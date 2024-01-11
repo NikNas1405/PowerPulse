@@ -1,27 +1,57 @@
 import { Route, Routes } from 'react-router-dom';
-import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
-import ErrorPage from 'pages/ErrorPage/ErrorPage';
-import { AppWrapper } from './App.styled';
+import { lazy } from 'react';
 
-// const test = import.meta.env.VITE_API_TEST;
+import SharedLayout from './components/SharedLayout/SharedLayout';
+
+import { GlobalStyles } from './styles/GlobalStyles';
+
+const WelcomePage = lazy(() =>
+  import('./pages/UnAuthorized/WelcomePage/WelcomePage')
+);
+
+const SignUpPage = lazy(() =>
+  import('./pages/UnAuthorized/SignUpPage/SignUpPage')
+);
+
+const SignInPage = lazy(() =>
+  import('./pages/UnAuthorized/SignInPage/SignInPage')
+);
+
+const ProfilePage = lazy(() =>
+  import('./pages/Authorized/ProfilePage/ProfilePage')
+);
+
+const DiaryPage = lazy(() => import('./pages/Authorized/DiaryPage/DiaryPage'));
+
+const ProductsPage = lazy(() =>
+  import('./pages/Authorized/ProductsPage/ProductsPage')
+);
+
+const ExercisesPage = lazy(() =>
+  import('./pages/Authorized/ExercisesPage/ExercisesPage')
+);
+
+const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 
 function App() {
-  // console.log(test);
   return (
-    <AppWrapper>
+    <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
+          <Route index element={<WelcomePage />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/diary" element={<DiaryPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/exercises" element={<ExercisesPage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-    </AppWrapper>
+      <GlobalStyles />
+    </>
   );
 }
+
 export default App;
