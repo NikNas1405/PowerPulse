@@ -1,7 +1,8 @@
+import { SignInForm } from '../../../components/UnAuthorized/SignInForm/SignInForm';
 import { Title } from './SignInPage.styled';
 
 const SignInPage = () => {
-  return <Title>SignIn Page</Title>;
+  return <SignInForm />;
 };
 
 export default SignInPage;
