@@ -127,7 +127,7 @@ button {
     margin: 0 auto;
   }
 
-  @media screen and (min-width: 375px) {
+  /* @media screen and (min-width: 375px) {
     width: 335px;
   }
 
@@ -139,5 +139,19 @@ button {
   @media screen and (min-width: 1440px) {
     width: 1248px;
     padding: 0 96px;
+  } */
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
   }
-`,k1=()=>D.jsxs(S1,{children:[D.jsx(v0,{}),D.jsx(_.Suspense,{fallback:null,children:D.jsx(bp,{})}),D.jsx(uu,{})]}),ba=_.lazy(()=>Kt(()=>import("./WelcomePage-8516fdd5.js"),[])),E1=_.lazy(()=>Kt(()=>import("./SignUpPage-da3be10c.js"),[])),x1=_.lazy(()=>Kt(()=>import("./SignInPage-c2d60eb8.js"),[])),C1=_.lazy(()=>Kt(()=>import("./ProfilePage-c6cfcc6b.js"),[])),_1=_.lazy(()=>Kt(()=>import("./DiaryPage-f6359546.js"),[])),P1=_.lazy(()=>Kt(()=>import("./ProductsPage-7b430690.js"),[])),T1=_.lazy(()=>Kt(()=>import("./ExercisesPage-76950cab.js"),[])),R1=_.lazy(()=>Kt(()=>import("./ErrorPage-985eaea4.js"),[]));function N1(){return D.jsxs(D.Fragment,{children:[D.jsx(th,{children:D.jsxs(Ge,{path:"/",element:D.jsx(k1,{}),children:[D.jsx(Ge,{index:!0,element:D.jsx(ba,{})}),D.jsx(Ge,{path:"/welcome",element:D.jsx(ba,{})}),D.jsx(Ge,{path:"/signup",element:D.jsx(E1,{})}),D.jsx(Ge,{path:"/signin",element:D.jsx(x1,{})}),D.jsx(Ge,{path:"/profile",element:D.jsx(C1,{})}),D.jsx(Ge,{path:"/diary",element:D.jsx(_1,{})}),D.jsx(Ge,{path:"/products",element:D.jsx(P1,{})}),D.jsx(Ge,{path:"/exercises",element:D.jsx(T1,{})}),D.jsx(Ge,{path:"*",element:D.jsx(R1,{})})]})}),D.jsx(w1,{})]})}hi.createRoot(document.getElementById("root")).render(D.jsx($.StrictMode,{children:D.jsx(rh,{basename:"/PowerPulse",children:D.jsx(N1,{})})}));export{D as j,Qd as s};
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 96px;
+  }
+`,k1=()=>D.jsxs(S1,{children:[D.jsx(v0,{}),D.jsx(_.Suspense,{fallback:null,children:D.jsx(bp,{})}),D.jsx(uu,{})]}),ba=_.lazy(()=>Kt(()=>import("./WelcomePage-2da6ab6f.js"),[])),E1=_.lazy(()=>Kt(()=>import("./SignUpPage-fb57506b.js"),[])),x1=_.lazy(()=>Kt(()=>import("./SignInPage-b2f8483b.js"),[])),C1=_.lazy(()=>Kt(()=>import("./ProfilePage-bf76ba9f.js"),[])),_1=_.lazy(()=>Kt(()=>import("./DiaryPage-6ff64f8a.js"),[])),P1=_.lazy(()=>Kt(()=>import("./ProductsPage-b40b7e86.js"),[])),T1=_.lazy(()=>Kt(()=>import("./ExercisesPage-4a59d768.js"),[])),R1=_.lazy(()=>Kt(()=>import("./ErrorPage-ad222bcc.js"),[]));function N1(){return D.jsxs(D.Fragment,{children:[D.jsx(th,{children:D.jsxs(Ge,{path:"/",element:D.jsx(k1,{}),children:[D.jsx(Ge,{index:!0,element:D.jsx(ba,{})}),D.jsx(Ge,{path:"/welcome",element:D.jsx(ba,{})}),D.jsx(Ge,{path:"/signup",element:D.jsx(E1,{})}),D.jsx(Ge,{path:"/signin",element:D.jsx(x1,{})}),D.jsx(Ge,{path:"/profile",element:D.jsx(C1,{})}),D.jsx(Ge,{path:"/diary",element:D.jsx(_1,{})}),D.jsx(Ge,{path:"/products",element:D.jsx(P1,{})}),D.jsx(Ge,{path:"/exercises",element:D.jsx(T1,{})}),D.jsx(Ge,{path:"*",element:D.jsx(R1,{})})]})}),D.jsx(w1,{})]})}hi.createRoot(document.getElementById("root")).render(D.jsx($.StrictMode,{children:D.jsx(rh,{basename:"/PowerPulse",children:D.jsx(N1,{})})}));export{D as j,Qd as s};
