@@ -1,4 +1,4 @@
-import{s as e,N as t,j as o}from"./index-0ab923c4.js";import{g as n,S as i}from"./StatisticsInfo-b6412f59.js";const r=e.div`
+import{s as e,N as t,j as o}from"./index-4d67e0c9.js";import{g as n,S as i}from"./StatisticsInfo-d7795e29.js";const r=e.div`
   display: flex;
 `,s=e.div`
   width: 55%;
