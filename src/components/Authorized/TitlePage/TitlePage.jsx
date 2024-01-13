@@ -1,3 +1,3 @@
-export const TitlePage = () => {
-  return <div></div>;
-};
+import { Title } from './TitlePage.styled';
+
+export const TitlePage = ({ title }) => <Title>{title}</Title>;
