@@ -1,9 +1,9 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { NavLink } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { register } from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
 import {
+  BgWrapper,
   ButtonSignUp,
   ErrorSpan,
   Form,
@@ -24,18 +24,19 @@ import { useState } from 'react';
 import { StatisticsInfo } from '../StatisticsInfo/StatisticsInfo';
 import sprite from '../../../assets/sprite.svg';
 import { StyleSheetManager } from 'styled-components';
+import { logIn } from '../../../redux/auth/operations';
 
 export const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  // const [isPasswordValid, setIsPasswordValid] = useState(true);
-  // const dispatch = useDispatch();
-  //  const navigate = useNavigate();
   const [isValidationCompleted, setIsValidationCompleted] = useState(false);
+
+  const dispatch = useDispatch();
+  //  const navigate = useNavigate();
+
   const shouldForwardProp = (prop) => !['isValidationCompleted'].includes(prop);
 
   const toggleCheckboxChange = () => {
     setShowPassword(!showPassword);
-    // setIsPasswordValid(false);
     setIsValidationCompleted(false);
   };
 
@@ -55,15 +56,13 @@ export const SignInForm = () => {
     }),
 
     onSubmit: (values) => {
-      // setIsValidationCompleted(true);
-      alert(JSON.stringify(values, null, 2));
       console.log(values);
-      // dispatch(
-      //   logIn({
-      //     email: values.email,
-      //     password: values.password,
-      //   })
-      // );
+      dispatch(
+        logIn({
+          email: values.email,
+          password: values.password,
+        })
+      );
       formik.resetForm();
     },
   });
@@ -71,6 +70,7 @@ export const SignInForm = () => {
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
       <FormContainer>
+        <NavLink to={'/'}>PowerPulse</NavLink>
         <FormWrapper>
           <FormTitle>Sign in</FormTitle>
           <FormDescription>
@@ -180,7 +180,9 @@ export const SignInForm = () => {
             <SignInLink to={'/signup'}>Sing Up</SignInLink>
           </WrapperText>
         </FormWrapper>
-        <StatisticsInfo />
+        <BgWrapper>
+          <StatisticsInfo />
+        </BgWrapper>
       </FormContainer>
     </StyleSheetManager>
   );

@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { NavLink } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { register } from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
+
 import {
   ButtonSignUp,
   Form,
@@ -19,18 +19,23 @@ import {
   WrapperText,
   ErrorSpan,
   SvgError,
+  BgWrapper,
 } from './SignUpForm.styled';
 import { useState } from 'react';
 import { StyleSheetManager } from 'styled-components';
 import { StatisticsInfo } from '../StatisticsInfo/StatisticsInfo';
 import sprite from '../../../assets/sprite.svg';
+import { register } from '../../../redux/auth/operations';
 
 export const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  // const dispatch = useDispatch();
-  //  const navigate = useNavigate();
   const [isValidationCompleted, setIsValidationCompleted] = useState(false);
-  const shouldForwardProp = (prop) => !['isValidationCompleted'].includes(prop);
+
+  const dispatch = useDispatch();
+  //  const navigate = useNavigate();
+
+  const shouldForwardProp = (prop) =>
+    !['isValidationCompleted', 'haserror'].includes(prop);
 
   const toggleCheckboxChange = () => {
     setShowPassword(!showPassword);
@@ -55,22 +60,21 @@ export const SignUpForm = () => {
     }),
 
     onSubmit: (values) => {
-      setIsValidationCompleted(true);
-      alert(JSON.stringify(values, null, 2));
       console.log(values);
-      // dispatch(
-      //   register({
-      //     name: values.name,
-      //     email: values.email,
-      //     password: values.password,
-      //   })
-      // );
+      dispatch(
+        register({
+          name: values.name,
+          email: values.email,
+          password: values.password,
+        })
+      );
     },
   });
 
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
       <FormContainer>
+        <NavLink to={'/'}>PowerPulse</NavLink>
         <FormWrapper>
           <FormTitle>Sign up</FormTitle>
           <FormDescription>
@@ -216,13 +220,7 @@ export const SignUpForm = () => {
                 )}
               </FormLabel>
             </LabelWrapper>
-            <ButtonSignUp
-              type="Submit"
-              // disabled={!formik.isValid || !formik.dirty || !formik.touched}
-              // onClick={nextPage}
-            >
-              Sign Up
-            </ButtonSignUp>
+            <ButtonSignUp type="Submit">Sign Up</ButtonSignUp>
           </Form>
 
           <WrapperText>
@@ -230,7 +228,9 @@ export const SignUpForm = () => {
             <SignInLink to={'/signin'}>Sing In</SignInLink>
           </WrapperText>
         </FormWrapper>
-        <StatisticsInfo />
+        <BgWrapper>
+          <StatisticsInfo />
+        </BgWrapper>
       </FormContainer>
     </StyleSheetManager>
   );
