@@ -1,4 +1,4 @@
-import{s as e,j as o}from"./index-68270a76.js";const r={colorBlack:" #040404",colorOrange:" #E6533C",colorOrange1:"#EF8964",colorBeige:"#EFA082",colorWhite:"#EFEDE8",colorSecondaryGreen:"#3CBF61",colorSecondaryRed:"#D80027",colorSecondaryGrey:"#303030"},t="/PowerPulse/assets/bgDesktop@1x-65809e4b.jpg",n=e.div`
+import{s as e,j as o}from"./index-0ab923c4.js";const r={colorBlack:" #040404",colorOrange:" #E6533C",colorOrange1:"#EF8964",colorBeige:"#EFA082",colorWhite:"#EFEDE8",colorSecondaryGreen:"#3CBF61",colorSecondaryRed:"#D80027",colorSecondaryGrey:"#303030"},t="/PowerPulse/assets/bgDesktop@1x-65809e4b.jpg",n=e.div`
   display: flex;
   position: relative;
   background-image: url(${t});
