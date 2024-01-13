@@ -1,47 +1,91 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { globalColor } from '../../../styles/root';
 
 export const FormContainer = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export const FormWrapper = styled.div`
-  width: 55%;
-  /* margin-right: 178px; */
+  @media screen and (min-width: 1440px) {
+    width: 55%;
+  }
 `;
 
 export const FormTitle = styled.h2`
-  color: #efede8;
-  font-family: Roboto;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 44px;
-  margin-bottom: 16px;
-  margin-top: 151px;
+  @media screen and (min-width: 320px) {
+    color: ${globalColor.colorWhite};
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    margin-top: 90px;
+    margin-bottom: 14px;
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 44px;
+    margin-top: 140px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 151px;
+  }
 `;
 
 export const FormDescription = styled.p`
-  color: rgba(239, 237, 232, 0.3);
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 32px;
-  width: 496px;
+  @media screen and (min-width: 320px) {
+    width: 335px;
+    color: rgba(239, 237, 232, 0.3);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 28px;
+    position: sticky;
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 496px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 496px;
+  }
 `;
 
-export const Form = styled.form`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* gap: 20px; */
-`;
+export const Form = styled.form``;
 
 export const LabelWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  @media screen and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const FormLabel = styled.label`
@@ -53,53 +97,70 @@ export const FormLabel = styled.label`
 `;
 
 export const FormInput = styled.input`
-  /* border: 1px solid rgba(239, 237, 232, 0.3); */
-  color: rgba(239, 237, 232, 0.6);
-  padding: 14px;
-  border-radius: 12px;
-  width: 364px;
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  background-color: transparent;
-  outline: none;
-  transition: border-color 0.3s;
+  @media screen and (min-width: 320px) {
+    width: 300px;
+    color: rgba(239, 237, 232, 0.6);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    background-color: transparent;
+    outline: none;
+    padding: 14px;
+    border-radius: 12px;
 
-  /* ${({ hasError, isValidationCompleted, ...rest }) => css`
-    border: 1px solid
-      ${hasError
-        ? '#D80027'
-        : isValidationCompleted
-        ? '#3CBF61'
-        : 'rgba(239, 237, 232, 0.3)'};
+    ${({ haserror, isValidationCompleted, ...rest }) => css`
+      border: 1px solid
+        ${haserror
+          ? '#D80027'
+          : isValidationCompleted
+          ? '#3CBF61'
+          : 'rgba(239, 237, 232, 0.3)'};
+    `}
+  }
 
-    &:hover,
-    &:focus {
-      ${!isValidationCompleted &&
-      `
+  @media screen and (min-width: 375px) {
+    width: 335px;
+    ${({ haserror, isValidationCompleted, ...rest }) => css`
+      border: 1px solid
+        ${haserror
+          ? '#D80027'
+          : isValidationCompleted
+          ? '#3CBF61'
+          : 'rgba(239, 237, 232, 0.3)'};
+    `}
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 364px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 14px;
+    border-radius: 12px;
+    width: 364px;
+    font-size: 16px;
+    line-height: 24px;
+    transition: border-color 0.3s;
+
+    ${({ haserror, isValidationCompleted, ...rest }) => css`
+      border: 1px solid
+        ${haserror
+          ? '#D80027'
+          : isValidationCompleted
+          ? '#3CBF61'
+          : 'rgba(239, 237, 232, 0.3)'};
+
+      &:hover,
+      &:focus {
+        ${!isValidationCompleted &&
+        `
         border: 1px solid #e6533c;
       `}
-    }
-  `} */
-
-  ${({ haserror, isValidationCompleted, ...rest }) => css`
-    border: 1px solid
-      ${haserror
-        ? '#D80027'
-        : isValidationCompleted
-        ? '#3CBF61'
-        : 'rgba(239, 237, 232, 0.3)'};
-
-    &:hover,
-    &:focus {
-      ${!isValidationCompleted &&
-      `
-        border: 1px solid #e6533c;
-      `}
-    }
-  `}
+      }
+    `}
+  }
 `;
 
 export const ErrorSpan = styled.div`
@@ -120,46 +181,83 @@ export const ErrorSpan = styled.div`
 `;
 
 export const SvgError = styled.svg`
+  @media screen and (min-width: 320px) {
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
   width: 16px;
   height: 16px;
 `;
 
 export const ImageToggle = styled.svg`
   position: absolute;
-  top: 30%;
-  right: 5%;
-  display: inline-block;
   width: 20px;
   height: 20px;
-  fill: #efede8;
+  fill: ${globalColor.colorWhite};
+
+  @media screen and (min-width: 320px) {
+    top: 30%;
+    right: 10%;
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    right: 5%;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const ButtonSignUp = styled.button`
-  display: inline-flex;
-  padding: 16px 60px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 12px;
-  background-color: #e6533c;
-  color: #efede8;
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px;
-  width: 192px;
-  margin-top: 64px;
-  outline: none;
-  border: transparent;
-  margin-bottom: 12px;
-
-  &:hover {
-    background-color: #ef8964;
+  @media screen and (min-width: 320px) {
+    position: sticky;
+    display: flex;
+    padding: 12px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 140px;
+    border-radius: 12px;
+    background-color: ${globalColor.colorOrange};
+    color: ${globalColor.colorWhite};
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    outline: none;
+    border: transparent;
+    margin-top: 28px;
+    margin-bottom: 12px;
   }
 
-  &:focus {
-    background-color: #ef8964;
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 64px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 16px 60px;
+    font-size: 20px;
+    line-height: 24px;
+    width: 192px;
+
+    &:hover,
+    &:focus {
+      background-color: ${globalColor.colorOrange1};
+    }
   }
 `;
 
@@ -182,7 +280,7 @@ export const Text = styled.p`
 `;
 
 export const SignInLink = styled(NavLink)`
-  color: #efede8;
+  color: ${globalColor.colorWhite};
   font-feature-settings:
     'clig' off,
     'liga' off;
@@ -192,4 +290,18 @@ export const SignInLink = styled(NavLink)`
   font-weight: 400;
   line-height: 18px;
   text-decoration-line: underline;
+`;
+
+export const BgWrapper = styled.div`
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    position: absolute;
+    z-index: -1;
+    top: 40%;
+    left: 20%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    top: 15%;
+    left: 5%;
+  }
 `;

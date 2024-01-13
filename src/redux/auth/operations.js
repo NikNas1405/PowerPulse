@@ -18,8 +18,11 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('/auth/signup', credentials);
       setAuthHeader(res.data.token);
+      console.log(res.data);
       return res.data;
     } catch (error) {
+      if (error.code === 'ERR_BAD_REQUEST')
+        return console.log('Please check your email or password');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -30,10 +33,11 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await axios.post('/auth/login', credentials);
+      const { data } = await axios.post('/auth/signin', credentials);
       setAuthHeader(data.token);
       return data;
     } catch (error) {
+      alert('Please try again');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -42,9 +46,10 @@ export const logIn = createAsyncThunk(
 // LogOut
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/logout');
+    await axios.post('/auth/logout');
     clearAuthHeader();
   } catch (error) {
+    console.log(error.message);
     return thunkAPI.rejectWithValue(error.message);
   }
 });
