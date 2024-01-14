@@ -12,11 +12,11 @@ const initialState = {
   isLoading: false,
   isFilter: false,
   error: null,
-  filter: {
-    search: '',
-    category: '',
-    recommended: '',
-  },
+  // filter: {
+  //   search: '',
+  //   category: '',
+  //   recommended: '',
+  // },
 };
 
 const handlePending = (state) => {
@@ -51,11 +51,11 @@ const handleFetchAllProductsCategoriesFulfilled = (state, action) => {
 const productsSlice = createSlice({
   name: 'products',
   initialState: initialState,
-  reducers: {
-    setProductsFilter(state, action) {
-      state.filter = action.payload;
-    },
-  },
+  // reducers: {
+  //   setProductsFilter(state, action) {
+  //     state.filter = action.payload;
+  //   },
+  // },
   extraReducers: (builder) =>
     builder
       .addCase(fetchAllProducts.pending, handlePending)
@@ -75,6 +75,6 @@ const productsSlice = createSlice({
       .addCase(fetchAllProductsCategories.rejected, handleRejected),
 });
 
-export const { setProductsFilter } = productsSlice.actions;
+// export const { setProductsFilter } = productsSlice.actions;
 
 export const productsReducer = productsSlice.reducer;

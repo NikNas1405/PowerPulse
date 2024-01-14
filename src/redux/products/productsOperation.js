@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://650b3186dfd73d1fab09c0ad.mockapi.io';
+// axios.defaults.baseURL = 'https://650b3186dfd73d1fab09c0ad.mockapi.io';
 
 export const fetchAllProducts = createAsyncThunk(
   'products/fetchAllProducts',
@@ -19,7 +19,7 @@ export const fetchAllProducts = createAsyncThunk(
 );
 
 // export const fetchAllProducts = createAsyncThunk(
-//   'products/fetchAllProducts',
+//   'user/products/fetchAllProducts',
 //   async (_, thunkAPI) => {
 //     try {
 //       const response = await axios.get('/user/products');
@@ -47,21 +47,22 @@ export const fetchAllProductsCategories = createAsyncThunk(
 );
 
 export const fetchFilteredProducts = createAsyncThunk(
-  'products/fetchFilteredProducts',
+  'user/products/fetchFilteredProducts',
   async (formData, thunkAPI) => {
-    const { search, category, recommended } = formData;
+    const { title, category, groupBloodNotAllowed } = formData;
     const filters = {};
 
-    if (search !== '' && search) {
-      filters.search = search;
+    if (title !== '' && title) {
+      filters.title = title;
     }
 
     if (category !== null && category) {
+      // filters.category = category.toLowerCase();
       filters.category = category;
     }
 
-    if (recommended !== null && recommended) {
-      filters.recommended = recommended;
+    if (groupBloodNotAllowed !== null && groupBloodNotAllowed) {
+      filters.groupBloodNotAllowed = groupBloodNotAllowed;
     }
 
     const options = new URLSearchParams({
@@ -69,10 +70,7 @@ export const fetchFilteredProducts = createAsyncThunk(
     });
 
     try {
-      const response = await axios.get(`/products?${options}`);
-
-      // console.log(response);
-
+      const response = await axios.get(`/user/products?${options}`);
       return response.data;
     } catch (error) {
       console.log(error);
