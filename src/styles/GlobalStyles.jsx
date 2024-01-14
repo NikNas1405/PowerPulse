@@ -40,7 +40,7 @@ a {
    margin: 0;
  }
 
-img {
+img, svg {
   display: block;
   width: 100%;
     height: 100%;
