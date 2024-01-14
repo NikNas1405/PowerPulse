@@ -1,9 +1,10 @@
-import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-4068d107.js";import{u as v,c as S,a as m}from"./index.esm-3f5fd74c.js";import{g as l,s}from"./sprite-c77c6b8b.js";import{S as z}from"./StatisticsInfo-fa6a76ac.js";import"./hoist-non-react-statics.cjs-3f8ebaa8.js";const k=n.div`
+import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-e6831af6.js";import{u as v,c as S,a as m}from"./index.esm-8af69a0f.js";import{g as l,s as t}from"./sprite-c5897d5a.js";import{S as z}from"./StatisticsInfo-024d8791.js";import"./hoist-non-react-statics.cjs-3f8ebaa8.js";const k=n.div`
   display: flex;
   position: relative;
 `,E=n.div`
   @media screen and (min-width: 1440px) {
     width: 55%;
+    margin-right: 178px;
   }
 `,P=n.h2`
   @media screen and (min-width: 320px) {
@@ -92,7 +93,7 @@ import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-4068
     padding: 14px;
     border-radius: 12px;
 
-    ${({haserror:r,isValidationCompleted:o,...t})=>p`
+    ${({haserror:r,isValidationCompleted:o,...s})=>p`
       border: 1px solid
         ${r?"#D80027":o?"#3CBF61":"rgba(239, 237, 232, 0.3)"};
     `}
@@ -100,7 +101,7 @@ import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-4068
 
   @media screen and (min-width: 375px) {
     width: 335px;
-    ${({haserror:r,isValidationCompleted:o,...t})=>p`
+    ${({haserror:r,isValidationCompleted:o,...s})=>p`
       border: 1px solid
         ${r?"#D80027":o?"#3CBF61":"rgba(239, 237, 232, 0.3)"};
     `}
@@ -118,7 +119,7 @@ import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-4068
     line-height: 24px;
     transition: border-color 0.3s;
 
-    ${({haserror:r,isValidationCompleted:o,...t})=>p`
+    ${({haserror:r,isValidationCompleted:o,...s})=>p`
       border: 1px solid
         ${r?"#D80027":o?"#3CBF61":"rgba(239, 237, 232, 0.3)"};
 
@@ -257,4 +258,4 @@ import{s as n,n as p,N as u,r as f,u as $,a as C,j as e,M as F}from"./index-4068
     top: 15%;
     left: 5%;
   }
-`,L=()=>{const[r,o]=f.useState(!1),[t,j]=f.useState(!1),b=$(),y=a=>!["isValidationCompleted","haserror"].includes(a),g=()=>{o(!r),j(!1)},i=v({initialValues:{name:"",email:"",password:""},validationSchema:S().shape({name:m().required("Name is required"),email:m().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:m().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:a=>{console.log(a),b(C({name:a.name,email:a.email,password:a.password}))}});return e.jsx(F,{shouldForwardProp:y,children:e.jsxs(k,{children:[e.jsx(u,{to:"/",children:"PowerPulse"}),e.jsxs(E,{children:[e.jsx(P,{children:"Sign up"}),e.jsx(B,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(D,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(R,{children:[e.jsxs(c,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!t&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success name"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!t&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success email"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!t&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${s}#icon-eye`})}):e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${s}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success password"]})})]})]}),e.jsx(W,{type:"Submit",children:"Sign Up"})]}),e.jsxs(I,{children:[e.jsx(q,{children:"Already have an account?"}),e.jsx(T,{to:"/signin",children:"Sing In"})]})]}),e.jsx(V,{children:e.jsx(z,{})})]})})},Z=()=>e.jsx(L,{});export{Z as default};
+`,L=()=>{const[r,o]=f.useState(!1),[s,j]=f.useState(!1),b=$(),y=a=>!["isValidationCompleted","haserror"].includes(a),g=()=>{o(!r),j(!1)},i=v({initialValues:{name:"",email:"",password:""},validationSchema:S().shape({name:m().required("Name is required"),email:m().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:m().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:a=>{console.log(a),b(C({name:a.name,email:a.email,password:a.password}))}});return e.jsx(F,{shouldForwardProp:y,children:e.jsxs(k,{children:[e.jsxs(E,{children:[e.jsx(u,{to:"/",children:"PowerPulse"}),e.jsx(P,{children:"Sign up"}),e.jsx(B,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(D,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(R,{children:[e.jsxs(c,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!s&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success name"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!s&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success email"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!s&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${t}#icon-eye`})}):e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${t}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(d,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success password"]})})]})]}),e.jsx(W,{type:"Submit",children:"Sign Up"})]}),e.jsxs(I,{children:[e.jsx(q,{children:"Already have an account?"}),e.jsx(T,{to:"/signin",children:"Sing In"})]})]}),e.jsx(V,{children:e.jsx(z,{})})]})})},Z=()=>e.jsx(L,{});export{Z as default};
