@@ -10,6 +10,7 @@ export const FormContainer = styled.div`
 export const FormWrapper = styled.div`
   @media screen and (min-width: 1440px) {
     width: 55%;
+    margin-right: 178px;
   }
 `;
 

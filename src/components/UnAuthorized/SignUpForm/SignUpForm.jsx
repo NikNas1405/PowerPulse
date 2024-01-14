@@ -74,8 +74,8 @@ export const SignUpForm = () => {
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
       <FormContainer>
-        <NavLink to={'/'}>PowerPulse</NavLink>
         <FormWrapper>
+          <NavLink to={'/'}>PowerPulse</NavLink>
           <FormTitle>Sign up</FormTitle>
           <FormDescription>
             Thank you for your interest in our platform. To complete the
