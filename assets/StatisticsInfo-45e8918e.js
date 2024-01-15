@@ -1,8 +1,8 @@
-import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprite-af4a0cea.js";const d="/PowerPulse/assets/bgDesktop@1x-65809e4b.jpg",p="/PowerPulse/assets/bgDesktop@2x-ed7242a6.jpg",a="/PowerPulse/assets/bgTablet@1x-e78a8eb2.jpg",r="/PowerPulse/assets/bgTablet@2x-aedbf112.jpg",o="/PowerPulse/assets/bgMobile@1x-3af5d636.jpg",x="/PowerPulse/assets/bgMobile@2x-8a68f471.jpg",s=e.div`
+import{s as e,j as i,a as d}from"./index-3919f7ab.js";import{g as n}from"./root-3d799fe1.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
-    background-image: url(${o});
+    background-image: url(${t});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
@@ -12,7 +12,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
       screen and (min-resolution: 192dpi) and (min-width: 320px),
       screen and (min-resolution: 2dppx) and (min-width: 320px) {
-      background-image: url(${x});
+      background-image: url(${p});
     }
   }
 
@@ -37,17 +37,17 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
   }
 
   @media screen and (min-width: 1440px) {
-    background-image: url(${d});
+    background-image: url(${x});
     width: 670px;
     height: 800px;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 1440px),
       screen and (min-resolution: 192dpi) and (min-width: 1440px),
       screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-      background-image: url(${p});
+      background-image: url(${o});
     }
   }
-`,h=e.div`
+`,s=e.div`
   position: absolute;
   display: flex;
   width: 146px;
@@ -106,7 +106,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     margin-right: 12px;
     padding: 10px;
   }
-`,g=e.svg`
+`,c=e.svg`
   width: 14px;
   height: 14px;
   fill: ${n.colorWhite};
@@ -123,7 +123,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     width: 20px;
     height: 20px;
   }
-`,c=e.svg`
+`,g=e.svg`
   @media screen and (min-width: 320px) {
     width: 12px;
     height: 12px;
@@ -171,7 +171,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
 
   @media screen and (min-width: 1440px) {
   }
-`,b=e.div`
+`,f=e.div`
   @media screen and (min-width: 320px) {
     position: absolute;
     width: 100px;
@@ -206,7 +206,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     margin-top: 0;
     margin-left: 0;
   }
-`,f=e.div`
+`,u=e.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -220,11 +220,11 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     width: 24px;
     height: 24px;
   }
-`,u=e.div`
+`,b=e.div`
   display: flex;
   align-items: baseline;
   gap: 11px;
-`,j=e.p`
+`,k=e.p`
   color: ${n.colorWhite};
   font-family: Roboto;
   font-size: 24px;
@@ -244,7 +244,7 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
 
   @media screen and (min-width: 1440px) {
   }
-`,k=e.span`
+`,v=e.span`
   color: rgba(239, 237, 232, 0.65);
   font-family: Roboto;
   font-size: 12px;
@@ -264,4 +264,4 @@ import{s as e,j as i}from"./index-ea51fa02.js";import{g as n,s as t}from"./sprit
     font-size: 16px;
     line-height: 24px;
   }
-`,$=()=>i.jsxs(s,{children:[i.jsxs(h,{children:[i.jsx(m,{children:i.jsx(g,{children:i.jsx("use",{href:`${t}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(l,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]}),i.jsxs(b,{children:[i.jsx(f,{children:i.jsx(c,{children:i.jsx("use",{href:`${t}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(u,{children:[i.jsx(j,{children:"500"}),i.jsx(k,{children:"cal"})]})]})]});export{$ as S};
+`,z=()=>i.jsxs(h,{children:[i.jsxs(s,{children:[i.jsx(m,{children:i.jsx(c,{children:i.jsx("use",{href:`${d}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(l,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]}),i.jsxs(f,{children:[i.jsx(u,{children:i.jsx(g,{children:i.jsx("use",{href:`${d}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(b,{children:[i.jsx(k,{children:"500"}),i.jsx(v,{children:"cal"})]})]})]});export{z as S};
