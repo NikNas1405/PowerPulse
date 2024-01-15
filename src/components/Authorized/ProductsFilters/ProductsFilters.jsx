@@ -7,8 +7,8 @@ import { nanoid } from 'nanoid';
 import { Loader } from '../../Loader/Loader';
 
 import {
-  InputStyled,
   StyledForm,
+  InputStyled,
   InputPartWrapper,
   SvgWrapper,
   SvgCleanWrapper,
@@ -61,17 +61,25 @@ export const ProductsFilters = () => {
     return [...options.map((option) => ({ value: option, label: option }))];
   };
 
+  // const typesArray = ['All', 'Recommended', 'Not recommended'];
 
-
-  const typesArray = ['All', 'Recommended', 'Not recommended'];
+  const typesArray = [
+    { value: 'null', label: 'All' },
+    { value: 'true', label: 'Recommended ' },
+    { value: 'false', label: 'Not recommended' },
+  ];
 
   const applyFilter = (e) => {
-    e.preventDefault();
-    // const formData = {
-    //   search: searchByProductTitle,
-    //   category: selectedCategory,
-    //   recommended: selectedType,
-    // };
+    if (e) {
+      e.preventDefault();
+    }
+    const formData = {
+      title: searchByProductTitle || '',
+      category: selectedCategory || null,
+      groupBloodNotAllowed: selectedType || null,
+    };
+
+    console.log(formData);
 
     // dispatch(fetchFilteredProducts(formData));
   };
@@ -79,18 +87,58 @@ export const ProductsFilters = () => {
   const handleInputChange = (e) => {
     const text = e.target.value;
     setIsActive(text.length > 0);
-    setSearchByProductTitle(text);
+    setSearchByProductTitle(text.trim());
   };
 
   const handleCleanButton = () => {
     setIsActive(false);
     setSearchByProductTitle('');
+
+    const formData = {
+      title: '',
+      category: selectedCategory || null,
+      groupBloodNotAllowed: selectedType || null,
+    };
+
+    console.log(formData);
+
+    // dispatch(fetchFilteredProducts(formData));
   };
 
-  const handleDataChange = (selectedOption) => {
-    const value = selectedOption ? selectedOption.value : '';
+  const handleCategoryChange = (selectedOption) => {
+    const value = selectedOption ? selectedOption.value : null;
     setSelectedCategory(value);
+
+    const formData = {
+      title: searchByProductTitle || '',
+      category: value,
+      groupBloodNotAllowed: selectedType || null,
+    };
+
+    console.log(formData);
+
+    // dispatch(fetchFilteredProducts(formData));
+  };
+
+  const handleTypeChange = (selectedOption) => {
+    const value = selectedOption ? selectedOption.value : null;
     setSelectedType(value);
+
+    const formData = {
+      title: searchByProductTitle || '',
+      category: selectedCategory || null,
+      groupBloodNotAllowed: value,
+    };
+
+    console.log(formData);
+
+    // dispatch(fetchFilteredProducts(formData));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleTypeChange();
+    }
   };
 
   return (
@@ -103,6 +151,7 @@ export const ProductsFilters = () => {
             placeholder="Search"
             value={searchByProductTitle}
             onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
           />
           <ButtonWrapper>
             {isActive && (
@@ -129,20 +178,19 @@ export const ProductsFilters = () => {
             isSearchable={false}
             isMulti={false}
             isClearable
-            onChange={handleDataChange}
+            onChange={handleCategoryChange}
             placeholder={'Categories'}
             styles={categoriesStyles}
           />
+
           <Select
             id={nanoid()}
-            options={formattedOptions(typesArray)}
-            value={formattedOptions(typesArray).find(
-              (option) => option.value === selectedType
-            )}
+            options={typesArray}
+            value={typesArray.find((option) => option.value === selectedType)}
             isSearchable={false}
             isMulti={false}
             isClearable
-            onChange={handleDataChange}
+            onChange={handleTypeChange}
             placeholder={'All'}
             styles={typesStyles}
           />

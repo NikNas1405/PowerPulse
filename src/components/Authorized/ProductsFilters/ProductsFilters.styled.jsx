@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
 export const StyledForm = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -9,6 +10,19 @@ export const StyledForm = styled.form`
 
   @media (min-width: 768px) {
     flex-direction: row;
+  }
+
+  @media (min-width: 1440px) {
+    &:before {
+      content: 'Filters';
+      position: absolute;
+      top: -24px;
+      right: 0;
+      color: rgba(239, 237, 232, 0.5);
+      font-size: 14px;
+      line-height: 1.2857;
+      word-wrap: break-word;
+    }
   }
 `;
 
@@ -26,6 +40,19 @@ export const InputStyled = styled.input`
   color: ${globalColor.colorWhite};
   font-size: 14px;
   line-height: 1.42857;
+
+  ::placeholder {
+    color: ${globalColor.colorWhite};
+    font-size: 14px;
+    line-height: 1.42857;
+    font-weight: 400;
+    word-wrap: break-word;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
 
   &:focus {
     outline: none;
@@ -47,11 +74,11 @@ export const InputStyled = styled.input`
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  top: 14px;
+  top: 50%;
   right: 14px;
-  left: auto;
-  bottom: auto;
+  transform: translateY(-50%);
   display: flex;
+  align-items: center;
   gap: 8px;
 
   > button {
@@ -144,11 +171,7 @@ export const categoriesStyles = {
       ? 'none'
       : isSelected
       ? `${globalColor.colorInput}`
-      : //   : isFocused
-        //   ? `${globalColor.colorInput}`
-        //   : isHover
-        //   ? `${globalColor.colorInput}`
-        'transparent',
+      : 'transparent',
 
     ':active': {
       ...styles[':active'],
@@ -166,7 +189,6 @@ export const categoriesStyles = {
 
   menuList: (provided) => ({
     ...provided,
-
     boxSizing: 'content-box',
     '&::-webkit-scrollbar': {
       width: '6px',
@@ -194,11 +216,8 @@ export const categoriesStyles = {
   clearIndicator: (provided) => ({
     ...provided,
     padding: 0,
-    color: `${globalColor.colorWhite}`,
+    color: `${globalColor.colorOrange}`,
     cursor: 'pointer',
-    ':hover': {
-      color: `${globalColor.colorOrange}`,
-    },
   }),
 
   dropdownIndicator: (styles, state) => ({
@@ -280,11 +299,7 @@ export const typesStyles = {
       ? 'none'
       : isSelected
       ? `${globalColor.colorInput}`
-      : //   : isFocused
-        //   ? `${globalColor.colorInput}`
-        //   : isHover
-        //   ? `${globalColor.colorInput}`
-        'transparent',
+      : 'transparent',
 
     ':active': {
       ...styles[':active'],
@@ -330,11 +345,8 @@ export const typesStyles = {
   clearIndicator: (provided) => ({
     ...provided,
     padding: 0,
-    color: `${globalColor.colorWhite}`,
+    color: `${globalColor.colorOrange}`,
     cursor: 'pointer',
-    ':hover': {
-      color: `${globalColor.colorOrange}`,
-    },
   }),
 
   dropdownIndicator: (styles, state) => ({

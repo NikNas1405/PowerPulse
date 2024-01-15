@@ -1,24 +1,62 @@
-export const ProductsItem = ({ type, name, calories, category, weight }) => {
+import {
+  ProductsItemStyled,
+  DietSpan,
+  SvgWrapper,
+} from './ProductsItem.styled';
+
+import { globalColor } from '../../../styles/root';
+
+import sprite from '../../../assets/sprite.svg';
+
+export const ProductsItem = ({ type, title, calories, category, weight }) => {
+  let TypeFoods;
+
+  if (type) {
+    TypeFoods = 'Recommended';
+  } else TypeFoods = 'Not recommended';
+
   return (
-    <div>
-      <span>DIET</span>
+    <ProductsItemStyled>
+      <DietSpan>DIET</DietSpan>
       <div>
-        <svg>
-          <use></use>
-        </svg>
-        <p>{type}</p>
+        <SvgWrapper>
+          {type ? (
+            <use
+              href={sprite + '#icon-Ellipse-82'}
+              style={{ fill: globalColor.colorSecondaryGreen }}
+            />
+          ) : (
+            <use
+              href={sprite + '#icon-Ellipse-82'}
+              style={{
+                fill: globalColor.colorSecondaryRed,
+              }}
+            />
+          )}
+        </SvgWrapper>
+        <p>{TypeFoods}</p>
       </div>
       <button>
         Add
-        <svg>
-          <use></use>
-        </svg>
+        <SvgWrapper
+          style={{
+            width: '16px',
+            height: '16px',
+          }}
+        >
+          <use
+            href={sprite + '#icon-arrow'}
+            style={{
+              stroke: globalColor.colorSecondaryRed,
+            }}
+          />
+        </SvgWrapper>
       </button>
 
       <svg>
-        <use></use>
+        <use href={sprite + '#icon-arrow'} />
       </svg>
-      <p>{name}</p>
+      <h2>{title}</h2>
       <div>
         <span>Calories: </span>
         <p>{calories}</p>
@@ -31,6 +69,6 @@ export const ProductsItem = ({ type, name, calories, category, weight }) => {
         <span>Weight: </span>
         <p>{weight}</p>
       </div>
-    </div>
+    </ProductsItemStyled>
   );
 };
