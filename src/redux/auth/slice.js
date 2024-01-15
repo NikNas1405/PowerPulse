@@ -6,6 +6,27 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  isUserParams: false,
+};
+
+const checkUserParams = (user) => {
+  const defaultUserDate = {
+    blood: 1,
+    sex: 'male',
+    height: 0,
+    currentWeight: 0,
+    desiredWeight: 0,
+    levelActivity: 1,
+  };
+
+  return (
+    user.sex === defaultUserDate.sex &&
+    user.blood === defaultUserDate.blood &&
+    user.height === defaultUserDate.height &&
+    user.currentWeight === defaultUserDate.currentWeight &&
+    user.desiredWeight === defaultUserDate.desiredWeight &&
+    user.levelActivity === defaultUserDate.levelActivity
+  );
 };
 
 const authSlice = createSlice({
@@ -22,6 +43,7 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.isUserParams = checkUserParams(state.user);
       })
       .addCase(logOut.fulfilled, (state) => {
         state.user = { name: null, email: null };

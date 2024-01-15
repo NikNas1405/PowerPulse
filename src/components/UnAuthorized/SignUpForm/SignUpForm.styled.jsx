@@ -22,7 +22,8 @@ export const FormTitle = styled.h2`
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    margin-top: 90px;
+    /* margin-top: 90px; */
+    margin-top: 127px;
     margin-bottom: 14px;
   }
 
@@ -32,19 +33,21 @@ export const FormTitle = styled.h2`
   @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 44px;
-    margin-top: 140px;
+    /* margin-top: 140px; */
+    margin-top: 189px;
     margin-bottom: 16px;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 151px;
+    /* margin-top: 151px; */
+    margin-top: 200px;
   }
 `;
 
 export const FormDescription = styled.p`
   @media screen and (min-width: 320px) {
     width: 335px;
-    color: rgba(239, 237, 232, 0.3);
+    color: ${globalColor.colorInput};
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -114,10 +117,10 @@ export const FormInput = styled.input`
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
         ${haserror
-          ? '#D80027'
+          ? `${globalColor.colorSecondaryRed}`
           : isValidationCompleted
-          ? '#3CBF61'
-          : 'rgba(239, 237, 232, 0.3)'};
+          ? `${globalColor.colorSecondaryGreen}`
+          : `${globalColor.colorInput}`};
     `}
   }
 
@@ -126,10 +129,10 @@ export const FormInput = styled.input`
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
         ${haserror
-          ? '#D80027'
+          ? `${globalColor.colorSecondaryRed}`
           : isValidationCompleted
-          ? '#3CBF61'
-          : 'rgba(239, 237, 232, 0.3)'};
+          ? `${globalColor.colorSecondaryGreen}`
+          : `${globalColor.colorInput}`};
     `}
   }
 
@@ -148,16 +151,16 @@ export const FormInput = styled.input`
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
         ${haserror
-          ? '#D80027'
+          ? `${globalColor.colorSecondaryRed}`
           : isValidationCompleted
-          ? '#3CBF61'
-          : 'rgba(239, 237, 232, 0.3)'};
+          ? `${globalColor.colorSecondaryGreen}`
+          : `${globalColor.colorInput}`};
 
       &:hover,
       &:focus {
         ${!isValidationCompleted &&
         `
-        border: 1px solid #e6533c;
+        border: 1px solid ${globalColor.colorOrange};
       `}
       }
     `}

@@ -16,10 +16,10 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/auth/signup', credentials);
-      setAuthHeader(res.data.token);
-      console.log(res.data);
-      return res.data;
+      const { data } = await axios.post('/auth/signup', credentials);
+      setAuthHeader(data.token);
+
+      return data;
     } catch (error) {
       if (error.code === 'ERR_BAD_REQUEST')
         return console.log('Please check your email or password');
@@ -35,6 +35,7 @@ export const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('/auth/signin', credentials);
       setAuthHeader(data.token);
+
       return data;
     } catch (error) {
       alert('Please try again');
@@ -66,8 +67,9 @@ export const refreshUser = createAsyncThunk(
     }
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get('/auth/current');
-      return res.data;
+      const { data } = await axios.get('/auth/current');
+
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

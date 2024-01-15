@@ -71,7 +71,6 @@ export const SignInForm = () => {
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
       <FormContainer>
         <FormWrapper>
-          <NavLink to={'/'}>PowerPulse</NavLink>
           <FormTitle>Sign in</FormTitle>
           <FormDescription>
             Welcome! Please enter your credentials to login to the platform:
