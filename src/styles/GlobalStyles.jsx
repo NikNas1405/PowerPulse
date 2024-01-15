@@ -40,7 +40,7 @@ a {
    margin: 0;
  }
 
-img {
+img, svg {
   display: block;
   width: 100%;
     height: 100%;
@@ -57,11 +57,11 @@ export const Container = styled.div`
   padding: 0 20px;
   margin: 0 auto;
 
-  @media screen and (min-width: 320px) {
+  /* @media screen and (min-width: 320px) {
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-  }
+  } */
 
   /* @media screen and (min-width: 375px) {
     width: 335px;

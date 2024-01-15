@@ -5,52 +5,9 @@
 // import { GlobalStyles } from './styles/GlobalStyles';
 // import SharedLayout from './components/SharedLayout/SharedLayout';
 
-// import { useAuth } from 'operations/useAuth';
+// import { useAuth } from './hooks/useAuth';
 
-// ========================== useAuth:==========================
-// import { useSelector } from 'react-redux';
-// import {
-//   selectUser,
-//   selectIsSignedIn,
-//   selectIsRefreshing,
-// } from '../../redux/auth/selectors';
-
-// export const useAuth = () => {
-//   const user = useSelector(selectUser);
-//   const isLoggedIn = useSelector(selectIsLoggedIn);
-//   const isRefreshing = useSelector(selectIsRefreshing);
-
-//   return {
-//     user,
-//     isLoggedIn,
-//     isRefreshing,
-//   };
-// };
-//========================== ==========================
-
-// import { refreshData } from 'operations/authAPI';
-//====================================================
-// export const refreshData = createAsyncThunk(
-//   'auth/refresh',
-//   async (_, thunkAPI) => {
-//     const { token } = thunkAPI.getState().auth;
-
-//     if (!token) {
-//       return thunkAPI.rejectWithValue('No valid token');
-//     }
-//     setAuthHeader(token);
-
-//     try {
-//       const response = await axios.get('/users/current');
-//       return response.data;
-//     } catch (error) {
-//       toast.error(`${error.response.data.message}`);
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-//====================================================
-
+// import { refreshUser } from './redux/auth/operations';
 // import { RestrictedRoute } from './RestrictedRoute';
 // import { PrivateRoute } from './PrivateRoute';
 
@@ -88,7 +45,7 @@
 //   const { isRefreshing } = useAuth();
 
 //   useEffect(() => {
-//     dispatch(refreshData());
+//     dispatch(refreshUser());
 //   }, [dispatch]);
 
 //   return (

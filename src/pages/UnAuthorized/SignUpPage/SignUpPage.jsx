@@ -1,7 +1,7 @@
-import { Title } from './SignUpPage.styled';
+import { SignUpForm } from '../../../components/UnAuthorized/SignUpForm/SignUpForm';
 
 const SignUpPage = () => {
-  return <Title>SignUp Page</Title>;
+  return <SignUpForm />;
 };
 
 export default SignUpPage;
