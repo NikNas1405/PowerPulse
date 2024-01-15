@@ -18,8 +18,9 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroWrapper = styled.div`
-  margin-top: 90px;
+  /* margin-top: 90px; */
   position: relative;
+  margin-top: 127px;
 
   @media screen and (min-width: 320px) {
   }
@@ -28,12 +29,14 @@ export const HeroWrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 140px;
+    /* margin-top: 140px; */
+    margin-top: 189px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 55%;
-    margin-top: 151px;
+    /* margin-top: 151px; */
+    margin-top: 200px;
     margin-right: 76px;
   }
 `;

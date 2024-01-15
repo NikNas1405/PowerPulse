@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { LogoutIcon } from '../LogOutBtn/LogOutBtn.styled';
+// import { LogoutIcon } from '../LogOutBtn/LogOutBtn.styled';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
@@ -85,6 +85,47 @@ export const SecondNavWrapper = styled.div`
   }
 `;
 
-export const LogoutIconStyled = styled(LogoutIcon)`
-  stroke: var(--color-main-one);
+// export const LogoutIconStyled = styled(LogoutIcon)`
+//   stroke: var(--color-main-one);
+// `;
+
+// DELETE
+export const NavLinkPower = styled.div`
+  /* margin-top: 33px; */
+  /* margin: 0; */
+  margin-top: 33px;
+  z-index: 1;
+
+  @media screen and (min-width: 1440px) {
+    position: absolute;
+  }
+`;
+
+export const NavLinkPowerPlus = styled.div`
+  /* margin-top: 33px; */
+  /* margin: 0; */
+  margin-top: 33px;
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+`;
+
+export const LogoNavLink = styled(NavLink)`
+  /* margin-top: 33px; */
+  /* z-index: 1; */
+  display: flex;
+  gap: 8px;
+`;
+
+export const Svg = styled.svg`
+  width: 44px;
+  height: 17px;
+  fill: #efede8;
+`;
+
+export const SvgPowerPlus = styled.svg`
+  width: 100px;
+  height: 15px;
+  fill: #efede8;
 `;
