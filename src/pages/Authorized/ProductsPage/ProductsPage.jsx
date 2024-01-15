@@ -1,27 +1,25 @@
-// import { useEffect } from 'react';
-// import {
-// useDispatch,
-// useSelector
-// } from 'react-redux';
-// import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import { toast } from 'react-toastify';і
 
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import { ProductsFilters } from '../../../components/Authorized/ProductsFilters/ProductsFilters';
 import { ProductsList } from '../../../components/Authorized/ProductsList/ProductsList';
-
-// import { fetchAllProducts } from '../../../redux/products/productsOperation';
 
 import {
   Wrapper,
   TitleAndFilterWrapper,
   ProductsListWrapper,
 } from './ProductsPage.styled';
+import {
+  fetchAllProductsCategories,
+  // fetchProducts,
+} from '../../../redux/products/productsOperation';
+import { selectProductsCategories } from '../../../redux/products/productsSelector';
 // import { selectProducts } from '../../../redux/products/productsSelector';
 
 const ProductsPage = () => {
-  // const dispatch = useDispatch();
-
-  // const products = useSelector(selectProducts);
+  const dispatch = useDispatch();
 
   const products = [
     {
@@ -129,21 +127,35 @@ const ProductsPage = () => {
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
-  //       await dispatch(fetchAllProducts());
-  //     } catch (error) {
-  //       toast.error('Error fetching data:', error);
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
+        // const formData = {
+        //   title: '',
+        //   category: null,
+        //   groupBloodNotAllowed: null,
+        // };
+        // await dispatch(fetchProducts(formData));
+    //   } catch (error) {
+    //     toast.error('Error fetching data:', error);
+    //     console.error('Error fetching data:', error);
+    //   }
+    // };
 
   //   fetchData();
   // }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchAllProductsCategories());
+  }, [dispatch]);
+
+  const categoriesArray = useSelector(selectProductsCategories);
+  // const productsArray = useSelector(selectProducts);
 
   return (
     <Wrapper>
       <TitleAndFilterWrapper>
         <TitlePage title={'Products Page'} />
-        <ProductsFilters />
+        <ProductsFilters
+          categories={categoriesArray.map((item) => item.title)}
+        />
       </TitleAndFilterWrapper>
 
       <ProductsListWrapper>

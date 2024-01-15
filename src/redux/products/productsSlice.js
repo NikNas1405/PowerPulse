@@ -1,14 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import {
-  // fetchAllProducts,
-  fetchFilteredProducts,
-  fetchAllProductsCategories,
-} from './productsOperation';
+import { fetchProducts, fetchAllProductsCategories } from './productsOperation';
 
 const initialState = {
   productsArray: [],
-  productsCategories: null,
+  productsCategories: [],
   isLoading: false,
   isFilter: false,
   error: null,
@@ -41,12 +37,9 @@ const productsSlice = createSlice({
   initialState: initialState,
   extraReducers: (builder) =>
     builder
-      .addCase(fetchFilteredProducts.pending, handlePending)
-      .addCase(
-        fetchFilteredProducts.fulfilled,
-        handleFetchFilteredProductsFulfilled
-      )
-      .addCase(fetchFilteredProducts.rejected, handleRejected)
+      .addCase(fetchProducts.pending, handlePending)
+      .addCase(fetchProducts.fulfilled, handleFetchFilteredProductsFulfilled)
+      .addCase(fetchProducts.rejected, handleRejected)
       .addCase(fetchAllProductsCategories.pending, handlePending)
       .addCase(
         fetchAllProductsCategories.fulfilled,

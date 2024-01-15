@@ -32,49 +32,76 @@ export const SvgWrapper = styled.svg`
   height: 14px;
 `;
 
-// export const Nothing = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 16px;
-//   width: 100%;
-//   margin-top: 64px;
+export const Text = styled.p`
+  color: ${globalColor.colorWhite};
+  font-size: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
 
-//   @media (min-width: 375px) {
-//     width: 335px;
-//   }
+  > span {
+    color: rgba(239, 237, 232, 0.4);
+  }
+`;
 
-//   @media (min-width: 768px) {
-//     margin-top: 132px;
-//     width: 580px;
-//   }
+export const Title = styled.h2`
+  color: ${globalColor.colorWhite};
+  font-size: 20px;
+  line-height: 1.2;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: auto;
 
-//   @media (min-width: 1440px) {
-//     margin-top: 136px;
-//   }
-// `;
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1.33;
+  }
 
-// export const Parag1 = styled.p`
-//   line-height: 1.2857;
-//   word-wrap: break-word;
-//   color: ${globalColor.colorInput};
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-//   > span {
-//     color: ${globalColor.colorOrange};
-//   }
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+`;
 
-//   @media (min-width: 768px) {
-//     line-height: 1.5;
-//     font-weight: 16px;
-//   }
-// `;
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  color: ${globalColor.colorOrange};
+  gap: 8px;
+  width: 49px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
 
-// export const Parag2 = styled.p`
-//   line-height: 1.2857;
-//   word-wrap: break-word;
-//   color: ${globalColor.colorOrange};
+  font-size: 14px;
+  line-height: 1.2857;
+  word-wrap: break-word;
 
-//   @media (min-width: 768px) {
-//     line-height: 1.5;
-//     font-weight: 16px;
-//   }
-// `;
+  @media (min-width: 768px) {
+    width: 53px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+`;
+
+export const WrapperTitle = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 41px;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    margin-top: 30px;
+  }
+`;
+
+export const WrapperText = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  align-items: center;
+`;

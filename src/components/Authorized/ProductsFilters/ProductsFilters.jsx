@@ -2,7 +2,6 @@ import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Select from 'react-select';
 import { nanoid } from 'nanoid';
-// import { useSelector, useDispatch } from 'react-redux';
 
 import { Loader } from '../../Loader/Loader';
 
@@ -19,41 +18,14 @@ import {
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
-// import { fetchFilteredProducts } from '../../../redux/products/productsOperation';
 
-export const ProductsFilters = () => {
-  // const dispatch = useDispatch();
-
+export const ProductsFilters = ({ categories }) => {
   const [isActive, setIsActive] = useState(false);
   const [searchByProductTitle, setSearchByProductTitle] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
 
-  const categoriesArray = [
-    'alcoholic drinks',
-    'berries',
-    'cereals',
-    'dairy',
-    'dried fruits',
-    'eggs',
-    'fish',
-    'flour',
-    'fruits',
-    'meat',
-    'mushrooms',
-    'nuts',
-    'oils and fats',
-    'poppy',
-    'sausage',
-    'seeds',
-    'sesame',
-    'soft drinks',
-    'vegetables and herbs',
-  ]; //тут має прийти відповідь від беку з переліком, а не хардкод
-
-  // const categoriesArray = dispatch(fetchAllProductsCategories());
-
-  const categoriesArrayFormatted = categoriesArray.map(
+  const categoriesArrayFormatted = categories.map(
     (el) => el[0].toUpperCase() + el.slice(1).toLowerCase()
   );
 
@@ -81,7 +53,7 @@ export const ProductsFilters = () => {
 
     console.log(formData);
 
-    // dispatch(fetchFilteredProducts(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleInputChange = (e) => {
@@ -102,7 +74,7 @@ export const ProductsFilters = () => {
 
     console.log(formData);
 
-    // dispatch(fetchFilteredProducts(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleCategoryChange = (selectedOption) => {
@@ -117,7 +89,7 @@ export const ProductsFilters = () => {
 
     console.log(formData);
 
-    // dispatch(fetchFilteredProducts(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleTypeChange = (selectedOption) => {
@@ -132,7 +104,7 @@ export const ProductsFilters = () => {
 
     console.log(formData);
 
-    // dispatch(fetchFilteredProducts(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleKeyDown = (e) => {

@@ -3,10 +3,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 export const fetchAllProductsCategories = createAsyncThunk(
-  'products/fetchAllProductsCategory',
+  '/user/products/categories/fetchAllProductsCategory',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/productsCategory');
+      const response = await axios.get('/user/products/categories');
       return response.data;
     } catch (error) {
       console.log(error);
@@ -16,7 +16,7 @@ export const fetchAllProductsCategories = createAsyncThunk(
   }
 );
 
-export const fetchFilteredProducts = createAsyncThunk(
+export const fetchProducts = createAsyncThunk(
   'user/products/fetchFilteredProducts',
   async (formData, thunkAPI) => {
     const { title, category, groupBloodNotAllowed } = formData;
@@ -40,8 +40,9 @@ export const fetchFilteredProducts = createAsyncThunk(
     });
 
     try {
-      const response = await axios.get(`/user/products?${options}`);
-      return response.data;
+      // const response = await axios.get(`/user/products?${options}`);
+      const response = await axios.get(`/user/products/${options}`);
+      return response.data.dataUser;
     } catch (error) {
       console.log(error);
       toast.error(`${error.message}`);

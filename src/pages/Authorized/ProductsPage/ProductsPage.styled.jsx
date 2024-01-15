@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import bgDesktop1 from '../../../assets/products/products-bg.jpg';
 import bgDesktop2 from '../../../assets/products/products-bg@2x.jpg';
+import { globalColor } from '../../../styles/root';
 
 export const Wrapper = styled.div`
   padding: 40px 0 80px;
@@ -58,5 +59,14 @@ export const ProductsListWrapper = styled.div`
   @media (min-width: 1440px) {
     height: 487px;
     width: 850px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${globalColor.colorOrange1};
+    border-radius: 12px;
   }
 `;

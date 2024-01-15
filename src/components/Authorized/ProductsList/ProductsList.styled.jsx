@@ -1,23 +1,6 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-// export const ProductsListStyled = styled.ul`
-//   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 20px;
-
-//   @media (min-width: 768px) {
-//     height: 660px;
-//     overflow: auto;
-//     gap: 32px 16px;
-//   }
-
-//   @media (min-width: 1440px) {
-//     height: 487px;
-//   }
-// `;
-
 export const ProductsListStyled = styled.ul`
   width: 100%;
   display: flex;
@@ -50,7 +33,7 @@ export const Nothing = styled.div`
   }
 `;
 
-export const Parag1 = styled.p`
+export const Paragraph1 = styled.p`
   line-height: 1.2857;
   word-wrap: break-word;
   color: ${globalColor.colorInput};
@@ -65,7 +48,7 @@ export const Parag1 = styled.p`
   }
 `;
 
-export const Parag2 = styled.p`
+export const Paragraph2 = styled.p`
   line-height: 1.2857;
   word-wrap: break-word;
   color: ${globalColor.colorOrange};
