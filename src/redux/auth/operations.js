@@ -23,9 +23,13 @@ export const register = createAsyncThunk(
       return data;
     } catch (error) {
       if (error.code === 'ERR_BAD_REQUEST') {
-        return toast.error('Please enter correct data');
+        return toast.error('Please enter correct data', {
+          theme: 'dark',
+        });
       }
-      toast.error('Sorry, something went wrong, please try again');
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -41,7 +45,9 @@ export const logIn = createAsyncThunk(
 
       return data;
     } catch (error) {
-      toast.error('Please check your email or password');
+      toast.error('Please check your email or password', {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -53,7 +59,6 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/auth/logout');
     clearAuthHeader();
   } catch (error) {
-    console.log(error.message);
     return thunkAPI.rejectWithValue(error.message);
   }
 });

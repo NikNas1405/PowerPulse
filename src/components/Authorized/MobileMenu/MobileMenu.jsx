@@ -12,8 +12,9 @@ import { useDispatch } from 'react-redux';
 import { logOut } from '../../../redux/auth/operations';
 
 export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
-  const isMobileWidth = useMediaQuery('(max-width: 375px)');
-  const isTabletWidth = useMediaQuery('(max-width: 768px)');
+  const isMobileWidth = useMediaQuery('(min-width: 375px)');
+  const isTabletWidth = useMediaQuery('(min-width: 768px)');
+  const isDesctopWidth = useMediaQuery('(min-width: 1440px)');
 
   const dispatch = useDispatch();
   const handleLogOut = () => {
@@ -35,7 +36,7 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
       }}
       PaperProps={{
         sx: {
-          position: 'fixed !important',
+          position: 'relative',
           boxSizing: 'border-box',
           boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
           backgroundColor: '#E6533C',
@@ -43,11 +44,11 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
           paddingRight: `${isTabletWidth ? 20 : 32}px`,
           paddingBottom: `${isTabletWidth ? 20 : 26}px`,
           paddingLeft: `${isTabletWidth ? 20 : 32}px`,
-          display: 'flex',
+          display: `${isDesctopWidth ? 'none' : 'flex'}`,
           flexDirection: 'column',
           alignItems: 'flex-start',
-          width: `${isTabletWidth ? 200 : 300}px`,
-          height: `${isTabletWidth ? 812 : 1005}px`,
+          width: `${isTabletWidth ? 300 : 200}px`,
+          height: `${isTabletWidth ? 1005 : 812}px`,
           top: '0 !important',
         },
       }}

@@ -11,7 +11,6 @@ import {
   SvgUserNav,
   UserCardContainer,
   BtnIconMenu,
-  BtnIconClose,
   LogOutWrapper,
   UseNavWrapper,
 } from './UserBar.styled';
