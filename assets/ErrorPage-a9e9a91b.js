@@ -1,4 +1,4 @@
-import{s as e,N as t,j as i}from"./index-fb0384a4.js";import{g as n}from"./root-3d799fe1.js";import{b as o,a as d,c as a,d as r,e as p,f as s}from"./bgMobile@2x-26480d49.js";const x=e.div`
+import{s as e,g as n,N as t,j as i}from"./index-454775b7.js";import{b as o,a as d,c as a,d as r,e as p,f as s}from"./bgMobile@2x-26480d49.js";const x=e.div`
   display: flex;
   position: relative;
 
@@ -187,4 +187,4 @@ import{s as e,N as t,j as i}from"./index-fb0384a4.js";import{g as n}from"./root-
       background-image: url(${s});
     }
   }
-`,v=()=>i.jsxs(x,{children:[i.jsx(h,{}),i.jsxs(m,{children:[i.jsx(c,{children:"404"}),i.jsx(l,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),i.jsx(g,{to:"/",children:"Go Home"})]}),i.jsx("div",{children:i.jsx(w,{})})]});export{v as default};
+`,f=()=>i.jsxs(x,{children:[i.jsx(h,{}),i.jsxs(m,{children:[i.jsx(c,{children:"404"}),i.jsx(l,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),i.jsx(g,{to:"/",children:"Go Home"})]}),i.jsx("div",{children:i.jsx(w,{})})]});export{f as default};

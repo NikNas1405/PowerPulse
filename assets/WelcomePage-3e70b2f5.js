@@ -1,4 +1,4 @@
-import{s as e,N as t,j as i,a as p}from"./index-fb0384a4.js";import{S as d}from"./StatisticsInfo-bd1a1ba6.js";import{g as n}from"./root-3d799fe1.js";import"./bgMobile@2x-26480d49.js";const o=e.div`
+import{s as e,g as n,N as t,j as i,a as p}from"./index-454775b7.js";import{S as d}from"./StatisticsInfo-9ab22344.js";import"./bgMobile@2x-26480d49.js";const o=e.div`
   @media screen and (min-width: 320px) {
   }
 
@@ -182,4 +182,4 @@ import{s as e,N as t,j as i,a as p}from"./index-fb0384a4.js";import{S as d}from"
       border: 1px solid ${n.colorOrange};
     }
   }
-`,f=()=>i.jsxs(o,{children:[i.jsxs(x,{children:[i.jsx(a,{children:"Transforming your body shape with Power Pulse"}),i.jsx(r,{children:i.jsx("use",{href:`${p}#icon-line`})}),i.jsxs(s,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]})]}),i.jsx(d,{})]});export{f as default};
+`,w=()=>i.jsxs(o,{children:[i.jsxs(x,{children:[i.jsx(a,{children:"Transforming your body shape with Power Pulse"}),i.jsx(r,{children:i.jsx("use",{href:`${p}#icon-line`})}),i.jsxs(s,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]})]}),i.jsx(d,{})]});export{w as default};

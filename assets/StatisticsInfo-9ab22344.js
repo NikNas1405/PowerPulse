@@ -1,4 +1,4 @@
-import{s as e,j as i,a as d}from"./index-fb0384a4.js";import{g as n}from"./root-3d799fe1.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
+import{s as e,g as n,j as i,a as d}from"./index-454775b7.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
@@ -264,4 +264,4 @@ import{s as e,j as i,a as d}from"./index-fb0384a4.js";import{g as n}from"./root-
     font-size: 16px;
     line-height: 24px;
   }
-`,z=()=>i.jsxs(h,{children:[i.jsxs(s,{children:[i.jsx(m,{children:i.jsx(c,{children:i.jsx("use",{href:`${d}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(l,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]}),i.jsxs(f,{children:[i.jsx(u,{children:i.jsx(g,{children:i.jsx("use",{href:`${d}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(b,{children:[i.jsx(k,{children:"500"}),i.jsx(v,{children:"cal"})]})]})]});export{z as S};
+`,$=()=>i.jsxs(h,{children:[i.jsxs(s,{children:[i.jsx(m,{children:i.jsx(c,{children:i.jsx("use",{href:`${d}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(l,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]}),i.jsxs(f,{children:[i.jsx(u,{children:i.jsx(g,{children:i.jsx("use",{href:`${d}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(b,{children:[i.jsx(k,{children:"500"}),i.jsx(v,{children:"cal"})]})]})]});export{$ as S};
