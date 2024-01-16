@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://powerpulserver.onrender.com/api';
 
@@ -21,8 +22,10 @@ export const register = createAsyncThunk(
 
       return data;
     } catch (error) {
-      if (error.code === 'ERR_BAD_REQUEST')
-        return console.log('Please check your email or password');
+      if (error.code === 'ERR_BAD_REQUEST') {
+        return toast.error('Please enter correct data');
+      }
+      toast.error('Sorry, something went wrong, please try again');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -38,7 +41,7 @@ export const logIn = createAsyncThunk(
 
       return data;
     } catch (error) {
-      alert('Please try again');
+      toast.error('Please check your email or password');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

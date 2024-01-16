@@ -1,131 +1,75 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { LogoutIcon } from '../LogOutBtn/LogOutBtn.styled';
 import { NavLink } from 'react-router-dom';
+import { globalColor } from '../../styles/root';
 
-export const HeaderContainer = styled.div`
-  /* border-bottom: 1px solid var(--color-text); */
-  border-bottom: 1px solid rgba(239, 237, 232, 0.2);
-  @media (max-width: 374px) {
-    padding: 12px 18px;
-  }
-
-  @media (min-width: 375px) and (max-width: 768px) {
-    padding: 12px 18px;
-  }
-
-  @media (min-width: 769px) and (max-width: 1439px) {
-    padding: 19px 26px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 20px 96px;
-  }
-`;
-
-export const Navigation = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const StyledLink = styled(NavLink)`
-  font-size: 16px;
-  line-height: 24px;
-  padding: 10px 27px;
-  color: var(--color-text);
-  background-color: transparent;
-  border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  transition: background-color 0.3s var(--timing-function);
-
-  &:hover,
-  &:focus {
-    background-color: var(--color-main-one);
-  }
-  &.active {
-    background-color: var(--color-main-one);
-  }
-`;
-
-export const StyledLinkSettings = styled(Link)`
+export const HeaderConatiner = styled.div`
   display: flex;
   align-items: center;
-  gap: 14px;
-  color: var(--color-text);
-  background-color: transparent;
-  border-radius: 12px;
+  position: relative;
 `;
 
-export const Burger = styled.svg`
-  width: ${(props) => props.size || '28px'};
-  height: ${(props) => props.size || '28px'};
-  fill: ${(props) => props.color || 'none'};
-  stroke: ${(props) => props.color || 'var(--color-back-two)'};
-  display: block;
+export const NavLinkWrapper = styled.div`
+  margin-right: 96px;
 
-  transition: stroke 0.3s var(--timing-function);
-  &:hover,
-  &:focus {
-    stroke: var(--color-main-one);
-  }
-`;
-
-export const NavWrapper = styled.div`
-  display: flex;
-  gap: 16px;
-`;
-
-export const SecondNavWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
   @media screen and (min-width: 768px) {
-    gap: 32px;
-  }
-`;
-
-// export const LogoutIconStyled = styled(LogoutIcon)`
-//   stroke: var(--color-main-one);
-// `;
-
-// DELETE
-export const NavLinkPower = styled.div`
-  /* margin-top: 33px; */
-  /* margin: 0; */
-  margin-top: 33px;
-  z-index: 1;
-
-  @media screen and (min-width: 1440px) {
-    position: absolute;
+    margin-right: 410px;
   }
 `;
 
 export const NavLinkPowerPlus = styled.div`
-  /* margin-top: 33px; */
-  /* margin: 0; */
-  margin-top: 33px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(239, 237, 232, 0.2);
 
   @media screen and (min-width: 1440px) {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
   }
 `;
 
 export const LogoNavLink = styled(NavLink)`
-  /* margin-top: 33px; */
-  /* z-index: 1; */
   display: flex;
   gap: 8px;
 `;
 
 export const Svg = styled.svg`
-  width: 44px;
-  height: 17px;
-  fill: #efede8;
+  fill: ${globalColor.colorOrange};
+
+  @media screen and (min-width: 320px) {
+    width: 36px;
+    height: 13px;
+  }
+
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 17px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 44px;
+    height: 17px;
+  }
 `;
 
 export const SvgPowerPlus = styled.svg`
-  width: 100px;
-  height: 15px;
-  fill: #efede8;
+  fill: ${globalColor.colorWhite};
+
+  @media screen and (min-width: 320px) {
+    width: 82px;
+    height: 12px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 100px;
+    height: 15px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 100px;
+    height: 15px;
+  }
 `;
