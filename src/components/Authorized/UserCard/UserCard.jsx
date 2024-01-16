@@ -1,5 +1,6 @@
 import sprite from '../../../assets/sprite.svg';
-
+import gridicons_user from '../../../assets/profile/gridicons_user.jpg';
+import { LogOutBtn } from '../LogOutBtn/LogOutBtn';
 import {
   TextWrapper,
   WrapperTextSvg,
@@ -15,43 +16,45 @@ import {
   AvatarUpload,
   InputFile,
   SectionText,
+  UserNameTitle,
+  UserText,
 } from './UserCard.styled';
 export const UserCard = () => {
   return (
     <ProfileContainer>
       <ContainerAvatar>
-        <Avatar
-          src="../../../assets/profile/gridicons_user.png"
-          alt="User Avatar"
-        />
+        <Avatar url={gridicons_user} alt="User Avatar" />
         <AvatarUpload>
           <InputFile type="file" accept="image/*" />
         </AvatarUpload>
       </ContainerAvatar>
       <UserName>
-        <h2>Anna Rybachok</h2>
-        <p>User</p>
+        <UserNameTitle>Anna Rybachok</UserNameTitle>
+        <UserText>User</UserText>
       </UserName>
       <ActivityBoxes>
         <TextWrapper>
-          <WrapperTextSvg>
-            <Svg>
-              <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
-            </Svg>
-          </WrapperTextSvg>
-          <TextDescription> Daily calorie intake</TextDescription>
-
+          <WrapperDescription>
+            <WrapperTextSvg>
+              <Svg>
+                <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
+              </Svg>
+            </WrapperTextSvg>
+            <TextDescription> Daily calorie intake</TextDescription>
+          </WrapperDescription>
           <WrapperDescription>
             <TextNumber>0</TextNumber>
           </WrapperDescription>
         </TextWrapper>
         <TextWrapper>
-          <WrapperTextSvg>
-            <Svg>
-              <use href={`${sprite}#icon-dumbbell`}></use>
-            </Svg>
-          </WrapperTextSvg>
-          <TextDescription> Daily physical activity</TextDescription>
+          <WrapperDescription>
+            <WrapperTextSvg>
+              <Svg>
+                <use href={`${sprite}#icon-dumbbell`}></use>
+              </Svg>
+            </WrapperTextSvg>
+            <TextDescription> Daily physical activity</TextDescription>
+          </WrapperDescription>
 
           <WrapperDescription>
             <TextNumber>0</TextNumber>
@@ -61,10 +64,18 @@ export const UserCard = () => {
       </ActivityBoxes>
 
       <SectionText>
-        We understand that each individual is unique, so the
-        <br /> entire approach to diet is relative and tailored to your
-        <br /> unique body and goals.
+        <WrapperDescription>
+          <WrapperTextSvg>
+            <Svg>
+              <use href={`${sprite}#exclamation-mark`}></use>
+            </Svg>
+          </WrapperTextSvg>
+          We understand that each individual is unique, so the
+          <br /> entire approach to diet is relative and tailored to your
+          <br /> unique body and goals.
+        </WrapperDescription>
       </SectionText>
+      <LogOutBtn />
     </ProfileContainer>
   );
 };
