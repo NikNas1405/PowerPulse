@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazy, useEffect } from 'react';
+import { lazy, useEffect, useState } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
@@ -9,6 +9,7 @@ import { refreshUser } from './redux/auth/operations';
 import { useAuth } from '../src/hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
+import { Loader } from './components/Loader/Loader';
 
 const WelcomePage = lazy(() =>
   import('./pages/UnAuthorized/WelcomePage/WelcomePage')
@@ -41,23 +42,21 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 function App() {
   const { isUserParams, isLoggedIn } = useAuth();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     dispatch(refreshUser());
+    setLoading(false);
   }, [dispatch]);
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={isLoggedIn ? <DiaryPage /> : <WelcomePage />} />
           <Route path="/welcome" element={<WelcomePage />} />
-          {/* <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/diary" element={<DiaryPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/exercises" element={<ExercisesPage />} /> */}
 
           <Route
             path="/signup"
