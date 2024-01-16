@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100%;
-  margin: 0 auto;
+// export const Container = styled.div`
+//   width: 100%;
+//   margin: 0 auto;
 
-  /* @media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
     width: 375px;
   }
 
@@ -15,19 +15,19 @@ export const Container = styled.div`
   @media screen and (min-width: 1440px) {
     width: 1440px;
   } */
-`;
+// `;
 export const DiaryWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 40px 20px 80px 20px;
+  padding: 40px 0 80px 0;
   @media screen and (min-width: 768px) {
-    padding: 72px 32px 64px 32px;
+    padding: 72px 0 64px 0;
   }
   @media screen and (min-width: 1440px) {
-    padding: 72px 96px 68px 96px;
+    padding: 72px 0 68px 0;
   }
 `;
-export const TitleAndSwitchContainer = styled.div`
+export const TitleAndSwitch = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,28 +67,6 @@ export const CustomDivForTables = styled.div`
     min-width: 826px;
   }
 `;
-// export const StyledTitle = styled.h2`
-//   color: white;
-
-//   font-family: 'RobotoBold';
-//   font-size: 24px;
-//   line-height: 1.05;
-//   letter-spacing: 0.38px;
-//   margin-bottom: 40px;
-//   margin-top: 40px;
-
-//   @media screen and (min-width: 768px) {
-//     margin-bottom: 32px;
-//     margin-top: 72px;
-//     font-size: 32px;
-
-//     line-height: 1.11;
-//     letter-spacing: 0.7px;
-//   }
-
-//   @media screen and (min-width: 1440px) {
-//   }
-// `;
 
 export const DescriptionWrapper = styled.div`
   display: flex;

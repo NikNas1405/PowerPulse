@@ -28,7 +28,7 @@ const DateLabel = styled.p`
   line-height: 1.33;
   margin: 0;
   padding: 0;
-  color: '#EFEDE8';
+  color: ${globalColor.colorWhite};
 
   &:hover {
     color: ${globalColor.colorOrange1};
@@ -49,7 +49,11 @@ const CalenderIconWrap = styled.div`
     height: 24px;
   }
 `;
-
+const SvgCalendar = styled.svg`
+  width: 100%;
+  height: 100%;
+  fill: ${globalColor.colorOrange1};
+`;
 const CalenderBtn = styled.button`
   display: flex;
   align-items: center;
@@ -57,7 +61,7 @@ const CalenderBtn = styled.button`
   margin-right: 40px;
   background-color: transparent;
   gap: 8px;
-
+  border: none;
   @media screen and (max-width: 767px) {
     margin-right: 20px;
     gap: 6px;
@@ -69,7 +73,6 @@ const BtnPrev = styled.button`
   margin: 0 6px 0 0;
   padding: 0;
   background-color: transparent;
-  color: #efede8;
   width: 16px;
   height: 16px;
 `;
@@ -77,7 +80,7 @@ const BtnPrev = styled.button`
 const Svg = styled.svg`
   width: 100%;
   height: 100%;
-  fill: '#EFEDE8';
+  fill: ${globalColor.colorWhite};
 `;
 
 export {
@@ -88,4 +91,5 @@ export {
   BtnNext,
   Svg,
   CalenderIconWrap,
+  SvgCalendar,
 };
