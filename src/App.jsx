@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { lazy, useEffect, useState } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
@@ -109,7 +109,8 @@ function App() {
               <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
             }
           />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<Navigate to="/error" />} />
         </Route>
       </Routes>
       <GlobalStyles />
