@@ -15,13 +15,11 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     top: 16px;
     right: 16px;
-
     width: 26px;
     height: 26px;
   }
 
   > svg {
-    stroke: ${globalColor.colorOrange1};
-    /* stroke: ${globalColor.colorWhite}; */
+    stroke: ${globalColor.colorWhite};
   }
 `;

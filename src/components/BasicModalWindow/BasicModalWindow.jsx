@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { Button } from './BasicModalWindow.styled';
 
@@ -6,6 +6,17 @@ import sprite from '../../assets/sprite.svg';
 
 export const BasicModalWindow = ({ isOpen, onRequestClose, children }) => {
   const [modalIsOpen, setModalIsOpen] = useState(isOpen);
+
+  useEffect(() => {
+    if (modalIsOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [modalIsOpen]);
 
   const closeModal = () => {
     setModalIsOpen(false);

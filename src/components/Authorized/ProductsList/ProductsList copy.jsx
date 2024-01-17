@@ -17,7 +17,6 @@ import {
   Paragraph1,
   Paragraph2,
 } from './ProductsList.styled';
-// import { selectUserProfile } from '../../../redux/settings/selectors';
 
 export const ProductsList = ({ products }) => {
   // const error = useSelector(selectProductsError);
@@ -38,9 +37,9 @@ export const ProductsList = ({ products }) => {
     setSelectedProduct(null);
   };
 
-  // // const currentUser = useSelector(selectUserProfile);
-  // // const userBloodType = currentUser.blood;
-  const userBloodType = 1;
+  // const currentUser = useSelector(selectUser);
+  // const userBloodType = currentUser.blood;
+  // const isRecommended = !product.groupBloodNotAllowed[userBloodType];
 
   return (
     <>
@@ -49,7 +48,8 @@ export const ProductsList = ({ products }) => {
           {products.map((product) => (
             <ProductsItem
               product={product}
-              type={product.groupBloodNotAllowed[userBloodType]}
+              type={product.groupBloodNotAllowed}
+              // type={isRecommended}
               category={product.category}
               title={product.title}
               calories={product.calories}

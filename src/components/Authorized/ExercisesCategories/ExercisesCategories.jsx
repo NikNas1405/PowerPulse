@@ -5,7 +5,7 @@
 //
 import { useSelector } from 'react-redux';
 
-import { Card, CardBlock } from './ExercisesCategories.Styled';
+import { Card, CardBlock } from './ExercisesCategories.styled';
 import {
   getCategories,
   getError,
