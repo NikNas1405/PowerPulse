@@ -1,4 +1,4 @@
-import{s as e,g as n,N as t,j as i,a as p}from"./index-75382301.js";import{S as d}from"./StatisticsInfo-3eb14efb.js";import"./bgMobile@2x-26480d49.js";const o=e.div`
+import{s as e,g as n,N as t,j as i,a as p}from"./index-f4a6aa7a.js";import{S as d}from"./StatisticsInfo-9b7325cb.js";import"./bgMobile@2x-26480d49.js";const o=e.div`
   @media screen and (min-width: 320px) {
   }
 
