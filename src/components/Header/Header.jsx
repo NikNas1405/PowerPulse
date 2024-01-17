@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
 import Logo from '../Logo';
-import MobileMenu from '../MobileMenu';
+import MobileMenu from '../MobileMenu/MobileMenu';
 import UserBar from '../UserBar/UserBar';
 import { LogoutRouteStyled } from '../LogOutBtn/LogOutBtn.styled';
-import { logOutUser } from '../../redux/auth/operations';
+import { logOut } from '../../redux/auth/operations';
 import {
   HeaderContainer,
   Navigation,
@@ -19,17 +19,15 @@ import {
   LogoutIconStyled,
 } from './Header.styled';
 
-const Header = () => {
+export const Header = () => {
   const dispatch = useDispatch();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
 
-  const { profile } = useSelector((state) => state.profile);
-
   const handleLogOut = () => {
-    dispatch(logOutUser());
+    dispatch(logOut());
   };
 
   return (
@@ -40,13 +38,13 @@ const Header = () => {
         </Link>
         <SecondNavWrapper>
           <MediaQuery minWidth={1440}>
-            {profile === null ? null : (
+          
               <NavWrapper>
                 <StyledLink to="/diary">Diary</StyledLink>
                 <StyledLink to="/products">Products</StyledLink>
                 <StyledLink to="/exercises">Exercises</StyledLink>
               </NavWrapper>
-            )}
+          
           </MediaQuery>
           <StyledLinkSettings to="/profile">
             <UserBar />
@@ -73,4 +71,3 @@ const Header = () => {
   );
 };
 
-export default Header;

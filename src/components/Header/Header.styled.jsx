@@ -58,10 +58,9 @@ export const StyledLinkSettings = styled(Link)`
 `;
 
 export const Burger = styled.svg`
-  width: ${(props) => props.size || '28px'};
-  height: ${(props) => props.size || '28px'};
-  fill: ${(props) => props.color || 'none'};
-  stroke: ${(props) => props.color || 'var(--color-back-two)'};
+  width: 28px;
+  height: 28px;
+  stroke: 'var(--color-back-two)';
   display: block;
 
   transition: stroke 0.3s var(--timing-function);
@@ -81,7 +80,7 @@ export const SecondNavWrapper = styled.div`
   align-items: center;
   gap: 16px;
   @media screen and (min-width: 768px) {
-    gap: 32px;
+    gap: 16px;
   }
 `;
 
