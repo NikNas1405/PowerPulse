@@ -22,7 +22,7 @@ export const UserBar = () => {
   const location = useLocation();
   const isProfilePage = location.pathname === '/profile';
 
-  const { user } = useAuth();
+  const { user, isUserParams } = useAuth();
   const { name, avatarURL } = user;
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -39,7 +39,7 @@ export const UserBar = () => {
 
   return (
     <UserBarConatiner>
-      {isProfilePage ? null : (
+      {isProfilePage && isUserParams ? null : (
         <UseNavWrapper>
           <UserNav />
         </UseNavWrapper>
