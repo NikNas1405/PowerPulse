@@ -31,7 +31,6 @@ export const SignInForm = () => {
   const [isValidationCompleted, setIsValidationCompleted] = useState(false);
 
   const dispatch = useDispatch();
-  //  const navigate = useNavigate();
 
   const shouldForwardProp = (prop) => !['isValidationCompleted'].includes(prop);
 

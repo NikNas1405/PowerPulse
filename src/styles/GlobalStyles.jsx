@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
+import { globalColor } from './root';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -18,6 +19,20 @@ body {
    width: 100%;
    height: 100vh;
   margin: 0;
+
+    overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+       /* width: 8px; */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+
+    /* background-color: ${globalColor.colorOrange1};
+    border-radius: 12px; */
+  }
+
 }
 
 a {

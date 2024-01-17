@@ -1,4 +1,5 @@
 import { Suspense, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import Select from 'react-select';
 import { nanoid } from 'nanoid';
@@ -18,8 +19,12 @@ import {
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
+import { setProductsFilter } from '../../../redux/products/productsSlice';
+import { fetchProducts } from '../../../redux/products/productsOperation';
 
 export const ProductsFilters = ({ categories }) => {
+  const dispatch = useDispatch();
+
   const [isActive, setIsActive] = useState(false);
   const [searchByProductTitle, setSearchByProductTitle] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -41,6 +46,12 @@ export const ProductsFilters = ({ categories }) => {
     { value: 'false', label: 'Not recommended' },
   ];
 
+  // const typesArray = [
+  //   { value: 'all', label: 'All' },
+  //   { value: 'recommended', label: 'Recommended ' },
+  //   { value: 'notRecommended', label: 'Not recommended' },
+  // ];
+
   const applyFilter = (e) => {
     if (e) {
       e.preventDefault();
@@ -51,9 +62,9 @@ export const ProductsFilters = ({ categories }) => {
       groupBloodNotAllowed: selectedType || null,
     };
 
-    console.log(formData);
-
     // dispatch(fetchProducts(formData));
+
+    // dispatch(setProductsFilter(formData));
   };
 
   const handleInputChange = (e) => {
@@ -75,6 +86,8 @@ export const ProductsFilters = ({ categories }) => {
     console.log(formData);
 
     // dispatch(fetchProducts(formData));
+
+    dispatch(setProductsFilter(formData));
   };
 
   const handleCategoryChange = (selectedOption) => {
@@ -89,7 +102,8 @@ export const ProductsFilters = ({ categories }) => {
 
     console.log(formData);
 
-    // dispatch(fetchProducts(formData));
+    dispatch(fetchProducts(formData));
+    // dispatch(setProductsFilter(formData));
   };
 
   const handleTypeChange = (selectedOption) => {
@@ -105,12 +119,7 @@ export const ProductsFilters = ({ categories }) => {
     console.log(formData);
 
     // dispatch(fetchProducts(formData));
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleTypeChange();
-    }
+    dispatch(setProductsFilter(formData));
   };
 
   return (
@@ -123,7 +132,6 @@ export const ProductsFilters = ({ categories }) => {
             placeholder="Search"
             value={searchByProductTitle}
             onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
           />
           <ButtonWrapper>
             {isActive && (

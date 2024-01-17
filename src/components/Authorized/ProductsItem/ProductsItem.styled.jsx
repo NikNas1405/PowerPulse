@@ -14,6 +14,10 @@ export const ProductsItemStyled = styled.li`
   @media (min-width: 1440px) {
     width: 405px;
   }
+
+  @media (max-width: 335px) {
+    width: 100%;
+  }
 `;
 
 export const DietSpan = styled.div`
@@ -33,13 +37,39 @@ export const SvgWrapper = styled.svg`
 `;
 
 export const Text = styled.p`
+  > span {
+    color: rgba(239, 237, 232, 0.4);
+  }
+
+  display: flex;
+  gap: 4px;
   color: ${globalColor.colorWhite};
   font-size: 12px;
   line-height: 1.5;
   word-wrap: break-word;
+  white-space: nowrap;
+`;
 
+export const TextCategory = styled.p`
   > span {
     color: rgba(239, 237, 232, 0.4);
+  }
+
+  display: flex;
+  gap: 4px;
+  color: ${globalColor.colorWhite};
+  font-size: 12px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: nowrap;
+
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
   }
 `;
 
@@ -97,6 +127,10 @@ export const WrapperTitle = styled.div`
   @media (min-width: 768px) {
     margin-top: 30px;
   }
+
+  @media (max-width: 335px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const WrapperText = styled.div`
@@ -104,4 +138,8 @@ export const WrapperText = styled.div`
   gap: 16px;
   margin-top: 8px;
   align-items: center;
+
+  @media (max-width: 335px) {
+    flex-wrap: wrap;
+  }
 `;

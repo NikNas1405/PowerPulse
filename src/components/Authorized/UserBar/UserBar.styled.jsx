@@ -152,5 +152,7 @@ export const LogOutWrapper = styled.div`
   @media screen and (min-width: 320px) and (max-width: 1439px) {
     display: none;
   }
-  display: flex;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
 `;
