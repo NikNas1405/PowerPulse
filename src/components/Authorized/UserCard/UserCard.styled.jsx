@@ -50,6 +50,7 @@ export const Avatar = styled.img`
 export const AvatarUpload = styled.div`
   display: flex;
   align-items: center;
+  align-content: center;
 `;
 
 export const InputFile = styled.input`
@@ -62,6 +63,27 @@ export const UserName = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  gap: 8px;
+`;
+
+export const UserNameTitle = styled.h2`
+  color: #efede8;
+
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+`;
+
+export const UserText = styled.p`
+  color: rgba(239, 237, 232, 0.5);
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 `;
 
 export const ActivityBoxes = styled.div`
@@ -98,6 +120,9 @@ export const TextWrapper = styled.div`
     height: 108px;
     margin-top: 0;
     margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
   }
 `;
 
@@ -156,6 +181,10 @@ export const TextNumber = styled.p`
   }
 
   @media screen and (min-width: 1440px) {
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
   }
 `;
 
@@ -176,8 +205,12 @@ export const TextDescription = styled.span`
   }
 
   @media screen and (min-width: 1440px) {
-    font-size: 16px;
-    line-height: 24px;
+    color: rgba(239, 237, 232, 0.8);
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
   }
 `;
 
@@ -191,4 +224,12 @@ export const SectionText = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+`;
+
+export const NavLinkWrapper = styled.div`
+  margin-right: 96px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 410px;
+  }
 `;
