@@ -131,5 +131,9 @@
 <path fill="none" stroke="rgba(239, 237, 232, 1)" style="stroke: var(--color1, rgba(239, 237, 232, 1))" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M12 4h-1.6c-2.24 0-3.36 0-4.216 0.436-0.753 0.383-1.365 0.995-1.748 1.748-0.436 0.856-0.436 1.976-0.436 4.216v11.2c0 2.24 0 3.36 0.436 4.216 0.383 0.753 0.995 1.364 1.748 1.748 0.856 0.436 1.976 0.436 4.216 0.436h1.6"></path>
 <path fill="none" stroke="rgba(239, 237, 232, 1)" style="stroke: var(--color1, rgba(239, 237, 232, 1))" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M21.333 22.667l6.667-6.667M28 16l-6.667-6.667M28 16h-16"></path>
 </symbol>
+
+<symbol id="exclamation-mark" viewBox="0 0 24 24">
+  <path d="M12 19V19.01M12 15V5" fill="none" stroke="#EFEDE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
 </defs>
 </svg>

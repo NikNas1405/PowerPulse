@@ -10,7 +10,6 @@ import {
 import { useAuth } from '../../hooks/useAuth';
 import { Logo } from '../Logo/Logo';
 import { UserBar } from '../Authorized/UserBar/UserBar';
-
 const Header = () => {
   const { isLoggedIn, isUserParams } = useAuth();
 

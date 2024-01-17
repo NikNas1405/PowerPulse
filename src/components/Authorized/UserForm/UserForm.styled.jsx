@@ -27,6 +27,8 @@ export const FormLabel = styled.label`
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  display: flex;
+  flex-direction: column;
 
   /* @media screen and (min-width: 768px) {
     width: 317px;
@@ -74,6 +76,7 @@ export const DataWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     gap: 20px;
+    flex-direction: row;
   }
 
   @media screen and (min-width: 1440px) {
@@ -118,7 +121,7 @@ export const FormInput = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    width: 216px;
+    width: 341px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -223,7 +226,7 @@ export const ParamsInput = styled.input`
   }
 
   @media screen and (min-width: 768px) {
-    width: 364px;
+    width: 168px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -276,7 +279,7 @@ export const StyledDatePicker = styled(DatePicker)`
   `}
 
   @media screen and (min-width: 768px) {
-    width: 364px;
+    width: 187px;
   }
 
   @media screen and (min-width: 1440px) {
