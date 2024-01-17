@@ -68,15 +68,11 @@ button {
 `;
 
 export const Container = styled.div`
-  width: 100%;
-  padding: 0 20px;
-  margin: 0 auto;
-
-  /* @media screen and (min-width: 320px) {
+   @media screen and (min-width: 320px) {
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
-  } */
+  }
 
   /* @media screen and (min-width: 375px) {
     width: 335px;

@@ -3,9 +3,33 @@ import { NavLink } from 'react-router-dom';
 import { globalColor } from '../../styles/root';
 
 export const HeaderConatiner = styled.div`
+  border-bottom: 1px solid rgba(239, 237, 232, 0.2);
+`;
+
+export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+
+  @media screen and (min-width: 320px) {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding: 0 96px;
+  }
 `;
 
 export const NavLinkWrapper = styled.div`
