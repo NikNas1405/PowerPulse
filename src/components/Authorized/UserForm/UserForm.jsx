@@ -62,7 +62,7 @@ export const ProfileSchema = Yup.object().shape({
   dateOfBirth: Yup.number().label('Date of Birth'),
 });
 
-export const UserForm = () => {
+export const UserForm = ({ profile, refreshUserData }) => {
   const dispatch = useDispatch();
 
   const userInitialData = {
@@ -90,6 +90,7 @@ export const UserForm = () => {
     try {
       const resp = await dispatch(getCurrentUser());
       setUserData(resp.payload);
+      refreshUserData(resp.payload);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }

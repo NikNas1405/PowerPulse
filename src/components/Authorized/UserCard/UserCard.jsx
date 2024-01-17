@@ -19,17 +19,30 @@ import {
   UserNameTitle,
   UserText,
 } from './UserCard.styled';
-export const UserCard = () => {
+export const UserCard = ({ profile }) => {
+  const handleAvaChange = (e) => {
+    console.log(e.target.value);
+    // TODO UPDATE USER HERE
+    try {
+      //const resp = dispatch(updateUser());
+      //setUserData(resp.payload);
+      //console.log(resp);
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+    return e.target.value;
+  };
+
   return (
     <ProfileContainer>
       <ContainerAvatar>
-        <Avatar url={gridicons_user} alt="User Avatar" />
+        <Avatar src={profile.avatarURL} alt="User Avatar" />
         <AvatarUpload>
           <InputFile type="file" accept="image/*" />
         </AvatarUpload>
       </ContainerAvatar>
       <UserName>
-        <UserNameTitle>Anna Rybachok</UserNameTitle>
+        <UserNameTitle>{profile.name}</UserNameTitle>
         <UserText>User</UserText>
       </UserName>
       <ActivityBoxes>
