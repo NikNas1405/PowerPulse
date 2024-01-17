@@ -11,15 +11,19 @@ import {
   TitleAndFilterWrapper,
   ProductsListWrapper,
 } from './ProductsPage.styled';
+
+import { selectProductsCategories } from '../../../redux/products/productsSelector';
+import { selectProducts } from '../../../redux/products/productsSelector';
+
 import {
   fetchAllProductsCategories,
   fetchProducts,
 } from '../../../redux/products/productsOperation';
-import { selectProductsCategories } from '../../../redux/products/productsSelector';
-import { selectProducts } from '../../../redux/products/productsSelector';
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
+  const categoriesArray = useSelector(selectProductsCategories);
+  const productsArray = useSelector(selectProducts);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,9 +47,6 @@ const ProductsPage = () => {
     dispatch(fetchAllProductsCategories());
   }, [dispatch]);
 
-  const categoriesArray = useSelector(selectProductsCategories);
-  const productsArray = useSelector(selectProducts);
-
   return (
     <Wrapper>
       <TitleAndFilterWrapper>
@@ -54,7 +55,6 @@ const ProductsPage = () => {
           categories={categoriesArray.map((item) => item.title)}
         />
       </TitleAndFilterWrapper>
-
       <ProductsListWrapper>
         <ProductsList products={productsArray} />
       </ProductsListWrapper>

@@ -47,6 +47,16 @@ export const Title = styled.h4`
   word-wrap: break-word;
   border-radius: 12px;
   border: 1px #e6533c solid;
+  white-space: nowrap;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
 
   @media (min-width: 768px) {
     width: 216px;

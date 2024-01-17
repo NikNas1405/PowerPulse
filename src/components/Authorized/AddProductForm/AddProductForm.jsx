@@ -15,12 +15,11 @@ import {
 } from './AddProductForm.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
-import { BasicModalWindow } from '../../BasicModalWindow/BasicModalWindow.jsx';
 import { toast } from 'react-toastify';
 
 export const AddProductForm = ({
-  closeModallAddProduct,
+  closeModallAddProductForm,
+  onClick,
   productTitle,
   calories,
   productId,
@@ -49,16 +48,6 @@ export const AddProductForm = ({
   const [caloriesСonsumed, setСaloriesСonsumed] = useState('');
   const [error, setError] = useState('');
   const [isError, setIsError] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [modalSuccessIsOpen, setModalSuccessIsOpen] = useState(false);
-
-  function openModal() {
-    setModalSuccessIsOpen(true);
-  }
-
-  const handleCloseModal = () => {
-    if (modalSuccessIsOpen) setModalSuccessIsOpen(false);
-  };
 
   const currentDate = new Date();
   const formattedCurrentDate = `${currentDate.getDate()}.${
@@ -86,7 +75,6 @@ export const AddProductForm = ({
     } else {
       setError('');
       setIsError(false);
-      setIsSuccess(true);
 
       try {
         //       dispatch(updateWeight(productToAdd));
@@ -94,9 +82,8 @@ export const AddProductForm = ({
         //   dispatch(refreshUser());
         // }, 150);
         console.log(productToAdd);
-        closeModallAddProduct();
-        setModalSuccessIsOpen(true);
-        openModal();
+        closeModallAddProductForm();
+        onClick(productToAdd.calories);
       } catch (error) {
         toast.error('Network error:', error);
       }
@@ -130,68 +117,54 @@ export const AddProductForm = ({
   };
 
   return (
-    <>
-      <AddProductFormStyled onSubmit={applyAddProduct} noValidate>
-        <TitleInputWripper>
-          <Title>{formattedTitle}</Title>
-          <InputWrapper>
-            <Label htmlFor="calories">grams</Label>
-            <Input
-              type="number"
-              name="calories"
-              placeholder="100"
-              autoComplete="off"
-              required
-              step="1"
-              min="1"
-              max="3000"
-              onChange={handleInputChange}
-            />
-            {isError && (
-              <ErrorMessage>
-                <svg>
-                  <use href={sprite + '#icon-checkbox-circle-fill'} />
-                </svg>
-                {error}
-              </ErrorMessage>
-            )}
-          </InputWrapper>
-        </TitleInputWripper>
-        {caloriesСonsumed ? (
-          <Text>
-            <span>Calories: </span>
-            {caloriesСonsumed}
-          </Text>
-        ) : (
-          <Text>
-            <span>Calories: </span>
-            {calories}
-          </Text>
-        )}
-        <ButtonWripper>
-          <Button type="submit">Add to diary</Button>
-          <ButtonClose
-            type="button"
-            onClick={() => {
-              closeModallAddProduct();
-            }}
-          >
-            Cancel
-          </ButtonClose>
-        </ButtonWripper>
-      </AddProductFormStyled>
-
-      {isSuccess && (
-        <BasicModalWindow
-          isOpen={modalSuccessIsOpen}
-          onRequestClose={handleCloseModal}
-        >
-          <AddProductSuccess
-            onClose={handleCloseModal}
-            calories={caloriesСonsumed}
+    <AddProductFormStyled onSubmit={applyAddProduct} noValidate>
+      <TitleInputWripper>
+        <Title>{formattedTitle}</Title>
+        <InputWrapper>
+          <Label htmlFor="calories">grams</Label>
+          <Input
+            type="number"
+            name="calories"
+            placeholder="100"
+            autoComplete="off"
+            required
+            step="1"
+            min="1"
+            max="3000"
+            onChange={handleInputChange}
           />
-        </BasicModalWindow>
+          {isError && (
+            <ErrorMessage>
+              <svg>
+                <use href={sprite + '#icon-checkbox-circle-fill'} />
+              </svg>
+              {error}
+            </ErrorMessage>
+          )}
+        </InputWrapper>
+      </TitleInputWripper>
+      {caloriesСonsumed ? (
+        <Text>
+          <span>Calories: </span>
+          {caloriesСonsumed}
+        </Text>
+      ) : (
+        <Text>
+          <span>Calories: </span>
+          {calories}
+        </Text>
       )}
-    </>
+      <ButtonWripper>
+        <Button type="submit">Add to diary</Button>
+        <ButtonClose
+          type="button"
+          onClick={() => {
+            closeModallAddProductForm();
+          }}
+        >
+          Cancel
+        </ButtonClose>
+      </ButtonWripper>
+    </AddProductFormStyled>
   );
 };

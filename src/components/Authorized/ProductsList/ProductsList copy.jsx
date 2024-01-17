@@ -1,15 +1,18 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 
-// import {
-//   selectProductsError,
-//   selectProductsIsFilter,
-//   selectProductsIsLoading,
-// } from '../../../redux/products/productsSelector';
+import {
+  //   selectProductsError,
+  //   selectProductsIsFilter,
+  selectProductsIsLoading,
+} from '../../../redux/products/productsSelector';
 
 import { ProductsItem } from '../ProductsItem/ProductsItem';
+
 import { BasicModalWindow } from '../../BasicModalWindow/BasicModalWindow';
 import { AddProductForm } from '../AddProductForm/AddProductForm';
+import { Loader } from '../../Loader/Loader';
 
 import {
   ProductsListStyled,
@@ -18,9 +21,11 @@ import {
   Paragraph2,
 } from './ProductsList.styled';
 
+// import { selectUserProfile } from '../../../redux/settings/selectors';
+
 export const ProductsList = ({ products }) => {
   // const error = useSelector(selectProductsError);
-  // const isLoading = useSelector(selectProductsIsLoading);
+  const isLoading = useSelector(selectProductsIsLoading);
   // const isFilter = useSelector(selectProductsIsFilter);
 
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -37,19 +42,19 @@ export const ProductsList = ({ products }) => {
     setSelectedProduct(null);
   };
 
-  // const currentUser = useSelector(selectUser);
-  // const userBloodType = currentUser.blood;
-  // const isRecommended = !product.groupBloodNotAllowed[userBloodType];
+  // // const currentUser = useSelector(selectUserProfile);
+  // // const userBloodType = currentUser.blood;
+  const userBloodType = 1;
 
   return (
     <>
-      {products.length > 0 ? (
+      {isLoading && <Loader />}
+      {!isLoading && products.length > 0 && (
         <ProductsListStyled>
           {products.map((product) => (
             <ProductsItem
               product={product}
-              type={product.groupBloodNotAllowed}
-              // type={isRecommended}
+              type={product.groupBloodNotAllowed[userBloodType]}
               category={product.category}
               title={product.title}
               calories={product.calories}
@@ -59,7 +64,8 @@ export const ProductsList = ({ products }) => {
             />
           ))}
         </ProductsListStyled>
-      ) : (
+      )}
+      {!isLoading && products.length <= 0 && (
         <Nothing>
           <Paragraph1>
             <span>Sorry, no results were found</span> for the product filters
@@ -70,7 +76,6 @@ export const ProductsList = ({ products }) => {
           <Paragraph2>Try changing the search parameters.</Paragraph2>
         </Nothing>
       )}
-
       {selectedProduct && (
         <BasicModalWindow
           isOpen={modalIsOpen}

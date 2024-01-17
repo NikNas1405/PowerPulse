@@ -1,10 +1,13 @@
-import { Suspense, useState } from 'react';
+import {
+  // Suspense,
+  useState,
+} from 'react';
 import { useDispatch } from 'react-redux';
-import { Outlet } from 'react-router-dom';
+// import { Outlet } from 'react-router-dom';
 import Select from 'react-select';
 import { nanoid } from 'nanoid';
 
-import { Loader } from '../../Loader/Loader';
+// import { Loader } from '../../Loader/Loader';
 
 import {
   StyledForm,
@@ -19,8 +22,7 @@ import {
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { setProductsFilter } from '../../../redux/products/productsSlice';
-import { fetchProducts } from '../../../redux/products/productsOperation';
+// import { fetchProducts } from '../../../redux/products/productsOperation';
 
 export const ProductsFilters = ({ categories }) => {
   const dispatch = useDispatch();
@@ -62,9 +64,9 @@ export const ProductsFilters = ({ categories }) => {
       groupBloodNotAllowed: selectedType || null,
     };
 
-    // dispatch(fetchProducts(formData));
+    console.log(formData);
 
-    // dispatch(setProductsFilter(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleInputChange = (e) => {
@@ -87,7 +89,6 @@ export const ProductsFilters = ({ categories }) => {
 
     // dispatch(fetchProducts(formData));
 
-    dispatch(setProductsFilter(formData));
   };
 
   const handleCategoryChange = (selectedOption) => {
@@ -102,8 +103,7 @@ export const ProductsFilters = ({ categories }) => {
 
     console.log(formData);
 
-    dispatch(fetchProducts(formData));
-    // dispatch(setProductsFilter(formData));
+    // dispatch(fetchProducts(formData));
   };
 
   const handleTypeChange = (selectedOption) => {
@@ -119,7 +119,6 @@ export const ProductsFilters = ({ categories }) => {
     console.log(formData);
 
     // dispatch(fetchProducts(formData));
-    dispatch(setProductsFilter(formData));
   };
 
   return (
@@ -176,9 +175,9 @@ export const ProductsFilters = ({ categories }) => {
           />
         </DropdownSelectPartWrapper>
       </StyledForm>
-      <Suspense fallback={<Loader />}>
+      {/* <Suspense fallback={<Loader />}>
         <Outlet />
-      </Suspense>
+      </Suspense> */}
     </>
   );
 };
