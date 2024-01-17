@@ -9,15 +9,13 @@ import { Container } from '../../styles/GlobalStyles';
 
 const SharedLayout = () => {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-        <ToastContainer />
-      </Container>
-    </>
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
+      <ToastContainer />
+    </Container>
   );
 };
 
