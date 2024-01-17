@@ -14,20 +14,14 @@ import { globalColor } from '../../../styles/root';
 
 import sprite from '../../../assets/sprite.svg';
 
-export const ProductsItem = ({
-  product,
-  type,
-  title,
-  calories,
-  category,
-  weight,
-  handleOpenModal,
-}) => {
+export const ProductsItem = ({ product, type, handleOpenModal }) => {
   const formatted = (options) => {
     return [
       ...options.map((el) => el[0].toUpperCase() + el.slice(1).toLowerCase()),
     ];
   };
+
+  const { title, category, calories, weight } = product;
 
   const formattedTitle = formatted([title])[0];
   const formattedCategory = formatted([category])[0];

@@ -20,6 +20,7 @@ import {
   Paragraph1,
   Paragraph2,
 } from './ProductsList.styled';
+import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 
 // import { selectUserProfile } from '../../../redux/settings/selectors';
 
@@ -29,17 +30,20 @@ export const ProductsList = ({ products }) => {
   // const isFilter = useSelector(selectProductsIsFilter);
 
   const [selectedProduct, setSelectedProduct] = useState(null);
-
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const openModal = (product) => {
+  const [modalData, setModalData] = useState(null);
+
+  const handleOpenModal = (product) => {
     setIsOpen(true);
     setSelectedProduct(product);
+    setModalData(product);
   };
 
   const handleCloseModal = () => {
     if (modalIsOpen) setIsOpen(false);
     setSelectedProduct(null);
+    setModalData(null);
   };
 
   // // const currentUser = useSelector(selectUserProfile);
@@ -48,8 +52,8 @@ export const ProductsList = ({ products }) => {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {!isLoading && products.length > 0 && (
+      {isLoading ? <Loader /> : (
+       {(!isLoading && products.length > 0) ? (
         <ProductsListStyled>
           {products.map((product) => (
             <ProductsItem
@@ -60,12 +64,11 @@ export const ProductsList = ({ products }) => {
               calories={product.calories}
               weight={product.weight}
               key={product._id.$oid}
-              handleOpenModal={openModal}
+              handleOpenModal={handleOpenModal}
             />
           ))}
         </ProductsListStyled>
-      )}
-      {!isLoading && products.length <= 0 && (
+      ) : (
         <Nothing>
           <Paragraph1>
             <span>Sorry, no results were found</span> for the product filters
@@ -75,18 +78,31 @@ export const ProductsList = ({ products }) => {
           </Paragraph1>
           <Paragraph2>Try changing the search parameters.</Paragraph2>
         </Nothing>
-      )}
+      )
+      }
+      )
+      }
+     
       {selectedProduct && (
         <BasicModalWindow
           isOpen={modalIsOpen}
           onRequestClose={handleCloseModal}
         >
-          <AddProductForm
-            closeModallAddProduct={handleCloseModal}
-            calories={selectedProduct.calories}
-            productTitle={selectedProduct.title}
-            productId={selectedProduct._id.$oid}
-          />
+          {typeof modalData === 'object' ? (
+            <AddProductForm
+              closeModallAddProductForm={handleCloseModal}
+              calories={selectedProduct.calories}
+              productTitle={selectedProduct.title}
+              productId={selectedProduct._id.$oid}
+              product={modalData}
+              onClick={handleOpenModal}
+            />
+          ) : (
+            <AddProductSuccess
+              calories={modalData}
+              closeModallAddProductSuccess={handleCloseModal}
+            />
+          )}
         </BasicModalWindow>
       )}
     </>

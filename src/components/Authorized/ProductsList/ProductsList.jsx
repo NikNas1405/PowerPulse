@@ -59,11 +59,11 @@ export const ProductsList = ({ products }) => {
             <ProductsItem
               product={product}
               type={product.groupBloodNotAllowed[userBloodType]}
-              category={product.category}
-              title={product.title}
-              calories={product.calories}
-              weight={product.weight}
-              key={product._id.$oid}
+              // category={product.category}
+              // title={product.title}
+              // calories={product.calories}
+              // weight={product.weight}
+              // key={product._id}
               handleOpenModal={handleOpenModal}
             />
           ))}
@@ -90,7 +90,7 @@ export const ProductsList = ({ products }) => {
               closeModallAddProductForm={handleCloseModal}
               calories={selectedProduct.calories}
               productTitle={selectedProduct.title}
-              productId={selectedProduct._id.$oid}
+              productId={selectedProduct._id}
               product={modalData}
               onClick={handleOpenModal}
             />

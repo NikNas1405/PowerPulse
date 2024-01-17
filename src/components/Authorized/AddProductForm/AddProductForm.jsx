@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 
 import {
   AddProductFormStyled,
@@ -15,7 +17,7 @@ import {
 } from './AddProductForm.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { toast } from 'react-toastify';
+import { addDiaryProducts } from '../../../redux/diary/diaryOperation';
 
 export const AddProductForm = ({
   closeModallAddProductForm,
@@ -24,19 +26,7 @@ export const AddProductForm = ({
   calories,
   productId,
 }) => {
-  // const product = {
-  //   _id: '5d51694902b2373622ff5ab1',
-  //   weight: 100,
-  //   calories: 280,
-  //   category: 'fish',
-  //   title: 'anchovy paste',
-  //   groupBloodNotAllowed: {
-  //     1: false,
-  //     2: false,
-  //     3: false,
-  //     4: false,
-  //   },
-  // };
+  const dispatch = useDispatch();
 
   const [productToAdd, setProductToAdd] = useState({
     product: '',
@@ -50,9 +40,11 @@ export const AddProductForm = ({
   const [isError, setIsError] = useState(false);
 
   const currentDate = new Date();
-  const formattedCurrentDate = `${currentDate.getDate()}.${
-    currentDate.getMonth() + 1
-  }.${currentDate.getFullYear()}`;
+
+  const day = String(currentDate.getDate()).padStart(2, '0');
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  const year = currentDate.getFullYear();
+  const formattedCurrentDate = `${day}-${month}-${year}`;
 
   const formattedTitle =
     productTitle[0].toUpperCase() + productTitle.slice(1).toLowerCase();
@@ -77,13 +69,10 @@ export const AddProductForm = ({
       setIsError(false);
 
       try {
-        //       dispatch(updateWeight(productToAdd));
-        // setTimeout(() => {
-        //   dispatch(refreshUser());
-        // }, 150);
-        console.log(productToAdd);
         closeModallAddProductForm();
         onClick(productToAdd.calories);
+
+        dispatch(addDiaryProducts(productToAdd));
       } catch (error) {
         toast.error('Network error:', error);
       }
@@ -98,7 +87,7 @@ export const AddProductForm = ({
       const currentCalories = Math.round((gramsEat * caloriesPer100g) / 100);
       setСaloriesСonsumed(currentCalories);
       setProductToAdd({
-        product: productId,
+        productId: productId,
         date: formattedCurrentDate,
         amount: gramsEat,
         calories: currentCalories,
@@ -108,7 +97,7 @@ export const AddProductForm = ({
     } else {
       setСaloriesСonsumed(calories);
       setProductToAdd({
-        product: '',
+        productId: '',
         date: '',
         amount: '',
         calories: '',
