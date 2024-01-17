@@ -55,3 +55,5 @@ const Header = () => {
     </HeaderConatiner>
   );
 };
+
+export default Header;
