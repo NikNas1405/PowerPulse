@@ -22,6 +22,7 @@
     "formik": "^2.4.5",
     "lodash-es": "^4.17.21",
     "modern-normalize": "^2.0.0",
+    "moment": "^2.30.1",
     "nanoid": "^5.0.4",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",

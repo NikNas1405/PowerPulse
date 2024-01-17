@@ -21,6 +21,7 @@ export const getCurrentUser = createAsyncThunk(
 
       setAuthHeader(persistedToken);
       const res = await axios.get('/auth/current');
+      console.log(res.data.user);
 
       return res.data.user;
     } catch (error) {
@@ -33,7 +34,7 @@ export const getCurrentUser = createAsyncThunk(
 export const updateUser = createAsyncThunk(
   'updateUser',
 
-  async (userData, thunkAPI) => {
+  async (userForm, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
       const persistedToken = state.auth.token;
@@ -42,7 +43,10 @@ export const updateUser = createAsyncThunk(
         return thunkAPI.rejectWithValue('Token not available');
       }
       setAuthHeader(persistedToken);
-      const res = await axios.put('/auth/params', userData);
+      delete userForm.avatarURL;
+      delete userForm.userParams;
+
+      const res = await axios.patch('/auth/params', userForm);
       //console.log(userData);
       return res.data.user;
     } catch (error) {

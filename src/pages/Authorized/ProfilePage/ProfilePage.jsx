@@ -14,13 +14,14 @@ export class ProfilePage extends Component {
       blood: '1',
       sex: 'female',
       levelActivity: '1',
-      dateOfBirth: null,
       avatarURL: '',
+      birthday: '',
     },
   };
   refreshProfileState = (newState) => {
     this.setState({ profile: newState });
   };
+
   render() {
     return (
       <div>

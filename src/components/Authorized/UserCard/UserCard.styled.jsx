@@ -214,7 +214,7 @@ export const TextDescription = styled.span`
   }
 `;
 
-export const SectionText = styled.p`
+export const SectionText = styled.div`
   margin: 0 auto;
   margin-top: 40px;
   color: rgba(239, 237, 232, 0.3);

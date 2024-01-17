@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import DatePicker from 'react-datepicker'; // Додано імпорт
+import { useDispatch } from 'react-redux';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import moment from 'moment';
+import { Formik, Form } from 'formik';
 import { getCurrentUser, updateUser } from '../../../redux/settings/operations';
 
 import {
@@ -26,6 +26,8 @@ import {
 } from './UserForm.styled';
 
 import * as Yup from 'yup';
+
+const today = moment().format('YYYY-MM-DD');
 
 export const ProfileSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('Name is required'),
@@ -59,26 +61,17 @@ export const ProfileSchema = Yup.object().shape({
       'Invalid Level of Activity'
     )
     .required('Level of Activity is required'),
-  dateOfBirth: Yup.number().label('Date of Birth'),
+
+  birthday: Yup.string()
+    .label('Date of Birth')
+    // .max(today, "DOB cannot be greater than today's date")
+    .typeError('Invalid Date!'),
 });
 
 export const UserForm = ({ profile, refreshUserData }) => {
   const dispatch = useDispatch();
 
-  const userInitialData = {
-    name: 'Jane',
-    email: '',
-    height: 0,
-    currentWeight: 0,
-    desiredWeight: 0,
-    blood: '1',
-    sex: 'female',
-    levelActivity: '1',
-    dateOfBirth: null,
-    avatarURL: '',
-  };
-
-  const [userData, setUserData] = useState(userInitialData);
+  const [userData, setUserData] = useState(profile);
 
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -86,7 +79,6 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
   // console.log('Start');
   const fetchUserData = async () => {
-    // ToDo: connect api + create redux folders
     try {
       const resp = await dispatch(getCurrentUser());
       setUserData(resp.payload);
@@ -105,7 +97,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
     console.log(values);
     // TODO UPDATE USER HERE
     try {
-      const resp = dispatch(updateUser());
+      const resp = dispatch(updateUser(values));
       //setUserData(resp.payload);
       console.log(resp);
     } catch (error) {
@@ -194,13 +186,22 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
                   <ParamsLabel>
                     Date of birth
-                    <StyledDatePicker
+                    {/* <StyledDatePicker
                       selected={selectedDate}
-                      onChange={(date) => setSelectedDate(date)}
+                      onChange={props.handleChange}
                       dateFormat="dd.MM.yyyy"
                       placeholderText="00.00.00"
+                      name="birthday"
+                      value={props.values.birthday}
+                    /> */}
+                    <ParamsInput
+                      name="birthday"
+                      value={props.values.birthday}
+                      placeholder="0"
+                      type="text"
+                      onChange={props.handleChange}
                     />
-                    <StyledError name="fateOfBirth" component="div" />
+                    <StyledError name="birthday" component="div" />
                   </ParamsLabel>
                 </ParamsWrapper>
 
