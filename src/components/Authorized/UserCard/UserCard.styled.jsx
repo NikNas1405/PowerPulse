@@ -3,7 +3,7 @@ import { globalColor } from '../../../styles/root';
 
 export const ProfileContainer = styled.div`
   margin-top: 40px;
-  margin-bottom: 78px;
+  margin-bottom: 64px;
 
   @media screen and (min-width: 320px) {
   }
@@ -16,7 +16,7 @@ export const ProfileContainer = styled.div`
     flex-direction: column;
     margin: 0 auto;
     margin-top: 40px;
-    margin-bottom: 78px;
+    margin-bottom: 64px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -93,24 +93,26 @@ export const ActivityBoxes = styled.div`
 `;
 
 export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
   @media screen and (min-width: 320px) {
     width: 157px;
     height: 96px;
     border-radius: 12px;
     background-color: #e6533c;
-    padding: 14px 18px;
+    padding: 14px;
+    gap: 15px;
   }
 
   @media screen and (min-width: 375px) {
     width: 157px;
+    gap: 15px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    width: 209px;
+    width: 214px;
     height: 108px;
-    /* flex-shrink: 0; */
-    /* padding: 14px 28px 14px 38px; */
-    /* margin: 0 auto; */
   }
 
   @media screen and (min-width: 1440px) {
@@ -171,13 +173,8 @@ export const TextNumber = styled.p`
   letter-spacing: -1px;
   text-transform: uppercase;
 
-  @media screen and (min-width: 375px) {
-    font-size: 18px;
-  }
-
   @media screen and (min-width: 768px) {
-    font-size: 48px;
-    line-height: 50px;
+    line-height: 32px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -196,12 +193,8 @@ export const TextDescription = styled.span`
   font-weight: 700;
   line-height: 16px;
 
-  @media screen and (min-width: 375px) {
-  }
-
   @media screen and (min-width: 768px) {
-    font-size: 16px;
-    line-height: 24px;
+    line-height: 18px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -231,5 +224,21 @@ export const NavLinkWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-right: 410px;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+`;
+
+export const ShortText = styled.p`
+  @media screen and (min-width: 768px) {
+    width: 330px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 330px;
   }
 `;

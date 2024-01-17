@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import { Formik, Form } from 'formik';
 import { getCurrentUser, updateUser } from '../../../redux/settings/operations';
-
+import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
 import {
   ProfileContainer,
   ActiveRadioForm,
