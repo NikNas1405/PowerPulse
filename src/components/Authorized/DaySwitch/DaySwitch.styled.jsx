@@ -20,6 +20,7 @@ const BtnNext = styled.button`
   background-color: transparent;
   width: 16px;
   height: 16px;
+  border: none;
 `;
 
 const DateLabel = styled.p`
@@ -50,9 +51,8 @@ const CalenderIconWrap = styled.div`
   }
 `;
 const SvgCalendar = styled.svg`
-  width: 100%;
-  height: 100%;
-  fill: ${globalColor.colorOrange1};
+  width: 24px;
+  height: 24px;
 `;
 const CalenderBtn = styled.button`
   display: flex;
@@ -75,6 +75,7 @@ const BtnPrev = styled.button`
   background-color: transparent;
   width: 16px;
   height: 16px;
+  border: none;
 `;
 
 const Svg = styled.svg`

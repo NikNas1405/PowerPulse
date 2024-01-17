@@ -1,24 +1,6 @@
 import { createGlobalStyle, styled } from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const DataBtn = styled.div`
-  padding: 6px 12px;
-  color: #ffffff;
-  background: #3e85f3;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  @media screen and (min-width: 768px) {
-    margin-top: 33px;
-    margin-bottom: 33px;
-    padding: 8px 12px;
-    font-size: 16px;
-  }
-`;
-
 const Wrapper = styled.div`
   position: absolute;
   left: -40%;
@@ -191,4 +173,4 @@ const TitleWrapper = styled.button`
   justify-content: space-around;
   align-items: center;
 `;
-export { DataBtn, Wrapper, CalendarGlobalStyles, TitleWrapper };
+export { Wrapper, CalendarGlobalStyles, TitleWrapper };
