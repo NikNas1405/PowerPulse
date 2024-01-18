@@ -9,10 +9,9 @@ import {
   AddProductSuccessStyled,
 } from './AddProductSuccess.styled';
 
-// export const AddProductSuccess = (calories, onClose) => {
 export const AddProductSuccess = ({
   calories,
-  closeModallAddProductSuccess,
+  closeModalAddProductSuccess,
 }) => {
   return (
     <AddProductSuccessStyled>
@@ -22,10 +21,10 @@ export const AddProductSuccess = ({
         <span>Calories: </span>
         {calories}
       </Text>
-      <Button type="button" onClick={closeModallAddProductSuccess}>
+      <Button type="button" onClick={closeModalAddProductSuccess}>
         Next product
       </Button>
-      <StyledLink to={'/diary'} onClick={closeModallAddProductSuccess}>
+      <StyledLink to={'/diary'} onClick={closeModalAddProductSuccess}>
         To the diary
         <svg>
           <use href={sprite + '#icon-arrow'} />

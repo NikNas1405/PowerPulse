@@ -31,7 +31,7 @@ const ProductsPage = () => {
         const formData = {
           title: '',
           category: null,
-          groupBloodNotAllowed: null,
+          filter: 'all',
         };
         await dispatch(fetchProducts(formData));
       } catch (error) {

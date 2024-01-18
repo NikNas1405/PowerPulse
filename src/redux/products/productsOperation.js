@@ -54,27 +54,31 @@ export const fetchAllProductsCategories = createAsyncThunk(
 export const fetchProducts = createAsyncThunk(
   'user/products/fetchFilteredProducts',
   async (formData, thunkAPI) => {
-    const { title, category, groupBloodNotAllowed } = formData;
-    const filters = {};
+    const { title, category, filter } = formData;
+    const params = {};
 
     if (title) {
-      filters.title = title;
+      params.title = title;
     }
 
     if (category !== null) {
-      filters.category = category.toLowerCase();
+      params.category = category.toLowerCase();
     } else {
-      filters.category = category;
+      params.category = category;
     }
 
-    if (groupBloodNotAllowed) {
-      filters.groupBloodNotAllowed = groupBloodNotAllowed;
+    if (filter) {
+      params.filter = filter;
     }
 
     try {
       const response = await axios.get(`/user/products`, {
-        params: filters,
+        params,
       });
+
+      console.log(params);
+      console.log(response);
+
       return response.data.dataUser;
     } catch (error) {
       console.log(error);

@@ -1,13 +1,10 @@
-import {
-  // Suspense,
-  useState,
-} from 'react';
+import { Suspense, useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Select from 'react-select';
 import { nanoid } from 'nanoid';
 
-// import { Loader } from '../../Loader/Loader';
+import { Loader } from '../../Loader/Loader';
 
 import {
   StyledForm,
@@ -22,7 +19,7 @@ import {
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
-// import { fetchProducts } from '../../../redux/products/productsOperation';
+import { fetchProducts } from '../../../redux/products/productsOperation';
 
 export const ProductsFilters = ({ categories }) => {
   const dispatch = useDispatch();
@@ -40,19 +37,11 @@ export const ProductsFilters = ({ categories }) => {
     return [...options.map((option) => ({ value: option, label: option }))];
   };
 
-  // const typesArray = ['All', 'Recommended', 'Not recommended'];
-
   const typesArray = [
-    { value: 'null', label: 'All' },
-    { value: 'true', label: 'Recommended ' },
-    { value: 'false', label: 'Not recommended' },
+    { value: 'all', label: 'All' },
+    { value: 'recommended', label: 'Recommended ' },
+    { value: 'notRecommended', label: 'Not recommended' },
   ];
-
-  // const typesArray = [
-  //   { value: 'all', label: 'All' },
-  //   { value: 'recommended', label: 'Recommended ' },
-  //   { value: 'notRecommended', label: 'Not recommended' },
-  // ];
 
   const applyFilter = (e) => {
     if (e) {
@@ -61,12 +50,12 @@ export const ProductsFilters = ({ categories }) => {
     const formData = {
       title: searchByProductTitle || '',
       category: selectedCategory || null,
-      groupBloodNotAllowed: selectedType || null,
+      filter: selectedType || 'all',
     };
 
     console.log(formData);
 
-    // dispatch(fetchProducts(formData));
+    dispatch(fetchProducts(formData));
   };
 
   const handleInputChange = (e) => {
@@ -82,13 +71,12 @@ export const ProductsFilters = ({ categories }) => {
     const formData = {
       title: '',
       category: selectedCategory || null,
-      groupBloodNotAllowed: selectedType || null,
+      filter: selectedType || 'all',
     };
 
     console.log(formData);
 
-    // dispatch(fetchProducts(formData));
-
+    dispatch(fetchProducts(formData));
   };
 
   const handleCategoryChange = (selectedOption) => {
@@ -98,27 +86,27 @@ export const ProductsFilters = ({ categories }) => {
     const formData = {
       title: searchByProductTitle || '',
       category: value,
-      groupBloodNotAllowed: selectedType || null,
+      filter: selectedType || 'all',
     };
 
     console.log(formData);
 
-    // dispatch(fetchProducts(formData));
+    dispatch(fetchProducts(formData));
   };
 
   const handleTypeChange = (selectedOption) => {
-    const value = selectedOption ? selectedOption.value : null;
+    const value = selectedOption ? selectedOption.value.toLowerCase() : 'all';
     setSelectedType(value);
 
     const formData = {
       title: searchByProductTitle || '',
       category: selectedCategory || null,
-      groupBloodNotAllowed: value,
+      filter: value,
     };
 
     console.log(formData);
 
-    // dispatch(fetchProducts(formData));
+    dispatch(fetchProducts(formData));
   };
 
   return (
@@ -175,9 +163,9 @@ export const ProductsFilters = ({ categories }) => {
           />
         </DropdownSelectPartWrapper>
       </StyledForm>
-      {/* <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
-      </Suspense> */}
+      </Suspense>
     </>
   );
 };
