@@ -81,6 +81,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
   const fetchUserData = async () => {
     try {
       const resp = await dispatch(getCurrentUser());
+      if (resp.payload.birthday === undefined) {
+        resp.payload.birthday = '';
+      }
       setUserData(resp.payload);
       refreshUserData(resp.payload);
     } catch (error) {
@@ -194,13 +197,26 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       name="birthday"
                       value={props.values.birthday}
                     /> */}
-                    <ParamsInput
+                    <StyledDatePicker
+                      selected={selectedDate}
+                      onChange={(date) => {
+                        setSelectedDate(date);
+                        props.handleChange;
+                        props.values.birthday = date;
+                        props.setFieldTouched;
+                      }}
+                      dateFormat="MM.dd.yyyy"
+                      placeholderText="00.00.00"
+                      name="birthday"
+                      value={props.values.birthday}
+                    />
+                    {/* <ParamsInput
                       name="birthday"
                       value={props.values.birthday}
                       placeholder="0"
                       type="text"
                       onChange={props.handleChange}
-                    />
+                    /> */}
                     <StyledError name="birthday" component="div" />
                   </ParamsLabel>
                 </ParamsWrapper>
