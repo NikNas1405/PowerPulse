@@ -87,6 +87,7 @@ export const DataWrapper = styled.div`
 export const FormInput = styled.input`
   @media screen and (min-width: 320px) {
     width: 300px;
+    color: white;
     color: rgba(239, 237, 232, 0.6);
     font-family: Roboto;
     font-size: 14px;
@@ -109,6 +110,7 @@ export const FormInput = styled.input`
   }
 
   @media screen and (min-width: 375px) {
+    color: white;
     width: 335px;
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
@@ -125,6 +127,7 @@ export const FormInput = styled.input`
   }
 
   @media screen and (min-width: 1440px) {
+    color: white;
     padding: 14px;
     font-size: 16px;
     line-height: 24px;
@@ -191,7 +194,7 @@ export const ParamsLabel = styled.label`
 export const ParamsInput = styled.input`
   @media screen and (min-width: 320px) {
     width: 161px;
-    color: rgba(239, 237, 232, 0.6);
+    color: white;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -214,6 +217,7 @@ export const ParamsInput = styled.input`
   }
 
   @media screen and (min-width: 375px) {
+    color: white;
     width: 161px;
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
@@ -226,10 +230,12 @@ export const ParamsInput = styled.input`
   }
 
   @media screen and (min-width: 768px) {
+    color: white;
     width: 168px;
   }
 
   @media screen and (min-width: 1440px) {
+    color: white;
     padding: 14px;
     font-size: 16px;
     line-height: 24px;
@@ -257,7 +263,7 @@ export const ParamsInput = styled.input`
 
 export const StyledDatePicker = styled(DatePicker)`
   width: 161px;
-  color: rgba(239, 237, 232, 0.6);
+  color: white;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
@@ -279,10 +285,12 @@ export const StyledDatePicker = styled(DatePicker)`
   `}
 
   @media screen and (min-width: 768px) {
+    color: white;
     width: 187px;
   }
 
   @media screen and (min-width: 1440px) {
+    color: white;
     width: 160px;
     padding: 14px;
     font-size: 16px;
@@ -314,13 +322,13 @@ export const ActiveRadioForm = styled.div`
   margin-top: 20px;
   gap: 21px;
   @media (min-width: 834px) {
-    width: 438px;
-    margin: 24px auto 0 auto;
+    /* width: 438px;
+    margin: 24px auto 0 auto; */
   }
   @media (min-width: 1440px) {
-    width: none;
+    /* width: none;
     margin: 24px 0 0 0;
-    gap: 8px;
+    gap: 8px; */
   }
 `;
 
@@ -329,7 +337,7 @@ export const ActiveRadio = styled.div`
   flex-direction: row;
   gap: 8px;
   @media (min-width: 834px) {
-    width: 438px;
+    /* width: 438px; */
     flex-direction: row;
     /* justify-content: space-between; */
     flex-wrap: wrap;

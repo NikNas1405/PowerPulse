@@ -18,6 +18,8 @@ import {
   SectionText,
   UserNameTitle,
   UserText,
+  ButtonContainer,
+  ShortText,
 } from './UserCard.styled';
 export const UserCard = ({ profile }) => {
   const handleAvaChange = (e) => {
@@ -83,12 +85,15 @@ export const UserCard = ({ profile }) => {
               <use href={`${sprite}#exclamation-mark`}></use>
             </Svg>
           </WrapperTextSvg>
-          We understand that each individual is unique, so the
-          <br /> entire approach to diet is relative and tailored to your
-          <br /> unique body and goals.
+          <ShortText>
+            We understand that each individual is unique, so the entire approach
+            to diet is relative and tailored to your unique body and goals.
+          </ShortText>
         </WrapperDescription>
       </SectionText>
-      <LogOutBtn />
+      <ButtonContainer>
+        <LogOutBtn />
+      </ButtonContainer>
     </ProfileContainer>
   );
 };

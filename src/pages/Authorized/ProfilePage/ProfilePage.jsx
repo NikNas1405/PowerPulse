@@ -1,7 +1,10 @@
 import { UserCard } from '../../../components/Authorized/UserCard/UserCard';
 import { UserForm } from '../../../components/Authorized/UserForm/UserForm';
 import { Component } from 'react';
-import { ProfilePageContainer } from './ProfilePage.styled';
+import {
+  ProfileComponentsContainer,
+  ProfileContainer,
+} from './ProfilePage.styled';
 
 export class ProfilePage extends Component {
   state = {
@@ -14,18 +17,19 @@ export class ProfilePage extends Component {
       blood: '1',
       sex: 'female',
       levelActivity: '1',
-      dateOfBirth: null,
       avatarURL: '',
+      birthday: '',
     },
   };
   refreshProfileState = (newState) => {
     this.setState({ profile: newState });
   };
+
   render() {
     return (
-      <div>
+      <ProfileContainer>
         <h1>Profile Settings</h1>
-        <ProfilePageContainer>
+        <ProfileComponentsContainer>
           <UserForm
             profile={this.state.profile}
             refreshUserData={this.refreshProfileState}
@@ -34,8 +38,8 @@ export class ProfilePage extends Component {
             profile={this.state.profile}
             refreshUserData={this.refreshProfileState}
           />
-        </ProfilePageContainer>
-      </div>
+        </ProfileComponentsContainer>
+      </ProfileContainer>
     );
   }
 }

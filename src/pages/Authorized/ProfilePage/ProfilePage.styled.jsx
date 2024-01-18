@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const ProfilePageContainer = styled.div`
+export const ProfileContainer = styled.div`
+  padding-top: 72px;
+`;
+
+export const ProfileComponentsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
