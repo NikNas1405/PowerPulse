@@ -50,10 +50,11 @@ export const TitleAndFilterWrapper = styled.div`
 `;
 
 export const ProductsListWrapper = styled.div`
+  overflow: auto;
+
   @media (min-width: 768px) {
     height: 660px;
     width: 704px;
-    overflow: auto;
   }
 
   @media (min-width: 1440px) {

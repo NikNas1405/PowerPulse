@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { BasicModalWindow } from '../../BasicModalWindow/BasicModalWindow';
@@ -23,7 +23,6 @@ export const ProductsList = ({ products }) => {
 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
-
   const [modalData, setModalData] = useState(null);
 
   const handleOpenModal = (product) => {
@@ -51,6 +50,7 @@ export const ProductsList = ({ products }) => {
           {products.map((product) => (
             <ProductsItem
               product={product}
+              key={product._id}
               type={product.groupBloodNotAllowed[userBloodType]}
               handleOpenModal={handleOpenModal}
             />

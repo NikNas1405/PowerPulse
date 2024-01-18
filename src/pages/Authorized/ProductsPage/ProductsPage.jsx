@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import { ProductsFilters } from '../../../components/Authorized/ProductsFilters/ProductsFilters';
 import { ProductsList } from '../../../components/Authorized/ProductsList/ProductsList';
+import { Loader } from '../../../components/Loader/Loader';
 
 import {
   Wrapper,
@@ -12,7 +13,10 @@ import {
   ProductsListWrapper,
 } from './ProductsPage.styled';
 
-import { selectProductsCategories } from '../../../redux/products/productsSelector';
+import {
+  selectProductsCategories,
+  selectProductsIsLoading,
+} from '../../../redux/products/productsSelector';
 import { selectProducts } from '../../../redux/products/productsSelector';
 
 import {
@@ -22,6 +26,8 @@ import {
 
 const ProductsPage = () => {
   const dispatch = useDispatch();
+
+  const isLoading = useSelector(selectProductsIsLoading);
   const categoriesArray = useSelector(selectProductsCategories);
   const productsArray = useSelector(selectProducts);
 
@@ -55,9 +61,11 @@ const ProductsPage = () => {
           categories={categoriesArray.map((item) => item.title)}
         />
       </TitleAndFilterWrapper>
-      <ProductsListWrapper>
+
+      {isLoading ? <Loader/> : (<ProductsListWrapper>
         <ProductsList products={productsArray} />
-      </ProductsListWrapper>
+      </ProductsListWrapper>) }
+    
     </Wrapper>
   );
 };
