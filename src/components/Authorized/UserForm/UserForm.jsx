@@ -189,14 +189,6 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
                   <ParamsLabel>
                     Date of birth
-                    {/* <StyledDatePicker
-                      selected={selectedDate}
-                      onChange={props.handleChange}
-                      dateFormat="dd.MM.yyyy"
-                      placeholderText="00.00.00"
-                      name="birthday"
-                      value={props.values.birthday}
-                    /> */}
                     <StyledDatePicker
                       selected={selectedDate}
                       onChange={(date) => {
