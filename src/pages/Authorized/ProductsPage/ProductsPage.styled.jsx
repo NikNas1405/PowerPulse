@@ -5,24 +5,21 @@ import bgDesktop2 from '../../../assets/products/products-bg@2x.jpg';
 import { globalColor } from '../../../styles/root';
 
 export const Wrapper = styled.div`
-  padding: 40px 0 80px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 100vh;
 
   @media (min-width: 768px) {
-    padding: 72px 0 48px;
     gap: 32px;
   }
 
   @media (min-width: 1440px) {
-    padding: 72px 0 81px;
     background-image: linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%),
       url(${bgDesktop1});
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
-    /* background-size: 428px 716px; */
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -38,9 +35,11 @@ export const TitleAndFilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 40px;
 
   @media (min-width: 768px) {
     gap: 32px;
+    margin-top: 72px;
   }
 
   @media (min-width: 1440px) {
@@ -51,6 +50,7 @@ export const TitleAndFilterWrapper = styled.div`
 
 export const ProductsListWrapper = styled.div`
   overflow: auto;
+  margin-top: 32px;
 
   @media (min-width: 768px) {
     height: 660px;
@@ -60,6 +60,7 @@ export const ProductsListWrapper = styled.div`
   @media (min-width: 1440px) {
     height: 487px;
     width: 850px;
+    margin-top: 28px;
   }
 
   &::-webkit-scrollbar {

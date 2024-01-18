@@ -7,6 +7,8 @@ import { ProductsFilters } from '../../../components/Authorized/ProductsFilters/
 import { ProductsList } from '../../../components/Authorized/ProductsList/ProductsList';
 import { Loader } from '../../../components/Loader/Loader';
 
+import { Container } from '../../../styles/GlobalStyles';
+
 import {
   Wrapper,
   TitleAndFilterWrapper,
@@ -55,17 +57,22 @@ const ProductsPage = () => {
 
   return (
     <Wrapper>
-      <TitleAndFilterWrapper>
-        <TitlePage title={'Products Page'} />
-        <ProductsFilters
-          categories={categoriesArray.map((item) => item.title)}
-        />
-      </TitleAndFilterWrapper>
+      <Container>
+        <TitleAndFilterWrapper>
+          <TitlePage title={'Products Page'} />
+          <ProductsFilters
+            categories={categoriesArray.map((item) => item.title)}
+          />
+        </TitleAndFilterWrapper>
 
-      {isLoading ? <Loader/> : (<ProductsListWrapper>
-        <ProductsList products={productsArray} />
-      </ProductsListWrapper>) }
-    
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ProductsListWrapper>
+            <ProductsList products={productsArray} />
+          </ProductsListWrapper>
+        )}
+      </Container>
     </Wrapper>
   );
 };

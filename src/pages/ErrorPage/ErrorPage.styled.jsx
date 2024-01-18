@@ -30,6 +30,7 @@ export const Bg = styled.div`
   position: absolute;
   top: 0;
   left: -10%;
+  z-index: -1;
 
   @media screen and (min-width: 320px) {
     width: 240px;

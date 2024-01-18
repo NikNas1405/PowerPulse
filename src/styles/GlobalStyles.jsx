@@ -58,7 +58,7 @@ a {
 img, svg {
   display: block;
   width: 100%;
-    height: 100%;
+  height: 100%;
   
 }
 
@@ -68,25 +68,11 @@ button {
 `;
 
 export const Container = styled.div`
-   @media screen and (min-width: 320px) {
+  @media screen and (min-width: 320px) {
     width: 100%;
     padding: 0 20px;
     margin: 0 auto;
   }
-
-  /* @media screen and (min-width: 375px) {
-    width: 335px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    padding: 0 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 1248px;
-    padding: 0 96px;
-  } */
 
   @media screen and (min-width: 375px) {
     width: 375px;
