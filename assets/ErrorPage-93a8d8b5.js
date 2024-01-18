@@ -1,4 +1,4 @@
-import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as d,c as a,d as r,e as p,f as s}from"./bgMobile@2x-26480d49.js";const x=e.div`
+import{s as e,g as n,N as t,j as i,C as o}from"./index-7e968d56.js";import{b as d,a,c as r,d as p,e as s,f as x}from"./bgMobile@2x-26480d49.js";const h=e.div`
   display: flex;
   position: relative;
 
@@ -11,11 +11,12 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
   }
 `,m=e.div`
   z-index: 1;
-`,h=e.div`
+`,c=e.div`
   background-color: ${n.colorOrange};
   position: absolute;
   top: 0;
   left: -10%;
+  z-index: -1;
 
   @media screen and (min-width: 320px) {
     width: 240px;
@@ -38,7 +39,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
     top: 0;
     left: -10%;
   }
-`,c=e.h2`
+`,l=e.h2`
   color: ${n.colorWhite};
   font-family: Roboto;
   font-size: 66px;
@@ -70,7 +71,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
   @media screen and (min-width: 1440px) {
     margin-top: 221px;
   }
-`,l=e.p`
+`,g=e.p`
   width: 200px;
   height: 162px;
   color: ${n.colorWhite};
@@ -100,7 +101,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
     width: 477px;
     margin-right: 197px;
   }
-`,g=e(t)`
+`,w=e(t)`
   display: inline-flex;
   padding: 12px 40px;
   justify-content: center;
@@ -130,9 +131,9 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
 
   @media screen and (min-width: 1440px) {
   }
-`,w=e.div`
+`,u=e.div`
   @media screen and (min-width: 320px) {
-    background-image: url(${o});
+    background-image: url(${d});
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top 0% right 125%;
@@ -147,7 +148,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
       screen and (min-resolution: 192dpi) and (min-width: 320px),
       screen and (min-resolution: 2dppx) and (min-width: 320px) {
-      background-image: url(${d});
+      background-image: url(${a});
     }
   }
 
@@ -157,7 +158,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url(${a});
+    background-image: url(${r});
     width: 670px;
     height: 800px;
     top: 32%;
@@ -166,13 +167,13 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 768px),
       screen and (min-resolution: 192dpi) and (min-width: 768px),
       screen and (min-resolution: 2dppx) and (min-width: 768px) {
-      background-image: url(${r});
+      background-image: url(${p});
     }
   }
 
   @media screen and (min-width: 1440px) {
     /* position: absolute; */
-    background-image: url(${p});
+    background-image: url(${s});
     width: 670px;
     height: 800px;
     top: 0;
@@ -184,7 +185,7 @@ import{s as e,g as n,N as t,j as i}from"./index-9f09cd44.js";import{b as o,a as 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 1440px),
       screen and (min-resolution: 192dpi) and (min-width: 1440px),
       screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-      background-image: url(${s});
+      background-image: url(${x});
     }
   }
-`,f=()=>i.jsxs(x,{children:[i.jsx(h,{}),i.jsxs(m,{children:[i.jsx(c,{children:"404"}),i.jsx(l,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),i.jsx(g,{to:"/",children:"Go Home"})]}),i.jsx("div",{children:i.jsx(w,{})})]});export{f as default};
+`,v=()=>i.jsxs(h,{children:[i.jsx(c,{}),i.jsx(o,{children:i.jsxs(m,{children:[i.jsx(l,{children:"404"}),i.jsx(g,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),i.jsx(w,{to:"/",children:"Go Home"})]})}),i.jsx("div",{children:i.jsx(u,{})})]});export{v as default};
