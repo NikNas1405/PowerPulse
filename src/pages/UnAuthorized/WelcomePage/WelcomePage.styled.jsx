@@ -151,16 +151,12 @@ export const HeroSignUpLink = styled(NavLink)`
     line-height: 24px;
     padding: 16px 60px;
     width: 190px;
+    height: 56px;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding: 16px 60px;
-    width: 190px;
-
-    &:hover,
-    &:focus {
-      background-color: ${globalColor.colorOrange1};
-    }
+  &:hover,
+  &:focus {
+    background-color: ${globalColor.colorOrange1};
   }
 `;
 
@@ -180,22 +176,17 @@ export const HeroSignInLink = styled(NavLink)`
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  @media screen and (min-width: 375px) {
-  }
 
   @media screen and (min-width: 768px) {
     padding: 16px 60px;
     font-size: 20px;
     line-height: 24px;
     width: 184px;
+    height: 56px;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding: 16px 60px;
-
-    &:hover,
-    &:focus {
-      border: 1px solid ${globalColor.colorOrange};
-    }
+  &:hover,
+  &:focus {
+    border: 1px solid ${globalColor.colorOrange};
   }
 `;

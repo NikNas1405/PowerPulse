@@ -8,6 +8,7 @@ import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { Loader } from '../../Loader/Loader';
 
 import { selectProductsIsLoading } from '../../../redux/products/productsSelector';
+
 // import { selectUserProfile } from '../../../redux/settings/selectors';
 
 import {

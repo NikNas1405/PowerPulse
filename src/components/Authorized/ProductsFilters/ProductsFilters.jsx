@@ -6,6 +6,8 @@ import { nanoid } from 'nanoid';
 
 import { Loader } from '../../Loader/Loader';
 
+import { fetchProducts } from '../../../redux/products/productsOperation';
+
 import {
   StyledForm,
   InputStyled,
@@ -19,7 +21,6 @@ import {
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { fetchProducts } from '../../../redux/products/productsOperation';
 
 export const ProductsFilters = ({ categories }) => {
   const dispatch = useDispatch();

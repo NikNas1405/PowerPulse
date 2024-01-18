@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
+import { addDiaryProducts } from '../../../redux/diary/diaryOperation';
+
 import {
   AddProductFormStyled,
   Title,
@@ -17,7 +19,6 @@ import {
 } from './AddProductForm.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { addDiaryProducts } from '../../../redux/diary/diaryOperation';
 
 export const AddProductForm = ({
   closeModallAddProductForm,

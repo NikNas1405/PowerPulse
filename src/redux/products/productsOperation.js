@@ -16,40 +16,7 @@ export const fetchAllProductsCategories = createAsyncThunk(
   }
 );
 
-// export const fetchProducts = createAsyncThunk(
-//   'user/products/fetchFilteredProducts',
-//   async (formData, thunkAPI) => {
-//     const { title, category, groupBloodNotAllowed } = formData;
-//     const filters = {};
-
-//     if (title !== '' && title) {
-//       filters.title = title;
-//     }
-
-//     if (category !== null && category) {
-//       filters.category = category.toLowerCase();
-//       // filters.category = category;
-//     }
-
-//     if (groupBloodNotAllowed !== null && groupBloodNotAllowed) {
-//       filters.groupBloodNotAllowed = groupBloodNotAllowed;
-//     }
-
-//     const options = new URLSearchParams({
-//       ...filters,
-//     });
-
-//     try {
-//       // const response = await axios.get(`/user/products?${options}`);
-//       const response = await axios.get(`/user/products/${options}`);
-//       return response.data.dataUser;
-//     } catch (error) {
-//       console.log(error);
-//       toast.error(`${error.message}`);
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
+// фетч продуктів з фільтрами
 
 export const fetchProducts = createAsyncThunk(
   'user/products/fetchFilteredProducts',
@@ -72,7 +39,7 @@ export const fetchProducts = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get(`/user/products`, {
+      const response = await axios.get(`/user/products/:allOnFilter`, {
         params,
       });
 
