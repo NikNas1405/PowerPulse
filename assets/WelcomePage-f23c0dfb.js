@@ -1,4 +1,4 @@
-import{s as e,g as n,N as t,j as i,a as p}from"./index-9de832de.js";import{S as d}from"./StatisticsInfo-6f80ef47.js";import"./bgMobile@2x-26480d49.js";const o=e.div`
+import{s as e,g as n,N as t,j as i,a as p}from"./index-87dac3b0.js";import{S as o}from"./StatisticsInfo-e144eeda.js";import"./bgMobile@2x-26480d49.js";const d=e.div`
   @media screen and (min-width: 320px) {
   }
 
@@ -137,16 +137,12 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-9de832de.js";import{S as 
     line-height: 24px;
     padding: 16px 60px;
     width: 190px;
+    height: 56px;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding: 16px 60px;
-    width: 190px;
-
-    &:hover,
-    &:focus {
-      background-color: ${n.colorOrange1};
-    }
+  &:hover,
+  &:focus {
+    background-color: ${n.colorOrange1};
   }
 `,m=e(t)`
   display: flex;
@@ -164,22 +160,17 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-9de832de.js";import{S as 
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  @media screen and (min-width: 375px) {
-  }
 
   @media screen and (min-width: 768px) {
     padding: 16px 60px;
     font-size: 20px;
     line-height: 24px;
     width: 184px;
+    height: 56px;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding: 16px 60px;
-
-    &:hover,
-    &:focus {
-      border: 1px solid ${n.colorOrange};
-    }
+  &:hover,
+  &:focus {
+    border: 1px solid ${n.colorOrange};
   }
-`,w=()=>i.jsxs(o,{children:[i.jsxs(x,{children:[i.jsx(a,{children:"Transforming your body shape with Power Pulse"}),i.jsx(r,{children:i.jsx("use",{href:`${p}#icon-line`})}),i.jsxs(s,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]})]}),i.jsx(d,{})]});export{w as default};
+`,w=()=>i.jsxs(d,{children:[i.jsxs(x,{children:[i.jsx(a,{children:"Transforming your body shape with Power Pulse"}),i.jsx(r,{children:i.jsx("use",{href:`${p}#icon-line`})}),i.jsxs(s,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]})]}),i.jsx(o,{})]});export{w as default};
