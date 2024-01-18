@@ -1,4 +1,4 @@
-import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import { CalendarGlobalStyles, Wrapper } from './StyledDatepicker.styled';

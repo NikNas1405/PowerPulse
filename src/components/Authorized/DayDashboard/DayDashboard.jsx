@@ -14,6 +14,7 @@ import {
 } from './DayDashboard.styled';
 import { globalColor } from '../../../styles/root';
 import sprite from '../../../assets/sprite.svg';
+
 const DayDashboard = () => {
   return (
     <ContainerD>
@@ -23,10 +24,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
             </Svg>
-
             <Title>Daily calory intake</Title>
           </TitleWrap>
-
           <Value>{2200}</Value>
         </ItemBlock>
 
@@ -35,10 +34,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-dumbbell`}></use>
             </Svg>
-
             <Title>Daily norm of sports</Title>
           </TitleWrap>
-
           <Value>110 min</Value>
         </ItemBlock>
 
@@ -47,10 +44,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
             </Svg>
-
             <Title>Calories consumed</Title>
           </TitleWrap>
-
           <Value>{0}</Value>
         </ItemBlock>
 
@@ -59,10 +54,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-calories-1`}></use>
             </Svg>
-
             <Title>Calories burned</Title>
           </TitleWrap>
-
           <Value>{0}</Value>
         </ItemBlock>
 
@@ -71,10 +64,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-bubble`}></use>
             </Svg>
-
             <Title>The rest of the calories</Title>
           </TitleWrap>
-
           <Value>{2200}</Value>
         </ItemBlock>
 
@@ -85,10 +76,8 @@ const DayDashboard = () => {
                 href={`${sprite}#icon-running-stick-figure-svgrepo-com-1`}
               ></use>
             </Svg>
-
             <Title>The rest of sports</Title>
           </TitleWrap>
-
           <Value>{110} min</Value>
         </ItemBlock>
       </BlockList>
@@ -99,7 +88,6 @@ const DayDashboard = () => {
             <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
           </ExclamationSvg>
         </SvgWrap>
-
         <Text>
           Record all your meals in a calorie diary every day. This will help me
           be aware of my nutrition and make me responsible for my choices.
