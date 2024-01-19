@@ -1,4 +1,4 @@
-import{s as e,g as n,j as i,a as d}from"./index-71f4ab42.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
+import{s as e,g as n,j as i,a as d}from"./index-0aae1f18.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
