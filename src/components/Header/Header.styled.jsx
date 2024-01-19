@@ -33,7 +33,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const NavLinkWrapper = styled.div`
-
   margin-right: 96px;
   
   @media screen and (min-width: 768px) {
