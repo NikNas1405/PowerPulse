@@ -1,6 +1,7 @@
 import sprite from '../../../assets/sprite.svg';
 import gridicons_user from '../../../assets/profile/gridicons_user.jpg';
 import { LogOutBtn } from '../LogOutBtn/LogOutBtn';
+
 import {
   TextWrapper,
   WrapperTextSvg,
@@ -20,7 +21,12 @@ import {
   UserText,
   ButtonContainer,
   ShortText,
+  WrapperAvatar,
+  Label,
+  AvatarPickerSvg,
+  NewAvatar,
 } from './UserCard.styled';
+
 export const UserCard = ({ profile }) => {
   const handleAvaChange = (e) => {
     console.log(e.target.value);
@@ -37,12 +43,22 @@ export const UserCard = ({ profile }) => {
 
   return (
     <ProfileContainer>
-      <ContainerAvatar>
-        <Avatar src={profile.avatarURL} alt="User Avatar" />
-        <AvatarUpload>
-          <InputFile type="file" accept="image/*" />
-        </AvatarUpload>
-      </ContainerAvatar>
+      <WrapperAvatar>
+        <ContainerAvatar>
+          {/* <Avatar src={profile.avatarURL} alt="User Avatar" /> */}
+          <AvatarUpload>
+            <InputFile type="file" accept="image/*" id="file-input" />
+          </AvatarUpload>
+        </ContainerAvatar>
+        <Label htmlFor="file-input">
+          <AvatarPickerSvg>
+            <use href={sprite + '#icon-check-mark-1'} />
+          </AvatarPickerSvg>
+        </Label>
+        <div>
+          <NewAvatar src={profile.avatarURL} alt="User Avatar" />
+        </div>
+      </WrapperAvatar>
       <UserName>
         <UserNameTitle>{profile.name}</UserNameTitle>
         <UserText>User</UserText>

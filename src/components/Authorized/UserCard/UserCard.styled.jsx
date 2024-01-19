@@ -24,11 +24,43 @@ export const ProfileContainer = styled.div`
   }
 `;
 
-export const ContainerAvatar = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
+export const WrapperAvatar = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background-color: var(----background-color-avatar, rgba(48, 48, 48, 0.3));
+  border-radius: 100%;
+  margin-top: 40px;
+  border: 1px solid var(--orange, #e6533c);
 
+  @media (min-width: 768px) {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 320px) {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 375px) {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+`;
+
+export const ContainerAvatar = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
   @media (min-width: 834px) {
     width: 219px;
   }
@@ -54,7 +86,46 @@ export const AvatarUpload = styled.div`
 `;
 
 export const InputFile = styled.input`
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+`;
+
+export const Label = styled.label`
+  cursor: pointer;
+  position: absolute;
+  top: 47%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+`;
+
+export const AvatarPickerSvg = styled.svg`
+  width: 24px;
+  height: 24px;
+
+  @media (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+`;
+export const NewAvatar = styled.img`
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const UserName = styled.div`
