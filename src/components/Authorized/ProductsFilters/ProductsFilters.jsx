@@ -41,7 +41,8 @@ export const ProductsFilters = ({ categories }) => {
   const typesArray = [
     { value: 'all', label: 'All' },
     { value: 'recommended', label: 'Recommended ' },
-    { value: 'notRecommended', label: 'Not recommended' },
+    // { value: 'notRecommended', label: 'Not recommended' },
+    { value: 'not-recommended', label: 'Not recommended' },
   ];
 
   const applyFilter = (e) => {

@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
 import {
   LogoNavLink,
@@ -12,11 +13,13 @@ import { useAuth } from '../../hooks/useAuth';
 import { UserBar } from '../Authorized/UserBar/UserBar';
 const Header = () => {
   const { isLoggedIn, isUserParams } = useAuth();
+  const location = useLocation();
+  const shouldShowHeader = isLoggedIn && location.pathname !== '/error';
 
   return (
     <Wrapper>
-      <HeaderContainer>  
-        {isLoggedIn && (
+      <HeaderContainer>
+        {shouldShowHeader && (
           <NavLinkPowerPlus>
             {!isUserParams ? (
               <>
