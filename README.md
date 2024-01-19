@@ -41,34 +41,46 @@ on categories and equipment.
 
 ![Presentation](./public/presentation/BodyParts.png)
 
-# Development team :
+# Our development team :
 
-- ANASTASIIA NIKITINA **Front end Team Lead & Scrum Master**,
-- SERHII PEREVERTNIUK **Front End Developer**,
-- KATERYNA KOKHAS **Front End Developer**,
-- TETIANA MOSKALIUK **Front End Developer**,
-- OLEKSII HOSTRYK **Front End Developer**,
-- ROMAN PROTSENKO **Front End Developer**,
+- [ANASTASIIA NIKITINA ](https://github.com/NikNas1405) **Front end Team Lead & Scrum Master**,
+- [ANTON TYSLENKO](https://github.com/AntonTy35) **Back end Team Lead**,
 
-- ANTON TYSLENKO **Back end Team Lead**,
-- OLEKSANDR SHEVCHENKO **Back end Developer**,
-- EDUARD KURISH **Back end Developer**,
-- HRYHORII KYRIIENKO **Back end Developer**.
+- [SERHII PEREVERTNIUK](https://github.com/Sereban13) **Front End Developer** ,
+- [KATERYNA KOKHAS](https://github.com/KatanES) **Front End Developer** ,
+- [TETIANA MOSKALIUK](https://github.com/TanyaMosk) **Front End Developer** ,
+- [OLEKSII HOSTRYK](https://github.com/Alex1Go) **Front End Developer** ,
+- [ROMAN PROTSENKO](https://github.com/RomanProtsenko) **Front End Developer** ,
+
+- [OLEKSANDR SHEVCHENKO](https://github.com/Alex-diver) **Back end Developer**,
+- [EDUARD KURISH](https://github.com/EduardMLT) **Back end Developer**,
+- [HRYHORII KYRIIENKO](https://github.com/kyr13nko) **Back end Developer**.
 
 # Technologies used:
-
+ 
 Frontend:
 
 - HTML/CSS,
 - JS,
+- Axios,
 - React,
 - Redux,
+- ReduxToolkit,
 - Persist,
-- Axios,
-- Vite
+- Pagination.
 
 Backend:
 
 - Node.js,
+- Express,
+- Mongoose,
 - Mongo DB,
-- Render.
+- Render,
+- [Swagger Documentation](https://powerpulserver.onrender.com/api-docs/#/) 
+
+Utils:
+
+- VSCode,
+- Vite,
+- Figma,
+- Git/GitHub.

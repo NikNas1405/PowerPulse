@@ -9,14 +9,11 @@ export const fetchAllProductsCategories = createAsyncThunk(
       const response = await axios.get('/products/categories');
       return response.data;
     } catch (error) {
-      console.log(error);
       toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
-
-// фетч продуктів з фільтрами
 
 export const fetchProducts = createAsyncThunk(
   'user/products/fetchProducts',
@@ -25,7 +22,7 @@ export const fetchProducts = createAsyncThunk(
     const params = {};
 
     if (title) {
-      params.title = title;
+      params.title = title.trim();
     }
 
     if (category !== null) {
@@ -44,7 +41,6 @@ export const fetchProducts = createAsyncThunk(
       });
       return response.data.dataUser;
     } catch (error) {
-      console.log(error);
       toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
