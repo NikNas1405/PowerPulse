@@ -73,22 +73,22 @@ const Svg = styled.svg`
 `;
 const Title = styled.h2`
   font-size: 12px;
-  line-height: ${16 / 12};
+  line-height: 16px;
   color: rgba(239, 237, 232, 0.8);
 
   @media screen and (min-width: 768px) {
     text-wrap: nowrap;
-    line-height: ${18 / 12};
+    line-height: 18px;
   }
 `;
 const Value = styled.p`
   font-weight: 700;
   font-size: 18px;
-  line-height: ${20 / 18};
+  line-height: 20px;
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
-    line-height: ${32 / 24};
+    line-height: 32px;
   }
 `;
 const TextWrap = styled.div`
@@ -111,7 +111,7 @@ const ExclamationSvg = styled.svg`
 `;
 const Text = styled.p`
   font-size: 14px;
-  line-height: ${18 / 14};
+  line-height: 18px;
   color: ${globalColor.colorInput};
 
   @media screen and (max-width: 374px) {
@@ -120,7 +120,7 @@ const Text = styled.p`
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
-    line-height: ${24 / 16};
+    line-height: 24px;
   }
 `;
 export {

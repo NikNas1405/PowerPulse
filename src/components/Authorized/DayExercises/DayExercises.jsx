@@ -1,11 +1,11 @@
 import {
   NavText,
   NotProductText,
-  Product,
+  Exercises,
   Svg,
   TitleNav,
-  TitleProd,
-  WrapA,
+  TitleText,
+  Wrap,
 } from './DayExercises.styled';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
@@ -13,10 +13,10 @@ import { globalColor } from '../../../styles/root';
 
 const DayExercises = () => {
   return (
-    <Product>
+    <Exercises>
       <TitleNav>
-        <TitleProd>Exercises</TitleProd>
-        <WrapA>
+        <TitleText>Exercises</TitleText>
+        <Wrap>
           <NavLink
             to="/exercises"
             style={{ display: 'flex', alignItems: 'center' }}
@@ -36,11 +36,11 @@ const DayExercises = () => {
               />
             </Svg>
           </NavLink>
-        </WrapA>
+        </Wrap>
       </TitleNav>
 
       <NotProductText>Not found exercises</NotProductText>
-    </Product>
+    </Exercises>
   );
 };
 

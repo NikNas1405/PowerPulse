@@ -4,6 +4,7 @@ export const DiaryCont = styled.div`
   display: flex;
   flex-direction: column;
   padding: 40px 0 80px 0;
+
   @media screen and (min-width: 768px) {
     padding: 72px 0 64px 0;
   }

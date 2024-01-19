@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   BlockList,
   ContainerD,
@@ -14,7 +14,32 @@ import {
 } from './DayDashboard.styled';
 import { globalColor } from '../../../styles/root';
 import sprite from '../../../assets/sprite.svg';
+// import { useEffect, useState } from 'react';
+
 const DayDashboard = () => {
+  // const [userData, setUserData] = useState({
+  //   dailyCaloryIntake: 0,
+  //   dailyNormOfSports: 0,
+  //   caloriesConsumed: 0,
+  //   caloriesBurned: 0,
+  //   restOfCalories: 0,
+  //   restOfSports: 0,
+  // });
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+
+  //       );
+  //       setUserData(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching user data', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
   return (
     <ContainerD>
       <BlockList>
@@ -23,10 +48,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
             </Svg>
-
             <Title>Daily calory intake</Title>
           </TitleWrap>
-
           <Value>{2200}</Value>
         </ItemBlock>
 
@@ -35,10 +58,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-dumbbell`}></use>
             </Svg>
-
             <Title>Daily norm of sports</Title>
           </TitleWrap>
-
           <Value>110 min</Value>
         </ItemBlock>
 
@@ -47,10 +68,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
             </Svg>
-
             <Title>Calories consumed</Title>
           </TitleWrap>
-
           <Value>{0}</Value>
         </ItemBlock>
 
@@ -59,10 +78,8 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-calories-1`}></use>
             </Svg>
-
             <Title>Calories burned</Title>
           </TitleWrap>
-
           <Value>{0}</Value>
         </ItemBlock>
 
@@ -71,24 +88,18 @@ const DayDashboard = () => {
             <Svg>
               <use href={`${sprite}#icon-bubble`}></use>
             </Svg>
-
             <Title>The rest of the calories</Title>
           </TitleWrap>
-
           <Value>{2200}</Value>
         </ItemBlock>
 
         <ItemBlock caloriesOverBurned={0}>
           <TitleWrap>
             <Svg>
-              <use
-                href={`${sprite}#icon-running-stick-figure-svgrepo-com-1`}
-              ></use>
+              <use href={`${sprite}#icon-running-figure`}></use>
             </Svg>
-
             <Title>The rest of sports</Title>
           </TitleWrap>
-
           <Value>{110} min</Value>
         </ItemBlock>
       </BlockList>
@@ -99,7 +110,6 @@ const DayDashboard = () => {
             <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
           </ExclamationSvg>
         </SvgWrap>
-
         <Text>
           Record all your meals in a calorie diary every day. This will help me
           be aware of my nutrition and make me responsible for my choices.
@@ -107,39 +117,6 @@ const DayDashboard = () => {
       </TextWrap>
     </ContainerD>
   );
-};
-
-DayDashboard.propTypes = {
-  bmrData: PropTypes.number,
-  diaryProducts: PropTypes.arrayOf(
-    PropTypes.shape({
-      amount: PropTypes.number.isRequired,
-      calories: PropTypes.number.isRequired,
-      date: PropTypes.string.isRequired,
-      groupBloodNotAllowed: PropTypes.shape({
-        1: PropTypes.bool.isRequired,
-        2: PropTypes.bool.isRequired,
-        3: PropTypes.bool.isRequired,
-        4: PropTypes.bool.isRequired,
-      }),
-      product_ID: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      _id: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  diaryExercises: PropTypes.arrayOf(
-    PropTypes.shape({
-      bodyPart: PropTypes.string.isRequired,
-      calories: PropTypes.number.isRequired,
-      date: PropTypes.string.isRequired,
-      equipment: PropTypes.string.isRequired,
-      exercise_ID: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      target: PropTypes.string.isRequired,
-      time: PropTypes.number.isRequired,
-      _id: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default DayDashboard;
