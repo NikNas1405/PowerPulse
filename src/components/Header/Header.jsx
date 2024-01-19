@@ -4,21 +4,19 @@ import {
   NavLinkPowerPlus,
   Svg,
   SvgPowerPlus,
-  HeaderConatiner,
+  HeaderContainer,
   NavLinkWrapper,
+  Wrapper,
 } from './Header.styled';
 import { useAuth } from '../../hooks/useAuth';
-import { Logo } from '../Logo/Logo';
 import { UserBar } from '../Authorized/UserBar/UserBar';
 const Header = () => {
   const { isLoggedIn, isUserParams } = useAuth();
 
   return (
-    <HeaderConatiner>
-      {!isLoggedIn ? (
-        <Logo />
-      ) : (
-        <>
+    <Wrapper>
+      <HeaderContainer>  
+        {isLoggedIn && (
           <NavLinkPowerPlus>
             {!isUserParams ? (
               <>
@@ -50,9 +48,9 @@ const Header = () => {
               </>
             )}
           </NavLinkPowerPlus>
-        </>
-      )}
-    </HeaderConatiner>
+        )}
+      </HeaderContainer>
+    </Wrapper>
   );
 };
 

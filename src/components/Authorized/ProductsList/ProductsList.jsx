@@ -50,6 +50,7 @@ export const ProductsList = ({ products }) => {
         <ProductsListStyled>
           {products.map((product) => (
             <ProductsItem
+              key={product._id}
               product={product}
               type={product.groupBloodNotAllowed[userBloodType]}
               handleOpenModal={handleOpenModal}

@@ -4,12 +4,6 @@ import { globalColor } from '../../styles/root';
 
 export const NavLinkPower = styled.div`
   z-index: 1;
-  margin-top: 33px;
-
-  @media screen and (min-width: 1440px) {
-    position: absolute;
-    top: 0;
-  }
 `;
 
 export const LogoNavLink = styled(NavLink)`

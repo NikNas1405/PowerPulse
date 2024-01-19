@@ -6,7 +6,7 @@ export const fetchAllProductsCategories = createAsyncThunk(
   '/user/products/categories/fetchAllProductsCategory',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/user/products/categories');
+      const response = await axios.get('/products/categories');
       return response.data;
     } catch (error) {
       console.log(error);
@@ -19,7 +19,7 @@ export const fetchAllProductsCategories = createAsyncThunk(
 // фетч продуктів з фільтрами
 
 export const fetchProducts = createAsyncThunk(
-  'user/products/fetchFilteredProducts',
+  'user/products/fetchProducts',
   async (formData, thunkAPI) => {
     const { title, category, filter } = formData;
     const params = {};
@@ -39,13 +39,9 @@ export const fetchProducts = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get(`/user/products/:allOnFilter`, {
+      const response = await axios.get(`/products/:allOnFilter`, {
         params,
       });
-
-      console.log(params);
-      console.log(response);
-
       return response.data.dataUser;
     } catch (error) {
       console.log(error);

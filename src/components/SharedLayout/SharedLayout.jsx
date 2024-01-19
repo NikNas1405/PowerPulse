@@ -5,17 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Header from '../Header/Header';
 import { Loader } from '../Loader/Loader';
-import { Container } from '../../styles/GlobalStyles';
 
 const SharedLayout = () => {
   return (
-    <Container>
+    <>
       <Header />
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <ToastContainer />
-    </Container>
+    </>
   );
 };
 

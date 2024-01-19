@@ -50,7 +50,7 @@ export const AddProductForm = ({
   const formattedTitle =
     productTitle[0].toUpperCase() + productTitle.slice(1).toLowerCase();
 
-  const applyAddProduct = (e) => {
+  const applyAddProduct = async (e) => {
     e.preventDefault();
     if (
       (0 >= productToAdd.amount || 3000 <= productToAdd.amount) &&
@@ -73,7 +73,7 @@ export const AddProductForm = ({
         closeModallAddProductForm();
         onClick(productToAdd.calories);
 
-        dispatch(addDiaryProducts(productToAdd));
+        await dispatch(addDiaryProducts(productToAdd));
       } catch (error) {
         toast.error('Network error:', error);
       }

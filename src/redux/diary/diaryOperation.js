@@ -6,7 +6,7 @@ export const addDiaryProducts = createAsyncThunk(
   'user/diary/products/addDiaryProducts',
   async (data, thunkAPI) => {
     try {
-      const response = await axios.post('user/diary/products', data);
+      const response = await axios.post('/diary/products', data);
 
       console.log(response.data);
       
