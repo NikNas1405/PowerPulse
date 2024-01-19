@@ -4,19 +4,20 @@ import {
   Product,
   Svg,
   TitleNav,
-  TitleProd,
-  WrapA,
+  TitleText,
+  Wrap,
 } from './DayProducts.styled';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
 import { globalColor } from '../../../styles/root';
+import DayProdTable from '../DayProdTable/DayProdTable';
 
 const DayProducts = () => {
   return (
     <Product>
       <TitleNav>
-        <TitleProd>Products</TitleProd>
-        <WrapA>
+        <TitleText>Products</TitleText>
+        <Wrap>
           <NavLink
             to="/products"
             style={{ display: 'flex', alignItems: 'center' }}
@@ -36,9 +37,9 @@ const DayProducts = () => {
               />
             </Svg>
           </NavLink>
-        </WrapA>
+        </Wrap>
       </TitleNav>
-
+      <DayProdTable />
       <NotProductText>Not found products</NotProductText>
     </Product>
   );

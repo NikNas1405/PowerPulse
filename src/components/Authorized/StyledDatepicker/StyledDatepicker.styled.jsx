@@ -4,7 +4,7 @@ import { globalColor } from '../../../styles/root';
 const Wrapper = styled.div`
   position: absolute;
   left: -40%;
-  top: 50%;
+  top: 90%;
   transform: translate(0%, 0%);
   z-index: 999;
 `;
@@ -55,40 +55,48 @@ const CalendarGlobalStyles = createGlobalStyle`
 }
   .react-datepicker__current-month {
     color: ${globalColor.colorWhite};
-        font-family: 'RobotoMedium';
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.32px;
+    font-family: 'RobotoMedium';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.32px;
+    
   }
   .react-datepicker__day-name {
     margin: 0;
-   padding: 8px 8px;
-   color: rgba(239, 237, 232, 0.50);
-        font-family: 'RobotoMedium';
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: -0.28px;
+    padding: 8px 8px;
+    color: rgba(239, 237, 232, 0.50);
+    font-family: 'RobotoMedium';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.28px;
   }
   .react-datepicker__navigation {
     margin-top: 24px;
-    color:${globalColor.colorWhite};
+    color: red;
+    
+  }
+  .react-datepicker__aria-live {
+    display: none;
   }
   .react-datepicker__navigation--previous {
     left: 7px;
     width: 18px;
     height: 18px;
+    display: none;
   }
   .react-datepicker__navigation--next {
     right: 7px;
     width: 18px;
     height: 18px;
+   
   }
   .react-datepicker__navigation-icon::before:hover:focus {
     border-color: ${globalColor.colorWhite};
+   
   }
   .react-datepicker__week {
     display: flex;
@@ -107,13 +115,13 @@ letter-spacing: -0.28px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-   color: ${globalColor.colorWhite};
-        font-family: 'RobotoRegular';
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; 
-letter-spacing: -0.28px;
+    color: ${globalColor.colorWhite};
+    font-family: 'RobotoRegular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; 
+    letter-spacing: -0.28px;
     text-align: center;
   }
   .react-datepicker__month {
@@ -131,7 +139,7 @@ letter-spacing: -0.28px;
   }
   .react-datepicker__day--selected:hover {
     border-radius: 50%;
-  background-color: ${globalColor.colorWhite};
+    background-color: ${globalColor.colorWhite};
   }
   .react-datepicker__day:hover {
     border-radius: 50%;
@@ -155,7 +163,7 @@ letter-spacing: -0.28px;
     padding: 6px 10px 5px 13px;
   }
   .react-datepicker__triangle {
-    visibility: hidden;
+   display: none;
   }
 `;
 

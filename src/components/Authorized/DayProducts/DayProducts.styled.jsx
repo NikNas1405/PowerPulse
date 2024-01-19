@@ -24,7 +24,6 @@ const Product = styled.div`
     width: 100%;
   }
 `;
-
 const TitleNav = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,19 +33,16 @@ const TitleNav = styled.div`
     margin-bottom: 16px;
   }
 `;
-
-const TitleProd = styled.p`
+const TitleText = styled.p`
   color: #efede880;
   font-size: 14px;
   line-height: 18px;
 `;
-
-const WrapA = styled.div`
+const Wrap = styled.div`
   &:hover span {
     color: ${globalColor.colorOrange1};
   }
 `;
-
 const NavText = styled.span`
   color: ${globalColor.colorOrange};
   font-size: 14px;
@@ -58,13 +54,11 @@ const NavText = styled.span`
     line-height: 24px;
   }
 `;
-
 const Svg = styled.svg`
   width: 16px;
   height: 16px;
   margin-left: 8px;
 `;
-
 const NotProductText = styled.p`
   color: #efede84d;
   font-size: 14px;
@@ -78,4 +72,4 @@ const NotProductText = styled.p`
   }
 `;
 
-export { NotProductText, Svg, NavText, WrapA, TitleProd, TitleNav, Product };
+export { NotProductText, Svg, NavText, Wrap, TitleText, TitleNav, Product };
