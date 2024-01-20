@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { globalColor } from '../../styles/root';
 
 export const NavLinkPower = styled.div`
-  z-index: 1;
+  @media screen and (min-width: 320px) {
+    z-index: 1;
+  }
+  @media screen and (min-width: 1440px) {
+  }
 `;
 
 export const LogoNavLink = styled(NavLink)`
