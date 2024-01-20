@@ -13,7 +13,7 @@ export const FormWrapper = styled.div`
     padding: 32px 0;
   }
   @media screen and (min-width: 1440px) {
-    width: 62.3%;
+    width: 56%;
   }
 `;
 
@@ -314,6 +314,6 @@ export const BgWrapper = styled.div`
     margin: 0;
   }
   @media screen and (min-width: 1440px) {
-    width: 37.7%;
+    width: 45%;
   }
 `;

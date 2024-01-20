@@ -27,7 +27,7 @@ export const HeroWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 62.8%;
+    width: 56%;
   }
 `;
 
@@ -197,6 +197,6 @@ export const BgWrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 38%;
+    width: 45%;
   }
 `;

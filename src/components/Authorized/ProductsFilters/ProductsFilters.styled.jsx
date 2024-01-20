@@ -150,6 +150,10 @@ export const categoriesStyles = {
       width: '192px',
       height: '52px',
     },
+
+    '@media (max-width: 375px)': {
+      width: '88vw',
+    },
   }),
 
   option: (styles, { isHover, isDisabled, isFocused, isSelected }) => ({
@@ -278,6 +282,10 @@ export const typesStyles = {
       width: '204px',
       height: '52px',
     },
+
+    '@media (max-width: 375px)': {
+      width: '88vw',
+    },
   }),
 
   option: (styles, { isHover, isDisabled, isFocused, isSelected }) => ({
@@ -363,8 +371,6 @@ export const typesStyles = {
   }),
 };
 
-
-
 export const ErrorMessage = styled.p`
   display: flex;
   color: ${globalColor.colorSecondaryRed};
@@ -379,5 +385,4 @@ export const ErrorMessage = styled.p`
     height: 16px;
     fill: ${globalColor.colorSecondaryRed};
   }
-
 `;

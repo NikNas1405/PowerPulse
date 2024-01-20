@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
 export const ProductsItemStyled = styled.li`
-  width: 335px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -11,12 +10,16 @@ export const ProductsItemStyled = styled.li`
   border-radius: 12px;
   border: 1px rgba(239, 237, 232, 0.2) solid;
 
-  @media (min-width: 1440px) {
-    width: 405px;
+  @media (min-width: 320px) {
+    width: 87vw;
   }
 
-  @media (max-width: 335px) {
-    width: 100%;
+  @media (min-width: 375px) {
+    width: 335px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 405px;
   }
 `;
 
@@ -138,8 +141,4 @@ export const WrapperText = styled.div`
   gap: 16px;
   margin-top: 8px;
   align-items: center;
-
-  @media (max-width: 335px) {
-    flex-wrap: wrap;
-  }
 `;
