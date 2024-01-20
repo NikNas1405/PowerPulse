@@ -9,14 +9,13 @@ import { Loader } from '../../Loader/Loader';
 
 import { selectProductsIsLoading } from '../../../redux/products/productsSelector';
 
-// import { selectUserProfile } from '../../../redux/settings/selectors';
-
 import {
   ProductsListStyled,
   Nothing,
   Paragraph1,
   Paragraph2,
 } from './ProductsList.styled';
+import { selectUser } from '../../../redux/auth/selectors';
 
 export const ProductsList = ({ products }) => {
   const isLoading = useSelector(selectProductsIsLoading);
@@ -38,10 +37,8 @@ export const ProductsList = ({ products }) => {
     setModalData(null);
   };
 
-  // const currentUser = useSelector(selectUserProfile);
-  // const userBloodType = currentUser.blood;
-
-  const userBloodType = 1;
+  const currentUser = useSelector(selectUser);
+  const userBloodType = currentUser.blood;
 
   return (
     <>
