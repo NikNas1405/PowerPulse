@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
 import { globalColor } from '../../../styles/root';
 
-const DayExercises = () => {
+const DayExercises = ({ exercisesArray }) => {
   return (
     <Exercises>
       <TitleNav>

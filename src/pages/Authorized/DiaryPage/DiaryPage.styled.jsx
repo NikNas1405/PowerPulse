@@ -33,7 +33,7 @@ export const ProdAndExercise = styled.div`
     width: 826px;
   }
 `;
-export const InfoConteiner = styled.div`
+export const InfoContainer = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: column-reverse;

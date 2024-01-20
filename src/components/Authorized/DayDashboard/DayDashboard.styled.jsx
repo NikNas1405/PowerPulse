@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const Container = styled.div`
+export const ContainerWrap = styled.div`
   @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
@@ -14,7 +14,8 @@ const Container = styled.div`
     width: 390px;
   }
 `;
-const BlockList = styled.ul`
+
+export const ListStyled = styled.ul`
   margin-bottom: 20px;
 
   @media screen and (min-width: 375px) {
@@ -38,13 +39,23 @@ const BlockList = styled.ul`
   @media screen and (min-width: 1440px) {
     margin-bottom: 48px;
   }
+
+  > li {
+    &:nth-child(1) {
+      background-color: ${globalColor.colorOrange};
+    }
+
+    &:nth-child(2) {
+      background-color: ${globalColor.colorOrange};
+    }
+  }
 `;
-const ItemBlock = styled.li`
+
+export const ItemListStyled = styled.li`
   display: block;
   width: 157px;
-
   padding: 14px;
-  background-color: rgba(239, 237, 232, 0.05);
+  background-color: ${globalColor.colorDiaryItem};
   border-radius: 12px;
   border: 1px solid #efede833;
 
@@ -61,19 +72,24 @@ const ItemBlock = styled.li`
     height: 116px;
     padding: 18px;
   }
+
+  &.redBg {
+    border: 1px solid #e9101d;
+  }
+
+  &.greenBg {
+    border: 1px solid #3cbf61;
+  }
 `;
-const TitleBlock = styled.div`
+
+export const TitleStyledWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 28px;
 `;
-const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: ${globalColor.colorOrange1};
-`;
-const Title = styled.h2`
+
+export const TitleStyled = styled.h2`
   font-size: 12px;
   line-height: 16px;
   color: rgba(239, 237, 232, 0.8);
@@ -83,7 +99,8 @@ const Title = styled.h2`
     line-height: 18px;
   }
 `;
-const Value = styled.p`
+
+export const DataValue = styled.p`
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
@@ -93,7 +110,8 @@ const Value = styled.p`
     line-height: 32px;
   }
 `;
-const TextBlock = styled.div`
+
+export const TextWrapper = styled.div`
   display: flex;
   gap: 8px;
 
@@ -101,17 +119,26 @@ const TextBlock = styled.div`
     margin: 0 auto;
   }
 `;
-const SvgText = styled.div`
+
+export const SvgWrapperText = styled.div`
   width: 24px;
   height: 24px;
   background-color: ${globalColor.colorBeige};
   border-radius: 50%;
 `;
-const ExclamationSvg = styled.svg`
+
+export const SvgStyled = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: ${globalColor.colorOrange1};
+`;
+
+export const ExclamationSvg = styled.svg`
   width: 24px;
   height: 24px;
 `;
-const Text = styled.p`
+
+export const TextStyled = styled.p`
   font-size: 14px;
   line-height: 18px;
   color: ${globalColor.colorInput};
@@ -125,16 +152,3 @@ const Text = styled.p`
     line-height: 24px;
   }
 `;
-export {
-  ExclamationSvg,
-  Text,
-  SvgText,
-  TextBlock,
-  Container,
-  Value,
-  BlockList,
-  ItemBlock,
-  TitleBlock,
-  Title,
-  Svg,
-};
