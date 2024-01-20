@@ -43,8 +43,7 @@ export const ProductsFilters = ({ categories }) => {
 
   const typesArray = [
     { value: 'all', label: 'All' },
-    { value: 'recommended', label: 'Recommended ' },
-    // { value: 'notRecommended', label: 'Not recommended' },
+    { value: 'recommended', label: 'Recommended' },
     { value: 'not-recommended', label: 'Not recommended' },
   ];
 
@@ -58,7 +57,6 @@ export const ProductsFilters = ({ categories }) => {
       category: selectedCategory || null,
       filter: selectedType || 'all',
     };
-
     const isTitleValid = searchByProductTitle.length <= 40;
 
     if (!isTitleValid) {
@@ -93,7 +91,6 @@ export const ProductsFilters = ({ categories }) => {
       category: selectedCategory || null,
       filter: selectedType || 'all',
     };
-
     dispatch(fetchProducts(formData));
   };
 
@@ -106,7 +103,6 @@ export const ProductsFilters = ({ categories }) => {
       category: value,
       filter: selectedType || 'all',
     };
-
     dispatch(fetchProducts(formData));
   };
 
@@ -119,7 +115,6 @@ export const ProductsFilters = ({ categories }) => {
       category: selectedCategory || null,
       filter: value,
     };
-
     dispatch(fetchProducts(formData));
   };
 
