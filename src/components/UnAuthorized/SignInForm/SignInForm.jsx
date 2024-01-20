@@ -1,6 +1,5 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
   BgWrapper,
@@ -25,6 +24,8 @@ import { StatisticsInfo } from '../StatisticsInfo/StatisticsInfo';
 import sprite from '../../../assets/sprite.svg';
 import { StyleSheetManager } from 'styled-components';
 import { logIn } from '../../../redux/auth/operations';
+import { Logo } from '../../Logo/Logo';
+import { Container } from '../../../styles/GlobalStyles';
 
 export const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -68,120 +69,123 @@ export const SignInForm = () => {
 
   return (
     <StyleSheetManager shouldForwardProp={shouldForwardProp}>
-      <FormContainer>
-        <FormWrapper>
-          <FormTitle>Sign in</FormTitle>
-          <FormDescription>
-            Welcome! Please enter your credentials to login to the platform:
-          </FormDescription>
-          <Form autoComplete="off" onSubmit={formik.handleSubmit}>
-            <LabelWrapper>
-              <FormLabel>
-                <FormInput
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                  haserror={
-                    !isValidationCompleted &&
-                    formik.touched.email &&
-                    formik.errors.email
-                  }
-                  isValidationCompleted={
-                    !formik.errors.email && formik.touched.email
-                  }
-                />
-                {formik.touched.email && (
-                  <ErrorSpan
-                    style={{
-                      color: formik.errors.email ? '#D80027' : '#3CBF61',
-                    }}
-                  >
-                    {formik.errors.email ? (
-                      <>
-                        <SvgError>
-                          <use href={`${sprite}#icon-red`}></use>
-                        </SvgError>
-                        {`Error email. ${formik.errors.email}`}
-                      </>
-                    ) : (
-                      <>
-                        <SvgError>
-                          <use href={`${sprite}#icon-green`}></use>
-                        </SvgError>
-                        {'Success email'}
-                      </>
-                    )}
-                  </ErrorSpan>
-                )}
-              </FormLabel>
-
-              <FormLabel>
-                <FormInput
-                  id="password"
-                  name="password"
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="Password"
-                  onChange={formik.handleChange}
-                  value={formik.values.password}
-                  haserror={
-                    !isValidationCompleted &&
-                    formik.touched.password &&
-                    formik.errors.password
-                  }
-                  isValidationCompleted={
-                    !formik.errors.password && formik.touched.password
-                  }
-                />
-                <>
-                  {showPassword ? (
-                    <ImageToggle onClick={toggleCheckboxChange}>
-                      <use href={`${sprite}#icon-eye`}></use>
-                    </ImageToggle>
-                  ) : (
-                    <ImageToggle onClick={toggleCheckboxChange}>
-                      <use href={`${sprite}#icon-eye-off`}></use>
-                    </ImageToggle>
+      <Container>
+        <FormContainer>
+          <FormWrapper>
+            <Logo />
+            <FormTitle>Sign in</FormTitle>
+            <FormDescription>
+              Welcome! Please enter your credentials to login to the platform:
+            </FormDescription>
+            <Form autoComplete="off" onSubmit={formik.handleSubmit}>
+              <LabelWrapper>
+                <FormLabel>
+                  <FormInput
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    onChange={formik.handleChange}
+                    value={formik.values.email}
+                    haserror={
+                      !isValidationCompleted &&
+                      formik.touched.email &&
+                      formik.errors.email
+                    }
+                    isValidationCompleted={
+                      !formik.errors.email && formik.touched.email
+                    }
+                  />
+                  {formik.touched.email && (
+                    <ErrorSpan
+                      style={{
+                        color: formik.errors.email ? '#D80027' : '#3CBF61',
+                      }}
+                    >
+                      {formik.errors.email ? (
+                        <>
+                          <SvgError>
+                            <use href={`${sprite}#icon-red`}></use>
+                          </SvgError>
+                          {`Error email. ${formik.errors.email}`}
+                        </>
+                      ) : (
+                        <>
+                          <SvgError>
+                            <use href={`${sprite}#icon-green`}></use>
+                          </SvgError>
+                          {'Success email'}
+                        </>
+                      )}
+                    </ErrorSpan>
                   )}
-                </>
-                {formik.touched.password && (
-                  <ErrorSpan
-                    style={{
-                      color: formik.errors.password ? '#D80027' : '#3CBF61',
-                    }}
-                  >
-                    {formik.errors.password ? (
-                      <>
-                        <SvgError>
-                          <use href={`${sprite}#icon-red`}></use>
-                        </SvgError>
-                        {`Error password, ${formik.errors.password}`}
-                      </>
+                </FormLabel>
+
+                <FormLabel>
+                  <FormInput
+                    id="password"
+                    name="password"
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Password"
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                    haserror={
+                      !isValidationCompleted &&
+                      formik.touched.password &&
+                      formik.errors.password
+                    }
+                    isValidationCompleted={
+                      !formik.errors.password && formik.touched.password
+                    }
+                  />
+                  <>
+                    {showPassword ? (
+                      <ImageToggle onClick={toggleCheckboxChange}>
+                        <use href={`${sprite}#icon-eye`}></use>
+                      </ImageToggle>
                     ) : (
-                      <>
-                        <SvgError>
-                          <use href={`${sprite}#icon-green`}></use>
-                        </SvgError>
-                        {'Success password'}
-                      </>
+                      <ImageToggle onClick={toggleCheckboxChange}>
+                        <use href={`${sprite}#icon-eye-off`}></use>
+                      </ImageToggle>
                     )}
-                  </ErrorSpan>
-                )}
-              </FormLabel>
-            </LabelWrapper>
-            <ButtonSignUp type="Submit">Sign In</ButtonSignUp>
-          </Form>
-          <WrapperText>
-            <Text>Don’t have an account?</Text>
-            <SignInLink to={'/signup'}>Sing Up</SignInLink>
-          </WrapperText>
-        </FormWrapper>
-        <BgWrapper>
-          <StatisticsInfo />
-        </BgWrapper>
-      </FormContainer>
+                  </>
+                  {formik.touched.password && (
+                    <ErrorSpan
+                      style={{
+                        color: formik.errors.password ? '#D80027' : '#3CBF61',
+                      }}
+                    >
+                      {formik.errors.password ? (
+                        <>
+                          <SvgError>
+                            <use href={`${sprite}#icon-red`}></use>
+                          </SvgError>
+                          {`Error password, ${formik.errors.password}`}
+                        </>
+                      ) : (
+                        <>
+                          <SvgError>
+                            <use href={`${sprite}#icon-green`}></use>
+                          </SvgError>
+                          {'Success password'}
+                        </>
+                      )}
+                    </ErrorSpan>
+                  )}
+                </FormLabel>
+              </LabelWrapper>
+              <ButtonSignUp type="Submit">Sign In</ButtonSignUp>
+            </Form>
+            <WrapperText>
+              <Text>Don’t have an account?</Text>
+              <SignInLink to={'/signup'}>Sing Up</SignInLink>
+            </WrapperText>
+          </FormWrapper>
+          <BgWrapper>
+            <StatisticsInfo />
+          </BgWrapper>
+        </FormContainer>
+      </Container>
     </StyleSheetManager>
   );
 };

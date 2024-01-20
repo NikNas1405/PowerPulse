@@ -14,9 +14,9 @@ import {
 } from './StatisticsInfo.styled';
 import sprite from '../../../assets/sprite.svg';
 
-export const StatisticsInfo = () => {
+export const StatisticsInfo = ({ isWelcomePage }) => {
   return (
-    <DivContainer>
+    <DivContainer isWelcomePage={isWelcomePage}>
       <VideoWrapper>
         <WrapperSvg>
           <SvgPlay>

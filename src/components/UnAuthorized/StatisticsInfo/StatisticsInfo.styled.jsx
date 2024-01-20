@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { globalColor } from '../../../styles/root';
 import bgDesktop1 from '../../../assets/hero/bgDesktop@1x.jpg';
 import bgDesktop2 from '../../../assets/hero/bgDesktop@2x.jpg';
@@ -11,49 +11,121 @@ export const DivContainer = styled.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
-    background-image: url(${bgMobilep1});
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    width: 320px;
-    height: 669px;
+    ${({ isWelcomePage }) =>
+      isWelcomePage
+        ? css`
+            background-image: linear-gradient(
+                170deg,
+                #040404 3.66%,
+                rgba(4, 4, 4, 0) 19.15%
+              ),
+              linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+              url(${bgMobilep1});
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top;
+            width: 320px;
+            height: 609px;
 
-    @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
-      screen and (min-resolution: 192dpi) and (min-width: 320px),
-      screen and (min-resolution: 2dppx) and (min-width: 320px) {
-      background-image: url(${bgMobilep2});
-    }
+            @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
+              screen and (min-resolution: 192dpi) and (min-width: 320px),
+              screen and (min-resolution: 2dppx) and (min-width: 320px) {
+              background-image: linear-gradient(
+                  170deg,
+                  #040404 3.66%,
+                  rgba(4, 4, 4, 0) 19.15%
+                ),
+                linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                url(${bgMobilep2});
+            }
+          `
+        : css`
+            background-image: linear-gradient(
+                168deg,
+                rgb(4, 4, 4) 14.75%,
+                rgba(4, 4, 4, 0) 52.97%
+              ),
+              linear-gradient(
+                73deg,
+                rgb(4, 4, 4) 6.11%,
+                rgba(4, 4, 4, 0) 66.68%
+              ),
+              url(${bgMobilep1});
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top;
+            width: 320px;
+            height: 609px;
+
+            @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
+              screen and (min-resolution: 192dpi) and (min-width: 320px),
+              screen and (min-resolution: 2dppx) and (min-width: 320px) {
+              background-image: linear-gradient(
+                  168deg,
+                  #040404 14.75%,
+                  rgba(4, 4, 4, 0) 52.97%
+                ),
+                linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                url(${bgMobilep2});
+            }
+          `}
   }
-
   @media screen and (min-width: 375px) {
-    width: 446px;
-    height: 669px;
     flex-shrink: 0;
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url(${bgTablet1});
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${bgTablet1});
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 670px;
-    height: 800px;
-    background-position: right;
-    position: relative;
+    height: 1005px;
+    background-position: left;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 100px;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 768px),
       screen and (min-resolution: 192dpi) and (min-width: 768px),
       screen and (min-resolution: 2dppx) and (min-width: 768px) {
-      background-image: url(${bgTablet2});
+      background-image: linear-gradient(
+          168deg,
+          #040404 14.75%,
+          rgba(4, 4, 4, 0) 52.97%
+        ),
+        linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+        url(${bgTablet2});
     }
   }
 
   @media screen and (min-width: 1440px) {
-    background-image: url(${bgDesktop1});
+    background-image: linear-gradient(
+        80deg,
+        #040404 -2.45%,
+        rgba(4, 4, 4, 0) 68.17%
+      ),
+      url(${bgDesktop1});
     width: 670px;
     height: 800px;
+    margin: 0;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 1440px),
       screen and (min-resolution: 192dpi) and (min-width: 1440px),
       screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-      background-image: url(${bgDesktop2});
+      background-image: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${bgDesktop2});
+      background-position: right;
+      margin: 0;
     }
   }
 `;
@@ -67,19 +139,18 @@ export const VideoWrapper = styled.div`
   flex-shrink: 0;
   border-radius: 12px;
   padding: 14px 18px;
-  margin-top: 383px;
-  margin-left: 123px;
+  margin-top: 344px;
+  margin-left: 48px;
 
   @media screen and (min-width: 375px) {
-    margin-left: 123px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 206px;
     height: 96px;
     padding: 20px 23px 20px 36px;
-    margin-top: 512px;
-    margin-left: 277px;
+    margin-top: 670px;
+    margin-left: 0px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -202,14 +273,12 @@ export const TextWrapper = styled.div`
     border-radius: 12px;
     background-color: ${globalColor.colorOrange1};
     padding: 14px 18px;
-    margin-top: 492px;
-    margin-left: 200px;
+    margin-top: 484px;
+    margin-left: 170px;
   }
 
   @media screen and (min-width: 375px) {
     width: 119px;
-    margin-top: 548px;
-    margin-left: 253px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -217,8 +286,8 @@ export const TextWrapper = styled.div`
     height: 110px;
     flex-shrink: 0;
     padding: 14px 28px 14px 38px;
-    margin-top: 657px;
-    margin-left: 480px;
+    margin-top: 830px;
+    margin-left: 275px;
   }
 
   @media screen and (min-width: 1440px) {

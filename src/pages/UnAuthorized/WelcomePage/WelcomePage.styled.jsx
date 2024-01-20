@@ -4,6 +4,7 @@ import { globalColor } from '../../../styles/root';
 
 export const HeroContainer = styled.div`
   @media screen and (min-width: 320px) {
+    position: relative;
   }
 
   @media screen and (min-width: 375px) {
@@ -18,32 +19,22 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroWrapper = styled.div`
-  /* margin-top: 90px; */
   position: relative;
-  margin-top: 127px;
-
-  @media screen and (min-width: 320px) {
-  }
-
-  @media screen and (min-width: 375px) {
-  }
+  padding: 24px 0;
 
   @media screen and (min-width: 768px) {
-    /* margin-top: 140px; */
-    margin-top: 189px;
+    padding: 32px 0;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 55%;
-    /* margin-top: 151px; */
-    margin-top: 200px;
-    margin-right: 76px;
+    width: 62.8%;
   }
 `;
 
 export const HeroTitle = styled.h1`
   width: 300px;
   z-index: 1;
+  margin-top: 90px;
 
   @media screen and (min-width: 375px) {
     color: ${globalColor.colorWhite};
@@ -63,6 +54,7 @@ export const HeroTitle = styled.h1`
     letter-spacing: 0.7px;
     width: 598px;
     margin-bottom: 64px;
+    margin-top: 140px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -70,26 +62,23 @@ export const HeroTitle = styled.h1`
     line-height: 78px;
     letter-spacing: 0.7px;
     width: 598px;
+    margin-top: 151px;
   }
 `;
 
 export const HeroSvg = styled.svg`
   position: absolute;
-  width: 92px;
-  height: 30px;
-  top: 36%;
-  left: -5%;
 
   @media screen and (min-width: 320px) {
     width: 92px;
     height: 30px;
-    top: 36%;
-    left: -4%;
+    top: 167px;
+    left: -13px;
   }
 
   @media screen and (min-width: 375px) {
-    top: 35.7%;
-    left: -2%;
+    top: 169px;
+    left: -8px;
     width: 98px;
     height: 35px;
   }
@@ -98,13 +87,15 @@ export const HeroSvg = styled.svg`
     width: 185px;
     height: 67px;
     margin-top: 83px;
+    top: 190px;
+    left: -18px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 185px;
     height: 67px;
-    top: 13%;
-    left: -3%;
+    top: 284px;
+    left: -17px;
   }
 `;
 
@@ -118,7 +109,7 @@ export const LinkWrapper = styled.div`
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 768px;
-    margin-top: 282px;
+    margin-top: 424px;
   }
   @media screen and (min-width: 1440px) {
     width: 768px;
@@ -188,5 +179,24 @@ export const HeroSignInLink = styled(NavLink)`
   &:hover,
   &:focus {
     border: 1px solid ${globalColor.colorOrange};
+  }
+`;
+
+export const BgWrapper = styled.div`
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    position: absolute;
+    top: 98.2%;
+    left: 17%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 38%;
   }
 `;

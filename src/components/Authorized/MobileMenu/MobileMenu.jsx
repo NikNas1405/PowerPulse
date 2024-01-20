@@ -31,12 +31,12 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
         horizontal: 'right',
       }}
       transformOrigin={{
-        vertical: 'top',
+        vertical: 'bottom',
         horizontal: 'right',
       }}
       PaperProps={{
         sx: {
-          position: 'relative',
+          // position: 'fixes !important',
           boxSizing: 'border-box',
           boxShadow: '0px 4px 14px 0px rgba(227, 255, 168, 0.2)',
           backgroundColor: '#E6533C',
@@ -47,8 +47,8 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
           display: `${isDesctopWidth ? 'none' : 'flex'}`,
           flexDirection: 'column',
           alignItems: 'flex-start',
-          width: `${isTabletWidth ? 300 : 200}px`,
-          height: `${isTabletWidth ? 1005 : 812}px`,
+          width: `${isTabletWidth ? 350 : 200}px`,
+          height: '100vh !important',
           top: '0 !important',
         },
       }}
