@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import DaySwitch from '../../../components/Authorized/DaySwitch/DaySwitch';
+import DayExercises from '../../../components/Authorized/DayExercises/DayExercises';
+import DayProducts from '../../../components/Authorized/DayProducts/DayProducts';
+import DayDashboard from '../../../components/Authorized/DayDashboard/DayDashboard';
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import {
   DiaryCont,
@@ -7,9 +10,6 @@ import {
   ProdAndExercise,
   TitleAndSwitch,
 } from './DiaryPage.styled';
-import DayProducts from '../../../components/Authorized/DayProducts/DayProducts';
-import DayExercises from '../../../components/Authorized/DayExercises/DayExercises';
-import DayDashboard from '../../../components/Authorized/DayDashboard/DayDashboard';
 import { Container } from '../../../styles/GlobalStyles';
 
 const DiaryPage = () => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const Wrap = styled.div`
+const Conteiner = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -12,7 +12,6 @@ const Wrap = styled.div`
     margin-bottom: 0;
   }
 `;
-
 const BtnNext = styled.button`
   display: flex;
   margin: 0;
@@ -22,7 +21,6 @@ const BtnNext = styled.button`
   height: 16px;
   border: none;
 `;
-
 const DateLabel = styled.p`
   font-family: 'RobotoBold';
   font-size: 24px;
@@ -40,8 +38,7 @@ const DateLabel = styled.p`
     line-height: 1.1;
   }
 `;
-
-const CalenderIconWrap = styled.div`
+const CalenderIcon = styled.div`
   width: 20px;
   height: 20px;
 
@@ -67,7 +64,6 @@ const CalenderBtn = styled.button`
     gap: 6px;
   }
 `;
-
 const BtnPrev = styled.button`
   display: flex;
   margin: 0 6px 0 0;
@@ -77,7 +73,6 @@ const BtnPrev = styled.button`
   height: 16px;
   border: none;
 `;
-
 const Svg = styled.svg`
   width: 100%;
   height: 100%;
@@ -85,12 +80,12 @@ const Svg = styled.svg`
 `;
 
 export {
-  Wrap,
+  Conteiner,
   DateLabel,
   CalenderBtn,
   BtnPrev,
   BtnNext,
   Svg,
-  CalenderIconWrap,
+  CalenderIcon,
   SvgCalendar,
 };

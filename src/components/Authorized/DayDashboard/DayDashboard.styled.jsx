@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const ContainerD = styled.div`
+const Container = styled.div`
   @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
@@ -60,7 +60,7 @@ const ItemBlock = styled.li`
     padding: 18px;
   }
 `;
-const TitleWrap = styled.div`
+const TitleBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -91,7 +91,7 @@ const Value = styled.p`
     line-height: 32px;
   }
 `;
-const TextWrap = styled.div`
+const TextBlock = styled.div`
   display: flex;
   gap: 8px;
 
@@ -99,7 +99,7 @@ const TextWrap = styled.div`
     margin: 0 auto;
   }
 `;
-const SvgWrap = styled.div`
+const SvgText = styled.div`
   width: 24px;
   height: 24px;
   background-color: ${globalColor.colorBeige};
@@ -126,13 +126,13 @@ const Text = styled.p`
 export {
   ExclamationSvg,
   Text,
-  SvgWrap,
-  TextWrap,
-  ContainerD,
+  SvgText,
+  TextBlock,
+  Container,
   Value,
   BlockList,
   ItemBlock,
-  TitleWrap,
+  TitleBlock,
   Title,
   Svg,
 };
