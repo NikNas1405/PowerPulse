@@ -42,14 +42,15 @@ const BlockList = styled.ul`
 const ItemBlock = styled.li`
   display: block;
   width: 157px;
+
   padding: 14px;
   background-color: rgba(239, 237, 232, 0.05);
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid #efede833;
 
   @media screen and (max-width: 374px) {
     margin: 0 auto;
-
+    height: 96px;
     :not(:last-of-type) {
       margin-bottom: 20px;
     }
@@ -57,6 +58,7 @@ const ItemBlock = styled.li`
 
   @media screen and (min-width: 768px) {
     width: 187px;
+    height: 116px;
     padding: 18px;
   }
 `;

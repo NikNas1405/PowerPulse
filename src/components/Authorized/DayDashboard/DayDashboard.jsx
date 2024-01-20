@@ -14,34 +14,45 @@ import {
 import { globalColor } from '../../../styles/root';
 import sprite from '../../../assets/sprite.svg';
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
-  selectDailyCaloryIntake,
-  selectDailyNormOfSports,
-  selectCaloriesConsumed,
-  selectCaloriesBurned,
-  selectRestOfCalories,
-  selectRestOfSports,
-  selectWarningCalories,
-  selectEncouragementSports,
+  selectDiaryInformation,
+  selectConsumedProducts,
+  selectCompletedExercisesArray,
+  selectDiaryIsLoading,
+  selectDiaryError,
+  // selectDailyCaloryIntake,
+  // selectDailyNormOfSports,
+  // selectCaloriesConsumed,
+  // selectCaloriesBurned,
+  // selectRestOfCalories,
+  // selectRestOfSports,
+  // selectWarningCalories,
+  // selectEncouragementSports,
 } from '../../../redux/diary/diarySelector';
-import { fetchDiaryData } from '../../../redux/diary/diaryOperation';
 
 const DayDashboard = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchDiaryData());
-  }, [dispatch]);
-
-  const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
-  const dailyNormOfSports = useSelector(selectDailyNormOfSports);
-  const caloriesConsumed = useSelector(selectCaloriesConsumed);
-  const caloriesBurned = useSelector(selectCaloriesBurned);
-  const restOfCalories = useSelector(selectRestOfCalories);
-  const restOfSports = useSelector(selectRestOfSports);
-  const warningCalories = useSelector(selectWarningCalories);
-  const encouragementSports = useSelector(selectEncouragementSports);
+  const diaryInformation = useSelector(selectDiaryInformation);
+  const consumedProducts = useSelector(selectConsumedProducts);
+  const completedExercisesArray = useSelector(selectCompletedExercisesArray);
+  const isLoading = useSelector(selectDiaryIsLoading);
+  const error = useSelector(selectDiaryError);
+  const {
+    dailyCaloryIntake,
+    dailyNormOfSports,
+    caloriesConsumed,
+    caloriesBurned,
+    restOfCalories,
+    restOfSports,
+  } = diaryInformation;
+  // const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
+  // const dailyNormOfSports = useSelector(selectDailyNormOfSports);
+  // const caloriesConsumed = useSelector(selectCaloriesConsumed);
+  // const caloriesBurned = useSelector(selectCaloriesBurned);
+  // const restOfCalories = useSelector(selectRestOfCalories);
+  // const restOfSports = useSelector(selectRestOfSports);
+  // const warningCalories = useSelector(selectWarningCalories);
+  // const encouragementSports = useSelector(selectEncouragementSports);
 
   return (
     <Container>
@@ -63,10 +74,7 @@ const DayDashboard = () => {
             </Svg>
             <Title>Daily norm of sports</Title>
           </TitleBlock>
-          <Value>
-            {dailyNormOfSports}
-            min
-          </Value>
+          <Value> {dailyNormOfSports} min</Value>
         </ItemBlock>
 
         <ItemBlock>
@@ -89,7 +97,12 @@ const DayDashboard = () => {
           <Value>{caloriesBurned}</Value>
         </ItemBlock>
 
-        <ItemBlock caloriesOverConsumed={warningCalories}>
+        <ItemBlock
+          style={{
+            borderColor:
+              restOfCalories > dailyCaloryIntake ? 'red' : '#efede833',
+          }}
+        >
           <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-bubble`}></use>
@@ -99,17 +112,18 @@ const DayDashboard = () => {
           <Value>{restOfCalories}</Value>
         </ItemBlock>
 
-        <ItemBlock caloriesOverBurned={encouragementSports}>
+        <ItemBlock
+          style={{
+            borderColor: restOfSports < dailyNormOfSports ? 'red' : 'green',
+          }}
+        >
           <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-running-figure`}></use>
             </Svg>
             <Title>The rest of sports</Title>
           </TitleBlock>
-          <Value>
-            {restOfSports}
-            min
-          </Value>
+          <Value>{restOfSports} min</Value>
         </ItemBlock>
       </BlockList>
 
