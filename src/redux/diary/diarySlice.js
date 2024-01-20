@@ -1,41 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { addDiaryProducts } from './diaryOperation';
-
-// const initialState = {
-//   consumedProductsArray: [],
-//   isLoading: false,
-//   error: null,
-// };
-
-// const handlePending = (state) => {
-//   state.isLoading = true;
-// };
-
-// const handleRejected = (state, action) => {
-//   state.isLoading = false;
-//   state.error = action.payload;
-// };
-
-// const handleAddDiaryProductsFulfilled = (state, action) => {
-//   state.isLoading = false;
-//   state.error = null;
-//   state.consumedProductsArray.push(action.payload);
-// };
-
-// const diarySlice = createSlice({
-//   name: 'diary',
-//   initialState: initialState,
-//   extraReducers: (builder) =>
-//     builder
-//       .addCase(addDiaryProducts.pending, handlePending)
-//       .addCase(addDiaryProducts.fulfilled, handleAddDiaryProductsFulfilled)
-//       .addCase(addDiaryProducts.rejected, handleRejected),
-// });
 
 import {
   getAllDiaryInformation,
   addDiaryProducts,
   deleteDiaryProducts,
+  addDiaryExercise,
+  deleteDiaryExercise,
 } from './diaryOperation';
 
 const initialState = {
@@ -76,6 +46,23 @@ const handleDeleteDiaryProductsFulfilled = (state, action) => {
   );
   state.consumedProductsArray.splice(index, 1);
 };
+
+const handleAddDiaryExerciseFulfilled = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  state.completedExercisesArray.push(action.payload);
+};
+
+const handleDeleteDiaryExerciseFulfilled = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+
+  const index = state.completedExercisesArray.findIndex(
+    (product) => product._id === action.payload._id
+  );
+  state.completedExercisesArray.splice(index, 1);
+};
+
 const diarySlice = createSlice({
   name: 'diary',
   initialState: initialState,
@@ -95,27 +82,16 @@ const diarySlice = createSlice({
         deleteDiaryProducts.fulfilled,
         handleDeleteDiaryProductsFulfilled
       )
-      .addCase(deleteDiaryProducts.rejected, handleRejected),
+      .addCase(deleteDiaryProducts.rejected, handleRejected)
+      .addCase(addDiaryExercise.pending, handlePending)
+      .addCase(addDiaryExercise.fulfilled, handleAddDiaryExerciseFulfilled)
+      .addCase(addDiaryExercise.rejected, handleRejected)
+      .addCase(deleteDiaryExercise.pending, handlePending)
+      .addCase(
+        deleteDiaryExercise.fulfilled,
+        handleDeleteDiaryExerciseFulfilled
+      )
+      .addCase(deleteDiaryExercise.rejected, handleRejected),
 });
-// const diarySlice = createSlice({
-//   name: 'diary',
-//   initialState: {
-//     dailyCaloryIntake: 0,
-//     dailyNormOfSports: 0,
-//     caloriesConsumed: 0,
-//     caloriesBurned: 0,
-//     restOfCalories: 0,
-//     restOfSports: 0,
-//     warningCalories: false,
-//     encouragementSports: false,
-//   },
-//   reducers: {
-//     updateDiaryData: (state, action) => {
-//       return { ...state, ...action.payload };
-//     },
-//   },
-// });
-
-export const { updateDiaryData } = diarySlice.actions;
 
 export const diaryReducer = diarySlice.reducer;

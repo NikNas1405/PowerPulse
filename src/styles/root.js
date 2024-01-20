@@ -8,4 +8,5 @@ export const globalColor = {
   colorSecondaryRed: '#D80027',
   colorSecondaryGrey: '#303030',
   colorInput: 'rgba(239, 237, 232, 0.3)',
+  colorDiaryItem: 'rgba(239, 237, 232, 0.05)',
 };

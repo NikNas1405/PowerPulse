@@ -12,7 +12,7 @@ import { getAllDiaryInformation } from '../../../redux/diary/diaryOperation';
 
 import {
   DiaryCont,
-  InfoConteiner,
+  InfoContainer,
   ProdAndExercise,
   TitleAndSwitch,
 } from './DiaryPage.styled';
@@ -36,7 +36,8 @@ const DiaryPage = () => {
   //     weight : 100,
   //     _id : "5d51694902b2373622ff5f42"]
 
- 
+  const { addProducts, addExercises } = userData;
+
   const [currentDate] = useState(new Date());
 
   const day = String(currentDate.getDate()).padStart(2, '0');
@@ -56,9 +57,6 @@ const DiaryPage = () => {
     fetchData();
   }, [dispatch, formattedCurrentDate]);
 
-
-   console.log(userData);
-
   return (
     <Container>
       <DiaryCont>
@@ -66,13 +64,13 @@ const DiaryPage = () => {
           <TitlePage title="Diary" />
           <DaySwitch currentDate={currentDate} />
         </TitleAndSwitch>
-        <InfoConteiner>
-          <DayDashboard />
+        <InfoContainer>
+          <DayDashboard userDiaryInformation={userData} />
           <ProdAndExercise>
-            <DayProducts />
-            <DayExercises />
+            <DayProducts productsArray={addProducts} />
+            <DayExercises exercisesArray={addExercises} />
           </ProdAndExercise>
-        </InfoConteiner>
+        </InfoContainer>
       </DiaryCont>
     </Container>
   );

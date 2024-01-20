@@ -1,144 +1,122 @@
 import {
-  BlockList,
-  Container,
+  ContainerWrap,
+  ListStyled,
+  ItemListStyled,
+  TitleStyledWrapper,
+  TitleStyled,
   ExclamationSvg,
-  ItemBlock,
-  Svg,
-  SvgText,
-  Text,
-  TextBlock,
-  Title,
-  TitleBlock,
-  Value,
+  SvgStyled,
+  SvgWrapperText,
+  TextStyled,
+  TextWrapper,
+  DataValue,
 } from './DayDashboard.styled';
-import { globalColor } from '../../../styles/root';
+
 import sprite from '../../../assets/sprite.svg';
+import { useEffect, useState } from 'react';
 
-import { useSelector } from 'react-redux';
-import {
-  selectDiaryInformation,
-  selectConsumedProducts,
-  selectCompletedExercisesArray,
-  selectDiaryIsLoading,
-  selectDiaryError,
-  // selectDailyCaloryIntake,
-  // selectDailyNormOfSports,
-  // selectCaloriesConsumed,
-  // selectCaloriesBurned,
-  // selectRestOfCalories,
-  // selectRestOfSports,
-  // selectWarningCalories,
-  // selectEncouragementSports,
-} from '../../../redux/diary/diarySelector';
+const DayDashboard = ({ userDiaryInformation }) => {
+  console.log(userDiaryInformation);
 
-const DayDashboard = () => {
-  const diaryInformation = useSelector(selectDiaryInformation);
-  const consumedProducts = useSelector(selectConsumedProducts);
-  const completedExercisesArray = useSelector(selectCompletedExercisesArray);
-  const isLoading = useSelector(selectDiaryIsLoading);
-  const error = useSelector(selectDiaryError);
   const {
-    dailyCaloryIntake,
-    dailyNormOfSports,
-    caloriesConsumed,
-    caloriesBurned,
-    restOfCalories,
-    restOfSports,
-  } = diaryInformation;
-  // const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
-  // const dailyNormOfSports = useSelector(selectDailyNormOfSports);
-  // const caloriesConsumed = useSelector(selectCaloriesConsumed);
-  // const caloriesBurned = useSelector(selectCaloriesBurned);
-  // const restOfCalories = useSelector(selectRestOfCalories);
-  // const restOfSports = useSelector(selectRestOfSports);
-  // const warningCalories = useSelector(selectWarningCalories);
-  // const encouragementSports = useSelector(selectEncouragementSports);
+    burnedCalories,
+    caloriesIntake,
+    consumedCalories,
+    // remainingCalories,    невірно приходить з беку, має використатися замість balanceConsumCalories
+    // remainingSports,       невірно приходить з беку, має використатися замість balanceSport
+  } = userDiaryInformation;
+
+  const overConsumedCalories = consumedCalories - caloriesIntake;
+
+  const balanceConsumCalories = caloriesIntake - consumedCalories;
+
+  const balanceSport = 100 - burnedCalories;
+
+  // const balanceSport = 100 - тут треба мінусонути дані з масиву вправ від Сергія. а не спалені калорії!;
+
+  const [isOverThan, setIsOverThan] = useState(false);
+
+  useEffect(() => {
+    if (overConsumedCalories > caloriesIntake) {
+      setIsOverThan(true);
+    }
+  }, [overConsumedCalories]);
 
   return (
-    <Container>
-      <BlockList>
-        <ItemBlock style={{ backgroundColor: globalColor.colorOrange }}>
-          <TitleBlock>
-            <Svg>
+    <ContainerWrap>
+      <ListStyled>
+        <ItemListStyled>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
-            </Svg>
-            <Title>Daily calory intake</Title>
-          </TitleBlock>
-          <Value>{dailyCaloryIntake}</Value>
-        </ItemBlock>
-
-        <ItemBlock style={{ backgroundColor: globalColor.colorOrange }}>
-          <TitleBlock>
-            <Svg>
+            </SvgStyled>
+            <TitleStyled>Daily calory intake</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>{caloriesIntake ? caloriesIntake : 0}</DataValue>
+        </ItemListStyled>
+        <ItemListStyled>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-dumbbell`}></use>
-            </Svg>
-            <Title>Daily norm of sports</Title>
-          </TitleBlock>
-          <Value> {dailyNormOfSports} min</Value>
-        </ItemBlock>
-
-        <ItemBlock>
-          <TitleBlock>
-            <Svg>
+            </SvgStyled>
+            <TitleStyled>Daily norm of sports</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>110 min</DataValue>
+        </ItemListStyled>
+        <ItemListStyled>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
-            </Svg>
-            <Title>Calories consumed</Title>
-          </TitleBlock>
-          <Value>{caloriesConsumed}</Value>
-        </ItemBlock>
-
-        <ItemBlock>
-          <TitleBlock>
-            <Svg>
+            </SvgStyled>
+            <TitleStyled>Calories consumed</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>{consumedCalories ? consumedCalories : 0}</DataValue>
+        </ItemListStyled>
+        <ItemListStyled>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-calories-1`}></use>
-            </Svg>
-            <Title>Calories burned</Title>
-          </TitleBlock>
-          <Value>{caloriesBurned}</Value>
-        </ItemBlock>
-
-        <ItemBlock
-          style={{
-            borderColor:
-              restOfCalories > dailyCaloryIntake ? 'red' : '#efede833',
-          }}
-        >
-          <TitleBlock>
-            <Svg>
+            </SvgStyled>
+            <TitleStyled>Calories burned</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>{burnedCalories ? burnedCalories : 0}</DataValue>
+        </ItemListStyled>
+        <ItemListStyled className={isOverThan ? 'redBg' : ''}>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-bubble`}></use>
-            </Svg>
-            <Title>The rest of the calories</Title>
-          </TitleBlock>
-          <Value>{restOfCalories}</Value>
-        </ItemBlock>
-
-        <ItemBlock
-          style={{
-            borderColor: restOfSports < dailyNormOfSports ? 'red' : 'green',
-          }}
-        >
-          <TitleBlock>
-            <Svg>
+            </SvgStyled>
+            <TitleStyled>The rest of the calories</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>
+            {balanceConsumCalories ? balanceConsumCalories : 0}
+          </DataValue>
+          {/* <DataValue>{remainingCalories}</DataValue> */}
+        </ItemListStyled>
+        <ItemListStyled className={isOverThan ? 'greenBg' : ''}>
+          <TitleStyledWrapper>
+            <SvgStyled>
               <use href={`${sprite}#icon-running-figure`}></use>
-            </Svg>
-            <Title>The rest of sports</Title>
-          </TitleBlock>
-          <Value>{restOfSports} min</Value>
-        </ItemBlock>
-      </BlockList>
+            </SvgStyled>
+            <TitleStyled>The rest of sports</TitleStyled>
+          </TitleStyledWrapper>
+          <DataValue>{balanceSport ? balanceSport : 110} min</DataValue>
+          {/* <DataValue>{remainingSports} min</DataValue> */}
+        </ItemListStyled>
+      </ListStyled>
 
-      <TextBlock>
-        <SvgText>
+      <TextWrapper>
+        <SvgWrapperText>
           <ExclamationSvg>
             <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
           </ExclamationSvg>
-        </SvgText>
-        <Text>
+        </SvgWrapperText>
+        <TextStyled>
           Record all your meals in a calorie diary every day. This will help me
           be aware of my nutrition and make me responsible for my choices.
-        </Text>
-      </TextBlock>
-    </Container>
+        </TextStyled>
+      </TextWrapper>
+    </ContainerWrap>
   );
 };
 
