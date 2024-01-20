@@ -43,6 +43,36 @@ const ProdTitle = styled.tr`
   line-height: 18px;
   color: ${globalColor.colorOrange1};
 `;
+const BtnDel = styled.button`
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 203px;
+    left: 91%;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 4px;
+  }
+`;
+const Svg = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: #ef8964;
+  transition:
+    stroke 250ms cubic-bezier(0.165, 0.84, 0.44, 1.03),
+    fill 250ms cubic-bezier(0.165, 0.84, 0.44, 1.03);
+
+  &:is(:hover, :focus) {
+    stroke: #e6533c;
+  }
+`;
 const ProdTitleTh = styled.th`
   @media screen and (max-width: 767px) {
     position: absolute;
@@ -110,37 +140,7 @@ const ProdTitleTh = styled.th`
     }
   }
 `;
-const BtnDel = styled.button`
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-
-  @media screen and (max-width: 767px) {
-    position: absolute;
-    top: 203px;
-    left: 91%;
-  }
-
-  @media screen and (min-width: 768px) {
-    padding-left: 4px;
-  }
-`;
-const Svg = styled.svg`
-  width: 20px;
-  height: 20px;
-  stroke: #ef8964;
-  transition:
-    stroke 250ms cubic-bezier(0.165, 0.84, 0.44, 1.03),
-    fill 250ms cubic-bezier(0.165, 0.84, 0.44, 1.03);
-
-  &:is(:hover, :focus) {
-    stroke: #e6533c;
-  }
-`;
-const ProdRecomSpan = styled.span`
+const Recommend = styled.span`
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -156,5 +156,5 @@ export {
   ProdTitleTh,
   BtnDel,
   Svg,
-  ProdRecomSpan,
+  Recommend,
 };

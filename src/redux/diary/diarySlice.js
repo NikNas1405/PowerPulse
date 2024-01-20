@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
 import { addDiaryProducts } from './diaryOperation';
 
 const initialState = {
@@ -32,5 +31,26 @@ const diarySlice = createSlice({
       .addCase(addDiaryProducts.fulfilled, handleAddDiaryProductsFulfilled)
       .addCase(addDiaryProducts.rejected, handleRejected),
 });
+
+// const diarySlice = createSlice({
+//   name: 'diary',
+//   initialState: {
+//     dailyCaloryIntake: 0,
+//     dailyNormOfSports: 0,
+//     caloriesConsumed: 0,
+//     caloriesBurned: 0,
+//     restOfCalories: 0,
+//     restOfSports: 0,
+//     warningCalories: false,
+//     encouragementSports: false,
+//   },
+//   reducers: {
+//     updateDiaryData: (state, action) => {
+//       return { ...state, ...action.payload };
+//     },
+//   },
+// });
+
+// export const { updateDiaryData } = diarySlice.actions;
 
 export const diaryReducer = diarySlice.reducer;

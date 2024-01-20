@@ -1,11 +1,11 @@
 import {
   NavText,
-  NotProductText,
+  NotExercisesText,
   Exercises,
   Svg,
   TitleNav,
   TitleText,
-  Wrap,
+  NavBlock,
 } from './DayExercises.styled';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
@@ -16,7 +16,7 @@ const DayExercises = () => {
     <Exercises>
       <TitleNav>
         <TitleText>Exercises</TitleText>
-        <Wrap>
+        <NavBlock>
           <NavLink
             to="/exercises"
             style={{ display: 'flex', alignItems: 'center' }}
@@ -36,10 +36,9 @@ const DayExercises = () => {
               />
             </Svg>
           </NavLink>
-        </Wrap>
+        </NavBlock>
       </TitleNav>
-
-      <NotProductText>Not found exercises</NotProductText>
+      <NotExercisesText>Not found exercises</NotExercisesText>
     </Exercises>
   );
 };

@@ -41,7 +41,7 @@ const TitleText = styled.p`
   line-height: 18px;
 `;
 
-const Wrap = styled.div`
+const NavBlock = styled.div`
   &:hover span {
     color: ${globalColor.colorOrange1};
   }
@@ -66,7 +66,7 @@ const Svg = styled.svg`
   margin-left: 8px;
 `;
 
-const NotProductText = styled.p`
+const NotExercisesText = styled.p`
   color: #efede84d;
   font-size: 14px;
   line-height: 18px;
@@ -80,4 +80,12 @@ const NotProductText = styled.p`
   }
 `;
 
-export { NotProductText, Svg, NavText, Wrap, TitleText, TitleNav, Exercises };
+export {
+  NotExercisesText,
+  Svg,
+  NavText,
+  NavBlock,
+  TitleText,
+  TitleNav,
+  Exercises,
+};

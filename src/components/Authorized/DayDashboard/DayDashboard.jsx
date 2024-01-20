@@ -1,121 +1,124 @@
-// import PropTypes from 'prop-types';
 import {
   BlockList,
-  ContainerD,
+  Container,
   ExclamationSvg,
   ItemBlock,
   Svg,
-  SvgWrap,
+  SvgText,
   Text,
-  TextWrap,
+  TextBlock,
   Title,
-  TitleWrap,
+  TitleBlock,
   Value,
 } from './DayDashboard.styled';
 import { globalColor } from '../../../styles/root';
 import sprite from '../../../assets/sprite.svg';
-// import { useEffect, useState } from 'react';
+
+// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import {
+//   selectDailyCaloryIntake,
+//   selectDailyNormOfSports,
+//   selectCaloriesConsumed,
+//   selectCaloriesBurned,
+//   selectRestOfCalories,
+//   selectRestOfSports,
+//   selectWarningCalories,
+//   selectEncouragementSports,
+// } from '../../../redux/diary/diarySelector';
+// import { fetchDiaryData } from '../../../redux/diary/diaryOperation';
 
 const DayDashboard = () => {
-  // const [userData, setUserData] = useState({
-  //   dailyCaloryIntake: 0,
-  //   dailyNormOfSports: 0,
-  //   caloriesConsumed: 0,
-  //   caloriesBurned: 0,
-  //   restOfCalories: 0,
-  //   restOfSports: 0,
-  // });
+  //   const dispatch = useDispatch();
+  //   useEffect(() => {
+  //     dispatch(fetchDiaryData());
+  //   }, [dispatch]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
+  //   const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
+  //   const dailyNormOfSports = useSelector(selectDailyNormOfSports);
+  //   const caloriesConsumed = useSelector(selectCaloriesConsumed);
+  //   const caloriesBurned = useSelector(selectCaloriesBurned);
+  //   const restOfCalories = useSelector(selectRestOfCalories);
+  //   const restOfSports = useSelector(selectRestOfSports);
+  //   const warningCalories = useSelector(selectWarningCalories);
+  //   const encouragementSports = useSelector(selectEncouragementSports);
 
-  //       );
-  //       setUserData(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching user data', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
   return (
-    <ContainerD>
+    <Container>
       <BlockList>
         <ItemBlock style={{ backgroundColor: globalColor.colorOrange }}>
-          <TitleWrap>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
             </Svg>
             <Title>Daily calory intake</Title>
-          </TitleWrap>
-          <Value>{2200}</Value>
+          </TitleBlock>
+          <Value>{}</Value>
         </ItemBlock>
 
         <ItemBlock style={{ backgroundColor: globalColor.colorOrange }}>
-          <TitleWrap>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-dumbbell`}></use>
             </Svg>
             <Title>Daily norm of sports</Title>
-          </TitleWrap>
-          <Value>110 min</Value>
+          </TitleBlock>
+          <Value>{}min</Value>
         </ItemBlock>
 
         <ItemBlock>
-          <TitleWrap>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
             </Svg>
             <Title>Calories consumed</Title>
-          </TitleWrap>
-          <Value>{0}</Value>
+          </TitleBlock>
+          <Value>{}</Value>
         </ItemBlock>
 
         <ItemBlock>
-          <TitleWrap>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-calories-1`}></use>
             </Svg>
             <Title>Calories burned</Title>
-          </TitleWrap>
-          <Value>{0}</Value>
+          </TitleBlock>
+          <Value>{}</Value>
         </ItemBlock>
 
-        <ItemBlock caloriesOverConsumed={0}>
-          <TitleWrap>
+        <ItemBlock caloriesOverConsumed={warningCalories}>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-bubble`}></use>
             </Svg>
             <Title>The rest of the calories</Title>
-          </TitleWrap>
-          <Value>{2200}</Value>
+          </TitleBlock>
+          <Value>{}</Value>
         </ItemBlock>
 
-        <ItemBlock caloriesOverBurned={0}>
-          <TitleWrap>
+        <ItemBlock caloriesOverBurned={encouragementSports}>
+          <TitleBlock>
             <Svg>
               <use href={`${sprite}#icon-running-figure`}></use>
             </Svg>
             <Title>The rest of sports</Title>
-          </TitleWrap>
-          <Value>{110} min</Value>
+          </TitleBlock>
+          <Value>{} min</Value>
         </ItemBlock>
       </BlockList>
 
-      <TextWrap>
-        <SvgWrap>
+      <TextBlock>
+        <SvgText>
           <ExclamationSvg>
             <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
           </ExclamationSvg>
-        </SvgWrap>
+        </SvgText>
         <Text>
           Record all your meals in a calorie diary every day. This will help me
           be aware of my nutrition and make me responsible for my choices.
         </Text>
-      </TextWrap>
-    </ContainerD>
+      </TextBlock>
+    </Container>
   );
 };
 

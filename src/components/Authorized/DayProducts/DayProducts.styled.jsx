@@ -38,7 +38,7 @@ const TitleText = styled.p`
   font-size: 14px;
   line-height: 18px;
 `;
-const Wrap = styled.div`
+const NavBlock = styled.div`
   &:hover span {
     color: ${globalColor.colorOrange1};
   }
@@ -72,4 +72,4 @@ const NotProductText = styled.p`
   }
 `;
 
-export { NotProductText, Svg, NavText, Wrap, TitleText, TitleNav, Product };
+export { NotProductText, Svg, NavText, NavBlock, TitleText, TitleNav, Product };

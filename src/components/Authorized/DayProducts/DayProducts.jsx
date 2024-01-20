@@ -5,7 +5,7 @@ import {
   Svg,
   TitleNav,
   TitleText,
-  Wrap,
+  NavBlock,
 } from './DayProducts.styled';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
@@ -17,7 +17,7 @@ const DayProducts = () => {
     <Product>
       <TitleNav>
         <TitleText>Products</TitleText>
-        <Wrap>
+        <NavBlock>
           <NavLink
             to="/products"
             style={{ display: 'flex', alignItems: 'center' }}
@@ -37,7 +37,7 @@ const DayProducts = () => {
               />
             </Svg>
           </NavLink>
-        </Wrap>
+        </NavBlock>
       </TitleNav>
       <DayProdTable />
       <NotProductText>Not found products</NotProductText>
