@@ -19,15 +19,15 @@ export const addDiaryProducts = createAsyncThunk(
   }
 );
 
-// import { updateDiaryData } from './diarySlice';
+import { updateDiaryData } from './diarySlice';
 
-// axios.defaults.baseURL = 'https://powerpulserver.onrender.com/api';
+axios.defaults.baseURL = 'https://powerpulserver.onrender.com/api';
 
-// export const fetchDiaryData = () => async (dispatch) => {
-//   try {
-//     const response = await axios.get('user/diary/:data');
-//     dispatch(updateDiaryData(response.data));
-//   } catch (error) {
-//     console.error('Error fetching diary data:', error);
-//   }
-// };
+export const fetchDiaryData = () => async (dispatch) => {
+  try {
+    const response = await axios.get('user/diary/:data');
+    dispatch(updateDiaryData(response.data));
+  } catch (error) {
+    console.error('Error fetching diary data:', error);
+  }
+};

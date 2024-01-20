@@ -14,34 +14,34 @@ import {
 import { globalColor } from '../../../styles/root';
 import sprite from '../../../assets/sprite.svg';
 
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import {
-//   selectDailyCaloryIntake,
-//   selectDailyNormOfSports,
-//   selectCaloriesConsumed,
-//   selectCaloriesBurned,
-//   selectRestOfCalories,
-//   selectRestOfSports,
-//   selectWarningCalories,
-//   selectEncouragementSports,
-// } from '../../../redux/diary/diarySelector';
-// import { fetchDiaryData } from '../../../redux/diary/diaryOperation';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectDailyCaloryIntake,
+  selectDailyNormOfSports,
+  selectCaloriesConsumed,
+  selectCaloriesBurned,
+  selectRestOfCalories,
+  selectRestOfSports,
+  selectWarningCalories,
+  selectEncouragementSports,
+} from '../../../redux/diary/diarySelector';
+import { fetchDiaryData } from '../../../redux/diary/diaryOperation';
 
 const DayDashboard = () => {
-  //   const dispatch = useDispatch();
-  //   useEffect(() => {
-  //     dispatch(fetchDiaryData());
-  //   }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchDiaryData());
+  }, [dispatch]);
 
-  //   const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
-  //   const dailyNormOfSports = useSelector(selectDailyNormOfSports);
-  //   const caloriesConsumed = useSelector(selectCaloriesConsumed);
-  //   const caloriesBurned = useSelector(selectCaloriesBurned);
-  //   const restOfCalories = useSelector(selectRestOfCalories);
-  //   const restOfSports = useSelector(selectRestOfSports);
-  //   const warningCalories = useSelector(selectWarningCalories);
-  //   const encouragementSports = useSelector(selectEncouragementSports);
+  const dailyCaloryIntake = useSelector(selectDailyCaloryIntake);
+  const dailyNormOfSports = useSelector(selectDailyNormOfSports);
+  const caloriesConsumed = useSelector(selectCaloriesConsumed);
+  const caloriesBurned = useSelector(selectCaloriesBurned);
+  const restOfCalories = useSelector(selectRestOfCalories);
+  const restOfSports = useSelector(selectRestOfSports);
+  const warningCalories = useSelector(selectWarningCalories);
+  const encouragementSports = useSelector(selectEncouragementSports);
 
   return (
     <Container>
@@ -53,7 +53,7 @@ const DayDashboard = () => {
             </Svg>
             <Title>Daily calory intake</Title>
           </TitleBlock>
-          <Value>{}</Value>
+          <Value>{dailyCaloryIntake}</Value>
         </ItemBlock>
 
         <ItemBlock style={{ backgroundColor: globalColor.colorOrange }}>
@@ -63,7 +63,10 @@ const DayDashboard = () => {
             </Svg>
             <Title>Daily norm of sports</Title>
           </TitleBlock>
-          <Value>{}min</Value>
+          <Value>
+            {dailyNormOfSports}
+            min
+          </Value>
         </ItemBlock>
 
         <ItemBlock>
@@ -73,7 +76,7 @@ const DayDashboard = () => {
             </Svg>
             <Title>Calories consumed</Title>
           </TitleBlock>
-          <Value>{}</Value>
+          <Value>{caloriesConsumed}</Value>
         </ItemBlock>
 
         <ItemBlock>
@@ -83,7 +86,7 @@ const DayDashboard = () => {
             </Svg>
             <Title>Calories burned</Title>
           </TitleBlock>
-          <Value>{}</Value>
+          <Value>{caloriesBurned}</Value>
         </ItemBlock>
 
         <ItemBlock caloriesOverConsumed={warningCalories}>
@@ -93,7 +96,7 @@ const DayDashboard = () => {
             </Svg>
             <Title>The rest of the calories</Title>
           </TitleBlock>
-          <Value>{}</Value>
+          <Value>{restOfCalories}</Value>
         </ItemBlock>
 
         <ItemBlock caloriesOverBurned={encouragementSports}>
@@ -103,7 +106,10 @@ const DayDashboard = () => {
             </Svg>
             <Title>The rest of sports</Title>
           </TitleBlock>
-          <Value>{} min</Value>
+          <Value>
+            {restOfSports}
+            min
+          </Value>
         </ItemBlock>
       </BlockList>
 
