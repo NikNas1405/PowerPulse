@@ -1,4 +1,4 @@
-import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as C,C as v,a}from"./index-ad0607ca.js";import{u as F,c as z,a as m}from"./index.esm-cfa96c6c.js";import{S as k}from"./StatisticsInfo-70e6f8ea.js";import{L as E}from"./Logo-80a3e387.js";import"./hoist-non-react-statics.cjs-60a9c4b4.js";const I=o.div`
+import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as C,C as v,a}from"./index-5813a213.js";import{u as F,c as z,a as m}from"./index.esm-d9c6c67a.js";import{S as k}from"./StatisticsInfo-f7c05d8b.js";import{L as E}from"./Logo-32348d4d.js";import"./hoist-non-react-statics.cjs-8c8a37d1.js";const I=o.div`
   display: flex;
   position: relative;
 `,R=o.div`
@@ -7,7 +7,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as C,C as v,a}f
     padding: 32px 0;
   }
   @media screen and (min-width: 1440px) {
-    width: 62.3%;
+    width: 56%;
   }
 `,W=o.h2`
   @media screen and (min-width: 320px) {
@@ -267,6 +267,6 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as C,C as v,a}f
     margin: 0;
   }
   @media screen and (min-width: 1440px) {
-    width: 37.7%;
+    width: 45%;
   }
 `,U=()=>{const[r,t]=f.useState(!1),[s,u]=f.useState(!1),j=$(),b=d=>!["isValidationCompleted","haserror"].includes(d),g=()=>{t(!r),u(!1)},i=F({initialValues:{name:"",email:"",password:""},validationSchema:z().shape({name:m().required("Name is required"),email:m().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:m().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:d=>{console.log(d),j(S({name:d.name,email:d.email,password:d.password}))}});return e.jsx(C,{shouldForwardProp:b,children:e.jsx(v,{children:e.jsxs(I,{children:[e.jsxs(R,{children:[e.jsx(E,{}),e.jsx(W,{children:"Sign up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(q,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(L,{children:[e.jsxs(c,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!s&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success name"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!s&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success email"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!s&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye`})}):e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success password"]})})]})]}),e.jsx(T,{type:"Submit",children:"Sign Up"})]}),e.jsxs(V,{children:[e.jsx(B,{children:"Already have an account?"}),e.jsx(D,{to:"/signin",children:"Sing In"})]})]}),e.jsx(N,{children:e.jsx(k,{})})]})})})},_=()=>e.jsx(U,{});export{_ as default};

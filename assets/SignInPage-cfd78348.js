@@ -1,4 +1,4 @@
-import{s as n,g as o,n as p,N as y,r as m,u as $,l as S,j as e,M as v,C,a as s}from"./index-ad0607ca.js";import{u as F,c as z,a as x}from"./index.esm-cfa96c6c.js";import{S as I}from"./StatisticsInfo-70e6f8ea.js";import{L as k}from"./Logo-80a3e387.js";import"./hoist-non-react-statics.cjs-60a9c4b4.js";const R=n.div`
+import{s as n,g as o,n as p,N as y,r as m,u as $,l as S,j as e,M as v,C,a as s}from"./index-5813a213.js";import{u as F,c as z,a as x}from"./index.esm-d9c6c67a.js";import{S as I}from"./StatisticsInfo-f7c05d8b.js";import{L as k}from"./Logo-32348d4d.js";import"./hoist-non-react-statics.cjs-8c8a37d1.js";const R=n.div`
   display: flex;
   position: relative;
 
@@ -11,7 +11,7 @@ import{s as n,g as o,n as p,N as y,r as m,u as $,l as S,j as e,M as v,C,a as s}f
     padding: 32px 0;
   }
   @media screen and (min-width: 1440px) {
-    width: 56%;
+    width: 48%;
     margin-right: 178px;
   }
 `,W=n.h2`
@@ -257,6 +257,6 @@ import{s as n,g as o,n as p,N as y,r as m,u as $,l as S,j as e,M as v,C,a as s}f
     z-index: -1;
   }
   @media screen and (min-width: 1440px) {
-    width: 44%;
+    width: 52%;
   }
 `,O=()=>{const[r,t]=m.useState(!1),[d,u]=m.useState(!1),b=$(),j=a=>!["isValidationCompleted"].includes(a),c=()=>{t(!r),u(!1)},i=F({initialValues:{email:"",password:""},validationSchema:z().shape({email:x().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:x().min(6,"at least 6 characters").required("Password is required")}),onSubmit:a=>{console.log(a),b(S({email:a.email,password:a.password})),i.resetForm()}});return e.jsx(v,{shouldForwardProp:j,children:e.jsx(C,{children:e.jsxs(R,{children:[e.jsxs(E,{children:[e.jsx(k,{}),e.jsx(W,{children:"Sign in"}),e.jsx(P,{children:"Welcome! Please enter your credentials to login to the platform:"}),e.jsxs(L,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(D,{children:[e.jsxs(h,{children:[e.jsx(g,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!d&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(w,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success email"]})})]}),e.jsxs(h,{children:[e.jsx(g,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!d&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(f,{onClick:c,children:e.jsx("use",{href:`${s}#icon-eye`})}):e.jsx(f,{onClick:c,children:e.jsx("use",{href:`${s}#icon-eye-off`})})}),i.touched.password&&e.jsx(w,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success password"]})})]})]}),e.jsx(V,{type:"Submit",children:"Sign In"})]}),e.jsxs(q,{children:[e.jsx(B,{children:"Don’t have an account?"}),e.jsx(T,{to:"/signup",children:"Sing Up"})]})]}),e.jsx(G,{children:e.jsx(I,{})})]})})})},_=()=>e.jsx(O,{});export{_ as default};

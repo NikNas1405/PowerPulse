@@ -1,4 +1,4 @@
-import{s as e,g as n,N as t,j as i,M as d,C as x,a}from"./index-ad0607ca.js";import{S as r}from"./StatisticsInfo-70e6f8ea.js";import{L as s}from"./Logo-80a3e387.js";const h=e.div`
+import{s as e,g as n,N as t,j as i,M as d,C as x,a}from"./index-5813a213.js";import{S as r}from"./StatisticsInfo-f7c05d8b.js";import{L as s}from"./Logo-32348d4d.js";const h=e.div`
   @media screen and (min-width: 320px) {
     position: relative;
   }
@@ -21,7 +21,7 @@ import{s as e,g as n,N as t,j as i,M as d,C as x,a}from"./index-ad0607ca.js";imp
   }
 
   @media screen and (min-width: 1440px) {
-    width: 62.8%;
+    width: 56%;
   }
 `,m=e.h1`
   width: 300px;
@@ -179,6 +179,6 @@ import{s as e,g as n,N as t,j as i,M as d,C as x,a}from"./index-ad0607ca.js";imp
   }
 
   @media screen and (min-width: 768px) {
-    width: 38%;
+    width: 45%;
   }
 `,v=()=>{const p=o=>!["isWelcomePage"].includes(o);return i.jsx(d,{shouldForwardProp:p,children:i.jsx(x,{children:i.jsxs(h,{children:[i.jsxs(l,{children:[i.jsx(s,{}),i.jsx(m,{children:"Transforming your body shape with Power Pulse"}),i.jsx(c,{children:i.jsx("use",{href:`${a}#icon-line`})}),i.jsxs(g,{children:[i.jsx(w,{to:"/signup",children:"Sign Up"}),i.jsx(f,{to:"/signin",children:"Sign In"})]})]}),i.jsx(u,{children:i.jsx(r,{isWelcomePage:!0})})]})})})};export{v as default};
