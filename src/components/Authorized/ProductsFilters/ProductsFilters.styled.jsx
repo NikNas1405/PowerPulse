@@ -32,7 +32,7 @@ export const InputPartWrapper = styled.div`
 
 export const InputStyled = styled.input`
   width: 100%;
-  padding: 14px;
+  padding: 14px 68px 14px 14px;
   height: 46px;
   border-radius: 12px;
   border: 1px solid ${globalColor.colorInput};
@@ -362,3 +362,22 @@ export const typesStyles = {
     color: `${globalColor.colorWhite}`,
   }),
 };
+
+
+
+export const ErrorMessage = styled.p`
+  display: flex;
+  color: ${globalColor.colorSecondaryRed};
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.5;
+  position: absolute;
+  word-wrap: break-word;
+
+  > svg {
+    width: 16px;
+    height: 16px;
+    fill: ${globalColor.colorSecondaryRed};
+  }
+
+`;

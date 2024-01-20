@@ -9,16 +9,13 @@ import {
   Content,
 } from './ErrorPage.styled';
 import { Logo } from '../../components/Logo/Logo';
-import { useAuth } from '../../hooks/useAuth';
 
 const ErrorPage = () => {
-  const { isLoggedIn } = useAuth();
-
   return (
     <ErrorContainer>
       <BgText>
         <Wrapper>
-          {!isLoggedIn && <Logo />}
+          <Logo />
           <Content>
             <TitleError>404</TitleError>
             <DescriptionError>

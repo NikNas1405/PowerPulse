@@ -18,7 +18,7 @@ body {
    color: #fff;
    width: 100%;
    height: 100vh;
-  margin: 0;
+   margin: 0;
 
     overflow: auto;
   &::-webkit-scrollbar {

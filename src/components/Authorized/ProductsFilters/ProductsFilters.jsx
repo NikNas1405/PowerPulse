@@ -18,6 +18,7 @@ import {
   DropdownSelectPartWrapper,
   categoriesStyles,
   typesStyles,
+  ErrorMessage,
 } from './ProductsFilters.styled';
 
 import sprite from '../../../assets/sprite.svg';
@@ -26,6 +27,8 @@ export const ProductsFilters = ({ categories }) => {
   const dispatch = useDispatch();
 
   const [isActive, setIsActive] = useState(false);
+  const [error, setError] = useState('');
+  const [isError, setIsError] = useState(false);
   const [searchByProductTitle, setSearchByProductTitle] = useState('');
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
@@ -41,28 +44,44 @@ export const ProductsFilters = ({ categories }) => {
   const typesArray = [
     { value: 'all', label: 'All' },
     { value: 'recommended', label: 'Recommended ' },
-    { value: 'notRecommended', label: 'Not recommended' },
+    // { value: 'notRecommended', label: 'Not recommended' },
+    { value: 'not-recommended', label: 'Not recommended' },
   ];
 
   const applyFilter = (e) => {
     if (e) {
       e.preventDefault();
     }
+
     const formData = {
       title: searchByProductTitle || '',
       category: selectedCategory || null,
       filter: selectedType || 'all',
     };
 
-    console.log(formData);
+    const isTitleValid = searchByProductTitle.length <= 40;
 
-    dispatch(fetchProducts(formData));
+    if (!isTitleValid) {
+      setError(
+        `Please enter up to 30 characters, now ${searchByProductTitle.length}`
+      );
+      setIsError(true);
+    } else {
+      setError('');
+      setIsError(false);
+
+      try {
+        dispatch(fetchProducts(formData));
+      } catch (error) {
+        toast.error('Network error:', error);
+      }
+    }
   };
 
   const handleInputChange = (e) => {
     const text = e.target.value;
     setIsActive(text.length > 0);
-    setSearchByProductTitle(text.trim());
+    setSearchByProductTitle(text);
   };
 
   const handleCleanButton = () => {
@@ -74,8 +93,6 @@ export const ProductsFilters = ({ categories }) => {
       category: selectedCategory || null,
       filter: selectedType || 'all',
     };
-
-    console.log(formData);
 
     dispatch(fetchProducts(formData));
   };
@@ -90,8 +107,6 @@ export const ProductsFilters = ({ categories }) => {
       filter: selectedType || 'all',
     };
 
-    console.log(formData);
-
     dispatch(fetchProducts(formData));
   };
 
@@ -105,14 +120,12 @@ export const ProductsFilters = ({ categories }) => {
       filter: value,
     };
 
-    console.log(formData);
-
     dispatch(fetchProducts(formData));
   };
 
   return (
     <>
-      <StyledForm onSubmit={applyFilter}>
+      <StyledForm onSubmit={applyFilter} noValidate>
         <InputPartWrapper>
           <InputStyled
             type="text"
@@ -135,6 +148,15 @@ export const ProductsFilters = ({ categories }) => {
               </SvgWrapper>
             </button>
           </ButtonWrapper>
+
+          {isError && (
+            <ErrorMessage>
+              <svg>
+                <use href={sprite + '#icon-checkbox-circle-fill'} />
+              </svg>
+              {error}
+            </ErrorMessage>
+          )}
         </InputPartWrapper>
         <DropdownSelectPartWrapper>
           <Select
