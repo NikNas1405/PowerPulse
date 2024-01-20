@@ -1,12 +1,15 @@
-import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./index-b9b3a3d1.js";import{u as C,c as F,a as m}from"./index.esm-f35a84f0.js";import{S as z}from"./StatisticsInfo-c4f017fd.js";import"./hoist-non-react-statics.cjs-f221e854.js";import"./bgMobile@2x-26480d49.js";const k=o.div`
+import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as C,C as v,a}from"./index-ad0607ca.js";import{u as F,c as z,a as m}from"./index.esm-cfa96c6c.js";import{S as k}from"./StatisticsInfo-70e6f8ea.js";import{L as E}from"./Logo-80a3e387.js";import"./hoist-non-react-statics.cjs-60a9c4b4.js";const I=o.div`
   display: flex;
   position: relative;
-`,E=o.div`
-  @media screen and (min-width: 1440px) {
-    width: 55%;
-    margin-right: 178px;
+`,R=o.div`
+  padding: 24px 0;
+  @media screen and (min-width: 768px) {
+    padding: 32px 0;
   }
-`,I=o.h2`
+  @media screen and (min-width: 1440px) {
+    width: 62.3%;
+  }
+`,W=o.h2`
   @media screen and (min-width: 320px) {
     color: ${n.colorWhite};
     font-family: Roboto;
@@ -14,8 +17,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    /* margin-top: 90px; */
-    margin-top: 127px;
+    margin-top: 90px;
     margin-bottom: 14px;
   }
 
@@ -25,16 +27,14 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
   @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 44px;
-    /* margin-top: 140px; */
-    margin-top: 189px;
+    margin-top: 140px;
     margin-bottom: 16px;
   }
 
   @media screen and (min-width: 1440px) {
-    /* margin-top: 151px; */
-    margin-top: 200px;
+    margin-top: 151px;
   }
-`,R=o.p`
+`,P=o.p`
   @media screen and (min-width: 320px) {
     width: 335px;
     color: ${n.colorInput};
@@ -60,7 +60,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
   @media screen and (min-width: 1440px) {
     width: 496px;
   }
-`,W=o.form``,P=o.div`
+`,q=o.form``,L=o.div`
   @media screen and (min-width: 320px) {
     display: flex;
     flex-direction: column;
@@ -163,7 +163,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
   }
   width: 16px;
   height: 16px;
-`,u=o.svg`
+`,w=o.svg`
   position: absolute;
   width: 20px;
   height: 20px;
@@ -183,7 +183,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
 
   @media screen and (min-width: 1440px) {
   }
-`,q=o.button`
+`,T=o.button`
   @media screen and (min-width: 320px) {
     position: sticky;
     display: flex;
@@ -211,12 +211,13 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
-  }
-
-  @media screen and (min-width: 1440px) {
+    width: 190px;
     padding: 16px 60px;
     font-size: 20px;
     line-height: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
     width: 192px;
 
     &:hover,
@@ -224,11 +225,11 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
       background-color: ${n.colorOrange1};
     }
   }
-`,T=o.div`
+`,V=o.div`
   display: flex;
   align-items: center;
   gap: 5px;
-`,V=o.p`
+`,B=o.p`
   color: rgba(239, 237, 232, 0.6);
   font-feature-settings:
     'clig' off,
@@ -238,7 +239,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-`,B=o(y)`
+`,D=o(y)`
   color: ${n.colorWhite};
   font-feature-settings:
     'clig' off,
@@ -249,16 +250,23 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,j as e,M as v,a}from"./i
   font-weight: 400;
   line-height: 18px;
   text-decoration-line: underline;
-`,D=o.div`
+`,N=o.div`
   @media screen and (min-width: 320px) and (max-width: 767px) {
     position: absolute;
     z-index: -1;
-    top: 40%;
-    left: 20%;
+    top: 45.9%;
+    left: 17.1%;
+    margin: 0;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    top: 15%;
-    left: 5%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    margin: 0;
   }
-`,L=()=>{const[r,t]=f.useState(!1),[s,w]=f.useState(!1),j=$(),b=d=>!["isValidationCompleted","haserror"].includes(d),g=()=>{t(!r),w(!1)},i=C({initialValues:{name:"",email:"",password:""},validationSchema:F().shape({name:m().required("Name is required"),email:m().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:m().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:d=>{console.log(d),j(S({name:d.name,email:d.email,password:d.password}))}});return e.jsx(v,{shouldForwardProp:b,children:e.jsxs(k,{children:[e.jsxs(E,{children:[e.jsx(I,{children:"Sign up"}),e.jsx(R,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(W,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(P,{children:[e.jsxs(c,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!s&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success name"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!s&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success email"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!s&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(u,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye`})}):e.jsx(u,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success password"]})})]})]}),e.jsx(q,{type:"Submit",children:"Sign Up"})]}),e.jsxs(T,{children:[e.jsx(V,{children:"Already have an account?"}),e.jsx(B,{to:"/signin",children:"Sing In"})]})]}),e.jsx(D,{children:e.jsx(z,{})})]})})},M=()=>e.jsx(L,{});export{M as default};
+  @media screen and (min-width: 1440px) {
+    width: 37.7%;
+  }
+`,U=()=>{const[r,t]=f.useState(!1),[s,u]=f.useState(!1),j=$(),b=d=>!["isValidationCompleted","haserror"].includes(d),g=()=>{t(!r),u(!1)},i=F({initialValues:{name:"",email:"",password:""},validationSchema:z().shape({name:m().required("Name is required"),email:m().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:m().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:d=>{console.log(d),j(S({name:d.name,email:d.email,password:d.password}))}});return e.jsx(C,{shouldForwardProp:b,children:e.jsx(v,{children:e.jsxs(I,{children:[e.jsxs(R,{children:[e.jsx(E,{}),e.jsx(W,{children:"Sign up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(q,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(L,{children:[e.jsxs(c,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!s&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success name"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!s&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success email"]})})]}),e.jsxs(c,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!s&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye`})}):e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${a}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${a}#icon-green`})}),"Success password"]})})]})]}),e.jsx(T,{type:"Submit",children:"Sign Up"})]}),e.jsxs(V,{children:[e.jsx(B,{children:"Already have an account?"}),e.jsx(D,{to:"/signin",children:"Sing In"})]})]}),e.jsx(N,{children:e.jsx(k,{})})]})})})},_=()=>e.jsx(U,{});export{_ as default};

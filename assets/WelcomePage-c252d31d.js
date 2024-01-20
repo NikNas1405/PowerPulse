@@ -1,5 +1,6 @@
-import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as o}from"./StatisticsInfo-c4f017fd.js";import"./bgMobile@2x-26480d49.js";const d=e.div`
+import{s as e,g as n,N as t,j as i,M as d,C as x,a}from"./index-ad0607ca.js";import{S as r}from"./StatisticsInfo-70e6f8ea.js";import{L as s}from"./Logo-80a3e387.js";const h=e.div`
   @media screen and (min-width: 320px) {
+    position: relative;
   }
 
   @media screen and (min-width: 375px) {
@@ -11,31 +12,21 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
   @media screen and (min-width: 1440px) {
     display: flex;
   }
-`,x=e.div`
-  /* margin-top: 90px; */
+`,l=e.div`
   position: relative;
-  margin-top: 127px;
-
-  @media screen and (min-width: 320px) {
-  }
-
-  @media screen and (min-width: 375px) {
-  }
+  padding: 24px 0;
 
   @media screen and (min-width: 768px) {
-    /* margin-top: 140px; */
-    margin-top: 189px;
+    padding: 32px 0;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 55%;
-    /* margin-top: 151px; */
-    margin-top: 200px;
-    margin-right: 76px;
+    width: 62.8%;
   }
-`,a=e.h1`
+`,m=e.h1`
   width: 300px;
   z-index: 1;
+  margin-top: 90px;
 
   @media screen and (min-width: 375px) {
     color: ${n.colorWhite};
@@ -55,6 +46,7 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
     letter-spacing: 0.7px;
     width: 598px;
     margin-bottom: 64px;
+    margin-top: 140px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -62,24 +54,21 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
     line-height: 78px;
     letter-spacing: 0.7px;
     width: 598px;
+    margin-top: 151px;
   }
-`,r=e.svg`
+`,c=e.svg`
   position: absolute;
-  width: 92px;
-  height: 30px;
-  top: 36%;
-  left: -5%;
 
   @media screen and (min-width: 320px) {
     width: 92px;
     height: 30px;
-    top: 36%;
-    left: -4%;
+    top: 167px;
+    left: -13px;
   }
 
   @media screen and (min-width: 375px) {
-    top: 35.7%;
-    left: -2%;
+    top: 169px;
+    left: -8px;
     width: 98px;
     height: 35px;
   }
@@ -88,15 +77,17 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
     width: 185px;
     height: 67px;
     margin-top: 83px;
+    top: 190px;
+    left: -18px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 185px;
     height: 67px;
-    top: 13%;
-    left: -3%;
+    top: 284px;
+    left: -17px;
   }
-`,s=e.div`
+`,g=e.div`
   display: flex;
   gap: 14px;
   width: 335px;
@@ -106,13 +97,13 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 768px;
-    margin-top: 282px;
+    margin-top: 424px;
   }
   @media screen and (min-width: 1440px) {
     width: 768px;
     gap: 20px;
   }
-`,h=e(t)`
+`,w=e(t)`
   display: flex;
   padding: 12px 34px;
   justify-content: center;
@@ -144,7 +135,7 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
   &:focus {
     background-color: ${n.colorOrange1};
   }
-`,m=e(t)`
+`,f=e(t)`
   display: flex;
   padding: 12px 40px;
   justify-content: center;
@@ -173,4 +164,21 @@ import{s as e,g as n,N as t,j as i,a as p}from"./index-b9b3a3d1.js";import{S as 
   &:focus {
     border: 1px solid ${n.colorOrange};
   }
-`,w=()=>i.jsxs(d,{children:[i.jsxs(x,{children:[i.jsx(a,{children:"Transforming your body shape with Power Pulse"}),i.jsx(r,{children:i.jsx("use",{href:`${p}#icon-line`})}),i.jsxs(s,{children:[i.jsx(h,{to:"/signup",children:"Sign Up"}),i.jsx(m,{to:"/signin",children:"Sign In"})]})]}),i.jsx(o,{})]});export{w as default};
+`,u=e.div`
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    position: absolute;
+    top: 98.2%;
+    left: 17%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1439px) {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 38%;
+  }
+`,v=()=>{const p=o=>!["isWelcomePage"].includes(o);return i.jsx(d,{shouldForwardProp:p,children:i.jsx(x,{children:i.jsxs(h,{children:[i.jsxs(l,{children:[i.jsx(s,{}),i.jsx(m,{children:"Transforming your body shape with Power Pulse"}),i.jsx(c,{children:i.jsx("use",{href:`${a}#icon-line`})}),i.jsxs(g,{children:[i.jsx(w,{to:"/signup",children:"Sign Up"}),i.jsx(f,{to:"/signin",children:"Sign In"})]})]}),i.jsx(u,{children:i.jsx(r,{isWelcomePage:!0})})]})})})};export{v as default};

@@ -1,53 +1,122 @@
-import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as p,c as a,d as r,e as x,f as o}from"./bgMobile@2x-26480d49.js";const h=e.div`
+import{s as e,n as a,g as n,j as i,a as t}from"./index-ad0607ca.js";import{b as r,a as p,c as o,d as x,e as g,f as s}from"./Logo-80a3e387.js";const h=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
-    background-image: url(${t});
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    width: 320px;
-    height: 669px;
+    ${({isWelcomePage:d})=>d?a`
+            background-image: linear-gradient(
+                170deg,
+                #040404 3.66%,
+                rgba(4, 4, 4, 0) 19.15%
+              ),
+              linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+              url(${r});
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top;
+            width: 320px;
+            height: 609px;
 
-    @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
-      screen and (min-resolution: 192dpi) and (min-width: 320px),
-      screen and (min-resolution: 2dppx) and (min-width: 320px) {
-      background-image: url(${p});
-    }
+            @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
+              screen and (min-resolution: 192dpi) and (min-width: 320px),
+              screen and (min-resolution: 2dppx) and (min-width: 320px) {
+              background-image: linear-gradient(
+                  170deg,
+                  #040404 3.66%,
+                  rgba(4, 4, 4, 0) 19.15%
+                ),
+                linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                url(${p});
+            }
+          `:a`
+            background-image: linear-gradient(
+                168deg,
+                rgb(4, 4, 4) 14.75%,
+                rgba(4, 4, 4, 0) 52.97%
+              ),
+              linear-gradient(
+                73deg,
+                rgb(4, 4, 4) 6.11%,
+                rgba(4, 4, 4, 0) 66.68%
+              ),
+              url(${r});
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: top;
+            width: 320px;
+            height: 609px;
+
+            @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
+              screen and (min-resolution: 192dpi) and (min-width: 320px),
+              screen and (min-resolution: 2dppx) and (min-width: 320px) {
+              background-image: linear-gradient(
+                  168deg,
+                  #040404 14.75%,
+                  rgba(4, 4, 4, 0) 52.97%
+                ),
+                linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+                url(${p});
+            }
+          `}
   }
-
   @media screen and (min-width: 375px) {
-    width: 446px;
-    height: 669px;
     flex-shrink: 0;
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url(${a});
+    background-image: linear-gradient(
+        170deg,
+        #040404 3.66%,
+        rgba(4, 4, 4, 0) 19.15%
+      ),
+      linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+      url(${o});
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 670px;
-    height: 800px;
-    background-position: right;
-    position: relative;
+    height: 1005px;
+    background-position: left;
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 100px;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 768px),
       screen and (min-resolution: 192dpi) and (min-width: 768px),
       screen and (min-resolution: 2dppx) and (min-width: 768px) {
-      background-image: url(${r});
+      background-image: linear-gradient(
+          168deg,
+          #040404 14.75%,
+          rgba(4, 4, 4, 0) 52.97%
+        ),
+        linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
+        url(${x});
     }
   }
 
   @media screen and (min-width: 1440px) {
-    background-image: url(${x});
+    background-image: linear-gradient(
+        80deg,
+        #040404 -2.45%,
+        rgba(4, 4, 4, 0) 68.17%
+      ),
+      url(${g});
     width: 670px;
     height: 800px;
+    margin: 0;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 1440px),
       screen and (min-resolution: 192dpi) and (min-width: 1440px),
       screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-      background-image: url(${o});
+      background-image: linear-gradient(
+          80deg,
+          #040404 -2.45%,
+          rgba(4, 4, 4, 0) 68.17%
+        ),
+        url(${s});
+      background-position: right;
+      margin: 0;
     }
   }
-`,s=e.div`
+`,m=e.div`
   position: absolute;
   display: flex;
   width: 146px;
@@ -56,19 +125,18 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
   flex-shrink: 0;
   border-radius: 12px;
   padding: 14px 18px;
-  margin-top: 383px;
-  margin-left: 123px;
+  margin-top: 344px;
+  margin-left: 48px;
 
   @media screen and (min-width: 375px) {
-    margin-left: 123px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
     width: 206px;
     height: 96px;
     padding: 20px 23px 20px 36px;
-    margin-top: 512px;
-    margin-left: 277px;
+    margin-top: 670px;
+    margin-left: 0px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -80,7 +148,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     margin-top: 0;
     margin-left: 0;
   }
-`,m=e.div`
+`,c=e.div`
   padding: 8px;
   border-radius: 50%;
   width: 30px;
@@ -106,7 +174,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     margin-right: 12px;
     padding: 10px;
   }
-`,c=e.svg`
+`,l=e.svg`
   width: 14px;
   height: 14px;
   fill: ${n.colorWhite};
@@ -123,7 +191,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     width: 20px;
     height: 20px;
   }
-`,g=e.svg`
+`,w=e.svg`
   @media screen and (min-width: 320px) {
     width: 12px;
     height: 12px;
@@ -134,7 +202,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     width: 16px;
     height: 16px;
   }
-`,l=e.p`
+`,b=e.p`
   margin-bottom: 8px;
   color: ${n.colorWhite};
   font-family: Roboto;
@@ -153,7 +221,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
 
   @media screen and (min-width: 1440px) {
   }
-`,w=e.p`
+`,u=e.p`
   color: rgba(239, 237, 232, 0.65);
   font-family: Roboto;
   font-size: 12px;
@@ -179,14 +247,12 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     border-radius: 12px;
     background-color: ${n.colorOrange1};
     padding: 14px 18px;
-    margin-top: 492px;
-    margin-left: 200px;
+    margin-top: 484px;
+    margin-left: 170px;
   }
 
   @media screen and (min-width: 375px) {
     width: 119px;
-    margin-top: 548px;
-    margin-left: 253px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
@@ -194,8 +260,8 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     height: 110px;
     flex-shrink: 0;
     padding: 14px 28px 14px 38px;
-    margin-top: 657px;
-    margin-left: 480px;
+    margin-top: 830px;
+    margin-left: 275px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -206,7 +272,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     margin-top: 0;
     margin-left: 0;
   }
-`,u=e.div`
+`,k=e.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -220,11 +286,11 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     width: 24px;
     height: 24px;
   }
-`,b=e.div`
+`,v=e.div`
   display: flex;
   align-items: baseline;
   gap: 11px;
-`,k=e.p`
+`,$=e.p`
   color: ${n.colorWhite};
   font-family: Roboto;
   font-size: 24px;
@@ -244,7 +310,7 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
 
   @media screen and (min-width: 1440px) {
   }
-`,v=e.span`
+`,j=e.span`
   color: rgba(239, 237, 232, 0.65);
   font-family: Roboto;
   font-size: 12px;
@@ -264,4 +330,4 @@ import{s as e,g as n,j as i,a as d}from"./index-b9b3a3d1.js";import{b as t,a as 
     font-size: 16px;
     line-height: 24px;
   }
-`,$=()=>i.jsxs(h,{children:[i.jsxs(s,{children:[i.jsx(m,{children:i.jsx(c,{children:i.jsx("use",{href:`${d}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(l,{children:"350+"}),i.jsx(w,{children:"Video tutorial"})]})]}),i.jsxs(f,{children:[i.jsx(u,{children:i.jsx(g,{children:i.jsx("use",{href:`${d}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(b,{children:[i.jsx(k,{children:"500"}),i.jsx(v,{children:"cal"})]})]})]});export{$ as S};
+`,W=({isWelcomePage:d})=>i.jsxs(h,{isWelcomePage:d,children:[i.jsxs(m,{children:[i.jsx(c,{children:i.jsx(l,{children:i.jsx("use",{href:`${t}#icon-play`})})}),i.jsxs("div",{children:[i.jsx(b,{children:"350+"}),i.jsx(u,{children:"Video tutorial"})]})]}),i.jsxs(f,{children:[i.jsx(k,{children:i.jsx(w,{children:i.jsx("use",{href:`${t}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(v,{children:[i.jsx($,{children:"500"}),i.jsx(j,{children:"cal"})]})]})]});export{W as S};
