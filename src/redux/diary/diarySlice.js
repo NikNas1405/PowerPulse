@@ -4,8 +4,8 @@ import {
   getAllDiaryInformation,
   addDiaryProducts,
   deleteDiaryProducts,
-  // addDiaryExercise,
-  // deleteDiaryExercise,
+  addDiaryExercise,
+  deleteDiaryExercise,
 } from './diaryOperation';
 
 const initialState = {
@@ -47,21 +47,21 @@ const handleDeleteDiaryProductsFulfilled = (state, action) => {
   state.consumedProductsArray.splice(index, 1);
 };
 
-// const handleAddDiaryExerciseFulfilled = (state, action) => {
-//   state.isLoading = false;
-//   state.error = null;
-//   state.completedExercisesArray.push(action.payload);
-// };
+const handleAddDiaryExerciseFulfilled = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
+  state.completedExercisesArray.push(action.payload);
+};
 
-// const handleDeleteDiaryExerciseFulfilled = (state, action) => {
-//   state.isLoading = false;
-//   state.error = null;
+const handleDeleteDiaryExerciseFulfilled = (state, action) => {
+  state.isLoading = false;
+  state.error = null;
 
-//   const index = state.completedExercisesArray.findIndex(
-//     (product) => product._id === action.payload._id
-//   );
-//   state.completedExercisesArray.splice(index, 1);
-// };
+  const index = state.completedExercisesArray.findIndex(
+    (product) => product._id === action.payload._id
+  );
+  state.completedExercisesArray.splice(index, 1);
+};
 
 const diarySlice = createSlice({
   name: 'diary',
@@ -82,16 +82,16 @@ const diarySlice = createSlice({
         deleteDiaryProducts.fulfilled,
         handleDeleteDiaryProductsFulfilled
       )
-      .addCase(deleteDiaryProducts.rejected, handleRejected),
-  // .addCase(addDiaryExercise.pending, handlePending)
-  // .addCase(addDiaryExercise.fulfilled, handleAddDiaryExerciseFulfilled)
-  // .addCase(addDiaryExercise.rejected, handleRejected)
-  // .addCase(deleteDiaryExercise.pending, handlePending)
-  // .addCase(
-  //   deleteDiaryExercise.fulfilled,
-  //   handleDeleteDiaryExerciseFulfilled
-  // )
-  // .addCase(deleteDiaryExercise.rejected, handleRejected),
+      .addCase(deleteDiaryProducts.rejected, handleRejected)
+      .addCase(addDiaryExercise.pending, handlePending)
+      .addCase(addDiaryExercise.fulfilled, handleAddDiaryExerciseFulfilled)
+      .addCase(addDiaryExercise.rejected, handleRejected)
+      .addCase(deleteDiaryExercise.pending, handlePending)
+      .addCase(
+        deleteDiaryExercise.fulfilled,
+        handleDeleteDiaryExerciseFulfilled
+      )
+      .addCase(deleteDiaryExercise.rejected, handleRejected),
 });
 
 export const diaryReducer = diarySlice.reducer;
