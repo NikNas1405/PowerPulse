@@ -33,8 +33,14 @@ export const HeaderContainer = styled.div`
 `;
 
 export const NavLinkWrapper = styled.div`
-  margin-right: 96px;
-  
+  @media screen and (min-width: 320px) {
+    margin-right: 20vw;
+  }
+
+  @media screen and (min-width: 375px) {
+    margin-right: 96px;
+  }
+
   @media screen and (min-width: 768px) {
     margin-right: 410px;
   }
@@ -59,7 +65,6 @@ export const LogoNavLink = styled(NavLink)`
 `;
 
 export const Svg = styled.svg`
-
   fill: ${globalColor.colorOrange};
 
   @media screen and (min-width: 320px) {
@@ -81,7 +86,6 @@ export const Svg = styled.svg`
   }
 `;
 export const SvgPowerPlus = styled.svg`
-
   fill: ${globalColor.colorWhite};
 
   @media screen and (min-width: 320px) {
