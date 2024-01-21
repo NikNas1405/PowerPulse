@@ -36,7 +36,7 @@ export const fetchProducts = createAsyncThunk(
     }
 
     try {
-      const response = await axios.get(`/products/:allOnFilter`, {
+      const response = await axios.get(`/products/filter`, {
         params,
       });
       return response.data.dataUser;

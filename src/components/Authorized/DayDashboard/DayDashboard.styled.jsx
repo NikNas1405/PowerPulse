@@ -17,14 +17,11 @@ export const ContainerWrap = styled.div`
 
 export const ListStyled = styled.ul`
   margin-bottom: 20px;
-
-  @media screen and (min-width: 375px) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 13px;
-    row-gap: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 13px;
+  row-gap: 20px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
