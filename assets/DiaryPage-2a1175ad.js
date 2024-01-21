@@ -1,4 +1,4 @@
-import{s as t,g as i,r as u,j as e,a as o,f as S,h as $,N as T,u as k,C,i as z,Q as N}from"./index-dbeaf64b.js";import{f as O,S as I}from"./StyledDatepicker-930557f4.js";import{T as E}from"./TitlePage-359d2401.js";import"./warning-91553cef.js";const B=t.div`
+import{s as t,g as i,r as u,j as e,a as o,f as S,h as $,N as T,u as k,C,i as z,Q as N}from"./index-d3c09ff5.js";import{f as O,S as I}from"./StyledDatepicker-9a327e17.js";import{T as E}from"./TitlePage-7e5c8d6a.js";import"./warning-c23374f8.js";const B=t.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -459,14 +459,11 @@ import{s as t,g as i,r as u,j as e,a as o,f as S,h as $,N as T,u as k,C,i as z,Q
   }
 `,pe=t.ul`
   margin-bottom: 20px;
-
-  @media screen and (min-width: 375px) {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 13px;
-    row-gap: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 13px;
+  row-gap: 20px;
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
