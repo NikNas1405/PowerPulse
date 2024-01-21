@@ -54,7 +54,7 @@ export const ProductsFilters = ({ categories }) => {
 
     const formData = {
       title: searchByProductTitle || '',
-      category: selectedCategory || null,
+      category: selectedCategory || undefined,
       filter: selectedType || 'all',
     };
     const isTitleValid = searchByProductTitle.length <= 40;
@@ -88,14 +88,14 @@ export const ProductsFilters = ({ categories }) => {
 
     const formData = {
       title: '',
-      category: selectedCategory || null,
+      category: selectedCategory || undefined,
       filter: selectedType || 'all',
     };
     dispatch(fetchProducts(formData));
   };
 
   const handleCategoryChange = (selectedOption) => {
-    const value = selectedOption ? selectedOption.value : null;
+    const value = selectedOption ? selectedOption.value : undefined;
     setSelectedCategory(value);
 
     const formData = {
@@ -112,7 +112,7 @@ export const ProductsFilters = ({ categories }) => {
 
     const formData = {
       title: searchByProductTitle || '',
-      category: selectedCategory || null,
+      category: selectedCategory || undefined,
       filter: value,
     };
     dispatch(fetchProducts(formData));
