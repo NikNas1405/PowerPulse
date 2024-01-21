@@ -387,13 +387,24 @@ export const ActiveField = styled(Field)`
 `;
 
 export const StyledError = styled(ErrorMessage)`
-  color: red;
+  color: #d80027;
+  position: relative;
+  font-size: 12px;
+
+  &::before {
+    content: '✖';
+    display: inline-block;
+    font-size: 12px;
+    color: #d80027;
+    margin-right: 5px;
+  }
 `;
 
 export const ActivityRadio = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
   @media (min-width: 834px) {
     width: 438px;
     flex-direction: row;
