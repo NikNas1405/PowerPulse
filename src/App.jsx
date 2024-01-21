@@ -11,6 +11,9 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Loader } from './components/Loader/Loader';
 import { selectIsRefreshing } from './redux/auth/selectors';
+import { ExercisesSubcategoriesItem } from './components/Authorized/ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
+import { ExercisesSubcategoriesList } from './components/Authorized/ExercisesSubcategoriesList/ExercisesSubcategoriesList';
+import ExerciseCategories from './components/Authorized/ExercisesCategories/ExercisesCategories';
 
 const WelcomePage = lazy(() =>
   import('./pages/UnAuthorized/WelcomePage/WelcomePage')
@@ -108,7 +111,26 @@ function App() {
             element={
               <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
             }
-          />
+          >
+            <Route
+              index
+              element={<Navigate to="/exercises/Body parts" replace />}
+            />
+            <Route
+              path="/exercises/:filter"
+              element={<ExercisesSubcategoriesList />}
+            />
+            {/* <Route
+              path="/exercises/:filter/:filterList"
+              element={<ExercisesList />}
+            /> */}
+          </Route>
+          {/* <Route
+            path="/exercises"
+            element={
+              <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
+            }
+          /> */}
           <Route path="/error" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/error" />} />
         </Route>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllExercisesCategories } from './operations';
+import { fetchExercisesCategories } from './operations';
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -19,13 +19,13 @@ const categoriesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllExercisesCategories.pending, handlePending)
-      .addCase(fetchAllExercisesCategories.fulfilled, (state, action) => {
+      .addCase(fetchExercisesCategories.pending, handlePending)
+      .addCase(fetchExercisesCategories.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchAllExercisesCategories.rejected, handleRejecting);
+      .addCase(fetchExercisesCategories.rejected, handleRejecting);
   },
 });
 
