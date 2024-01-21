@@ -6,6 +6,8 @@ import {
   ProfileContainer,
 } from './ProfilePage.styled';
 
+import { Container } from '../../../styles/GlobalStyles';
+
 export class ProfilePage extends Component {
   state = {
     profile: {
@@ -27,19 +29,21 @@ export class ProfilePage extends Component {
 
   render() {
     return (
-      <ProfileContainer>
-        <h1>Profile Settings</h1>
-        <ProfileComponentsContainer>
-          <UserForm
-            profile={this.state.profile}
-            refreshUserData={this.refreshProfileState}
-          />
-          <UserCard
-            profile={this.state.profile}
-            refreshUserData={this.refreshProfileState}
-          />
-        </ProfileComponentsContainer>
-      </ProfileContainer>
+      <Container>
+        <ProfileContainer>
+          <h1>Profile Settings</h1>
+          <ProfileComponentsContainer>
+            <UserForm
+              profile={this.state.profile}
+              refreshUserData={this.refreshProfileState}
+            />
+            <UserCard
+              profile={this.state.profile}
+              refreshUserData={this.refreshProfileState}
+            />
+          </ProfileComponentsContainer>
+        </ProfileContainer>
+      </Container>
     );
   }
 }

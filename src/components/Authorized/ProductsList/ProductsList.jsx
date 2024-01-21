@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-// import { useDispatch } from 'react-redux';
-
-import {
-  //   selectProductsError,
-  //   selectProductsIsFilter,
-  selectProductsIsLoading,
-} from '../../../redux/products/productsSelector';
-
-import { ProductsItem } from '../ProductsItem/ProductsItem';
 
 import { BasicModalWindow } from '../../BasicModalWindow/BasicModalWindow';
+import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
 import { AddProductForm } from '../AddProductForm/AddProductForm';
+import { ProductsItem } from '../ProductsItem/ProductsItem';
 import { Loader } from '../../Loader/Loader';
+
+import { selectProductsIsLoading } from '../../../redux/products/productsSelector';
 
 import {
   ProductsListStyled,
@@ -20,14 +15,10 @@ import {
   Paragraph1,
   Paragraph2,
 } from './ProductsList.styled';
-import { AddProductSuccess } from '../AddProductSuccess/AddProductSuccess';
-
-// import { selectUserProfile } from '../../../redux/settings/selectors';
+import { selectUser } from '../../../redux/auth/selectors';
 
 export const ProductsList = ({ products }) => {
-  // const error = useSelector(selectProductsError);
   const isLoading = useSelector(selectProductsIsLoading);
-  // const isFilter = useSelector(selectProductsIsFilter);
 
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -46,9 +37,8 @@ export const ProductsList = ({ products }) => {
     setModalData(null);
   };
 
-  // // const currentUser = useSelector(selectUserProfile);
-  // // const userBloodType = currentUser.blood;
-  const userBloodType = 1;
+  const currentUser = useSelector(selectUser);
+  const userBloodType = currentUser.blood;
 
   return (
     <>
@@ -57,13 +47,9 @@ export const ProductsList = ({ products }) => {
         <ProductsListStyled>
           {products.map((product) => (
             <ProductsItem
+              key={product._id}
               product={product}
               type={product.groupBloodNotAllowed[userBloodType]}
-              // category={product.category}
-              // title={product.title}
-              // calories={product.calories}
-              // weight={product.weight}
-              // key={product._id}
               handleOpenModal={handleOpenModal}
             />
           ))}
@@ -97,7 +83,7 @@ export const ProductsList = ({ products }) => {
           ) : (
             <AddProductSuccess
               calories={modalData}
-              closeModallAddProductSuccess={handleCloseModal}
+              closeModalAddProductSuccess={handleCloseModal}
             />
           )}
         </BasicModalWindow>

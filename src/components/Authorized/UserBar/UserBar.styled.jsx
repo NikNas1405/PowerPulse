@@ -18,11 +18,15 @@ export const UseNavWrapper = styled.div`
   }
 `;
 
-export const BtnIconMenu = styled.svg`
+export const BtnIconMenu = styled.button`
   width: 24px;
   height: 24px;
   flex-shrink: 0;
   margin-top: 7px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
 
   @media screen and (min-width: 320px) {
   }

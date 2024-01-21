@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const Product = styled.div`
+const Exercises = styled.div`
   width: 100%;
   min-height: 335px;
   padding: 16px 8px 16px 16px;
@@ -35,13 +35,13 @@ const TitleNav = styled.div`
   }
 `;
 
-const TitleProd = styled.p`
+const TitleText = styled.p`
   color: #efede880;
   font-size: 14px;
   line-height: 18px;
 `;
 
-const WrapA = styled.div`
+const NavBlock = styled.div`
   &:hover span {
     color: ${globalColor.colorOrange1};
   }
@@ -53,6 +53,7 @@ const NavText = styled.span`
   line-height: 18px;
   font-weight: 500;
   transition: color 300ms;
+
   @media (min-width: 768px) {
     font-size: 16px;
     line-height: 24px;
@@ -65,12 +66,13 @@ const Svg = styled.svg`
   margin-left: 8px;
 `;
 
-const NotProductText = styled.p`
+const NotExercisesText = styled.p`
   color: #efede84d;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
   margin-top: 125px;
+
   @media (min-width: 768px) {
     margin-top: 65px;
     font-size: 16px;
@@ -78,4 +80,12 @@ const NotProductText = styled.p`
   }
 `;
 
-export { NotProductText, Svg, NavText, WrapA, TitleProd, TitleNav, Product };
+export {
+  NotExercisesText,
+  Svg,
+  NavText,
+  NavBlock,
+  TitleText,
+  TitleNav,
+  Exercises,
+};

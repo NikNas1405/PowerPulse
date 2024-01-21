@@ -1,24 +1,25 @@
+import { useLocation } from 'react-router-dom';
 import sprite from '../../assets/sprite.svg';
 import {
   LogoNavLink,
   NavLinkPowerPlus,
   Svg,
   SvgPowerPlus,
-  HeaderConatiner,
+  HeaderContainer,
   NavLinkWrapper,
+  Wrapper,
 } from './Header.styled';
 import { useAuth } from '../../hooks/useAuth';
-import { Logo } from '../Logo/Logo';
 import { UserBar } from '../Authorized/UserBar/UserBar';
 const Header = () => {
   const { isLoggedIn, isUserParams } = useAuth();
+  const location = useLocation();
+  const shouldShowHeader = isLoggedIn && location.pathname !== '/error';
 
   return (
-    <HeaderConatiner>
-      {!isLoggedIn ? (
-        <Logo />
-      ) : (
-        <>
+    <Wrapper>
+      <HeaderContainer>
+        {shouldShowHeader && (
           <NavLinkPowerPlus>
             {!isUserParams ? (
               <>
@@ -50,9 +51,9 @@ const Header = () => {
               </>
             )}
           </NavLinkPowerPlus>
-        </>
-      )}
-    </HeaderConatiner>
+        )}
+      </HeaderContainer>
+    </Wrapper>
   );
 };
 

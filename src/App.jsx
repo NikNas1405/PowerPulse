@@ -4,12 +4,13 @@ import { lazy, useEffect, useState } from 'react';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
 import { GlobalStyles } from './styles/GlobalStyles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from './redux/auth/operations';
 import { useAuth } from '../src/hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Loader } from './components/Loader/Loader';
+import { selectIsRefreshing } from './redux/auth/selectors';
 
 const WelcomePage = lazy(() =>
   import('./pages/UnAuthorized/WelcomePage/WelcomePage')
@@ -42,14 +43,13 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 function App() {
   const { isUserParams, isLoggedIn } = useAuth();
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
-    setLoading(false);
   }, [dispatch]);
 
-  return loading ? (
+  return isRefreshing ? (
     <Loader />
   ) : (
     <>

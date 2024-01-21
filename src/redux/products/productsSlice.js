@@ -5,27 +5,30 @@ import { fetchProducts, fetchAllProductsCategories } from './productsOperation';
 const initialState = {
   productsArray: [],
   productsCategories: [],
-  isLoading: false,
+  isLoadingProductsCategories: false,
+  isLoadingProducts: false,
   error: null,
 };
 
 const handlePending = (state) => {
-  state.isLoading = true;
+  state.isLoadingProductsCategories = true;
+  state.isLoadingProducts = true;
 };
 
 const handleRejected = (state, action) => {
-  state.isLoading = false;
+  state.isLoadingProductsCategories = false;
+  state.isLoadingProducts = false;
   state.error = action.payload;
 };
 
 const handleFetchProductsFulfilled = (state, action) => {
-  state.isLoading = false;
+  state.isLoadingProducts = false;
   state.error = null;
   state.productsArray = action.payload;
 };
 
 const handleFetchAllProductsCategoriesFulfilled = (state, action) => {
-  state.isLoading = false;
+  state.isLoadingProductsCategories = false;
   state.error = null;
   state.productsCategories = action.payload;
 };
@@ -45,6 +48,5 @@ const productsSlice = createSlice({
       )
       .addCase(fetchAllProductsCategories.rejected, handleRejected),
 });
-
 
 export const productsReducer = productsSlice.reducer;

@@ -5,11 +5,19 @@ import { globalColor } from '../../../styles/root';
 export const FormContainer = styled.div`
   display: flex;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+  }
 `;
 
 export const FormWrapper = styled.div`
+  padding: 24px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 32px 0;
+  }
   @media screen and (min-width: 1440px) {
-    width: 55%;
+    width: 48%;
     margin-right: 178px;
   }
 `;
@@ -22,8 +30,7 @@ export const FormTitle = styled.h2`
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    /* margin-top: 90px; */
-    margin-top: 127px;
+    margin-top: 90px;
     margin-bottom: 14px;
   }
 
@@ -33,14 +40,12 @@ export const FormTitle = styled.h2`
   @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 44px;
-    /* margin-top: 140px; */
-    margin-top: 189px;
+    margin-top: 140px;
     margin-bottom: 16px;
   }
 
   @media screen and (min-width: 1440px) {
-    /* margin-top: 151px; */
-    margin-top: 200px;
+    margin-top: 151px;
   }
 `;
 
@@ -237,13 +242,13 @@ export const ButtonSignUp = styled.button`
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    display: inline-flex;
+    width: 190px;
     padding: 16px 60px;
     font-size: 20px;
     line-height: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
     width: 192px;
 
     &:hover,
@@ -288,12 +293,17 @@ export const BgWrapper = styled.div`
   @media screen and (min-width: 320px) and (max-width: 767px) {
     position: absolute;
     z-index: -1;
-    top: 50%;
-    left: 20%;
+    top: 55%;
+    left: 17.1%;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1439px) {
-    top: 15%;
-    left: 5%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 52%;
   }
 `;

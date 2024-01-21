@@ -124,8 +124,6 @@ export const ErrorMessage = styled.p`
   margin: 0;
   line-height: 1.5;
   position: absolute;
-  /* top: 36px; */
-  /* left: 0; */
   word-wrap: break-word;
 
   > svg {
@@ -134,10 +132,6 @@ export const ErrorMessage = styled.p`
     fill: ${globalColor.colorSecondaryRed};
   }
 
-  /* @media (min-width: 768px) {
-    top: 50px;
-    left: 0;
-  } */
 `;
 
 export const Text = styled.p`

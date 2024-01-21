@@ -1,22 +1,22 @@
 import {
   NavText,
-  NotProductText,
-  Product,
+  NotExercisesText,
+  Exercises,
   Svg,
   TitleNav,
-  TitleProd,
-  WrapA,
+  TitleText,
+  NavBlock,
 } from './DayExercises.styled';
 import { NavLink } from 'react-router-dom';
 import sprite from '../../../assets/sprite.svg';
 import { globalColor } from '../../../styles/root';
 
-const DayExercises = () => {
+const DayExercises = ({ exercisesArray }) => {
   return (
-    <Product>
+    <Exercises>
       <TitleNav>
-        <TitleProd>Exercises</TitleProd>
-        <WrapA>
+        <TitleText>Exercises</TitleText>
+        <NavBlock>
           <NavLink
             to="/exercises"
             style={{ display: 'flex', alignItems: 'center' }}
@@ -36,11 +36,10 @@ const DayExercises = () => {
               />
             </Svg>
           </NavLink>
-        </WrapA>
+        </NavBlock>
       </TitleNav>
-
-      <NotProductText>Not found exercises</NotProductText>
-    </Product>
+      <NotExercisesText>Not found exercises</NotExercisesText>
+    </Exercises>
   );
 };
 

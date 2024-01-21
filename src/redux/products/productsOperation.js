@@ -6,78 +6,41 @@ export const fetchAllProductsCategories = createAsyncThunk(
   '/user/products/categories/fetchAllProductsCategory',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/user/products/categories');
+      const response = await axios.get('/products/categories');
       return response.data;
     } catch (error) {
-      console.log(error);
       toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-// export const fetchProducts = createAsyncThunk(
-//   'user/products/fetchFilteredProducts',
-//   async (formData, thunkAPI) => {
-//     const { title, category, groupBloodNotAllowed } = formData;
-//     const filters = {};
-
-//     if (title !== '' && title) {
-//       filters.title = title;
-//     }
-
-//     if (category !== null && category) {
-//       filters.category = category.toLowerCase();
-//       // filters.category = category;
-//     }
-
-//     if (groupBloodNotAllowed !== null && groupBloodNotAllowed) {
-//       filters.groupBloodNotAllowed = groupBloodNotAllowed;
-//     }
-
-//     const options = new URLSearchParams({
-//       ...filters,
-//     });
-
-//     try {
-//       // const response = await axios.get(`/user/products?${options}`);
-//       const response = await axios.get(`/user/products/${options}`);
-//       return response.data.dataUser;
-//     } catch (error) {
-//       console.log(error);
-//       toast.error(`${error.message}`);
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
 export const fetchProducts = createAsyncThunk(
-  'user/products/fetchFilteredProducts',
+  'user/products/fetchProducts',
   async (formData, thunkAPI) => {
-    const { title, category, groupBloodNotAllowed } = formData;
-    const filters = {};
+    const { title, category, filter } = formData;
+    const params = {};
 
     if (title) {
-      filters.title = title;
+      params.title = title.trim();
     }
 
     if (category !== null) {
-      filters.category = category.toLowerCase();
+      params.category = category.toLowerCase();
     } else {
-      filters.category = category;
+      params.category = category;
     }
 
-    if (groupBloodNotAllowed) {
-      filters.groupBloodNotAllowed = groupBloodNotAllowed;
+    if (filter) {
+      params.filter = filter;
     }
 
     try {
-      const response = await axios.get(`/user/products`, {
-        params: filters,
+      const response = await axios.get(`/products/filter`, {
+        params,
       });
       return response.data.dataUser;
     } catch (error) {
-      console.log(error);
       toast.error(`${error.message}`);
       return thunkAPI.rejectWithValue(error.message);
     }

@@ -63,7 +63,7 @@ export const UserBar = () => {
           </AvatarContainer>
         )}
       </UserCardContainer>
-      <BtnIconMenu onClick={onClickMenuBtn}>
+      <BtnIconMenu onClick={onClickMenuBtn} type="button">
         <svg>
           <use href={`${sprite}#icon-menu`} />
         </svg>

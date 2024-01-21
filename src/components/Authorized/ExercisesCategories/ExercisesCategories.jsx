@@ -24,7 +24,7 @@ const ExerciseCategories = () => {
   // console.log(filter);
 
   const filteredCategories = categories.filter(
-    (category) => category.filter.toLowerCase() === filter
+    (category) => category.filter.toLowerCase() === filter.toLowerCase()
   );
 
   console.log(filteredCategories);
