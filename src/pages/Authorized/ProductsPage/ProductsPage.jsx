@@ -43,7 +43,7 @@ const ProductsPage = () => {
       try {
         const formData = {
           title: '',
-          category: undefined,
+          category: null,
           filter: 'all',
         };
         await dispatch(fetchProducts(formData));
