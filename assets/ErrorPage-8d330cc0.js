@@ -1,4 +1,4 @@
-import{s as e,g as n,N as o,j as i}from"./index-070b21b8.js";import{b as d,a as t,c as a,d as r,e as s,f as p,L as l}from"./Logo-a763b5f6.js";const c=e.div`
+import{s as e,g as n,N as o,j as i}from"./index-6476bcc7.js";import{b as d,a as t,c as a,d as r,e as s,f as p,L as l}from"./Logo-c2aa3db6.js";const c=e.div`
   display: flex;
 `,x=e.div`
   height: 100vh;
