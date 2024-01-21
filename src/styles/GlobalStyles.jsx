@@ -22,15 +22,12 @@ body {
 
     overflow: auto;
   &::-webkit-scrollbar {
-    display: none;
-       /* width: 8px; */
+       width: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    display: none;
-
-    /* background-color: ${globalColor.colorOrange1};
-    border-radius: 12px; */
+    background-color:rgba(239, 237, 232, 0.10);
+    border-radius: 12px;
   }
 
 }
