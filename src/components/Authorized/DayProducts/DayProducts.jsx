@@ -13,88 +13,135 @@ import {
   TableStyled,
   TableTitleArray,
   TableTitleTh,
-  BtnDel,
+  DeleteBtn,
   SvgTableStyled,
   TypeRecommendSwgSpan,
   TableRowStyled,
+  TableDataStyled,
 } from './DayProducts.styled';
 
 import { globalColor } from '../../../styles/root';
+import { selectUser } from '../../../redux/auth/selectors';
+import { useSelector } from 'react-redux';
 
-const DayProducts = ({ productsArray }) => {
+const DayProducts = ({ productsArray, handleDeleteButtonClick }) => {
+  const currentUser = useSelector(selectUser);
+  const userBloodType = currentUser.blood;
+
+  let FoodRecommended;
+  let type;
+
+  if (productsArray) {
+    type = productsArray.map(
+      (product) => product.productId.groupBloodNotAllowed[userBloodType]
+    );
+  }
+
+  if (type) {
+    FoodRecommended = 'Yes';
+  } else FoodRecommended = 'No';
+
   return (
     <ProductsTableWrap>
-      <TitleNav>
-        <TitleText>Products</TitleText>
-        <NavBlock>
-          <NavLink
-            to="/products"
-            style={{ display: 'flex', alignItems: 'center' }}
-          >
-            <NavText>Add product</NavText>
-            <Svg
-              style={{
-                width: '16px',
-                height: '16px',
-              }}
-            >
-              <use
-                href={sprite + '#icon-arrow'}
-                style={{
-                  stroke: globalColor.colorOrange,
-                }}
-              />
-            </Svg>
-          </NavLink>
-        </NavBlock>
-      </TitleNav>
+      {productsArray ? (
+        <>
+          <TitleNav>
+            <TitleText>Products</TitleText>
+            <NavBlock>
+              <NavLink
+                to="/products"
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <NavText>Add product</NavText>
+                <Svg>
+                  <use href={sprite + '#icon-arrow'} />
+                </Svg>
+              </NavLink>
+            </NavBlock>
+          </TitleNav>
+          <TableWrapper>
+            <div>
+              <TableStyled>
+                <TableTitleArray>
+                  <tr>
+                    <TableTitleTh>Title</TableTitleTh>
+                    <TableTitleTh>Category</TableTitleTh>
+                    <TableTitleTh>Calories</TableTitleTh>
+                    <TableTitleTh>Weight</TableTitleTh>
+                    <TableTitleTh>Recommend</TableTitleTh>
+                  </tr>
+                </TableTitleArray>
 
-      <TableWrapper>
-        <div>
-          <TableStyled>
-            <TableTitleArray>
-              <TableTitleTh>Title</TableTitleTh>
-              <TableTitleTh>Category</TableTitleTh>
-              <TableTitleTh>Calories</TableTitleTh>
-              <TableTitleTh>Weight</TableTitleTh>
-              <TableTitleTh>Recommend</TableTitleTh>
-            </TableTitleArray>
-
-            <tbody
-              // key={product._id}
-              // as={motion.tbody}
-              initial={{ x: 900 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-              exit={{ x: -900 }}
-            >
-              <TableRowStyled>
-                {/* <td>{product.title}</td>
-
-                <td>{product.category}</td>
-
-                <td>{product.calories}</td>
-
-                <td>{product.amount}</td> */}
-
-                <td>
-                  <TypeRecommendSwgSpan />
-                </td>
-
-                <td>
-                  <BtnDel>
-                    <SvgTableStyled>
-                      <use href={`${sprite}#icon-trash-03`} />
-                    </SvgTableStyled>
-                  </BtnDel>
-                </td>
-              </TableRowStyled>
-            </tbody>
-          </TableStyled>
-        </div>
-      </TableWrapper>
-
-      {/* <NotProductText>Not found products</NotProductText> */}
+                <tbody>
+                  {productsArray.map((product) => (
+                    <TableRowStyled key={product._id} item={product}>
+                      <TableDataStyled>
+                        {product.productId.title}
+                      </TableDataStyled>
+                      <TableDataStyled>
+                        {product.productId.category}
+                      </TableDataStyled>
+                      <TableDataStyled>{product.calories}</TableDataStyled>
+                      <TableDataStyled>{product.amount}</TableDataStyled>
+                      <TableDataStyled>
+                        <div
+                          style={{
+                            display: 'flex',
+                            gap: '8px',
+                            alignItems: 'center',
+                            height: '24px',
+                          }}
+                        >
+                          <svg
+                            style={{
+                              width: '14px',
+                              height: '14px',
+                            }}
+                          >
+                            {type ? (
+                              <use
+                                href={sprite + '#icon-Ellipse-82'}
+                                style={{
+                                  fill: globalColor.colorSecondaryGreen,
+                                  stroke: globalColor.colorSecondaryGreen,
+                                }}
+                              />
+                            ) : (
+                              <use
+                                href={sprite + '#icon-Ellipse-82'}
+                                style={{
+                                  fill: globalColor.colorSecondaryRed,
+                                  stroke: globalColor.colorSecondaryRed,
+                                }}
+                              />
+                            )}
+                          </svg>
+                          <TypeRecommendSwgSpan>
+                            {FoodRecommended}
+                          </TypeRecommendSwgSpan>
+                        </div>
+                      </TableDataStyled>
+                      <TableDataStyled>
+                        <DeleteBtn
+                        // onClick={() =>
+                        //   handleDeleteButtonClick({ id: product._id })
+                        // }
+                        >
+                          <SvgTableStyled>
+                            <use href={sprite + `#icon-trash`}></use>
+                          </SvgTableStyled>
+                        </DeleteBtn>
+                      </TableDataStyled>
+                    </TableRowStyled>
+                  ))}
+                </tbody>
+              </TableStyled>
+            </div>
+          </TableWrapper>
+        </>
+      ) : (
+        <NotProductText>Not found products</NotProductText>
+      )}
     </ProductsTableWrap>
   );
 };

@@ -41,7 +41,7 @@ export const DateLabel = styled.p`
   }
 `;
 
-export const CalenderIconWrap = styled.div`
+export const CalenderIconSvg = styled.svg`
   width: 20px;
   height: 20px;
 
@@ -51,10 +51,6 @@ export const CalenderIconWrap = styled.div`
   }
 `;
 
-export const SvgCalendar = styled.svg`
-  width: 24px;
-  height: 24px;
-`;
 
 export const CalenderBtn = styled.button`
   display: flex;

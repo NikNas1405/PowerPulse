@@ -16,23 +16,15 @@ import sprite from '../../../assets/sprite.svg';
 import { useEffect, useState } from 'react';
 
 const DayDashboard = ({ userDiaryInformation }) => {
-  console.log(userDiaryInformation);
-
   const {
     burnedCalories,
     caloriesIntake,
     consumedCalories,
-    // remainingCalories,    невірно приходить з беку, має використатися замість balanceConsumCalories
-    // remainingSports,       невірно приходить з беку, має використатися замість balanceSport
+    remainingCalories,
+    remainingSports,
   } = userDiaryInformation;
 
   const overConsumedCalories = consumedCalories - caloriesIntake;
-
-  const balanceConsumCalories = caloriesIntake - consumedCalories;
-
-  const balanceSport = 100 - burnedCalories;
-
-  // const balanceSport = 100 - тут треба мінусонути дані з масиву вправ від Сергія. а не спалені калорії!;
 
   const [isOverThan, setIsOverThan] = useState(false);
 
@@ -88,10 +80,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
             </SvgStyled>
             <TitleStyled>The rest of the calories</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>
-            {balanceConsumCalories ? balanceConsumCalories : 0}
-          </DataValue>
-          {/* <DataValue>{remainingCalories}</DataValue> */}
+          <DataValue>{remainingCalories ? remainingCalories : 0}</DataValue>
         </ItemListStyled>
         <ItemListStyled className={isOverThan ? 'greenBg' : ''}>
           <TitleStyledWrapper>
@@ -100,8 +89,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
             </SvgStyled>
             <TitleStyled>The rest of sports</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{balanceSport ? balanceSport : 110} min</DataValue>
-          {/* <DataValue>{remainingSports} min</DataValue> */}
+          <DataValue>{remainingSports ? remainingSports : 110} min</DataValue>
         </ItemListStyled>
       </ListStyled>
 

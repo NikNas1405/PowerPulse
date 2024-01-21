@@ -5,10 +5,9 @@ import {
   BtnNext,
   BtnPrev,
   CalenderBtn,
-  CalenderIconWrap,
+  CalenderIconSvg,
   DateLabel,
   Svg,
-  SvgCalendar,
   ContainerWrap,
 } from './DaySwitch.styled';
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
@@ -41,20 +40,18 @@ const DaySwitch = ({ currentDate }) => {
     <ContainerWrap>
       <CalenderBtn onClick={openCalendar}>
         <DateLabel>{format(selectedDate, 'dd/MM/yyyy')}</DateLabel>
-        <CalenderIconWrap>
-          <SvgCalendar>
-            <use href={`${sprite}#icon-normal`} />
-          </SvgCalendar>
-        </CalenderIconWrap>
+        <CalenderIconSvg>
+          <use href={sprite + '#icon-calendar'} />
+        </CalenderIconSvg>
       </CalenderBtn>
       <BtnPrev type="button" onClick={goToPreviousDay}>
         <Svg>
-          <use href={`${sprite}#icon-chevron-left`} />
+          <use href={sprite + '#icon-chevron-left'} />
         </Svg>
       </BtnPrev>
       <BtnNext type="button" onClick={goToNextDay}>
         <Svg>
-          <use href={`${sprite}#icon-chevron-right`} />
+          <use href={sprite + '#icon-chevron-right'} />
         </Svg>
       </BtnNext>
 
