@@ -56,13 +56,30 @@ export const updateUser = createAsyncThunk(
   }
 );
 
+// export const updatedUserAvatar = createAsyncThunk(
+//   'auth/avatar',
+//   async (avatarURL, thunkAPI) => {
+//     try {
+//       //avatarURL =
+//       // 'https://static01.nyt.com/images/2021/07/18/books/review/Braithwaite1/Braithwaite1-superJumbo.jpg?quality=75&auto=webp';
+//       const res = await axios.patch('/auth/avatar', avatarURL);
+//       toast.success('Avatar updated');
+//       console.log(res.data);
+//       return res.data;
+//     } catch (error) {
+//       toast.error(error.message);
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
+
 export const updatedUserAvatar = createAsyncThunk(
   'auth/avatar',
   async (file, thunkAPI) => {
     try {
       const formData = new FormData();
       formData.append('avatar', file);
-      const res = await axios.patch('/*****', formData, {
+      const res = await axios.patch('/auth/avatar', formData, {
         headers: {
           'content-type': 'multipart/form-data',
         },
@@ -76,16 +93,16 @@ export const updatedUserAvatar = createAsyncThunk(
   }
 );
 
-export const addUserData = createAsyncThunk(
-  'auth/addUserData',
-  async (data, thunkAPI) => {
-    try {
-      const res = await axios.patch('/****', data);
-      toast.success('Your profile updated');
-      return res.data;
-    } catch (error) {
-      toast.error(error.message);
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const addUserData = createAsyncThunk(
+//   'auth/addUserData',
+//   async (data, thunkAPI) => {
+//     try {
+//       const res = await axios.patch('/****', data);
+//       toast.success('Your profile updated');
+//       return res.data;
+//     } catch (error) {
+//       toast.error(error.message);
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
