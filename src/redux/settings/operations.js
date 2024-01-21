@@ -45,6 +45,7 @@ export const updateUser = createAsyncThunk(
       setAuthHeader(persistedToken);
       delete userForm.avatarURL;
       delete userForm.userParams;
+      delete userForm.createdAt;
 
       const res = await axios.patch('/auth/params', userForm);
       //console.log(userData);
