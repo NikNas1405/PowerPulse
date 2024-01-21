@@ -1,7 +1,8 @@
 import sprite from '../../../assets/sprite.svg';
 import gridicons_user from '../../../assets/profile/gridicons_user.jpg';
 import { LogOutBtn } from '../LogOutBtn/LogOutBtn';
-
+import { useDispatch } from 'react-redux';
+import { updatedUserAvatar } from '../../../redux/settings/operations';
 import {
   TextWrapper,
   WrapperTextSvg,
@@ -27,16 +28,22 @@ import {
   NewAvatar,
 } from './UserCard.styled';
 
-export const UserCard = ({ profile }) => {
+export const UserCard = ({ profile, refreshUserData }) => {
+  const dispatch = useDispatch();
+
   const handleAvaChange = (e) => {
-    console.log(e.target.value);
     // TODO UPDATE USER HERE
     try {
-      //const resp = dispatch(updateUser());
+      const resp = dispatch(
+        // updatedUserAvatar(URL.createObjectURL(e.target.files[0]))
+        updatedUserAvatar(e.target.files[0])
+      );
+      profile.avatarURL = URL.createObjectURL(e.target.files[0]);
+      refreshUserData(profile);
       //setUserData(resp.payload);
       //console.log(resp);
     } catch (error) {
-      console.error('Error fetching user data:', error);
+      console.error('error ava update:', error);
     }
     return e.target.value;
   };
@@ -47,7 +54,19 @@ export const UserCard = ({ profile }) => {
         <ContainerAvatar>
           {/* <Avatar src={profile.avatarURL} alt="User Avatar" /> */}
           <AvatarUpload>
-            <InputFile type="file" accept="image/*" id="file-input" />
+            <InputFile
+              type="file"
+              accept="image/*"
+              id="file-input"
+              src={profile.avatarURL}
+              alt="User Avatar"
+              onChange={(e) => {
+                handleAvaChange(e);
+              }}
+              onClick={(e) => {
+                e.target.value = null;
+              }}
+            />
           </AvatarUpload>
         </ContainerAvatar>
         <Label htmlFor="file-input">
