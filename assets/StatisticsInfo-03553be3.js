@@ -1,4 +1,4 @@
-import{s as e,n as a,g as n,j as i,a as t}from"./index-1d08423b.js";import{b as r,a as p,c as o,d as x,e as g,f as s}from"./Logo-4f72b2e7.js";const h=e.div`
+import{s as e,n as a,g as n,j as i,a as t}from"./index-cae2b4c8.js";import{b as r,a as p,c as o,d as x,e as g,f as s}from"./Logo-b2d18821.js";const h=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
@@ -141,7 +141,7 @@ import{s as e,n as a,g as n,j as i,a as t}from"./index-1d08423b.js";import{b as 
 
   @media screen and (min-width: 1440px) {
     top: 47%;
-    right: 70%;
+    right: 69.2%;
     width: 206px;
     height: 96px;
     padding: 20px 23px 20px 36px;
