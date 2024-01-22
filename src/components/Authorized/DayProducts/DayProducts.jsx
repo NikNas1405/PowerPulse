@@ -23,6 +23,7 @@ import {
   MobileItemsHolder2,
   MobileItemsHolder3,
   MobileItemsHolder4,
+  ListMobileArray,
 } from './DayProducts.styled';
 
 import { globalColor } from '../../../styles/root';
@@ -103,19 +104,13 @@ const DayProducts = ({ productsArray, date }) => {
                   <ProductListArrayItemMobile>
                     {formattedTitle(product.productId.title)}
                   </ProductListArrayItemMobile>
-
                   <ProductListArrayItemMobile>
                     Category
                   </ProductListArrayItemMobile>
                   <ProductListArrayItemMobile>
                     {formattedTitle(product.productId.category)}
                   </ProductListArrayItemMobile>
-                  <div
-                    style={{
-                      display: 'flex',
-                      gap: '14px',
-                    }}
-                  >
+                  <ListMobileArray>
                     <MobileItemsHolder1
                       style={{
                         display: 'flex',
@@ -210,7 +205,7 @@ const DayProducts = ({ productsArray, date }) => {
                         </TableDeleteButton>
                       </ProductListArrayItemMobile>
                     </MobileItemsHolder4>
-                  </div>
+                  </ListMobileArray>
                 </ProductListArray>
               ))}
             </WrapperForItemsArray>

@@ -102,6 +102,75 @@ export const ExerciseListArray = styled.ul`
 `;
 
 export const ExerciseListArrayItemMobile = styled.li`
+  @media screen and (max-width: 375px) {
+    width: 100%;
+
+    &:first-of-type {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(2) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+
+    &:nth-of-type(3) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(4) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+
+    &:nth-of-type(5) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(6) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+  }
+
   @media screen and (min-width: 375px) {
     width: 290px;
 

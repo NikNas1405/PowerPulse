@@ -188,7 +188,6 @@ export const ProductListArray = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
 
   @media screen and (min-width: 768px) {
     gap: 8px;
@@ -198,6 +197,53 @@ export const ProductListArray = styled.ul`
 `;
 
 export const ProductListArrayItemMobile = styled.li`
+  @media screen and (max-width: 375px) {
+    width: 100%;
+
+    &:first-of-type {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(2) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+
+    &:nth-of-type(3) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(4) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+  }
+
   @media screen and (min-width: 375px) {
     width: 290px;
 
@@ -316,9 +362,27 @@ export const ProductListArrayItem = styled.li`
   }
 `;
 
+export const ListMobileArray = styled.div`
+  /* @media screen and (min-width: 320px) {
+    width: 100%;
+  } */
+
+  @media screen and (min-width: 375px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+`;
+
 export const MobileItemsHolder1 = styled.div`
   > li {
-    width: 79px;
+    /* @media screen and (min-width: 320px) {
+      width: 100%;
+    } */
+
+    @media screen and (min-width: 375px) {
+      width: 79px;
+    }
 
     &:nth-of-type(1) {
       color: ${globalColor.colorOrange1};
@@ -344,7 +408,14 @@ export const MobileItemsHolder1 = styled.div`
 
 export const MobileItemsHolder2 = styled.div`
   > li {
-    width: 78px;
+    /* @media screen and (min-width: 320px) {
+      width: 100%;
+    } */
+
+    @media screen and (min-width: 375px) {
+      width: 78px;
+    }
+
     &:nth-of-type(1) {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
@@ -369,7 +440,14 @@ export const MobileItemsHolder2 = styled.div`
 
 export const MobileItemsHolder3 = styled.div`
   > li {
-    width: 74px;
+    /* @media screen and (min-width: 320px) {
+      width: 100%;
+    } */
+
+    @media screen and (min-width: 375px) {
+      width: 74px;
+    }
+
     &:nth-of-type(1) {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
@@ -394,6 +472,14 @@ export const MobileItemsHolder3 = styled.div`
 
 export const MobileItemsHolder4 = styled.div`
   > li {
+    /* @media screen and (min-width: 320px) {
+      width: 100%;
+    } */
+
+    @media screen and (min-width: 375px) {
+      width: 20px;
+    }
+
     &:nth-of-type(1) {
       width: 20px;
       color: ${globalColor.colorOrange1};
