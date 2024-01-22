@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
+
 import sprite from '../../../assets/sprite.svg';
+
 import {
   BtnNext,
   BtnPrev,
@@ -10,9 +13,10 @@ import {
   Svg,
   ContainerWrap,
 } from './DaySwitch.styled';
+
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
 
-const DaySwitch = ({ currentDate }) => {
+const DaySwitch = ({ currentDate, setCurrentDate }) => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
@@ -23,19 +27,22 @@ const DaySwitch = ({ currentDate }) => {
   const goToPreviousDay = () => {
     const previousDay = new Date(selectedDate);
     previousDay.setDate(selectedDate.getDate() - 1);
-    if (previousDay >= currentDate) {
-      setSelectedDate(previousDay);
-    }
+
+    setCurrentDate(previousDay);
+    setSelectedDate(previousDay);
   };
 
   const goToNextDay = () => {
     const nextDay = new Date(selectedDate);
     nextDay.setDate(selectedDate.getDate() + 1);
+    setCurrentDate(nextDay);
     setSelectedDate(nextDay);
   };
+
   const closeCalendar = () => {
     setCalendarOpen(false);
   };
+
   return (
     <ContainerWrap>
       <CalenderBtn onClick={openCalendar}>
@@ -60,83 +67,10 @@ const DaySwitch = ({ currentDate }) => {
         setSelectedDate={setSelectedDate}
         isOpen={isCalendarOpen}
         onClose={closeCalendar}
+        setCurrentDate={setCurrentDate}
       />
     </ContainerWrap>
   );
 };
 
 export default DaySwitch;
-
-// import { useState, useRef } from 'react';
-// import DatePicker from 'react-datepicker';
-// import { format, addDays, isBefore } from 'date-fns';
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
-// import {
-//   BtnNext,
-//   BtnPrev,
-//   CalenderBtn,
-//   CalenderIconWrap,
-//   DateLabel,
-//   Svg,
-//   SvgCalendar,
-//   Wrap,
-// } from './DaySwitch.styled';
-// import sprite from '../../../assets/sprite.svg';
-// import { CalendarGlobalStyles } from '../StyledDatepicker/StyledDatepicker.styled';
-
-// const DaySwitch = () => {
-//   const [selectedDate, setSelectedDate] = useState(new Date());
-//   const calendarRef = useRef(null);
-
-//   const CustomInput = ({ onClick }) => (
-//     <Wrap>
-//       <CalenderBtn onClick={onClick} style={{ cursor: 'pointer' }}>
-//         <DateLabel>{format(selectedDate, 'dd/MM/yyyy')}</DateLabel>
-//         <CalenderIconWrap>
-//           <SvgCalendar>
-//             <use href={`${sprite}#icon-normal`} />
-//           </SvgCalendar>
-//         </CalenderIconWrap>
-//       </CalenderBtn>
-//       <BtnPrev
-//         type="button"
-//         onClick={() => calendarRef.current.setOpen(true)}
-//       >
-//         <Svg>
-//           <use href={`${sprite}#icon-chevron-left`} />
-//         </Svg>
-//       </BtnPrev>
-//       <BtnNext
-//         type="button"
-//         onClick={handleNextDay}
-//       >
-//         <Svg>
-//           <use href={`${sprite}#icon-chevron-right`} />
-//         </Svg>
-//       </BtnNext>
-//     </Wrap>
-//   );
-
-//   const handleNextDay = () => {
-//     const nextDay = addDays(selectedDate, 1);
-//     if (!isBefore(nextDay, new Date())) {
-//       setSelectedDate(nextDay);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <DatePicker
-//         selected={selectedDate}
-//         onChange={(date) => setSelectedDate(date)}
-//         customInput={<CustomInput />}
-//         dateFormat={'dd MM yyyy'}
-//         calendarStartDay={1}
-//         ref={calendarRef}
-//       />
-//       <CalendarGlobalStyles />
-//     </>
-//   );
-// };
-
-// export default DaySwitch;

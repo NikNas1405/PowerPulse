@@ -24,21 +24,9 @@ import { toast } from 'react-toastify';
 const DiaryPage = () => {
   const dispatch = useDispatch();
   const userData = useSelector(selectDiaryInformation);
-
-  // ОСЬ ЩО НАМ ПРИХОДИТЬ
-  // addExercises  Array(0)
-  // addProducts // Array(3)
-  //  [  amount: 150,
-  //     calories : 72,
-  //     date : "20-01-2024",
-  //     productId : {calories: 48, category: "soft drinks", groupBloodNotAllowed: { 1: false, 2: false, 3: false, 4: false },
-  //     title : "banana juice",
-  //     weight : 100,
-  //     _id : "5d51694902b2373622ff5f42"]
-
   const { addProducts, addExercises } = userData;
 
-  const [currentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   const day = String(currentDate.getDate()).padStart(2, '0');
   const month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -55,14 +43,17 @@ const DiaryPage = () => {
       }
     };
     fetchData();
-  }, [dispatch, formattedCurrentDate]);
+  }, [dispatch, formattedCurrentDate, currentDate]);
 
   return (
     <Container>
       <DiaryCont>
         <TitleAndSwitch>
           <TitlePage title="Diary" />
-          <DaySwitch currentDate={currentDate} />
+          <DaySwitch
+            currentDate={currentDate}
+            setCurrentDate={setCurrentDate}
+          />
         </TitleAndSwitch>
         <InfoContainer>
           <DayDashboard userDiaryInformation={userData} />
