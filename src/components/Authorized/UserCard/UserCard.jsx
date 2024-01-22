@@ -96,7 +96,9 @@ export const UserCard = ({ profile, refreshUserData }) => {
             <TextDescription> Daily calorie intake</TextDescription>
           </WrapperDescription>
           <WrapperDescription>
-            <TextNumber>{userDiaryData.caloriesIntake}</TextNumber>
+            <TextNumber>
+              {userDiaryData ? userDiaryData.caloriesIntake : 0}
+            </TextNumber>
           </WrapperDescription>
         </TextWrapper>
         <TextWrapper>
