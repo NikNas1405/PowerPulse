@@ -25,6 +25,18 @@ export const BtnIconClose = styled.svg`
   }
 `;
 
+export const TextUser = styled.div`
+  color: #efede8;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  width: 250px;
+  text-transform: uppercase;
+  text-align: center;
+`;
+
 export const UserNavMobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
