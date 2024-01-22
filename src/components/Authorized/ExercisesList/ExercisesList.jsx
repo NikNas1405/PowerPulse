@@ -24,25 +24,22 @@ export const ExercisesList = () => {
   const exercises = useSelector(getExercises);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  const { filter, filterList } = useParams();
+  const { filterList } = useParams();
 
-  console.log('filter=>', filter);
   console.log('filterList=>', filterList);
   console.log('exercises=>', exercises);
 
   useEffect(() => {
     const gettingExercisesList = async () => {
-      if (!filter || !filterList) {
+      if (!filterList) {
         console.error('Invalid filter or filterList');
         return;
       } else {
-        dispatch(
-          fetchExercisesList({ filter: filter, filterList: filterList })
-        );
+        dispatch(fetchExercisesList({ filterList: filterList }));
       }
     };
     gettingExercisesList();
-  }, [dispatch, filter, filterList]);
+  }, [dispatch, filterList]);
 
   return (
     <div>
