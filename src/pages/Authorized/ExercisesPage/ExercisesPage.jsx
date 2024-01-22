@@ -11,10 +11,7 @@ import {
 import ExerciseCategories from '../../../components/Authorized/ExercisesCategories/ExercisesCategories';
 import { fetchExercisesCategories } from '../../../redux/exercises/operations';
 //
-import {
-  Wrapper,
-  TitleAndFilterWrapper,
-} from '../ProductsPage/ProductsPage.styled';
+import { Wrapper } from '../ProductsPage/ProductsPage.styled';
 import { Container } from '../../../styles/GlobalStyles';
 import { ContainerExPage } from './ExercisesPage.Styled';
 //
@@ -31,7 +28,7 @@ const ExercisesPage = () => {
   useEffect(() => {
     const gettingExercisesFilters = async () => {
       if (filter === undefined) {
-        return console.log('fuck off');
+        return console.log('something wrong');
       } else {
         dispatch(fetchExercisesCategories({ filter: filter }));
       }
@@ -54,11 +51,11 @@ const ExercisesPage = () => {
         </ContainerExPage>
 
         {isLoading && !error && <Loader />}
-        <div>
+        <>
           <Suspense>
             <Outlet />
           </Suspense>
-        </div>
+        </>
       </Container>
     </Wrapper>
   );

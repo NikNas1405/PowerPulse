@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ExCat, CategoryLink } from './ExercisesCategories.styled';
 
 const ExerciseCategories = () => {
@@ -7,11 +8,14 @@ const ExerciseCategories = () => {
     <>
       <ExCat>
         {categories.map((category) => (
-          <CategoryLink key={category}>
-            <CategoryLink to={`/exercises/${category}`}>
+          <li key={category}>
+            <CategoryLink
+              // style={{ color: 'white' }}
+              to={`/exercises/${category}`}
+            >
               {category}
             </CategoryLink>
-          </CategoryLink>
+          </li>
         ))}
       </ExCat>
     </>

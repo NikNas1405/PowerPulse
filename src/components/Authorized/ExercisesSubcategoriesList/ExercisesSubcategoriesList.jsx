@@ -4,7 +4,7 @@ import {
   getIsLoading,
   getError,
 } from '../../../redux/exercises/categoriesSlice';
-import { Card } from './ExercisesSubcategoriesList.styled';
+import { SubCatItems } from './ExercisesSubcategoriesList.styled';
 import { Link } from 'react-router-dom';
 import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 
@@ -20,19 +20,19 @@ export const ExercisesSubcategoriesList = () => {
       {!categories ? (
         <p>you do not have any exersise category</p>
       ) : (
-        <div>
+        <SubCatItems>
           {/* Відображення категорій для відповідного значення filter */}
           {categories.map((category) => (
             <Link
               key={category._id}
               to={`/exercises/${category.filter}/${category.name}`}
             >
-              <Card>
+              <div>
                 <ExercisesSubcategoriesItem category={category} />
-              </Card>
+              </div>
             </Link>
           ))}
-        </div>
+        </SubCatItems>
       )}
     </div>
   );

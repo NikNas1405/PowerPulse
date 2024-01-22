@@ -14,6 +14,7 @@ import { selectIsRefreshing } from './redux/auth/selectors';
 import { ExercisesSubcategoriesItem } from './components/Authorized/ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 import { ExercisesSubcategoriesList } from './components/Authorized/ExercisesSubcategoriesList/ExercisesSubcategoriesList';
 import ExerciseCategories from './components/Authorized/ExercisesCategories/ExercisesCategories';
+import { ExercisesList } from './components/Authorized/ExercisesList/ExercisesList';
 
 const WelcomePage = lazy(() =>
   import('./pages/UnAuthorized/WelcomePage/WelcomePage')
@@ -120,10 +121,10 @@ function App() {
               path="/exercises/:filter"
               element={<ExercisesSubcategoriesList />}
             />
-            {/* <Route
+            <Route
               path="/exercises/:filter/:filterList"
               element={<ExercisesList />}
-            /> */}
+            />
           </Route>
           {/* <Route
             path="/exercises"

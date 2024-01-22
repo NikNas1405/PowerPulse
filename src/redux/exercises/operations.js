@@ -69,7 +69,7 @@ export const fetchExercisesList = createAsyncThunk(
     };
     try {
       const response = await axios.get(
-        `/exercises/filter/${transformFilter(filter)}?${transformFilter(
+        `/exercises/filter/:${transformFilter(filter)}?${transformFilter(
           filter
         )}=${filterList.toLowerCase()}`
       );

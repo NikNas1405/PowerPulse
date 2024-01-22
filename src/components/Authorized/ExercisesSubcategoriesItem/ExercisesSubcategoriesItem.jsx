@@ -1,14 +1,23 @@
-import { Block } from './ExercisesSubcategoriesItem.styled';
+import {
+  Block,
+  SubCategoryName,
+  CategoryTitle,
+} from './ExercisesSubcategoriesItem.styled';
 
 export const ExercisesSubcategoriesItem = ({
   category: { filter, name, imgURL },
 }) => {
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  const newName = capitalizeFirstLetter(name);
+  console.log(newName);
   return (
     <Block
       style={{ backgroundImage: `url(${imgURL})`, backgroundSize: 'cover' }}
     >
-      <p>Filter: {filter}</p>
-      <p>Name: {name}</p>
+      <SubCategoryName>{newName}</SubCategoryName>
+      <CategoryTitle>{filter}</CategoryTitle>
     </Block>
   );
 };
