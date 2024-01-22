@@ -119,7 +119,7 @@ export const ExercisesItem = ({
 
   const updateObject = (remainingTimeObj) => {
     setBurnedCaloriesByTime(funkOfBurnedCalories(remainingTimeObj));
-    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60) + 1);
+    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60));
   };
 
   // const onSubmitButtonClick = (value, actions) => {
@@ -333,6 +333,9 @@ export const ExercisesItem = ({
         </div>
         <div hidden className="secondModal">
           <div>
+            {/* <svg style={{ flexShrink: 0, width: '24px', height: '24px' }}>
+              <use href={sprite + '#icon-running-stick-figure-svgrepo-com-1'} />
+            </svg> */}
             <h2>Well done</h2>
             <p>
               Your time <span>{timeSpent}</span>
@@ -341,7 +344,7 @@ export const ExercisesItem = ({
               Burned calories <span>{burnedCaloriesByTime}</span>
             </p>
             <button onClick={() => setIsModalOpen(false)}>Next exercise</button>
-            <a href="#">
+            <a href="/PowerPulse/diary">
               <p>To the diary</p>
             </a>
             <p></p>
