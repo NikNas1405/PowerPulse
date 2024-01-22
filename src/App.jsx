@@ -11,10 +11,8 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Loader } from './components/Loader/Loader';
 import { selectIsRefreshing } from './redux/auth/selectors';
-import { ExercisesSubcategoriesItem } from './components/Authorized/ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
-import { ExercisesSubcategoriesList } from './components/Authorized/ExercisesSubcategoriesList/ExercisesSubcategoriesList';
-import ExerciseCategories from './components/Authorized/ExercisesCategories/ExercisesCategories';
 import { ExercisesList } from './components/Authorized/ExercisesList/ExercisesList';
+import { ExercisesSubcategoriesList } from './components/Authorized/ExercisesSubcategoriesList/ExercisesSubcategoriesList';
 
 const WelcomePage = lazy(() =>
   import('./pages/UnAuthorized/WelcomePage/WelcomePage')
@@ -61,7 +59,6 @@ function App() {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={isLoggedIn ? <DiaryPage /> : <WelcomePage />} />
           <Route path="/welcome" element={<WelcomePage />} />
-
           <Route
             path="/signup"
             element={
@@ -87,30 +84,36 @@ function App() {
               )
             }
           />
-
           <Route
             path="/profile"
             element={
               <PrivateRoute redirectTo="/" component={<ProfilePage />} />
             }
           />
-
           <Route
             path="/diary"
             element={<PrivateRoute redirectTo="/" component={<DiaryPage />} />}
           />
-
           <Route
             path="/products"
             element={
               <PrivateRoute redirectTo="/" component={<ProductsPage />} />
             }
           />
-
           <Route
             path="/exercises"
             element={
-              <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <RestrictedRoute
+                  redirectTo="/exercises"
+                  component={<ExercisesPage />}
+                />
+              )
             }
           >
             <Route
@@ -126,12 +129,6 @@ function App() {
               element={<ExercisesList />}
             />
           </Route>
-          {/* <Route
-            path="/exercises"
-            element={
-              <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
-            }
-          /> */}
           <Route path="/error" element={<ErrorPage />} />
           <Route path="*" element={<Navigate to="/error" />} />
         </Route>
