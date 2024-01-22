@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { lazy, useEffect, useState } from 'react';
+import { lazy, useEffect } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
@@ -10,6 +10,7 @@ import { useAuth } from '../src/hooks/useAuth';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Loader } from './components/Loader/Loader';
+import { selectIsRefreshing } from './redux/auth/selectors';
 import { ExercisesList } from './components/Authorized/ExercisesList/ExercisesList';
 import { ExercisesSubcategoriesList } from './components/Authorized/ExercisesSubcategoriesList/ExercisesSubcategoriesList';
 
@@ -44,14 +45,13 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 function App() {
   const { isUserParams, isLoggedIn } = useAuth();
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
-    setLoading(false);
   }, [dispatch]);
 
-  return loading ? (
+  return isRefreshing ? (
     <Loader />
   ) : (
     <>
@@ -92,20 +92,47 @@ function App() {
           />
           <Route
             path="/diary"
-            element={<PrivateRoute redirectTo="/" component={<DiaryPage />} />}
+            element={
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <PrivateRoute redirectTo="/diary" component={<DiaryPage />} />
+              )
+            }
           />
-
           <Route
             path="/products"
             element={
-              <PrivateRoute redirectTo="/" component={<ProductsPage />} />
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <PrivateRoute
+                  redirectTo="/products"
+                  component={<ProductsPage />}
+                />
+              )
             }
           />
-
           <Route
             path="/exercises"
             element={
-              <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <PrivateRoute
+                  redirectTo="/exercises"
+                  component={<ExercisesPage />}
+                />
+              )
             }
           >
             <Route
