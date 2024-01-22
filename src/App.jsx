@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { lazy, useEffect, useState } from 'react';
+import { lazy, useEffect } from 'react';
 
 import SharedLayout from './components/SharedLayout/SharedLayout';
 
@@ -99,10 +99,7 @@ function App() {
                   component={<ProfilePage />}
                 />
               ) : (
-                <RestrictedRoute
-                  redirectTo="/diary"
-                  component={<DiaryPage />}
-                />
+                <PrivateRoute redirectTo="/diary" component={<DiaryPage />} />
               )
             }
           />
@@ -115,7 +112,7 @@ function App() {
                   component={<ProfilePage />}
                 />
               ) : (
-                <RestrictedRoute
+                <PrivateRoute
                   redirectTo="/products"
                   component={<ProductsPage />}
                 />
@@ -131,7 +128,7 @@ function App() {
                   component={<ProfilePage />}
                 />
               ) : (
-                <RestrictedRoute
+                <PrivateRoute
                   redirectTo="/exercises"
                   component={<ExercisesPage />}
                 />
