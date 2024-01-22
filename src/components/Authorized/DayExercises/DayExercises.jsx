@@ -33,7 +33,6 @@ import { selectDiaryError } from '../../../redux/diary/diarySelector';
 import { useSelector } from 'react-redux';
 
 const DayExercises = ({ exercisesArray }) => {
-
   const isMobile = useMediaQuery('(max-width:768px)');
   const error = useSelector(selectDiaryError);
 
@@ -92,8 +91,7 @@ const DayExercises = ({ exercisesArray }) => {
                   <ExerciseListArrayItemMobile>
                     {formattedTitle(exercise.exerciseId.name)}
                   </ExerciseListArrayItemMobile>
-                  <ListMobileArray
-                  >
+                  <ListMobileArray>
                     <MobileItemsHolder1
                       style={{
                         display: 'flex',

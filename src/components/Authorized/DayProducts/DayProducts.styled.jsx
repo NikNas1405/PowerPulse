@@ -236,7 +236,6 @@ export const ProductListArrayItemMobile = styled.li`
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -363,9 +362,9 @@ export const ProductListArrayItem = styled.li`
 `;
 
 export const ListMobileArray = styled.div`
-  /* @media screen and (min-width: 320px) {
+  @media screen and (min-width: 320px) {
     width: 100%;
-  } */
+  }
 
   @media screen and (min-width: 375px) {
     display: flex;
@@ -376,128 +375,136 @@ export const ListMobileArray = styled.div`
 
 export const MobileItemsHolder1 = styled.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${globalColor.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${globalColor.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${globalColor.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 79px;
-    }
 
-    &:nth-of-type(1) {
-      color: ${globalColor.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${globalColor.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${globalColor.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin-bottom: 40px;
+      &:nth-of-type(2) {
+        margin-bottom: 40px;
+      }
     }
   }
 `;
 
 export const MobileItemsHolder2 = styled.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${globalColor.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${globalColor.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${globalColor.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 78px;
-    }
-
-    &:nth-of-type(1) {
-      color: ${globalColor.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${globalColor.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${globalColor.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
   }
 `;
 
 export const MobileItemsHolder3 = styled.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${globalColor.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${globalColor.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${globalColor.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 74px;
-    }
-
-    &:nth-of-type(1) {
-      color: ${globalColor.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${globalColor.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${globalColor.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
     }
   }
 `;
 
 export const MobileItemsHolder4 = styled.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        display: none;
+      }
+
+      &:nth-of-type(2) {
+        height: 38px;
+        border: none;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+    }
 
     @media screen and (min-width: 375px) {
       width: 20px;
-    }
 
-    &:nth-of-type(1) {
-      width: 20px;
-      color: ${globalColor.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
+      &:nth-of-type(1) {
+        display: block;
+        color: ${globalColor.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
 
-    &:nth-of-type(2) {
-      width: 20px;
-      height: 38px;
-
-      border: none;
-      padding: 0;
-      margin-top: 18px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      &:nth-of-type(2) {
+        margin-top: 18px;
+      }
     }
   }
 `;

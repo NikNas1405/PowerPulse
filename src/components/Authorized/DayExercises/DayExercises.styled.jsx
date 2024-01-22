@@ -104,12 +104,12 @@ export const ExerciseListArray = styled.ul`
 export const ExerciseListArrayItemMobile = styled.li`
   @media screen and (max-width: 375px) {
     width: 100%;
+    margin-bottom: 8px;
 
     &:first-of-type {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(2) {
@@ -123,14 +123,12 @@ export const ExerciseListArrayItemMobile = styled.li`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
 
     &:nth-of-type(3) {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(4) {
@@ -141,18 +139,15 @@ export const ExerciseListArrayItemMobile = styled.li`
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
 
     &:nth-of-type(5) {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(6) {
@@ -163,11 +158,9 @@ export const ExerciseListArrayItemMobile = styled.li`
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
   }
 
