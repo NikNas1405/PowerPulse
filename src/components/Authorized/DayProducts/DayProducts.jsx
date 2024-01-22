@@ -45,22 +45,11 @@ const DayProducts = ({ productsArray, date }) => {
 
   const isMobile = useMediaQuery('(max-width:768px)');
 
-  let FoodRecommended;
-  let type;
-
-  if (productsArray) {
-    type = productsArray.map(
-      (product) => product.productId.groupBloodNotAllowed[userBloodType]
-    );
-  }
-
-  if (type) {
-    FoodRecommended = 'Yes';
-  } else FoodRecommended = 'No';
-
   const formattedTitle = (productTitle) => {
     return productTitle[0].toUpperCase() + productTitle.slice(1).toLowerCase();
   };
+
+  let FoodRecommended;
 
   const handleDelete = async (id) => {
     try {
@@ -98,116 +87,126 @@ const DayProducts = ({ productsArray, date }) => {
         isMobile ? (
           <Table>
             <WrapperForItemsArray>
-              {productsArray.map((product) => (
-                <ProductListArray key={product._id}>
-                  <ProductListArrayItemMobile>Title</ProductListArrayItemMobile>
-                  <ProductListArrayItemMobile>
-                    {formattedTitle(product.productId.title)}
-                  </ProductListArrayItemMobile>
-                  <ProductListArrayItemMobile>
-                    Category
-                  </ProductListArrayItemMobile>
-                  <ProductListArrayItemMobile>
-                    {formattedTitle(product.productId.category)}
-                  </ProductListArrayItemMobile>
-                  <ListMobileArray>
-                    <MobileItemsHolder1
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      <ProductListArrayItemMobile>
-                        Calories
-                      </ProductListArrayItemMobile>
-                      <ProductListArrayItemMobile>
-                        {product.calories}
-                      </ProductListArrayItemMobile>
-                    </MobileItemsHolder1>
-                    <MobileItemsHolder2
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      <ProductListArrayItemMobile>
-                        Weight
-                      </ProductListArrayItemMobile>
-                      <ProductListArrayItemMobile>
-                        {product.amount}
-                      </ProductListArrayItemMobile>
-                    </MobileItemsHolder2>
-                    <MobileItemsHolder3
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      <ProductListArrayItemMobile>
-                        Recommend
-                      </ProductListArrayItemMobile>
-                      <ProductListArrayItemMobile>
-                        <div
-                          style={{
-                            display: 'flex',
-                            gap: '8px',
-                            alignItems: 'center',
-                            height: '24px',
-                          }}
-                        >
-                          <svg
+              {productsArray.map((product) => {
+                const type = product.productId.groupBloodNotAllowed[
+                  userBloodType
+                ]
+                  ? (FoodRecommended = 'Yes')
+                  : (FoodRecommended = 'No');
+
+                return (
+                  <ProductListArray key={product._id}>
+                    <ProductListArrayItemMobile>
+                      Title
+                    </ProductListArrayItemMobile>
+                    <ProductListArrayItemMobile>
+                      {formattedTitle(product.productId.title)}
+                    </ProductListArrayItemMobile>
+                    <ProductListArrayItemMobile>
+                      Category
+                    </ProductListArrayItemMobile>
+                    <ProductListArrayItemMobile>
+                      {formattedTitle(product.productId.category)}
+                    </ProductListArrayItemMobile>
+                    <ListMobileArray>
+                      <MobileItemsHolder1
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                      >
+                        <ProductListArrayItemMobile>
+                          Calories
+                        </ProductListArrayItemMobile>
+                        <ProductListArrayItemMobile>
+                          {product.calories}
+                        </ProductListArrayItemMobile>
+                      </MobileItemsHolder1>
+                      <MobileItemsHolder2
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                      >
+                        <ProductListArrayItemMobile>
+                          Weight
+                        </ProductListArrayItemMobile>
+                        <ProductListArrayItemMobile>
+                          {product.amount}
+                        </ProductListArrayItemMobile>
+                      </MobileItemsHolder2>
+                      <MobileItemsHolder3
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                      >
+                        <ProductListArrayItemMobile>
+                          Recommend
+                        </ProductListArrayItemMobile>
+                        <ProductListArrayItemMobile>
+                          <div
                             style={{
-                              width: '14px',
-                              height: '14px',
+                              display: 'flex',
+                              gap: '8px',
+                              alignItems: 'center',
+                              height: '24px',
                             }}
                           >
-                            {type ? (
-                              <use
-                                href={sprite + '#icon-Ellipse-82'}
-                                style={{
-                                  fill: globalColor.colorSecondaryGreen,
-                                  stroke: globalColor.colorSecondaryGreen,
-                                }}
-                              />
-                            ) : (
-                              <use
-                                href={sprite + '#icon-Ellipse-82'}
-                                style={{
-                                  fill: globalColor.colorSecondaryRed,
-                                  stroke: globalColor.colorSecondaryRed,
-                                }}
-                              />
-                            )}
-                          </svg>
-                          <TypeRecommendSpan>
-                            {FoodRecommended}
-                          </TypeRecommendSpan>
-                        </div>
-                      </ProductListArrayItemMobile>
-                    </MobileItemsHolder3>
-                    <MobileItemsHolder4
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}
-                    >
-                      <ProductListArrayItemMobile>
-                        {''}
-                      </ProductListArrayItemMobile>
-                      <ProductListArrayItemMobile>
-                        <TableDeleteButton
-                          type="button"
-                          onClick={() => handleDelete(product._id)}
-                        >
-                          <SvgTableStyled>
-                            <use href={sprite + '#icon-trash-03'}></use>
-                          </SvgTableStyled>
-                        </TableDeleteButton>
-                      </ProductListArrayItemMobile>
-                    </MobileItemsHolder4>
-                  </ListMobileArray>
-                </ProductListArray>
-              ))}
+                            <svg
+                              style={{
+                                width: '14px',
+                                height: '14px',
+                              }}
+                            >
+                              {type === 'Yes' ? (
+                                <use
+                                  href={sprite + '#icon-Ellipse-82'}
+                                  style={{
+                                    fill: globalColor.colorSecondaryGreen,
+                                    stroke: globalColor.colorSecondaryGreen,
+                                  }}
+                                />
+                              ) : (
+                                <use
+                                  href={sprite + '#icon-Ellipse-82'}
+                                  style={{
+                                    fill: globalColor.colorSecondaryRed,
+                                    stroke: globalColor.colorSecondaryRed,
+                                  }}
+                                />
+                              )}
+                            </svg>
+                            <TypeRecommendSpan>
+                              {FoodRecommended}
+                            </TypeRecommendSpan>
+                          </div>
+                        </ProductListArrayItemMobile>
+                      </MobileItemsHolder3>
+                      <MobileItemsHolder4
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                      >
+                        <ProductListArrayItemMobile>
+                          {''}
+                        </ProductListArrayItemMobile>
+                        <ProductListArrayItemMobile>
+                          <TableDeleteButton
+                            type="button"
+                            onClick={() => handleDelete(product._id)}
+                          >
+                            <SvgTableStyled>
+                              <use href={sprite + '#icon-trash-03'}></use>
+                            </SvgTableStyled>
+                          </TableDeleteButton>
+                        </ProductListArrayItemMobile>
+                      </MobileItemsHolder4>
+                    </ListMobileArray>
+                  </ProductListArray>
+                );
+              })}
             </WrapperForItemsArray>
           </Table>
         ) : (
@@ -222,66 +221,75 @@ const DayProducts = ({ productsArray, date }) => {
             </HeaderArray>
 
             <WrapperForItemsArray>
-              {productsArray.map((product) => (
-                <ProductListArray key={product._id}>
-                  <ProductListArrayItem>
-                    {formattedTitle(product.productId.title)}
-                  </ProductListArrayItem>
-                  <ProductListArrayItem>
-                    {formattedTitle(product.productId.category)}
-                  </ProductListArrayItem>
-                  <ProductListArrayItem>
-                    {product.calories}
-                  </ProductListArrayItem>
-                  <ProductListArrayItem>{product.amount}</ProductListArrayItem>
-                  <ProductListArrayItem>
-                    <div
-                      style={{
-                        display: 'flex',
-                        gap: '8px',
-                        alignItems: 'center',
-                        height: '24px',
-                      }}
-                    >
-                      <svg
+              {productsArray.map((product) => {
+                const type = product.productId.groupBloodNotAllowed[
+                  userBloodType
+                ]
+                  ? (FoodRecommended = 'Yes')
+                  : (FoodRecommended = 'No');
+                return (
+                  <ProductListArray key={product._id}>
+                    <ProductListArrayItem>
+                      {formattedTitle(product.productId.title)}
+                    </ProductListArrayItem>
+                    <ProductListArrayItem>
+                      {formattedTitle(product.productId.category)}
+                    </ProductListArrayItem>
+                    <ProductListArrayItem>
+                      {product.calories}
+                    </ProductListArrayItem>
+                    <ProductListArrayItem>
+                      {product.amount}
+                    </ProductListArrayItem>
+                    <ProductListArrayItem>
+                      <div
                         style={{
-                          width: '14px',
-                          height: '14px',
+                          display: 'flex',
+                          gap: '8px',
+                          alignItems: 'center',
+                          height: '24px',
                         }}
                       >
-                        {type ? (
-                          <use
-                            href={sprite + '#icon-Ellipse-82'}
-                            style={{
-                              fill: globalColor.colorSecondaryGreen,
-                              stroke: globalColor.colorSecondaryGreen,
-                            }}
-                          />
-                        ) : (
-                          <use
-                            href={sprite + '#icon-Ellipse-82'}
-                            style={{
-                              fill: globalColor.colorSecondaryRed,
-                              stroke: globalColor.colorSecondaryRed,
-                            }}
-                          />
-                        )}
-                      </svg>
-                      <TypeRecommendSpan>{FoodRecommended}</TypeRecommendSpan>
-                    </div>
-                  </ProductListArrayItem>
-                  <ProductListArrayItem>
-                    <TableDeleteButton
-                      type="button"
-                      onClick={() => handleDelete(product._id)}
-                    >
-                      <SvgTableStyled>
-                        <use href={sprite + '#icon-trash-03'}></use>
-                      </SvgTableStyled>
-                    </TableDeleteButton>
-                  </ProductListArrayItem>
-                </ProductListArray>
-              ))}
+                        <svg
+                          style={{
+                            width: '14px',
+                            height: '14px',
+                          }}
+                        >
+                          {type === 'Yes' ? (
+                            <use
+                              href={sprite + '#icon-Ellipse-82'}
+                              style={{
+                                fill: globalColor.colorSecondaryGreen,
+                                stroke: globalColor.colorSecondaryGreen,
+                              }}
+                            />
+                          ) : (
+                            <use
+                              href={sprite + '#icon-Ellipse-82'}
+                              style={{
+                                fill: globalColor.colorSecondaryRed,
+                                stroke: globalColor.colorSecondaryRed,
+                              }}
+                            />
+                          )}
+                        </svg>
+                        <TypeRecommendSpan>{FoodRecommended}</TypeRecommendSpan>
+                      </div>
+                    </ProductListArrayItem>
+                    <ProductListArrayItem>
+                      <TableDeleteButton
+                        type="button"
+                        onClick={() => handleDelete(product._id)}
+                      >
+                        <SvgTableStyled>
+                          <use href={sprite + '#icon-trash-03'}></use>
+                        </SvgTableStyled>
+                      </TableDeleteButton>
+                    </ProductListArrayItem>
+                  </ProductListArray>
+                );
+              })}
             </WrapperForItemsArray>
           </Table>
         )
