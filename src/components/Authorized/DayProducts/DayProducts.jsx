@@ -28,13 +28,19 @@ import {
 import { globalColor } from '../../../styles/root';
 import { selectUser } from '../../../redux/auth/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteDiaryProducts } from '../../../redux/diary/diaryOperation';
+import {
+  deleteDiaryProducts,
+  getAllDiaryInformation,
+} from '../../../redux/diary/diaryOperation';
 import { toast } from 'react-toastify';
+import { selectDiaryError } from '../../../redux/diary/diarySelector';
 
-const DayProducts = ({ productsArray }) => {
+const DayProducts = ({ productsArray, date }) => {
   const dispatch = useDispatch();
   const currentUser = useSelector(selectUser);
   const userBloodType = currentUser.blood;
+
+  const error = useSelector(selectDiaryError);
 
   const isMobile = useMediaQuery('(max-width:768px)');
 
@@ -55,9 +61,10 @@ const DayProducts = ({ productsArray }) => {
     return productTitle[0].toUpperCase() + productTitle.slice(1).toLowerCase();
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     try {
-      dispatch(deleteDiaryProducts(id));
+      await dispatch(deleteDiaryProducts(id));
+      await dispatch(getAllDiaryInformation(date));
     } catch (error) {
       toast.error('Some error occured, try again', error);
     }
@@ -86,7 +93,7 @@ const DayProducts = ({ productsArray }) => {
           </NavLink>
         </NavBlock>
       </TitleNav>
-      {productsArray && productsArray.length > 0 ? (
+      {productsArray && productsArray.length > 0 && !error ? (
         isMobile ? (
           <Table>
             <WrapperForItemsArray>

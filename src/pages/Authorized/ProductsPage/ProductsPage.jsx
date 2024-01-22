@@ -18,7 +18,6 @@ import {
 import {
   selectProductsCategories,
   selectProductsIsLoading,
-  selectProductsCategoriesIsLoading,
 } from '../../../redux/products/productsSelector';
 import { selectProducts } from '../../../redux/products/productsSelector';
 
@@ -31,9 +30,7 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
 
   const isLoadingProducts = useSelector(selectProductsIsLoading);
-  const isLoadingProductsCategories = useSelector(
-    selectProductsCategoriesIsLoading
-  );
+ 
 
   const categoriesArray = useSelector(selectProductsCategories);
   const productsArray = useSelector(selectProducts);
