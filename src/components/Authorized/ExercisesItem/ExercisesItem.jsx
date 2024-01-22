@@ -1,14 +1,15 @@
 // export const ExercisesItem = () => {
 //   return <div></div>;
 // };
-// import {
-//   ExerciseCard,
-//   ExerciseCardDownBlock,
-//   ExerciseCardMiddleBlock,
-//   Button,
-//   ExerciseCardTopBlock,
-//   Value,
-// } from './ExercisesItem.styled';
+import {
+  Forma,
+  Label,
+  ButtonSubmit,
+  Input,
+  Details,
+  InfoBlock,
+  DetailsSpan,
+} from './ExercisesItem.styled';
 
 // import { globalColor } from '../../../styles/root';
 // import sprite from '../../../assets/sprite.svg';
@@ -30,12 +31,11 @@ import sprite from '../../../assets/sprite.svg';
 //
 import Modal from 'react-modal';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import { useEffect, useState } from 'react';
-import { addExercises } from '../../../redux/exercises/operations';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { orange } from '@mui/material/colors';
-
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
+import { Formik, ErrorMessage } from 'formik';
+import { addDiaryExercise } from '../../../redux/diary/diaryOperation';
 
 const modalStyles = {
   overlay: {
@@ -73,24 +73,17 @@ const renderTime = ({ remainingTime }) => {
   return `${minutes}:${seconds}`;
 };
 
-// export const burnedCalories = Yup.object().shape({
-//   id: Yup.string().required('Name is required'),
-//   date: yup
-//     .string()
-//     .matches(
-//       /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/,
-//       'Invalid date format. Please use dd/mm/YYYY.'
-//     ),
-//   time: Yup.number()
-//     .label('Height')
-//     .min(60, 'The exercise time should not be less than 1 minute')
-//     .required('Height is required'),
+// const dateRegex = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
 
-//   calories: Yup.number()
-//     .label('Desired Weight')
-//     .min(35, 'Desired Weight must be a number greater than or equal to 35')
-//     .required('Desired Weight is required'),
-// });
+const caloriesSchema = Yup.object().shape({
+  exerciseId: Yup.string().required(),
+  date: Yup.string().required('Invalid date format. Please use dd/mm/YYYY.'),
+  time: Yup.number()
+    .min(1, 'Time of exercise should not be less than 1 minut')
+    .required('Time is required'),
+
+  calories: Yup.number().required(),
+});
 
 export const ExercisesItem = ({
   exercise: {
@@ -104,13 +97,13 @@ export const ExercisesItem = ({
     equipment,
   },
 }) => {
-  // const dispatch = useDispatch();
   const [select] = useState(180);
   const [timer, setTimer] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [burnedCaloriesByTime, setBurnedCaloriesByTime] = useState(0);
-  // const [exerTime, setExerTime] = useState(null);
+  const [timeSpent, setTimeSpent] = useState(0);
+  const [response, setResponse] = useState(null);
 
   const funkOfBurnedCalories = (timesRemaining) => {
     const realTime = 180 - timesRemaining;
@@ -120,24 +113,26 @@ export const ExercisesItem = ({
     const realCalories = (realTime * calories) / minTime;
     return realCalories.toFixed(0);
   };
+  const date = new Date();
+  const currentDate =
+    date.getDate() + '-' + date.getMonth() + 1 + '-' + date.getFullYear();
 
-  // const handleSubmit = (timesRemaining) => {
-  //   const date = Date.now();
-  //   const dateToExerc =
-  //     date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear();
-  //   setIsPlaying(false);
-  //   const realTime = setExerTime(180 - timesRemaining);
-  //   // const exercise = {
-  //   //   id: _id,
-  //   //   date: dateToExerc,
-  //   //   time: realTime,
-  //   //   calories: funkOfBurnedCalories(timesRemaining),
-  //   // };
-  //   dispatch(addExercises({ ...exercise }));
+  const updateObject = (remainingTimeObj) => {
+    setBurnedCaloriesByTime(funkOfBurnedCalories(remainingTimeObj));
+    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60) + 1);
+  };
 
-  //   console.log(exercise);
-  // };
+  // const onSubmitButtonClick = (value, actions) => {
+  const dispatch = useDispatch();
 
+  const updateModalWithResponseState = (data) => {
+    Array(document.getElementsByClassName('firstModal')).forEach(
+      (element) => (element[0].hidden = true)
+    );
+    Array(document.getElementsByClassName('secondModal')).forEach(
+      (element) => (element[0].hidden = false)
+    );
+  };
   const SetlectReset = () => {
     return (
       <div style={{ display: 'flex' }}>
@@ -186,47 +181,6 @@ export const ExercisesItem = ({
   };
   return (
     <>
-      {/* <ExerciseCard>
-        <ExerciseCardTopBlock>
-          <p>WORKOUT</p>
-          <Button onClick={() => setIsModalOpen(true)}>
-            Start
-            <div
-              style={{
-                width: '16px',
-                height: '16px',
-              }}
-            >
-              <use
-                href={sprite + '#icon-arrow'}
-                style={{
-                  stroke: globalColor.colorOrange,
-                }}
-              />
-            </div>
-          </Button>
-        </ExerciseCardTopBlock>
-
-        <ExerciseCardMiddleBlock>
-          <svg style={{ flexShrink: 0, width: '24px', height: '24px' }}>
-            <use href={sprite + '#icon-running-stick-figure-svgrepo-com-1'} />
-          </svg>
-
-          <p>{name}</p>
-        </ExerciseCardMiddleBlock>
-
-        <ExerciseCardDownBlock>
-          <p>
-            Burned calories <Value>{burnedCalories}</Value>
-          </p>
-          <p>
-            Body part <Value>{bodyPart}</Value>
-          </p>
-          <p>
-            Target <Value>{target}</Value>
-          </p>
-        </ExerciseCardDownBlock>
-      </ExerciseCard> */}
       <ProductsItemStyled>
         <DietSpan>WORKOUT</DietSpan>
         <div
@@ -285,42 +239,113 @@ export const ExercisesItem = ({
           </Text>
         </WrapperText>
       </ProductsItemStyled>
+      //
       <Modal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}
         contentLabel="Example Modal"
         style={modalStyles}
       >
-        <div>
-          <img src={gifUrl} alt="gif" />
-          <p>Name {name}</p>
-          <p>Burned calories {burnedCalories}</p>
-          <p>Body part {bodyPart}</p>
-          <p>Target {target}</p>
-          <div className="timer-wrapper">
-            <CountdownCircleTimer
-              key={timer}
-              isPlaying={isPlaying}
-              duration={select}
-              colors={[['#fc9002', 0.33], ['#F7B801', 0.33], ['#A30000']]}
-              onComplete={() =>
-                console.log('finished, burnedCalories', burnedCalories)
-              }
-              onUpdate={(remainingTime) => {
-                setBurnedCaloriesByTime(funkOfBurnedCalories(remainingTime));
-                // console.log('remainingTime', remainingTime);
-              }}
-            >
-              {renderTime}
-            </CountdownCircleTimer>
-            <br />
-            <br />
-            <SetlectReset />
-            <br />
-            <br />
-            <p>{burnedCaloriesByTime}</p>
+        <div className="firstModal">
+          <div>
+            <img src={gifUrl} alt="gif" />
+            <div className="timer-wrapper">
+              <CountdownCircleTimer
+                key={timer}
+                isPlaying={isPlaying}
+                duration={select}
+                colors={[['#fc9002', 0.33], ['#F7B801', 0.33], ['#A30000']]}
+                onComplete={() =>
+                  console.log('finished, burnedCalories', burnedCalories)
+                }
+                onUpdate={(remainingTime) => {
+                  updateObject(remainingTime);
+                  // console.log('remainingTime', remainingTime);
+                }}
+              >
+                {renderTime}
+              </CountdownCircleTimer>
+              <br />
+              <br />
+              <SetlectReset />
+              <br />
+              <br />
+              <p>{burnedCaloriesByTime}</p>
+            </div>
+            <InfoBlock>
+              <Details>
+                Name <DetailsSpan>{name}</DetailsSpan>
+              </Details>
+              <Details>
+                Burned calories <DetailsSpan>{burnedCalories}</DetailsSpan>
+              </Details>
+              <Details>
+                Body part <DetailsSpan>{bodyPart}</DetailsSpan>
+              </Details>
+              <Details>
+                Target <DetailsSpan>{target}</DetailsSpan>
+              </Details>
+            </InfoBlock>
+
+            {/* <button onClick={handleAddToDiary}>Add to diary</button> */}
           </div>
-          <button type="submit">Add to diary</button>
+          <Formik
+            initialValues={{
+              exerciseId: _id,
+              date: currentDate,
+              time: timeSpent,
+              calories: burnedCaloriesByTime,
+            }}
+            enableReinitialize
+            validationSchema={caloriesSchema}
+            onSubmit={(values) => {
+              setIsPlaying(false);
+              dispatch(addDiaryExercise({ ...values })).then((data) =>
+                updateModalWithResponseState(data)
+              );
+            }}
+          >
+            <Forma>
+              <Input hidden id="exerciseId" name="exerciseId" type="text" />
+              <ErrorMessage name="exerciseId" component="exerciseId" />
+              <Input hidden id="date" name="date" type="text" />
+              <ErrorMessage name="date" component="date" />
+              <Input
+                hidden
+                id="time"
+                name="time"
+                type="number"
+                min="0"
+                value={timeSpent}
+              />
+              <ErrorMessage name="time" component="div" />
+              <Input
+                hidden
+                id="calories"
+                name="calories"
+                type="number"
+                value={burnedCaloriesByTime}
+              />
+              <ErrorMessage name="calories" component="calories" />
+              <button type="submit">Add to diary</button>
+            </Forma>
+          </Formik>
+        </div>
+        <div hidden className="secondModal">
+          <div>
+            <h2>Well done</h2>
+            <p>
+              Your time <span>{timeSpent}</span>
+            </p>
+            <p>
+              Burned calories <span>{burnedCaloriesByTime}</span>
+            </p>
+            <button onClick={() => setIsModalOpen(false)}>Next exercise</button>
+            <a href="#">
+              <p>To the diary</p>
+            </a>
+            <p></p>
+          </div>
         </div>
       </Modal>
     </>
