@@ -126,7 +126,7 @@ export const HeaderArray = styled.ul`
 `;
 
 export const HeaderItem = styled.li`
-  color: #ef8964;
+  color: ${globalColor.colorOrange1};
   font-size: 12px;
   line-height: 1.5;
 
@@ -202,15 +202,15 @@ export const ProductListArrayItemMobile = styled.li`
     width: 290px;
 
     &:first-of-type {
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
 
     &:nth-of-type(2) {
-      color: #efede8;
+      color: ${globalColor.colorWhite};
       border-radius: 12px;
-      border: 1px solid rgba(239, 237, 232, 0.3);
+      border: 1px solid ${globalColor.colorInput};
       font-size: 14px;
       line-height: 1.2857;
       padding: 8px 14px;
@@ -222,15 +222,15 @@ export const ProductListArrayItemMobile = styled.li`
     }
 
     &:nth-of-type(3) {
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
 
     &:nth-of-type(4) {
-      color: #efede8;
+      color: ${globalColor.colorWhite};
       border-radius: 12px;
-      border: 1px solid rgba(239, 237, 232, 0.3);
+      border: 1px solid ${globalColor.colorInput};
       font-size: 14px;
       line-height: 1.2857;
       padding: 8px 14px;
@@ -245,9 +245,9 @@ export const ProductListArrayItemMobile = styled.li`
 
 export const ProductListArrayItem = styled.li`
   @media screen and (min-width: 768px) {
-    color: #efede8;
+    color: ${globalColor.colorWhite};
     border-radius: 12px;
-    border: 1px solid rgba(239, 237, 232, 0.3);
+    border: 1px solid ${globalColor.colorInput};
     padding: 8px 14px;
     height: 38px;
 
@@ -317,15 +317,15 @@ export const MobileItemsHolder1 = styled.div`
     width: 79px;
 
     &:nth-of-type(1) {
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
 
     &:nth-of-type(2) {
-      color: #efede8;
+      color: ${globalColor.colorWhite};
       border-radius: 12px;
-      border: 1px solid rgba(239, 237, 232, 0.3);
+      border: 1px solid ${globalColor.colorInput};
       font-size: 14px;
       line-height: 1.2857;
       padding: 8px 14px;
@@ -342,15 +342,15 @@ export const MobileItemsHolder2 = styled.div`
   > li {
     width: 78px;
     &:nth-of-type(1) {
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
 
     &:nth-of-type(2) {
-      color: #efede8;
+      color: ${globalColor.colorWhite};
       border-radius: 12px;
-      border: 1px solid rgba(239, 237, 232, 0.3);
+      border: 1px solid ${globalColor.colorInput};
       font-size: 14px;
       line-height: 1.2857;
       padding: 8px 14px;
@@ -367,15 +367,15 @@ export const MobileItemsHolder3 = styled.div`
   > li {
     width: 74px;
     &:nth-of-type(1) {
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
 
     &:nth-of-type(2) {
-      color: #efede8;
+      color: ${globalColor.colorWhite};
       border-radius: 12px;
-      border: 1px solid rgba(239, 237, 232, 0.3);
+      border: 1px solid ${globalColor.colorInput};
       font-size: 14px;
       line-height: 1.2857;
       padding: 8px 14px;
@@ -392,7 +392,7 @@ export const MobileItemsHolder4 = styled.div`
   > li {
     &:nth-of-type(1) {
       width: 20px;
-      color: #ef8964;
+      color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
     }
