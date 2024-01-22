@@ -24,6 +24,7 @@ import {
 import { Container } from '../../../styles/GlobalStyles';
 
 import { toast } from 'react-toastify';
+import { selectUser } from '../../../redux/auth/selectors';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
@@ -32,10 +33,19 @@ const DiaryPage = () => {
   const { addProducts, addExercises } = userData;
   const [currentDate, setCurrentDate] = useState(new Date());
 
-  const day = String(currentDate.getDate()).padStart(2, '0');
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const year = currentDate.getFullYear();
-  const formattedCurrentDate = `${day}-${month}-${year}`;
+  const user = useSelector(selectUser);
+  const userDataRegistration = user.createdAt;
+
+  const changeDate = (date) => {
+    const dateObject = new Date(date);
+    const day = String(dateObject.getDate()).padStart(2, '0');
+    const month = String(dateObject.getMonth() + 1).padStart(2, '0');
+    const year = dateObject.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
+
+  const formattedCurrentDate = changeDate(currentDate);
+  const formattedUserDateRegistration = changeDate(userDataRegistration);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,6 +70,7 @@ const DiaryPage = () => {
             <DaySwitch
               currentDate={currentDate}
               setCurrentDate={setCurrentDate}
+              userDateRegistration={formattedUserDateRegistration}
             />
           </TitleAndSwitch>
           <InfoContainer>

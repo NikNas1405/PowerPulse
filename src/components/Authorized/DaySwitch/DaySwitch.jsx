@@ -16,7 +16,7 @@ import {
 
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
 
-const DaySwitch = ({ currentDate, setCurrentDate }) => {
+const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
@@ -26,11 +26,14 @@ const DaySwitch = ({ currentDate, setCurrentDate }) => {
 
   const goToPreviousDay = () => {
     const previousDay = new Date(selectedDate);
-    previousDay.setDate(selectedDate.getDate() - 1);
-
-    setCurrentDate(previousDay);
-    setSelectedDate(previousDay);
+    if (previousDay < userDateRegistration) {
+      previousDay.setDate(selectedDate.getDate() - 1);
+      setCurrentDate(previousDay);
+      setSelectedDate(previousDay);
+    }
   };
+
+
 
   const goToNextDay = () => {
     const nextDay = new Date(selectedDate);
@@ -68,6 +71,7 @@ const DaySwitch = ({ currentDate, setCurrentDate }) => {
         isOpen={isCalendarOpen}
         onClose={closeCalendar}
         setCurrentDate={setCurrentDate}
+        userDateRegistration={userDateRegistration}
       />
     </ContainerWrap>
   );
