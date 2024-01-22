@@ -1,11 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import moment from 'moment';
 import { Formik, Form } from 'formik';
 import { getCurrentUser, updateUser } from '../../../redux/settings/operations';
-import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
 import { toast } from 'react-toastify';
 
 import {
@@ -25,6 +24,7 @@ import {
   ActivityRadio,
   ButtonSave,
   DataWrapper,
+  CalendarGlobalStyles,
 } from './UserForm.styled';
 
 import * as Yup from 'yup';
@@ -83,6 +83,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
   const fetchUserData = async () => {
     try {
       const resp = await dispatch(getCurrentUser());
+      console.log(resp);
       if (resp.payload.birthday === undefined) {
         resp.payload.birthday = '';
       }
@@ -199,7 +200,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
                         props.values.birthday = date;
                         props.setFieldTouched;
                       }}
-                      dateFormat="MM.dd.yyyy"
+                      dateFormat="dd.MM.yyyy"
                       placeholderText="00.00.00"
                       name="birthday"
                       value={props.values.birthday}
@@ -212,6 +213,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       onChange={props.handleChange}
                     /> */}
                     <StyledError name="birthday" component="div" />
+                    <CalendarGlobalStyles />
                   </ParamsLabel>
                 </ParamsWrapper>
 
