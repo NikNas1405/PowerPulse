@@ -22,7 +22,6 @@ export const register = createAsyncThunk(
 
       return data;
     } catch (error) {
-      console.log(error);
       toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
