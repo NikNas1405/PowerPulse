@@ -1,78 +1,67 @@
 import styled from 'styled-components';
 // import { globalColor } from '../../../styles/root';
+import { Field, Form } from 'formik';
 
-export const ExerciseCard = styled.div`
+export const Input = styled(Field)`
+  border: 2px solid gray;
+  &:hover {
+    border: 2px solid green;
+  }
+`;
+
+export const Forma = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 335px;
-  height: 141px;
-  border: 1px solid white;
-  border-radius: 12px;
-  padding: 16px;
-  gap: 8px;
-
-  @media (min-width: 768px) {
-    /* gap: 32px 16px; */
-  }
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+  width: 200px;
+  margin-bottom: 50px;
 `;
 
-export const ExerciseCardDownBlock = styled.div`
+export const Label = styled.label`
+  text-align: left;
+`;
+
+export const ButtonSubmit = styled.button`
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const Details = styled.div`
   display: flex;
-  align-items: end;
-  gap: 16px;
-  margin-top: 8px;
+  flex-direction: column;
+  width: 147px;
+  height: 62px;
   color: rgba(239, 237, 232, 0.4);
+  background-color: rgba(239, 237, 232, 0.2);
+  border: 1px solid rgba(239, 237, 232, 0.05);
+  padding: 12px 0 0 18px;
+  border-radius: 12px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
-  @media (min-width: 768px) {
-    /* gap: 32px 16px; */
-  }
 `;
-
-export const ExerciseCardMiddleBlock = styled.div`
-  display: flex;
-  gap: 16px;
-
-  @media (min-width: 768px) {
-    /* gap: 32px 16px; */
-  }
-`;
-
-export const ExerciseCardTopBlock = styled.div`
-  display: flex;
-  gap: 16px;
-
-  @media (min-width: 768px) {
-    /* gap: 32px 16px; */
-  }
-`;
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  color: orange;
-  gap: 8px;
-  width: 49px;
-  height: 18px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: transparent;
-
-  font-size: 14px;
-  line-height: 1.2857;
-  word-wrap: break-word;
-
-  @media (min-width: 768px) {
-    width: 53px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-`;
-
-export const Value = styled.span`
+export const DetailsSpan = styled.span`
   color: rgba(239, 237, 232, 1);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  word-wrap: break-word;
+`;
+
+export const InfoBlock = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+//
+export const SuccesModal = styled.div`
+  width: 335px;
+  height: 384px;
+  background-color: rgba(16, 16, 15, 1);
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  display: flex;
 `;
