@@ -28,13 +28,14 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
   };
 
   const goToPreviousDay = () => {
+    setIsActive(true);
     const previousDay = new Date(currentDate);
     const formattedPreviousDay = changeDate(previousDay);
     if (formattedPreviousDay > userDateRegistration) {
       previousDay.setDate(previousDay.getDate() - 1);
       setCurrentDate(previousDay);
       setSelectedDate(previousDay);
-      setIsActive(true);
+      setIsActive(false);
     } else {
       toast.error(
         'Selected date cannot be earlier than the registration date.'

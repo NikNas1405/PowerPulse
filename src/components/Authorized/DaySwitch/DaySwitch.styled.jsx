@@ -78,6 +78,7 @@ export const BtnPrev = styled.button`
     border: 1px solid #e9101d;
   }
 `;
+
 export const Svg = styled.svg`
   width: 100%;
   height: 100%;
