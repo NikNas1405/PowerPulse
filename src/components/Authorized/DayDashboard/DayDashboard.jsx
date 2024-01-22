@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import {
   ContainerWrap,
   ListStyled,
@@ -13,7 +15,6 @@ import {
 } from './DayDashboard.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { useEffect, useState } from 'react';
 
 const DayDashboard = ({ userDiaryInformation }) => {
   const {
@@ -24,15 +25,13 @@ const DayDashboard = ({ userDiaryInformation }) => {
     remainingSports,
   } = userDiaryInformation;
 
-  const overConsumedCalories = consumedCalories - caloriesIntake;
-
   const [isOverThan, setIsOverThan] = useState(false);
 
   useEffect(() => {
-    if (overConsumedCalories > caloriesIntake) {
+    if (remainingCalories < 0) {
       setIsOverThan(true);
     }
-  }, [overConsumedCalories]);
+  }, [remainingCalories]);
 
   return (
     <ContainerWrap>
@@ -40,7 +39,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
+              <use href={sprite + '#icon-fluent_food-24-filled'}></use>
             </SvgStyled>
             <TitleStyled>Daily calory intake</TitleStyled>
           </TitleStyledWrapper>
@@ -49,7 +48,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-dumbbell`}></use>
+              <use href={sprite + '#icon-dumbbell'}></use>
             </SvgStyled>
             <TitleStyled>Daily norm of sports</TitleStyled>
           </TitleStyledWrapper>
@@ -58,7 +57,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
+              <use href={sprite + '#icon-fluent_food-apple-20-filled'}></use>
             </SvgStyled>
             <TitleStyled>Calories consumed</TitleStyled>
           </TitleStyledWrapper>
@@ -67,7 +66,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-calories-1`}></use>
+              <use href={sprite + '#icon-calories-1'}></use>
             </SvgStyled>
             <TitleStyled>Calories burned</TitleStyled>
           </TitleStyledWrapper>
@@ -76,7 +75,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled className={isOverThan ? 'redBg' : ''}>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-bubble`}></use>
+              <use href={sprite + '#icon-bubble'}></use>
             </SvgStyled>
             <TitleStyled>The rest of the calories</TitleStyled>
           </TitleStyledWrapper>
@@ -85,7 +84,7 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled className={isOverThan ? 'greenBg' : ''}>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-running-figure`}></use>
+              <use href={sprite + '#icon-running-figure'}></use>
             </SvgStyled>
             <TitleStyled>The rest of sports</TitleStyled>
           </TitleStyledWrapper>
@@ -96,7 +95,9 @@ const DayDashboard = ({ userDiaryInformation }) => {
       <TextWrapper>
         <SvgWrapperText>
           <ExclamationSvg>
-            <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
+            <use
+              href={sprite + '#icon-running-stick-figure-svgrepo-com-1'}
+            ></use>
           </ExclamationSvg>
         </SvgWrapperText>
         <TextStyled>

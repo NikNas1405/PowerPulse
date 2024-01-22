@@ -10,9 +10,11 @@ const StyledDatepicker = ({
   setSelectedDate,
   isOpen,
   onClose,
+  setCurrentDate,
 }) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    setCurrentDate(date);
     onClose();
   };
 
