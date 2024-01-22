@@ -79,24 +79,43 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // console.log('Start');
-  const fetchUserData = async () => {
-    try {
-      const resp = await dispatch(getCurrentUser());
-      console.log(resp);
-      if (resp.payload.birthday === undefined) {
-        resp.payload.birthday = '';
-      }
-      setUserData(resp.payload);
-      refreshUserData(resp.payload);
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-    }
-  };
-
+  const [defaultBirthday, setDefaultBirthday] = useState(null);
   useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const resp = await dispatch(getCurrentUser());
+        if (resp.payload.birthday === undefined) {
+          resp.payload.birthday = '';
+        }
+        setUserData(resp.payload);
+        refreshUserData(resp.payload);
+        setDefaultBirthday(resp.payload.birthday);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
     fetchUserData();
   }, []);
+
+  // // console.log('Start');
+  // const fetchUserData = async () => {
+  //   try {
+  //     const resp = await dispatch(getCurrentUser());
+  //     console.log(resp);
+  //     if (resp.payload.birthday === undefined) {
+  //       resp.payload.birthday = '';
+  //     }
+  //     setUserData(resp.payload);
+  //     refreshUserData(resp.payload);
+  //   } catch (error) {
+  //     console.error('Error fetching user data:', error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchUserData();
+  // }, []);
 
   const handleSubmit = (values) => {
     setIsSubmitted(true);
@@ -116,10 +135,23 @@ export const UserForm = ({ profile, refreshUserData }) => {
     return false;
   };
 
+  const changeDate = (date) => {
+    const dateObject = new Date(date);
+    const year = dateObject.getFullYear();
+    const month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
+    const day = dateObject.getDate().toString().padStart(2, '0');
+
+    return `${day}-${month}-${year}`;
+  };
+
   return (
     <ProfileContainer>
       <Formik
-        initialValues={userData}
+        // initialValues={userData}
+        initialValues={{
+          ...userData,
+          birthday: defaultBirthday ? changeDate(defaultBirthday) : '',
+        }}
         enableReinitialize
         validationSchema={ProfileSchema}
         onSubmit={handleSubmit}
@@ -196,8 +228,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       selected={selectedDate}
                       onChange={(date) => {
                         setSelectedDate(date);
-                        props.handleChange;
-                        props.values.birthday = date;
+                        props.setFieldValue('birthday', date);
                         props.setFieldTouched;
                       }}
                       dateFormat="dd.MM.yyyy"
@@ -205,13 +236,14 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       name="birthday"
                       value={props.values.birthday}
                     />
-                    {/* <ParamsInput
+                    {/* 
                       name="birthday"
                       value={props.values.birthday}
                       placeholder="0"
                       type="text"
                       onChange={props.handleChange}
-                    /> */}
+                    */}
+                    {/* />  */}
                     <StyledError name="birthday" component="div" />
                     <CalendarGlobalStyles />
                   </ParamsLabel>
