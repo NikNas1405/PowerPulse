@@ -34,6 +34,8 @@ export const UserCard = ({ profile, refreshUserData }) => {
 
   const userDiaryData = useSelector(selectDiaryInformation);
 
+  const type = userDiaryData.caloriesIntake;
+
   const handleAvaChange = (e) => {
     // TODO UPDATE USER HERE
     try {
@@ -97,7 +99,7 @@ export const UserCard = ({ profile, refreshUserData }) => {
           </WrapperDescription>
           <WrapperDescription>
             <TextNumber>
-              {userDiaryData ? userDiaryData.caloriesIntake : 0}
+              {type !== undefined ? userDiaryData.caloriesIntake : 0}
             </TextNumber>
           </WrapperDescription>
         </TextWrapper>
