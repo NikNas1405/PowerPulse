@@ -1,4 +1,4 @@
-import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N as R,m as te,o as q,Q as U,C as ne,p as re}from"./index-5ae98b2e.js";import{W as oe,e as se,f as de,a as P,s as le,b as ae}from"./StyledDatepicker.styled-6bc2b071.js";import{T as pe}from"./TitlePage-a57d2e21.js";import"./defineProperty-aecfd905.js";const he=({selectedDate:o,setSelectedDate:a,isOpen:l,onClose:s,setCurrentDate:n})=>{const p=f=>{a(f),n(f),s()};return e.jsxs(oe,{children:[e.jsx(se,{selected:o,dateFormat:"dd/MM/yyyy",calendarStartDay:1,formatWeekDay:f=>f.substr(0,1),open:l,customInput:e.jsx("div",{style:{display:"none"}}),onChange:p}),e.jsx(ee,{})]})},xe=t.div`
+import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N as R,m as te,o as q,Q as U,C as ne,p as re}from"./index-da98ab04.js";import{W as oe,e as se,f as de,a as P,s as le,b as ae}from"./StyledDatepicker.styled-71ebe30d.js";import{T as pe}from"./TitlePage-e5d721ef.js";import"./defineProperty-9c5a3e9a.js";const he=({selectedDate:o,setSelectedDate:a,isOpen:l,onClose:s,setCurrentDate:n})=>{const p=f=>{a(f),n(f),s()};return e.jsxs(oe,{children:[e.jsx(se,{selected:o,dateFormat:"dd/MM/yyyy",calendarStartDay:1,formatWeekDay:f=>f.substr(0,1),open:l,customInput:e.jsx("div",{style:{display:"none"}}),onChange:p}),e.jsx(ee,{})]})},xe=t.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -571,11 +571,10 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       color: ${i.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     &:nth-of-type(2) {
@@ -586,7 +585,6 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -601,7 +599,6 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
 
     &:nth-of-type(4) {
@@ -612,7 +609,6 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -637,7 +633,6 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -719,7 +714,7 @@ import{j as e,h as ee,s as t,g as i,r as k,a as d,u as M,e as S,i as ie,k as A,N
       width: 20px;
     }
   }
-`,ve=()=>{const o=[{exerciseId:{_id:"64f2458d6f67bc34bae4f7h8",bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},date:"22-01-2024",time:7,calories:150,_id:"65ae304f0214b9f7570fd669"},{exerciseId:{_id:"64f2458d6f67bc34bae4f7f7",bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},date:"22-01-2024",time:7,calories:150,_id:"65ae304f0214b9f7570fd620"},{exerciseId:{_id:"64f2458d6f67bc34bae4f962",bodyPart:"upper arms",equipment:"dumbbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0416.gif",name:"dumbbell standing biceps curl",target:"biceps",burnedCalories:264,time:3},date:"22-01-2024",time:3,calories:264,_id:"65ae309c0214b9f7570fd63a"},{exerciseId:{_id:"64f2458d6f67bc34bae4f8e7",bodyPart:"upper legs",equipment:"dumbbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0291.gif",name:"dumbbell bench squat",target:"glutes",burnedCalories:268,time:3},date:"22-01-2024",time:3,calories:268,_id:"65ae30c20214b9f7570fd641"}],a=A("(max-width:768px)"),l=S(P),s=n=>n[0].toUpperCase()+n.slice(1).toLowerCase();return e.jsxs(H,{children:[e.jsxs(G,{children:[e.jsx(F,{children:"Exercises"}),e.jsx(Y,{children:e.jsxs(R,{to:"/exercises",style:{display:"flex",alignItems:"center"},children:[e.jsx(Q,{children:"Add exercises"}),e.jsx("svg",{style:{width:"16px",height:"16px",marginLeft:"8px",stroke:i.colorOrange},children:e.jsx("use",{href:d+"#icon-arrow"})})]})})]}),o&&o.length>0&&!l?a?e.jsx(T,{children:e.jsx(O,{children:o.map(n=>e.jsxs(N,{children:[e.jsx(c,{children:"Body Part"}),e.jsx(c,{children:s(n.exerciseId.bodyPart)}),e.jsx(c,{children:"Equipment"}),e.jsx(c,{children:s(n.exerciseId.equipment)}),e.jsx(c,{children:"Name"}),e.jsx(c,{children:s(n.exerciseId.name)}),e.jsxs("div",{style:{display:"flex",gap:"14px"},children:[e.jsxs(J,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Target"}),e.jsx(c,{children:s(n.exerciseId.target)})]}),e.jsxs(K,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Burned Calories"}),e.jsx(c,{children:n.exerciseId.burnedCalories})]}),e.jsxs(X,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Time"}),e.jsx(c,{children:n.time})]}),e.jsxs(Z,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:""}),e.jsx(c,{children:e.jsx(W,{type:"button",onClick:()=>handleDelete(n._id),children:e.jsx(E,{children:e.jsx("use",{href:d+"#icon-trash-03"})})})})]})]})]},n._id))})}):e.jsxs(T,{children:[e.jsxs(be,{children:[e.jsx(y,{children:"Body Part"}),e.jsx(y,{children:"Equipment"}),e.jsx(y,{children:"Name"}),e.jsx(y,{children:"Target"}),e.jsx(y,{children:"Burned Calories"}),e.jsx(y,{children:"Time"}),e.jsx(y,{children:""})]}),e.jsx(O,{children:o.map(n=>e.jsxs(N,{children:[e.jsx(j,{children:s(n.exerciseId.bodyPart)}),e.jsx(j,{children:s(n.exerciseId.equipment)}),e.jsx(j,{children:s(n.exerciseId.name)}),e.jsx(j,{children:s(n.exerciseId.target)}),e.jsx(j,{children:n.exerciseId.burnedCalories}),e.jsx(j,{children:n.time}),e.jsx(j,{children:e.jsx(W,{type:"button",onClick:()=>handleDelete(product._id),children:e.jsx(E,{children:e.jsx("use",{href:d+"#icon-trash-03"})})})})]},n._id))})]}):e.jsx(V,{children:"Not found exercises"})]})},Ie=t.div`
+`,ve=()=>{const o=[{exerciseId:{_id:"64f2458d6f67bc34bae4f7h8",bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},date:"22-01-2024",time:7,calories:150,_id:"65ae304f0214b9f7570fd669"},{exerciseId:{_id:"64f2458d6f67bc34bae4f7f7",bodyPart:"chest",equipment:"leverage machine",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0009.gif",name:"assisted chest dip (kneeling)",target:"pectorals",burnedCalories:329,time:3},date:"22-01-2024",time:7,calories:150,_id:"65ae304f0214b9f7570fd620"},{exerciseId:{_id:"64f2458d6f67bc34bae4f962",bodyPart:"upper arms",equipment:"dumbbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0416.gif",name:"dumbbell standing biceps curl",target:"biceps",burnedCalories:264,time:3},date:"22-01-2024",time:3,calories:264,_id:"65ae309c0214b9f7570fd63a"},{exerciseId:{_id:"64f2458d6f67bc34bae4f8e7",bodyPart:"upper legs",equipment:"dumbbell",gifUrl:"https://ftp.goit.study/img/power-pulse/gifs/0291.gif",name:"dumbbell bench squat",target:"glutes",burnedCalories:268,time:3},date:"22-01-2024",time:3,calories:268,_id:"65ae30c20214b9f7570fd641"}],a=A("(max-width:768px)"),l=S(P),s=n=>n[0].toUpperCase()+n.slice(1).toLowerCase();return e.jsxs(H,{children:[e.jsxs(G,{children:[e.jsx(F,{children:"Exercises"}),e.jsx(Y,{children:e.jsxs(R,{to:"/exercises",style:{display:"flex",alignItems:"center"},children:[e.jsx(Q,{children:"Add exercises"}),e.jsx("svg",{style:{width:"16px",height:"16px",marginLeft:"8px",stroke:i.colorOrange},children:e.jsx("use",{href:d+"#icon-arrow"})})]})})]}),o&&o.length>0&&!l?a?e.jsx(T,{children:e.jsx(O,{children:o.map(n=>e.jsxs(N,{children:[e.jsx(c,{children:"Body Part"}),e.jsx(c,{children:s(n.exerciseId.bodyPart)}),e.jsx(c,{children:"Equipment"}),e.jsx(c,{children:s(n.exerciseId.equipment)}),e.jsx(c,{children:"Name"}),e.jsx(c,{children:s(n.exerciseId.name)}),e.jsxs("div",{style:{display:"flex",gap:"14px"},children:[e.jsxs(J,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Target"}),e.jsx(c,{children:s(n.exerciseId.target)})]}),e.jsxs(K,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Burned Calories"}),e.jsx(c,{children:n.exerciseId.burnedCalories})]}),e.jsxs(X,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:"Time"}),e.jsx(c,{children:n.time})]}),e.jsxs(Z,{style:{display:"flex",flexDirection:"column"},children:[e.jsx(c,{children:""}),e.jsx(c,{children:e.jsx(W,{type:"button",onClick:()=>handleDelete(n._id),children:e.jsx(E,{children:e.jsx("use",{href:d+"#icon-trash-03"})})})})]})]})]},n._id))})}):e.jsxs(T,{children:[e.jsxs(be,{children:[e.jsx(y,{children:"Body Part"}),e.jsx(y,{children:"Equipment"}),e.jsx(y,{children:"Name"}),e.jsx(y,{children:"Target"}),e.jsx(y,{children:"Burned Calories"}),e.jsx(y,{children:"Time"}),e.jsx(y,{children:""})]}),e.jsx(O,{children:o.map(n=>e.jsxs(N,{children:[e.jsx(j,{children:s(n.exerciseId.bodyPart)}),e.jsx(j,{children:s(n.exerciseId.equipment)}),e.jsx(j,{children:s(n.exerciseId.name)}),e.jsx(j,{children:s(n.exerciseId.target)}),e.jsx(j,{children:n.exerciseId.burnedCalories}),e.jsx(j,{children:n.time}),e.jsx(j,{children:e.jsx(W,{type:"button",onClick:()=>handleDelete(n._id),children:e.jsx(E,{children:e.jsx("use",{href:d+"#icon-trash-03"})})})})]},n._id))})]}):e.jsx(V,{children:"Not found exercises"})]})},Ie=t.div`
   @media screen and (max-width: 767px) {
     margin-bottom: 40px;
   }
