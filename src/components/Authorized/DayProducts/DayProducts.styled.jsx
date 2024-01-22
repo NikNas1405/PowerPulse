@@ -188,7 +188,7 @@ export const ProductListArray = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 16px;
+  
 
   @media screen and (min-width: 768px) {
     gap: 8px;
@@ -205,6 +205,7 @@ export const ProductListArrayItemMobile = styled.li`
       color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
+      margin-bottom: 8px;
     }
 
     &:nth-of-type(2) {
@@ -219,12 +220,14 @@ export const ProductListArrayItemMobile = styled.li`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      margin-bottom: 16px;
     }
 
     &:nth-of-type(3) {
       color: ${globalColor.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
+      margin-bottom: 8px;
     }
 
     &:nth-of-type(4) {
@@ -239,6 +242,7 @@ export const ProductListArrayItemMobile = styled.li`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      margin-bottom: 16px;
     }
   }
 `;

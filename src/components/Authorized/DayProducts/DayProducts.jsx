@@ -119,7 +119,6 @@ const DayProducts = ({ productsArray, date }) => {
                     <MobileItemsHolder1
                       style={{
                         display: 'flex',
-                        gap: '8px',
                         flexDirection: 'column',
                       }}
                     >
@@ -133,7 +132,6 @@ const DayProducts = ({ productsArray, date }) => {
                     <MobileItemsHolder2
                       style={{
                         display: 'flex',
-                        gap: '8px',
                         flexDirection: 'column',
                       }}
                     >
@@ -147,7 +145,6 @@ const DayProducts = ({ productsArray, date }) => {
                     <MobileItemsHolder3
                       style={{
                         display: 'flex',
-                        gap: '8px',
                         flexDirection: 'column',
                       }}
                     >
@@ -196,7 +193,6 @@ const DayProducts = ({ productsArray, date }) => {
                     <MobileItemsHolder4
                       style={{
                         display: 'flex',
-                        gap: '8px',
                         flexDirection: 'column',
                       }}
                     >
