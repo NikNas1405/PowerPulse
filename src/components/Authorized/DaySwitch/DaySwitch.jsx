@@ -21,10 +21,11 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
+  const [isActive, setIsActive] = useState(false);
+
   const openCalendar = () => {
     setCalendarOpen(!isCalendarOpen);
   };
-
 
   const goToPreviousDay = () => {
     const previousDay = new Date(currentDate);
@@ -33,6 +34,7 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
       previousDay.setDate(previousDay.getDate() - 1);
       setCurrentDate(previousDay);
       setSelectedDate(previousDay);
+      setIsActive(true);
     } else {
       toast.error(
         'Selected date cannot be earlier than the registration date.'
@@ -60,7 +62,7 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
         </CalenderIconSvg>
       </CalenderBtn>
       <BtnPrev type="button" onClick={goToPreviousDay}>
-        <Svg>
+        <Svg className={isActive ? 'passive' : ''}>
           <use href={sprite + '#icon-chevron-left'} />
         </Svg>
       </BtnPrev>

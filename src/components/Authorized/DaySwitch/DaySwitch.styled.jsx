@@ -51,7 +51,6 @@ export const CalenderIconSvg = styled.svg`
   }
 `;
 
-
 export const CalenderBtn = styled.button`
   display: flex;
   align-items: center;
@@ -74,9 +73,17 @@ export const BtnPrev = styled.button`
   width: 16px;
   height: 16px;
   border: none;
+
+  &.passive {
+    border: 1px solid #e9101d;
+  }
 `;
 export const Svg = styled.svg`
   width: 100%;
   height: 100%;
   fill: ${globalColor.colorWhite};
+
+  &.passive {
+    fill: rgba(239, 237, 232, 0.2);
+  }
 `;
