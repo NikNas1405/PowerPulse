@@ -85,6 +85,22 @@ function App() {
             }
           />
           <Route
+            path="/signin"
+            element={
+              !isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/diary"
+                  component={<SignInPage />}
+                />
+              ) : (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<SignInPage />}
+                />
+              )
+            }
+          />
+          <Route
             path="/profile"
             element={
               <PrivateRoute redirectTo="/" component={<ProfilePage />} />
@@ -92,12 +108,34 @@ function App() {
           />
           <Route
             path="/diary"
-            element={<PrivateRoute redirectTo="/" component={<DiaryPage />} />}
+            element={
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <RestrictedRoute
+                  redirectTo="/diary"
+                  component={<DiaryPage />}
+                />
+              )
+            }
           />
           <Route
             path="/products"
             element={
-              <PrivateRoute redirectTo="/" component={<ProductsPage />} />
+              isUserParams ? (
+                <RestrictedRoute
+                  redirectTo="/profile"
+                  component={<ProfilePage />}
+                />
+              ) : (
+                <RestrictedRoute
+                  redirectTo="/products"
+                  component={<ProductsPage />}
+                />
+              )
             }
           />
           <Route
@@ -110,7 +148,8 @@ function App() {
                 />
               ) : (
                 <RestrictedRoute
-                  redirectTo="/exercises"
+                 redirectTo="/exercises"
+
                   component={<ExercisesPage />}
                 />
               )

@@ -66,12 +66,10 @@ const DiaryPage = () => {
             <DayDashboard userDiaryInformation={userData} />
             <ProdAndExercise>
               <DayProducts
-                productsArray={addProducts}
-                date={formattedCurrentDate}
+                  productsArray={addProducts}
               />
               <DayExercises
                 exercisesArray={addExercises}
-                date={formattedCurrentDate}
               />
             </ProdAndExercise>
           </InfoContainer>

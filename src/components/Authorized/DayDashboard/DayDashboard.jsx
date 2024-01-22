@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import {
   ContainerWrap,
   ListStyled,
@@ -13,7 +15,8 @@ import {
 } from './DayDashboard.styled';
 
 import sprite from '../../../assets/sprite.svg';
-import { useEffect, useState } from 'react';
+import { selectDiaryError } from '../../../redux/diary/diarySelector';
+import { useSelector } from 'react-redux';
 
 const DayDashboard = ({ userDiaryInformation }) => {
   const {
@@ -24,15 +27,15 @@ const DayDashboard = ({ userDiaryInformation }) => {
     remainingSports,
   } = userDiaryInformation;
 
-  const overConsumedCalories = consumedCalories - caloriesIntake;
-
   const [isOverThan, setIsOverThan] = useState(false);
 
+  const error = useSelector(selectDiaryError);
+
   useEffect(() => {
-    if (overConsumedCalories > caloriesIntake) {
+    if (remainingCalories < 0) {
       setIsOverThan(true);
     }
-  }, [overConsumedCalories]);
+  }, [remainingCalories]);
 
   return (
     <ContainerWrap>
@@ -40,16 +43,16 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-fluent_food-24-filled`}></use>
+              <use href={sprite + '#icon-fluent_food-24-filled'}></use>
             </SvgStyled>
             <TitleStyled>Daily calory intake</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{caloriesIntake ? caloriesIntake : 0}</DataValue>
+          <DataValue>{caloriesIntake && !error ? caloriesIntake : 0}</DataValue>
         </ItemListStyled>
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-dumbbell`}></use>
+              <use href={sprite + '#icon-dumbbell'}></use>
             </SvgStyled>
             <TitleStyled>Daily norm of sports</TitleStyled>
           </TitleStyledWrapper>
@@ -58,45 +61,53 @@ const DayDashboard = ({ userDiaryInformation }) => {
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-fluent_food-apple-20-filled`}></use>
+              <use href={sprite + '#icon-fluent_food-apple-20-filled'}></use>
             </SvgStyled>
             <TitleStyled>Calories consumed</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{consumedCalories ? consumedCalories : 0}</DataValue>
+          <DataValue>
+            {consumedCalories && !error ? consumedCalories : 0}
+          </DataValue>
         </ItemListStyled>
         <ItemListStyled>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-calories-1`}></use>
+              <use href={sprite + '#icon-calories-1'}></use>
             </SvgStyled>
             <TitleStyled>Calories burned</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{burnedCalories ? burnedCalories : 0}</DataValue>
+          <DataValue>{burnedCalories && !error ? burnedCalories : 0}</DataValue>
         </ItemListStyled>
         <ItemListStyled className={isOverThan ? 'redBg' : ''}>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-bubble`}></use>
+              <use href={sprite + '#icon-bubble'}></use>
             </SvgStyled>
             <TitleStyled>The rest of the calories</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{remainingCalories ? remainingCalories : 0}</DataValue>
+          <DataValue>
+            {remainingCalories && !error ? remainingCalories : 0}
+          </DataValue>
         </ItemListStyled>
         <ItemListStyled className={isOverThan ? 'greenBg' : ''}>
           <TitleStyledWrapper>
             <SvgStyled>
-              <use href={`${sprite}#icon-running-figure`}></use>
+              <use href={sprite + '#icon-running-figure'}></use>
             </SvgStyled>
             <TitleStyled>The rest of sports</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{remainingSports ? remainingSports : 110} min</DataValue>
+          <DataValue>
+            {remainingSports && !error ? remainingSports : 110} min
+          </DataValue>
         </ItemListStyled>
       </ListStyled>
 
       <TextWrapper>
         <SvgWrapperText>
           <ExclamationSvg>
-            <use href={`${sprite}#icon-tabler_exclamation-mark`}></use>
+            <use
+              href={sprite + '#icon-running-stick-figure-svgrepo-com-1'}
+            ></use>
           </ExclamationSvg>
         </SvgWrapperText>
         <TextStyled>

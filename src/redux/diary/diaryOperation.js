@@ -33,9 +33,6 @@ export const deleteDiaryProducts = createAsyncThunk(
   async (productId, thunkAPI) => {
     try {
       const response = await axios.delete(`/diary/products/${productId}`);
-
-      console.log(response.data); //THERE
-
       return response.data;
     } catch (error) {
       toast.error(`${error.message}`);
@@ -62,9 +59,6 @@ export const deleteDiaryExercise = createAsyncThunk(
   async (exerciseId, thunkAPI) => {
     try {
       const response = await axios.delete(`/diary/exercises/${exerciseId}`);
-
-      console.log(response.data); //THERE
-
       return response.data;
     } catch (error) {
       toast.error(`${error.message}`);

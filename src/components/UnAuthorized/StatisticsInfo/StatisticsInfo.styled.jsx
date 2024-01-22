@@ -155,7 +155,7 @@ export const VideoWrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     top: 47%;
-    right: 70%;
+    right: 69.2%;
     width: 206px;
     height: 96px;
     padding: 20px 23px 20px 36px;

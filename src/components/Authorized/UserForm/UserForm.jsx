@@ -6,6 +6,8 @@ import moment from 'moment';
 import { Formik, Form } from 'formik';
 import { getCurrentUser, updateUser } from '../../../redux/settings/operations';
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
+import { toast } from 'react-toastify';
+
 import {
   ProfileContainer,
   ActiveRadioForm,
@@ -377,11 +379,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
               </LabelWrapper>
 
               <ButtonSave type="submit">Save</ButtonSave>
-              {isSubmitted && (
-                <span className="success-msg">
-                  Settings updated successfully
-                </span>
-              )}
+              {isSubmitted && toast.success('Settings updated successfully')}
             </Form>
           );
         }}
