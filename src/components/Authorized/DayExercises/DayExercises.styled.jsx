@@ -1,91 +1,319 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-const Exercises = styled.div`
+export const HeaderArray = styled.ul`
   width: 100%;
-  min-height: 335px;
-  padding: 16px 8px 16px 16px;
-
-  border: 1px solid #efede820;
-  border-radius: 12px;
-
-  background-color: #efede80d;
-
-  @media (min-width: 768px) {
-    min-height: auto;
-    height: 234px;
-    width: 704px;
-  }
-  @media (min-width: 1440px) {
-    width: 826px;
-  }
-
-  & table {
-    width: 100%;
-  }
-`;
-
-const TitleNav = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 48px;
-  @media (min-width: 768px) {
-    margin-bottom: 16px;
+  gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+    margin-bottom: 8px;
+    justify-content: start;
   }
 `;
 
-const TitleText = styled.p`
-  color: #efede880;
-  font-size: 14px;
-  line-height: 18px;
-`;
+export const HeaderItem = styled.li`
+  color: ${globalColor.colorOrange1};
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
 
-const NavBlock = styled.div`
-  &:hover span {
-    color: ${globalColor.colorOrange1};
+  @media screen and (min-width: 768px) {
+    &:first-of-type {
+      width: 90px;
+    }
+
+    &:nth-of-type(2) {
+      width: 132px;
+    }
+
+    &:nth-of-type(3) {
+      width: 128px;
+    }
+
+    &:nth-of-type(4) {
+      width: 84px;
+    }
+
+    &:nth-of-type(5) {
+      width: 78px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(6) {
+      width: 32px;
+    }
+
+    &:nth-of-type(7) {
+      width: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:first-of-type {
+      width: 115px;
+    }
+
+    &:nth-of-type(2) {
+      width: 157px;
+    }
+
+    &:nth-of-type(3) {
+      width: 131px;
+    }
+
+    &:nth-of-type(4) {
+      width: 106px;
+    }
+
+    &:nth-of-type(5) {
+      width: 91px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(6) {
+      width: 82px;
+    }
+
+    &:nth-of-type(7) {
+      width: 20px;
+    }
   }
 `;
 
-const NavText = styled.span`
-  color: ${globalColor.colorOrange};
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
-  transition: color 300ms;
+export const ExerciseListArray = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: nowrap;
+  }
+`;
+
+export const ExerciseListArrayItemMobile = styled.li`
+  @media screen and (max-width: 375px) {
+    width: 100%;
+    margin-bottom: 8px;
+
+    &:first-of-type {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    &:nth-of-type(2) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(3) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    &:nth-of-type(4) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(5) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    &:nth-of-type(6) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 290px;
+
+    &:first-of-type {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(2) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+
+    &:nth-of-type(3) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(4) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+
+    &:nth-of-type(5) {
+      color: ${globalColor.colorOrange1};
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:nth-of-type(6) {
+      color: ${globalColor.colorWhite};
+      border-radius: 12px;
+      border: 1px solid ${globalColor.colorInput};
+      font-size: 14px;
+      line-height: 1.2857;
+      padding: 8px 14px;
+      height: 38px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 16px;
+    }
+  }
+`;
+
+export const ExerciseListArrayItem = styled.li`
+  @media screen and (min-width: 768px) {
+    color: ${globalColor.colorWhite};
+    border-radius: 12px;
+    border: 1px solid ${globalColor.colorInput};
+    padding: 8px 14px;
+    height: 38px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
+
+    &:first-of-type {
+      width: 90px;
+    }
+
+    &:nth-of-type(2) {
+      width: 132px;
+    }
+
+    &:nth-of-type(3) {
+      width: 128px;
+    }
+
+    &:nth-of-type(4) {
+      width: 84px;
+    }
+
+    &:nth-of-type(5) {
+      width: 78px;
+    }
+
+    &:nth-of-type(6) {
+      width: 72px;
+    }
+
+    &:nth-of-type(7) {
+      width: 20px;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    &:first-of-type {
+      width: 115px;
+    }
+
+    &:nth-of-type(2) {
+      width: 157px;
+    }
+
+    &:nth-of-type(3) {
+      width: 131px;
+    }
+
+    &:nth-of-type(4) {
+      width: 106px;
+    }
+
+    &:nth-of-type(5) {
+      width: 91px;
+    }
+
+    &:nth-of-type(6) {
+      width: 82px;
+    }
+
+    &:nth-of-type(7) {
+      width: 20px;
+    }
   }
 `;
-
-const Svg = styled.svg`
-  width: 16px;
-  height: 16px;
-  margin-left: 8px;
-`;
-
-const NotExercisesText = styled.p`
-  color: #efede84d;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  margin-top: 125px;
-
-  @media (min-width: 768px) {
-    margin-top: 65px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;
-
-export {
-  NotExercisesText,
-  Svg,
-  NavText,
-  NavBlock,
-  TitleText,
-  TitleNav,
-  Exercises,
-};

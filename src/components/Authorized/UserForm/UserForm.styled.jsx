@@ -368,6 +368,20 @@ export const ParamsInput = styled.input`
     border-radius: 12px;
     margin-top: 4px;
 
+    &[type='number'] {
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -moz-appearance: textfield;
+      }
+    }
+
     ${({ haserror, isValidationCompleted, ...rest }) => css`
       border: 1px solid
         ${haserror

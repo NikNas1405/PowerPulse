@@ -6,15 +6,18 @@ import {
   BtnLogOut,
   SvgLogOutBtn,
   LogOutContainer,
+  TextUser,
 } from './MobileMenu.styled';
 import { UserNav } from '../UserNav/UserNav';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../../redux/auth/operations';
+import { useAuth } from '../../../hooks/useAuth';
 
 export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
   const isMobileWidth = useMediaQuery('(min-width: 375px)');
   const isTabletWidth = useMediaQuery('(min-width: 768px)');
   const isDesctopWidth = useMediaQuery('(min-width: 1440px)');
+  const { isUserParams, user } = useAuth();
 
   const dispatch = useDispatch();
   const handleLogOut = () => {
@@ -59,7 +62,15 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
         </svg>
       </BtnIconClose>
       <UserNavMobileWrapper>
-        <UserNav />
+        {isUserParams ? (
+          <TextUser>
+            Dear {user.name}, to continue using the application, please fill in
+            all parameters in the profile settings.
+            <p> Thank you for choosing our application!</p>
+          </TextUser>
+        ) : (
+          <UserNav />
+        )}
       </UserNavMobileWrapper>
       <LogOutContainer>
         <BtnLogOut type="button" onClick={handleLogOut}>

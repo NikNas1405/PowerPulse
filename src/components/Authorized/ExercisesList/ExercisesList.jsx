@@ -1,7 +1,7 @@
 // export const ExercisesList = () => {
 //   return <div></div>;
 // };
-
+import { ProductsListStyled } from '../ProductsList/ProductsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -12,6 +12,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { fetchExercisesList } from '../../../redux/exercises/operations';
+import { ExercisesItem } from '../ExercisesItem/ExercisesItem';
 
 // import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 
@@ -23,25 +24,22 @@ export const ExercisesList = () => {
   const exercises = useSelector(getExercises);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  const { filter, filterList } = useParams();
+  const { filterList } = useParams();
 
-  console.log('filter=>', filter);
   console.log('filterList=>', filterList);
   console.log('exercises=>', exercises);
 
   useEffect(() => {
     const gettingExercisesList = async () => {
-      if (!filter || !filterList) {
+      if (!filterList) {
         console.error('Invalid filter or filterList');
         return;
       } else {
-        dispatch(
-          fetchExercisesList({ filter: filter, filterList: filterList })
-        );
+        dispatch(fetchExercisesList({ filterList: filterList }));
       }
     };
     gettingExercisesList();
-  }, [dispatch, filter, filterList]);
+  }, [dispatch, filterList]);
 
   return (
     <div>
@@ -51,19 +49,14 @@ export const ExercisesList = () => {
         {!exercises ? (
           <p>you do not have any exersise category</p>
         ) : (
-          <ul>
+          <ProductsListStyled>
             {/* Відображення категорій для відповідного значення filter */}
             {exercises.map((exercise) => (
               <li key={exercise._id}>
-                <div>
-                  <p>{exercise.target}</p>
-                  <p>{exercise.name}</p>
-                  <p>{exercise.equipment}</p>
-                </div>
-                {/* <ExercisesSubcategoriesItem exercise={exercise} /> */}
+                <ExercisesItem exercise={exercise} />
               </li>
             ))}
-          </ul>
+          </ProductsListStyled>
         )}
       </div>
     </div>
