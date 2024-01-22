@@ -19,7 +19,6 @@ import {
   MobileItemsHolder4,
   TableDeleteButton,
   SvgTableStyled,
-  
 } from '../DayProducts/DayProducts.styled';
 
 import {
@@ -263,7 +262,7 @@ const DayExercises = () => {
                   <ExerciseListArrayItem>
                     <TableDeleteButton
                       type="button"
-                      onClick={() => handleDelete(product._id)}
+                      onClick={() => handleDelete(exercise._id)}
                     >
                       <SvgTableStyled>
                         <use href={sprite + '#icon-trash-03'}></use>
