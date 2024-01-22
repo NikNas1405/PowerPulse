@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+
 import sprite from '../../../assets/sprite.svg';
 
 import { globalColor } from '../../../styles/root';
@@ -29,17 +32,33 @@ import {
   HeaderItem,
   ExerciseListArrayItem,
 } from './DayExercises.styled';
-import { selectDiaryError } from '../../../redux/diary/diarySelector';
-import { useSelector } from 'react-redux';
 
-const DayExercises = ({ exercisesArray }) => {
+import { selectDiaryError } from '../../../redux/diary/diarySelector';
+
+import {
+  deleteDiaryExercise,
+  getAllDiaryInformation,
+} from '../../../redux/diary/diaryOperation';
+
+const DayExercises = ({ exercisesArray, date }) => {
   const isMobile = useMediaQuery('(max-width:768px)');
   const error = useSelector(selectDiaryError);
+  const dispatch = useDispatch();
 
   const formattedTitle = (exerciseTitle) => {
     return (
       exerciseTitle[0].toUpperCase() + exerciseTitle.slice(1).toLowerCase()
     );
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await dispatch(deleteDiaryExercise(id));
+      await dispatch(getAllDiaryInformation(date));
+    } catch (error) {
+      console.log(error);
+      toast.error('Some error occured, try again', error);
+    }
   };
 
   return (
