@@ -31,74 +31,74 @@ import {
 import { selectDiaryError } from '../../../redux/diary/diarySelector';
 import { useSelector } from 'react-redux';
 
-// const DayExercises = ({ exercisesArray }) => {
-const DayExercises = () => {
-  const exercisesArray = [
-    {
-      exerciseId: {
-        _id: '64f2458d6f67bc34bae4f7h8',
-        bodyPart: 'chest',
-        equipment: 'leverage machine',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
-        name: 'assisted chest dip (kneeling)',
-        target: 'pectorals',
-        burnedCalories: 329,
-        time: 3,
-      },
-      date: '22-01-2024',
-      time: 7,
-      calories: 150,
-      _id: '65ae304f0214b9f7570fd669',
-    },
-    {
-      exerciseId: {
-        _id: '64f2458d6f67bc34bae4f7f7',
-        bodyPart: 'chest',
-        equipment: 'leverage machine',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
-        name: 'assisted chest dip (kneeling)',
-        target: 'pectorals',
-        burnedCalories: 329,
-        time: 3,
-      },
-      date: '22-01-2024',
-      time: 7,
-      calories: 150,
-      _id: '65ae304f0214b9f7570fd620',
-    },
-    {
-      exerciseId: {
-        _id: '64f2458d6f67bc34bae4f962',
-        bodyPart: 'upper arms',
-        equipment: 'dumbbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0416.gif',
-        name: 'dumbbell standing biceps curl',
-        target: 'biceps',
-        burnedCalories: 264,
-        time: 3,
-      },
-      date: '22-01-2024',
-      time: 3,
-      calories: 264,
-      _id: '65ae309c0214b9f7570fd63a',
-    },
-    {
-      exerciseId: {
-        _id: '64f2458d6f67bc34bae4f8e7',
-        bodyPart: 'upper legs',
-        equipment: 'dumbbell',
-        gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0291.gif',
-        name: 'dumbbell bench squat',
-        target: 'glutes',
-        burnedCalories: 268,
-        time: 3,
-      },
-      date: '22-01-2024',
-      time: 3,
-      calories: 268,
-      _id: '65ae30c20214b9f7570fd641',
-    },
-  ];
+const DayExercises = ({ exercisesArray }) => {
+// const DayExercises = () => {
+//   const exercisesArray = [
+//     {
+//       exerciseId: {
+//         _id: '64f2458d6f67bc34bae4f7h8',
+//         bodyPart: 'chest',
+//         equipment: 'leverage machine',
+//         gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
+//         name: 'assisted chest dip (kneeling)',
+//         target: 'pectorals',
+//         burnedCalories: 329,
+//         time: 3,
+//       },
+//       date: '22-01-2024',
+//       time: 7,
+//       calories: 150,
+//       _id: '65ae304f0214b9f7570fd669',
+//     },
+//     {
+//       exerciseId: {
+//         _id: '64f2458d6f67bc34bae4f7f7',
+//         bodyPart: 'chest',
+//         equipment: 'leverage machine',
+//         gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0009.gif',
+//         name: 'assisted chest dip (kneeling)',
+//         target: 'pectorals',
+//         burnedCalories: 329,
+//         time: 3,
+//       },
+//       date: '22-01-2024',
+//       time: 7,
+//       calories: 150,
+//       _id: '65ae304f0214b9f7570fd620',
+//     },
+//     {
+//       exerciseId: {
+//         _id: '64f2458d6f67bc34bae4f962',
+//         bodyPart: 'upper arms',
+//         equipment: 'dumbbell',
+//         gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0416.gif',
+//         name: 'dumbbell standing biceps curl',
+//         target: 'biceps',
+//         burnedCalories: 264,
+//         time: 3,
+//       },
+//       date: '22-01-2024',
+//       time: 3,
+//       calories: 264,
+//       _id: '65ae309c0214b9f7570fd63a',
+//     },
+//     {
+//       exerciseId: {
+//         _id: '64f2458d6f67bc34bae4f8e7',
+//         bodyPart: 'upper legs',
+//         equipment: 'dumbbell',
+//         gifUrl: 'https://ftp.goit.study/img/power-pulse/gifs/0291.gif',
+//         name: 'dumbbell bench squat',
+//         target: 'glutes',
+//         burnedCalories: 268,
+//         time: 3,
+//       },
+//       date: '22-01-2024',
+//       time: 3,
+//       calories: 268,
+//       _id: '65ae30c20214b9f7570fd641',
+//     },
+//   ];
 
   const isMobile = useMediaQuery('(max-width:768px)');
   const error = useSelector(selectDiaryError);
