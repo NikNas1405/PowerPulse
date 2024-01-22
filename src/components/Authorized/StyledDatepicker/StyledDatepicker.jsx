@@ -37,9 +37,9 @@ const StyledDatepicker = ({
         customInput={<div style={{ display: 'none' }} />}
         onChange={handleDateChange}
         minDate={new Date(userDateRegistration)}
-        showMonthYearDropdown
-        scrollableYearDropdown
-        yearDropdownItemNumber={15}
+        // showMonthYearDropdown
+        // scrollableYearDropdown
+        // yearDropdownItemNumber={15}
       />
       <CalendarGlobalStyles />
     </Wrapper>
