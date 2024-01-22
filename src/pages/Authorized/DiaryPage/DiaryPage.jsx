@@ -26,6 +26,8 @@ import { Container } from '../../../styles/GlobalStyles';
 import { toast } from 'react-toastify';
 import { selectUser } from '../../../redux/auth/selectors';
 
+import { changeDate } from '../../../helpers/helpers';
+
 const DiaryPage = () => {
   const dispatch = useDispatch();
   const userData = useSelector(selectDiaryInformation);
@@ -35,14 +37,6 @@ const DiaryPage = () => {
 
   const user = useSelector(selectUser);
   const userDataRegistration = user.createdAt;
-
-  const changeDate = (date) => {
-    const dateObject = new Date(date);
-    const day = String(dateObject.getDate()).padStart(2, '0');
-    const month = String(dateObject.getMonth() + 1).padStart(2, '0');
-    const year = dateObject.getFullYear();
-    return `${day}-${month}-${year}`;
-  };
 
   const formattedCurrentDate = changeDate(currentDate);
   const formattedUserDateRegistration = changeDate(userDataRegistration);

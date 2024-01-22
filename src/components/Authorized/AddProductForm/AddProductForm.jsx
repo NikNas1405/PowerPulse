@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
+import { changeDate } from '../../../helpers/helpers';
+
 import { addDiaryProducts } from '../../../redux/diary/diaryOperation';
 
 import {
@@ -42,10 +44,7 @@ export const AddProductForm = ({
 
   const currentDate = new Date();
 
-  const day = String(currentDate.getDate()).padStart(2, '0');
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const year = currentDate.getFullYear();
-  const formattedCurrentDate = `${day}-${month}-${year}`;
+  const formattedCurrentDate = changeDate(currentDate);
 
   const formattedTitle =
     productTitle[0].toUpperCase() + productTitle.slice(1).toLowerCase();

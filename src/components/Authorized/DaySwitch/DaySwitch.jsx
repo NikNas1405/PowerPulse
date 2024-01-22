@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
+import { changeDate } from '../../../helpers/helpers';
 
 import sprite from '../../../assets/sprite.svg';
 
@@ -15,6 +15,7 @@ import {
 } from './DaySwitch.styled';
 
 import StyledDatepicker from '../StyledDatepicker/StyledDatepicker';
+import { toast } from 'react-toastify';
 
 const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
@@ -24,16 +25,20 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
     setCalendarOpen(!isCalendarOpen);
   };
 
+
   const goToPreviousDay = () => {
-    const previousDay = new Date(selectedDate);
-    if (previousDay < userDateRegistration) {
-      previousDay.setDate(selectedDate.getDate() - 1);
+    const previousDay = new Date(currentDate);
+    const formattedPreviousDay = changeDate(previousDay);
+    if (formattedPreviousDay > userDateRegistration) {
+      previousDay.setDate(previousDay.getDate() - 1);
       setCurrentDate(previousDay);
       setSelectedDate(previousDay);
+    } else {
+      toast.error(
+        'Selected date cannot be earlier than the registration date.'
+      );
     }
   };
-
-
 
   const goToNextDay = () => {
     const nextDay = new Date(selectedDate);

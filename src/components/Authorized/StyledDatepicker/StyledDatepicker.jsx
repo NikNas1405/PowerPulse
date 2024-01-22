@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import { Wrapper } from './StyledDatepicker.styled';
 import { CalendarGlobalStyles } from '../../../styles/GlobalStyles';
 import { toast } from 'react-toastify';
+import { changeDate } from '../../../helpers/helpers';
 
 const StyledDatepicker = ({
   selectedDate,
@@ -12,15 +13,6 @@ const StyledDatepicker = ({
   setCurrentDate,
   userDateRegistration,
 }) => {
-  
-  const changeDate = (date) => {
-    const dateObject = new Date(date);
-    const day = String(dateObject.getDate()).padStart(2, '0');
-    const month = String(dateObject.getMonth() + 1).padStart(2, '0');
-    const year = dateObject.getFullYear();
-    return `${day}-${month}-${year}`;
-  };
-
   const handleDateChange = (date) => {
     const formattedDate = changeDate(date);
     if (formattedDate >= userDateRegistration) {
@@ -28,7 +20,7 @@ const StyledDatepicker = ({
       setCurrentDate(date);
       onClose();
     } else {
-      toast.warning(
+      toast.error(
         'Selected date cannot be earlier than the registration date.'
       );
     }
@@ -44,6 +36,7 @@ const StyledDatepicker = ({
         open={isOpen}
         customInput={<div style={{ display: 'none' }} />}
         onChange={handleDateChange}
+        minDate={new Date(userDateRegistration)}
       />
       <CalendarGlobalStyles />
     </Wrapper>
