@@ -1,4 +1,4 @@
-import{s as i,g as e}from"./index-6f2f4bbd.js";const t="/PowerPulse/assets/products-bg-b7e77cea.jpg",o="/PowerPulse/assets/products-bg@2x-9876be0a.jpg",a=i.div`
+import{s as i,g as e}from"./index-8eeff838.js";const t="/PowerPulse/assets/products-bg-b7e77cea.jpg",o="/PowerPulse/assets/products-bg@2x-9876be0a.jpg",a=i.div`
   display: flex;
   flex-direction: column;
   gap: 40px;

@@ -1,4 +1,4 @@
-import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N as _,m as ne,o as H,Q as G,C as oe,p as re}from"./index-6f2f4bbd.js";import{W as de,e as se,f as le,a as L,s as pe,b as he}from"./StyledDatepicker.styled-6e714a0e.js";import{T as ae}from"./TitlePage-0eeaab3c.js";import"./defineProperty-decf9c6f.js";const xe=({selectedDate:r,setSelectedDate:p,isOpen:l,onClose:d,setCurrentDate:n})=>{const h=f=>{p(f),n(f),d()};return e.jsxs(de,{children:[e.jsx(se,{selected:r,dateFormat:"dd/MM/yyyy",calendarStartDay:1,formatWeekDay:f=>f.substr(0,1),open:l,customInput:e.jsx("div",{style:{display:"none"}}),onChange:h}),e.jsx(ie,{})]})},ce=t.div`
+import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N as _,m as ne,o as H,Q as G,C as oe,p as re}from"./index-8eeff838.js";import{W as de,e as se,f as le,a as L,s as pe,b as he}from"./StyledDatepicker.styled-59851d25.js";import{T as ae}from"./TitlePage-7b8f48d0.js";import"./defineProperty-65957ed0.js";const xe=({selectedDate:r,setSelectedDate:p,isOpen:l,onClose:d,setCurrentDate:n})=>{const h=f=>{p(f),n(f),d()};return e.jsxs(de,{children:[e.jsx(se,{selected:r,dateFormat:"dd/MM/yyyy",calendarStartDay:1,formatWeekDay:f=>f.substr(0,1),open:l,customInput:e.jsx("div",{style:{display:"none"}}),onChange:h}),e.jsx(ie,{})]})},ce=t.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -277,7 +277,6 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -400,9 +399,9 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
     }
   }
 `,J=t.div`
-  /* @media screen and (min-width: 320px) {
+  @media screen and (min-width: 320px) {
     width: 100%;
-  } */
+  }
 
   @media screen and (min-width: 375px) {
     display: flex;
@@ -411,122 +410,130 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
   }
 `,K=t.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${i.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${i.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${i.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 79px;
-    }
 
-    &:nth-of-type(1) {
-      color: ${i.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${i.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${i.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin-bottom: 40px;
+      &:nth-of-type(2) {
+        margin-bottom: 40px;
+      }
     }
   }
 `,X=t.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${i.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${i.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${i.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 78px;
     }
-
-    &:nth-of-type(1) {
-      color: ${i.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${i.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${i.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
   }
 `,Z=t.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        color: ${i.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      &:nth-of-type(2) {
+        color: ${i.colorWhite};
+        border-radius: 12px;
+        border: 1px solid ${i.colorInput};
+        font-size: 14px;
+        line-height: 1.2857;
+        padding: 8px 14px;
+        height: 38px;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
 
     @media screen and (min-width: 375px) {
       width: 74px;
     }
-
-    &:nth-of-type(1) {
-      color: ${i.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    &:nth-of-type(2) {
-      color: ${i.colorWhite};
-      border-radius: 12px;
-      border: 1px solid ${i.colorInput};
-      font-size: 14px;
-      line-height: 1.2857;
-      padding: 8px 14px;
-      height: 38px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
   }
 `,ee=t.div`
   > li {
-    /* @media screen and (min-width: 320px) {
+    @media screen and (min-width: 320px) {
       width: 100%;
-    } */
+
+      &:nth-of-type(1) {
+        display: none;
+      }
+
+      &:nth-of-type(2) {
+        height: 38px;
+        border: none;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+    }
 
     @media screen and (min-width: 375px) {
       width: 20px;
-    }
 
-    &:nth-of-type(1) {
-      width: 20px;
-      color: ${i.colorOrange1};
-      font-size: 12px;
-      line-height: 1.5;
-    }
+      &:nth-of-type(1) {
+        display: block;
+        color: ${i.colorOrange1};
+        font-size: 12px;
+        line-height: 1.5;
+      }
 
-    &:nth-of-type(2) {
-      width: 20px;
-      height: 38px;
-
-      border: none;
-      padding: 0;
-      margin-top: 18px;
-
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      &:nth-of-type(2) {
+        margin-top: 18px;
+      }
     }
   }
 `,W=t.button`
@@ -650,12 +657,12 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
 `,c=t.li`
   @media screen and (max-width: 375px) {
     width: 100%;
+    margin-bottom: 8px;
 
     &:first-of-type {
       color: ${i.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(2) {
@@ -669,14 +676,12 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
 
     &:nth-of-type(3) {
       color: ${i.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(4) {
@@ -687,18 +692,15 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
 
     &:nth-of-type(5) {
       color: ${i.colorOrange1};
       font-size: 12px;
       line-height: 1.5;
-      margin-bottom: 8px;
     }
 
     &:nth-of-type(6) {
@@ -709,11 +711,9 @@ import{j as e,h as ie,s as t,g as i,r as C,a as s,u as A,e as S,i as te,k as R,N
       line-height: 1.2857;
       padding: 8px 14px;
       height: 38px;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      margin-bottom: 16px;
     }
   }
 
