@@ -25,6 +25,7 @@ import { Container } from '../../../styles/GlobalStyles';
 
 import { toast } from 'react-toastify';
 import {
+  selectBmr,
   selectIsRefreshing,
   selectIsUserParams,
   selectUser,
@@ -32,7 +33,6 @@ import {
 
 import { changeDate } from '../../../helpers/helpers';
 import { refreshUser } from '../../../redux/auth/operations';
-import { useAuth } from '../../../hooks/useAuth';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
@@ -40,27 +40,19 @@ const DiaryPage = () => {
   const isLoading = useSelector(selectDiaryIsLoading);
   const { addProducts, addExercises } = userData;
   const [currentDate, setCurrentDate] = useState(new Date());
-
+  const bmr = useSelector(selectBmr);
   const user = useSelector(selectUser);
   const userDataRegistration = user.createdAt;
-
-  const { bmr } = useAuth();
-
-  const [userBMR, setUserBRM] = useState(0);
-
   const formattedCurrentDate = changeDate(currentDate);
   const formattedUserDateRegistration = changeDate(userDataRegistration);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        dispatch(refreshUser());
-        setUserBRM(bmr);
-
+        await dispatch(refreshUser());
         await dispatch(getAllDiaryInformation(formattedCurrentDate));
       } catch (error) {
         toast.error('Error fetching data:', error);
-        console.error('Error fetching data:', error);
       }
     };
     fetchData();
@@ -81,7 +73,7 @@ const DiaryPage = () => {
             />
           </TitleAndSwitch>
           <InfoContainer>
-            <DayDashboard userDiaryInformation={userData} bmr={userBMR} />
+            <DayDashboard userDiaryInformation={userData} bmr={bmr} />
             <ProdAndExercise>
               <DayProducts
                 productsArray={addProducts}
