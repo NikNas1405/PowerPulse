@@ -180,7 +180,7 @@ export const CalendarGlobalStyles = createGlobalStyle`
     border-radius: 2px;
     color: ${globalColor.colorWhite};
     outline: none;
-    
+
     & >option{
       color: ${globalColor.colorBlack};  
       background-color:${globalColor.colorWhite} ;   
@@ -373,6 +373,7 @@ export const ParamsLabel = styled.label`
   width: 161px;
   max-width: 364px;
   text-align: left;
+  position: relative;
 
   color: rgba(239, 237, 232, 0.6);
   font-feature-settings:
@@ -594,6 +595,25 @@ export const ActiveField = styled(Field)`
   }
 `;
 
+export const SvgCalendar = styled.svg`
+  stroke: rgba(239, 237, 232, 1);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 35px;
+  right: 13px;
+
+  @media (min-width: 768px) {
+    top: 36px;
+    right: -10px;
+  }
+
+  @media (min-width: 1440px) {
+    top: 40px;
+    right: 15px;
+  }
+`;
+
 export const StyledError = styled(ErrorMessage)`
   color: #d80027;
   position: relative;
@@ -613,7 +633,7 @@ export const ActivityRadio = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  @media (min-width: 834px) {
+  @media (min-width: 768px) {
     width: 438px;
     flex-direction: row;
     justify-content: space-between;
@@ -647,6 +667,9 @@ export const ButtonSave = styled.button`
     border: transparent;
     margin-top: 28px;
     margin-bottom: 12px;
+    &:disabled {
+      background-color: ${globalColor.colorInput};
+    }
   }
 
   @media screen and (min-width: 375px) {

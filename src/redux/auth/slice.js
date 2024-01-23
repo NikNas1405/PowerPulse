@@ -60,7 +60,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-        state.user = action.payload;
+        state.user = action.payload.user;
         state.bmr = action.payload.bmr;
         state.isLoggedIn = true;
         state.isRefreshing = false;
@@ -70,7 +70,10 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        state.user = action.payload;
+        console.log(action.payload.user);
+        console.log(action.payload.bmr);
+        state.user = action.payload.user;
+        state.bmr = action.payload.bmr;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.isUserParams = checkUserParams(state.user);

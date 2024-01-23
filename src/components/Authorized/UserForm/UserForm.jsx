@@ -25,9 +25,11 @@ import {
   ButtonSave,
   DataWrapper,
   CalendarGlobalStyles,
+  SvgCalendar,
 } from './UserForm.styled';
 
 import * as Yup from 'yup';
+import sprite from '../../../assets/sprite.svg';
 
 const today = moment().format('YYYY-MM-DD');
 
@@ -118,14 +120,12 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
     try {
       const resp = dispatch(updateUser(values));
-      console.log(resp);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 3000);
+    // setTimeout(() => {
+    //   setIsSubmitted(false);
+    // }, 3000);
 
     return false;
   };
@@ -225,6 +225,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       showYearDropdown
                       dropdownMode="select"
                     />
+                    <SvgCalendar>
+                      <use href={`${sprite}#icon-calendar`} />
+                    </SvgCalendar>
                     <StyledError name="birthday" component="div" />
                     <CalendarGlobalStyles />
                   </ParamsLabel>
@@ -393,8 +396,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
                 </ActiveRadioForm>
               </LabelWrapper>
 
-              <ButtonSave type="submit">Save</ButtonSave>
-              {isSubmitted && toast.success('Settings updated successfully')}
+              <ButtonSave type="submit" disabled={isSubmitted}>
+                Save
+              </ButtonSave>
             </Form>
           );
         }}
