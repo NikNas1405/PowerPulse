@@ -18,7 +18,10 @@ import sprite from '../../../assets/sprite.svg';
 import { selectDiaryError } from '../../../redux/diary/diarySelector';
 import { useSelector } from 'react-redux';
 
-const DayDashboard = ({ userDiaryInformation, bmr }) => {
+const DayDashboard = ({
+  userDiaryInformation,
+  // bmr
+}) => {
   const {
     burnedCalories,
     caloriesIntake,
@@ -27,7 +30,7 @@ const DayDashboard = ({ userDiaryInformation, bmr }) => {
     remainingSports,
   } = userDiaryInformation;
 
-  // console.log(userDiaryInformation);
+  console.log(userDiaryInformation);
 
   const [isOverThan, setIsOverThan] = useState(false);
 
@@ -49,8 +52,8 @@ const DayDashboard = ({ userDiaryInformation, bmr }) => {
             </SvgStyled>
             <TitleStyled>Daily calory intake</TitleStyled>
           </TitleStyledWrapper>
-          {/* <DataValue>{caloriesIntake && !error ? caloriesIntake : 0}</DataValue> */}
-          <DataValue>{bmr !== null ? bmr : 0}</DataValue>
+          <DataValue>{caloriesIntake && !error ? caloriesIntake : 0}</DataValue>
+          {/* <DataValue>{bmr && !error ? bmr : 0}</DataValue> */}
         </ItemListStyled>
         <ItemListStyled>
           <TitleStyledWrapper>
