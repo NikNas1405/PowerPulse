@@ -13,15 +13,17 @@ const StyledDatepicker = ({
   setCurrentDate,
   userDateRegistration,
 }) => {
+  const today = changeDate(new Date());
+
   const handleDateChange = (date) => {
     const formattedDate = changeDate(date);
-    if (formattedDate >= userDateRegistration) {
+    if (today >= formattedDate && formattedDate >= userDateRegistration) {
       setSelectedDate(date);
       setCurrentDate(date);
       onClose();
     } else {
       toast.error(
-        'Selected date cannot be earlier than the registration date.'
+        `However, we don't have any data to show you. You can review the information from the day of your registration: ${userDateRegistration} up to today: ${today}. `
       );
     }
   };
@@ -37,6 +39,7 @@ const StyledDatepicker = ({
         customInput={<div style={{ display: 'none' }} />}
         onChange={handleDateChange}
         minDate={new Date(userDateRegistration)}
+        maxDate={new Date(today)}
       />
       <CalendarGlobalStyles />
     </Wrapper>

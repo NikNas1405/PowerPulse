@@ -98,13 +98,24 @@ export const BtnPrev = styled.button`
   }
 `;
 
-export const Svg = styled.svg`
+export const SvgPrev = styled.svg`
   width: 100%;
   height: 100%;
   fill: ${globalColor.colorWhite};
   transition: fill 0.3s ease;
 
-  &.passive {
+  &.passivePrev {
+    fill: rgba(239, 237, 232, 0.2);
+  }
+`;
+
+export const SvgNext = styled.svg`
+  width: 100%;
+  height: 100%;
+  fill: ${globalColor.colorWhite};
+  transition: fill 0.3s ease;
+
+  &.passiveNext {
     fill: rgba(239, 237, 232, 0.2);
   }
 `;

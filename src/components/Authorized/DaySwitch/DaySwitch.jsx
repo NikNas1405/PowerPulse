@@ -10,7 +10,8 @@ import {
   CalenderBtn,
   CalenderIconSvg,
   DateLabel,
-  Svg,
+  SvgPrev,
+  SvgNext,
   ContainerWrap,
 } from './DaySwitch.styled';
 
@@ -21,33 +22,46 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
   const [selectedDate, setSelectedDate] = useState(currentDate);
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActivePrev, setIsActivePrev] = useState(false);
+
+  const [isActiveNext, setIsActiveNext] = useState(false);
 
   const openCalendar = () => {
     setCalendarOpen(!isCalendarOpen);
   };
 
   const goToPreviousDay = () => {
-    setIsActive(true);
+    setIsActivePrev(true);
     const previousDay = new Date(currentDate);
     const formattedPreviousDay = changeDate(previousDay);
     if (formattedPreviousDay > userDateRegistration) {
       previousDay.setDate(previousDay.getDate() - 1);
       setCurrentDate(previousDay);
       setSelectedDate(previousDay);
-      setIsActive(false);
+      setIsActivePrev(false);
     } else {
       toast.error(
-        'Selected date cannot be earlier than the registration date.'
+        `However, we don't have any data to show you. Selected date cannot be earlier than the registration date: ${userDateRegistration}.`
       );
+      setIsActivePrev(true);
     }
   };
 
   const goToNextDay = () => {
+    setIsActiveNext(true);
+    const today = changeDate(new Date());
     const nextDay = new Date(selectedDate);
     nextDay.setDate(selectedDate.getDate() + 1);
-    setCurrentDate(nextDay);
-    setSelectedDate(nextDay);
+    if (nextDay > new Date()) {
+      toast.error(
+        `However, we don't have any data to show you. Selected date cannot be later than today's date: ${today}.`
+      );
+      setIsActiveNext(true);
+    } else {
+      setCurrentDate(nextDay);
+      setSelectedDate(nextDay);
+      setIsActiveNext(false);
+    }
   };
 
   const closeCalendar = () => {
@@ -63,14 +77,14 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
         </CalenderIconSvg>
       </CalenderBtn>
       <BtnPrev type="button" onClick={goToPreviousDay}>
-        <Svg className={isActive ? 'passive' : ''}>
+        <SvgPrev className={isActivePrev ? 'passivePrev' : ''}>
           <use href={sprite + '#icon-chevron-left'} />
-        </Svg>
+        </SvgPrev>
       </BtnPrev>
       <BtnNext type="button" onClick={goToNextDay}>
-        <Svg>
+        <SvgNext className={isActiveNext ? 'passiveNext' : ''}>
           <use href={sprite + '#icon-chevron-right'} />
-        </Svg>
+        </SvgNext>
       </BtnNext>
 
       <StyledDatepicker
