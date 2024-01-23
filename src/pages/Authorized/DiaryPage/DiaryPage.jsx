@@ -66,7 +66,6 @@ const DiaryPage = () => {
     fetchData();
   }, [dispatch, formattedCurrentDate, currentDate]);
 
-
   return (
     <Container>
       {isLoading ? (

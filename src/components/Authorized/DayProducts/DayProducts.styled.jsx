@@ -489,7 +489,6 @@ export const MobileItemsHolder4 = styled.div`
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-
     }
 
     @media screen and (min-width: 375px) {
@@ -516,6 +515,12 @@ export const TableDeleteButton = styled.button`
   background-color: transparent;
   padding: 0;
   position: relative;
+
+  &:hover {
+    > svg {
+      stroke: ${globalColor.colorOrange};
+    }
+  }
 `;
 
 export const SvgTableStyled = styled.svg`
@@ -525,6 +530,7 @@ export const SvgTableStyled = styled.svg`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: stroke 0.3s ease;
 `;
 
 export const TypeRecommendSpan = styled.span`

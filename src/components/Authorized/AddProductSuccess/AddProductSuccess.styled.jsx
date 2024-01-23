@@ -79,6 +79,12 @@ export const Button = styled.button`
   @media (min-width: 768px) {
     height: 52px;
   }
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${globalColor.colorOrange1};
+  }
 `;
 
 export const StyledLink = styled(NavLink)`
@@ -88,10 +94,21 @@ export const StyledLink = styled(NavLink)`
   color: ${globalColor.colorInput};
   line-height: 1.2357;
   word-wrap: break-word;
+  transition: color 0.3s ease;
 
   > svg {
     stroke: ${globalColor.colorInput};
     width: 16px;
     height: 16px;
+    transition: stroke 0.3s ease;
+  }
+
+  &:hover {
+    color: ${globalColor.colorOrange1};
+    > svg {
+      stroke: ${globalColor.colorOrange1};
+      width: 16px;
+      height: 16px;
+    }
   }
 `;

@@ -101,6 +101,7 @@ export const Title = styled.h2`
 export const Button = styled.button`
   display: flex;
   align-items: center;
+  cursor: pointer;
   color: ${globalColor.colorOrange};
   gap: 8px;
   width: 49px;
@@ -118,6 +119,12 @@ export const Button = styled.button`
     width: 53px;
     font-size: 16px;
     line-height: 1.5;
+  }
+
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${globalColor.colorOrange1};
   }
 `;
 

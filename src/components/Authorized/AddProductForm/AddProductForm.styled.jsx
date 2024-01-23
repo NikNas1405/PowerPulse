@@ -29,7 +29,6 @@ export const TitleInputWripper = styled.div`
   gap: 16px;
   flex-wrap: wrap;
   flex-direction: column;
-  
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -51,7 +50,6 @@ export const Title = styled.h4`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
 
   @media (min-width: 768px) {
     width: 216px;
@@ -126,7 +124,6 @@ export const ErrorMessage = styled.p`
     height: 16px;
     fill: ${globalColor.colorSecondaryRed};
   }
-
 `;
 
 export const Text = styled.p`
@@ -175,15 +172,27 @@ export const Button = styled.button`
   background-color: ${globalColor.colorOrange};
   border: transparent;
   padding: 12px 32px;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${globalColor.colorOrange1};
+  }
 `;
 
 export const ButtonClose = styled.button`
   max-width: 121px;
   background-color: transparent;
-  border: 1px rgba(239, 237, 232, 0.3) solid;
+  border: 1px ${globalColor.colorInput} solid;
   padding: 12px 34px;
 
   @media (min-width: 768px) {
     width: 142px;
+  }
+
+  transition: border0.3s ease;
+
+  &:hover {
+    border: 1px ${globalColor.colorOrange1} solid;
   }
 `;

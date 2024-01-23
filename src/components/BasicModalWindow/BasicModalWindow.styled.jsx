@@ -21,5 +21,12 @@ export const Button = styled.button`
 
   > svg {
     stroke: ${globalColor.colorWhite};
+    transition: stroke 0.3s ease;
+  }
+
+  &:hover {
+    > svg {
+      stroke: ${globalColor.colorOrange};
+    }
   }
 `;

@@ -21,13 +21,11 @@ import { useSelector } from 'react-redux';
 const DayDashboard = ({ userDiaryInformation, bmr }) => {
   const {
     burnedCalories,
-    caloriesIntake,
     consumedCalories,
     remainingCalories,
     remainingSports,
   } = userDiaryInformation;
 
-  // console.log(userDiaryInformation);
 
   const [isOverThan, setIsOverThan] = useState(false);
 
@@ -49,7 +47,6 @@ const DayDashboard = ({ userDiaryInformation, bmr }) => {
             </SvgStyled>
             <TitleStyled>Daily calory intake</TitleStyled>
           </TitleStyledWrapper>
-          {/* <DataValue>{caloriesIntake && !error ? caloriesIntake : 0}</DataValue> */}
           <DataValue>{bmr !== null ? bmr : 0}</DataValue>
         </ItemListStyled>
         <ItemListStyled>
