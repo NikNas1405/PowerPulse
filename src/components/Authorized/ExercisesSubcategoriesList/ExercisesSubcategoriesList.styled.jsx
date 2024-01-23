@@ -5,13 +5,14 @@ export const SubCatItems = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   & > div {
-    height: 140rem;
+    height: 150rem;
   }
 
   @media (min-width: 768px) {
     gap: 16px;
     & > div {
-      height: 40rem;
+      height: 45rem;
+      margin-bottom: 32px;
     }
   }
 
