@@ -1,10 +1,10 @@
-import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j as e,M as F,C as z,a as s}from"./index-70a7a61d.js";import{S as I}from"./StatisticsInfo-4b4f0be0.js";import{L as k}from"./Logo-9ce315ee.js";const R=o.div`
+import{s as n,g as o,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j as e,M as F,C as z,a as s}from"./index-fa0ce417.js";import{S as I}from"./StatisticsInfo-435ca2fd.js";import{L as k}from"./Logo-708b3441.js";const R=n.div`
   display: flex;
   position: relative;
 
   @media screen and (min-width: 768px) {
   }
-`,E=o.div`
+`,E=n.div`
   padding: 24px 0;
 
   @media screen and (min-width: 768px) {
@@ -14,9 +14,9 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
     width: 48%;
     margin-right: 178px;
   }
-`,W=o.h2`
+`,W=n.h2`
   @media screen and (min-width: 320px) {
-    color: ${n.colorWhite};
+    color: ${o.colorWhite};
     font-family: Roboto;
     font-size: 24px;
     font-style: normal;
@@ -39,10 +39,10 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
   @media screen and (min-width: 1440px) {
     margin-top: 151px;
   }
-`,P=o.p`
+`,P=n.p`
   @media screen and (min-width: 320px) {
     width: 335px;
-    color: ${n.colorInput};
+    color: ${o.colorInput};
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -65,7 +65,7 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
   @media screen and (min-width: 1440px) {
     width: 496px;
   }
-`,L=o.form``,D=o.div`
+`,L=n.form``,D=n.div`
   @media screen and (min-width: 320px) {
     display: flex;
     flex-direction: column;
@@ -81,13 +81,13 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
 
   @media screen and (min-width: 1440px) {
   }
-`,h=o.label`
+`,h=n.label`
   position: relative;
   border-radius: 12px;
   border: transparent;
   outline: transparent;
   width: 364px;
-`,g=o.input`
+`,g=n.input`
   @media screen and (min-width: 320px) {
     width: 300px;
     color: rgba(239, 237, 232, 0.6);
@@ -103,7 +103,7 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
 
     ${({haserror:r,isValidationCompleted:t,...d})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${o.colorSecondaryRed}`:t?`${o.colorSecondaryGreen}`:`${o.colorInput}`};
     `}
   }
 
@@ -111,7 +111,7 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
     width: 335px;
     ${({haserror:r,isValidationCompleted:t,...d})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${o.colorSecondaryRed}`:t?`${o.colorSecondaryGreen}`:`${o.colorInput}`};
     `}
   }
 
@@ -127,21 +127,22 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
 
     ${({haserror:r,isValidationCompleted:t})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${o.colorSecondaryRed}`:t?`${o.colorSecondaryGreen}`:`${o.colorInput}`};
 
       &:hover,
       &:focus {
         ${!t&&`
-        border: 1px solid ${n.colorOrange};
+        border: 1px solid ${o.colorOrange};
       `}
       }
     `}
   }
-`,f=o.svg`
+`,f=n.svg`
   position: absolute;
   width: 20px;
   height: 20px;
-  fill: ${n.colorWhite};
+  fill: ${o.colorWhite};
+  cursor: pointer;
 
   @media screen and (min-width: 320px) {
     top: 30%;
@@ -157,7 +158,7 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
 
   @media screen and (min-width: 1440px) {
   }
-`,w=o.div`
+`,w=n.div`
   display: flex;
   gap: 4px;
   position: absolute;
@@ -172,10 +173,10 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.12px;
-`,l=o.svg`
+`,l=n.svg`
   width: 16px;
   height: 16px;
-`,V=o.button`
+`,V=n.button`
   @media screen and (min-width: 320px) {
     position: sticky;
     display: flex;
@@ -185,8 +186,8 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
     gap: 10px;
     width: 140px;
     border-radius: 12px;
-    background-color: ${n.colorOrange};
-    color: ${n.colorWhite};
+    background-color: ${o.colorOrange};
+    color: ${o.colorWhite};
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -214,14 +215,14 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
 
     &:hover,
     &:focus {
-      background-color: ${n.colorOrange1};
+      background-color: ${o.colorOrange1};
     }
   }
-`,q=o.div`
+`,q=n.div`
   display: flex;
   align-items: center;
   gap: 5px;
-`,B=o.p`
+`,B=n.p`
   color: rgba(239, 237, 232, 0.6);
   font-feature-settings:
     'clig' off,
@@ -231,8 +232,8 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-`,T=o(y)`
-  color: ${n.colorWhite};
+`,T=n(y)`
+  color: ${o.colorWhite};
   font-feature-settings:
     'clig' off,
     'liga' off;
@@ -242,7 +243,7 @@ import{s as o,g as n,n as p,N as y,r as m,u as $,b as S,c as v,d as x,l as C,j a
   font-weight: 400;
   line-height: 18px;
   text-decoration-line: underline;
-`,G=o.div`
+`,G=n.div`
   @media screen and (min-width: 320px) and (max-width: 767px) {
     position: absolute;
     z-index: -1;
