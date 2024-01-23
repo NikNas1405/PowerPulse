@@ -28,8 +28,12 @@ export const fetchExercisesList = createAsyncThunk(
     console.log('filterListOper', filterList);
 
     try {
+      // const response = await axios.get(
+      //   `/exercises/filter/:bodyPart?bodyPart=${filterList.toLowerCase()}`
+      // );
+
       const response = await axios.get(
-        `/exercises/filter/:bodyPart?bodyPart=${filterList.toLowerCase()}`
+        `/exercises/filter/:category?category=${filterList.toLowerCase()}`
       );
 
       return response.data;

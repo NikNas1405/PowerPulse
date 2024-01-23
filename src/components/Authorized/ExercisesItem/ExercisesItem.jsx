@@ -239,7 +239,7 @@ export const ExercisesItem = ({
           </Text>
         </WrapperText>
       </ProductsItemStyled>
-      //
+
       <Modal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}

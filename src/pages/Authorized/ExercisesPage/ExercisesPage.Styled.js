@@ -21,3 +21,14 @@ export const ContainerExPage = styled.div`
 export const Block = styled.div`
   text-align: center;
 `;
+
+export const ExerPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 100vh;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+`;
