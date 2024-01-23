@@ -48,7 +48,7 @@ export const updateUser = createAsyncThunk(
 
       const res = await axios.patch('/auth/params', userForm);
 
-      return { user: res.data.user, bmr: res.data.bmr };
+      return res.data.user;
     } catch (error) {
       toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
