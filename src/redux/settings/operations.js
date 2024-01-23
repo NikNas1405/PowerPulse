@@ -21,7 +21,6 @@ export const getCurrentUser = createAsyncThunk(
 
       setAuthHeader(persistedToken);
       const res = await axios.get('/auth/current');
-      console.log(res.data.user);
 
       return res.data.user;
     } catch (error) {
@@ -48,8 +47,8 @@ export const updateUser = createAsyncThunk(
       delete userForm.createdAt;
 
       const res = await axios.patch('/auth/params', userForm);
-      //console.log(userData);
-      return res.data.user;
+
+      return { user: res.data.user, bmr: res.data.bmr };
     } catch (error) {
       toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
@@ -86,7 +85,7 @@ export const updatedUserAvatar = createAsyncThunk(
         },
       });
       toast.success('Avatar updated');
-      return res.data;
+      return res.data.user;
     } catch (error) {
       toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);

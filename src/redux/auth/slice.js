@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logIn, logOut, refreshUser, register } from './operations';
-import { updateUser } from '../settings/operations';
+import { updateUser, updatedUserAvatar } from '../settings/operations';
 
 const initialState = {
   user: {
     name: null,
     email: null,
   },
+  bmr: null,
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -67,9 +68,38 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, (state) => {
         state.isRefreshing = false;
       })
-      .addCase(updateUser.fulfilled, (state) => {
-        state.isUserParams = false;
+      .addCase(updateUser.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.bmr = action.payload.bmr;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+        state.isUserParams = checkUserParams(state.user);
+      })
+      .addCase(updatedUserAvatar.pending, (state) => {
+        state.isRefreshing = true;
+      })
+      .addCase(updatedUserAvatar.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+        // state.isUserParams = false;
       }),
 });
 
 export const authReducer = authSlice.reducer;
+
+// state.user = action.payload;
+// // state.bmr = action.payload;
+// state.isLoggedIn = true;
+// state.isRefreshing = false;
+// state.isUserParams = checkUserParams(state.user);
+// state.user = {
+//   ...state.user,
+//   ...action.payload.user,
+// };
+// Add the new field to the user
+
+// state.user.bmr = {
+//   ...state.user,
+//   bmr: action.payload.bmr,
+// };

@@ -175,6 +175,7 @@ export const ImageToggle = styled.svg`
   width: 20px;
   height: 20px;
   fill: ${globalColor.colorWhite};
+  cursor: pointer;
 
   @media screen and (min-width: 320px) {
     top: 30%;
