@@ -181,7 +181,7 @@ export const ExercisesItem = ({
   };
   return (
     <>
-      <ProductsItemStyled>
+      <>
         <DietSpan>WORKOUT</DietSpan>
         <div
           style={{
@@ -238,7 +238,7 @@ export const ExercisesItem = ({
             {target}
           </Text>
         </WrapperText>
-      </ProductsItemStyled>
+      </>
 
       <Modal
         isOpen={isModalOpen}

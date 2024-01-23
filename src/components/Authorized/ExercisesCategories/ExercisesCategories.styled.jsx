@@ -1,24 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { globalColor } from '../../../styles/root';
 
-// export const Card = styled.div`
-//   /* display: flex; */
-//   /* align-items: center; */
-//   gap: 10px;
-//   margin: 10px;
-//   border: 2px solid black;
-//   border-radius: 5px;
-//   padding: 5px;
-// `;
-
-// export const CardBlock = styled.div`
-//   display: flex;
-//   justify-content: flex-end;
-//   margin: 10px;
-// `;
-
-export const ExCat = styled.ul`
+export const ExercisesCategories = styled.ul`
   display: flex;
   /* margin-top: 20px;
   margin-bottom: 40px; */
@@ -35,6 +18,21 @@ export const CategoryLink = styled(Link)`
   font-weight: 400;
   line-height: 1.29;
   word-wrap: break-word;
+
+  color: ${(props) => (props.isactive === 'true' ? '#EFEDE8' : '')};
+  position: relative;
+
+  &:after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: ${(props) => (props.isactive === 'true' ? '4px' : '0')};
+    background-color: #e6533c;
+    border-radius: 2px;
+    content: '';
+    transition: height 0.3s;
+  }
 
   @media (min-width: 768px) {
     font-size: 16px;
