@@ -168,7 +168,39 @@ export const CalendarGlobalStyles = createGlobalStyle`
   .react-datepicker__triangle {
    display: none;
   }
+  .react-datepicker__header__dropdown--select{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;    
+  }
+  .react-datepicker__month-select{
+    background-color: transparent;
+    border: 1px solid ${globalColor.colorInput};
+    border-radius: 2px;
+    color: ${globalColor.colorWhite};
+    outline: none;
+    
+    & >option{
+      color: ${globalColor.colorBlack};  
+      background-color:${globalColor.colorWhite} ;   
+    }
+  }
+
+  .react-datepicker__year-select{
+    background-color: transparent;
+    border: 1px solid ${globalColor.colorInput};
+    border-radius: 2px;
+    color: ${globalColor.colorWhite};
+     outline: none;
+
+    & >option{
+      color: ${globalColor.colorBlack};  
+      background-color:${globalColor.colorWhite} ;   
+    }
+  }
 `;
+
 export const ProfileContainer = styled.div`
   display: flex;
 `;

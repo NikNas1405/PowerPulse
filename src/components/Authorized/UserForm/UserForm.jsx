@@ -221,6 +221,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       placeholderText="00.00.00"
                       name="birthday"
                       value={props.values.birthday}
+                      showMonthDropdown
+                      showYearDropdown
+                      dropdownMode="select"
                     />
                     <StyledError name="birthday" component="div" />
                     <CalendarGlobalStyles />
