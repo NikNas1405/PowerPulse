@@ -68,7 +68,6 @@ export const ProfileSchema = Yup.object().shape({
     .label('Date of Birth')
     // .max(today, "DOB cannot be greater than today's date")
     .typeError('Invalid Date!'),
-  // });
 });
 
 export const UserForm = ({ profile, refreshUserData }) => {
@@ -80,10 +79,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // const [defaultBirthday, setDefaultBirthday] = useState(null);
-  const [defaultBirthday, setDefaultBirthday] = useState(
-    profile.birthday ? moment(profile.birthday).format('DD.MM.YYYY') : ''
-  );
+  const [defaultBirthday, setDefaultBirthday] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -94,15 +90,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
         }
         setUserData(resp.payload);
         refreshUserData(resp.payload);
-        // setDefaultBirthday(resp.payload.birthday);
-        setDefaultBirthday(
-          resp.payload.birthday
-            ? moment(resp.payload.birthday).format('DD.MM.YYYY')
-            : ''
-        );
+        setDefaultBirthday(resp.payload.birthday);
       } catch (error) {
         console.error('Error fetching user data:', error);
-        toast.error('You must be older 18 age');
       }
     };
 
@@ -162,7 +152,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
         initialValues={{
           ...userData,
           // birthday: defaultBirthday ? changeDate(defaultBirthday) : '',
-          birthday: defaultBirthday,
+          birthday: defaultBirthday ? defaultBirthday : '',
         }}
         enableReinitialize
         validationSchema={ProfileSchema}

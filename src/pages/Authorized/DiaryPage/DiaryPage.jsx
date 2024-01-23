@@ -27,6 +27,7 @@ import { toast } from 'react-toastify';
 import { selectUser } from '../../../redux/auth/selectors';
 
 import { changeDate } from '../../../helpers/helpers';
+import { refreshUser } from '../../../redux/auth/operations';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const DiaryPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        dispatch(refreshUser());
         await dispatch(getAllDiaryInformation(formattedCurrentDate));
       } catch (error) {
         toast.error('Error fetching data:', error);
