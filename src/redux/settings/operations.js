@@ -85,7 +85,7 @@ export const updatedUserAvatar = createAsyncThunk(
         },
       });
       toast.success('Avatar updated');
-      return res.data.user;
+      return res.data;
     } catch (error) {
       toast.error(error.message);
       return thunkAPI.rejectWithValue(error.message);
