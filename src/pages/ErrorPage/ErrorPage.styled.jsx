@@ -137,6 +137,12 @@ export const ErrorNavlinkGoHome = styled(NavLink)`
   border: 1px solid ${globalColor.colorInput};
   width: 147px;
 
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    border: 1px solid ${globalColor.colorBeige};
+  }
+
   @media screen and (min-width: 768px) {
     padding: 16px 58px;
     width: 204px;

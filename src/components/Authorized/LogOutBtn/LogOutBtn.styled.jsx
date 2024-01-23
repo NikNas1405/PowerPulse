@@ -33,9 +33,15 @@ export const BtnLogOut = styled.button`
 
   @media screen and (min-width: 1440px) {
   }
+ 
+  &:hover > svg {
+    stroke: ${globalColor.colorOrange1};
+  }
 `;
 
 export const SvgLogOutBtn = styled.svg`
+  transition: stroke 0.3s ease;
   width: 20px;
   height: 20px;
+  stroke: ${globalColor.colorOrange};
 `;

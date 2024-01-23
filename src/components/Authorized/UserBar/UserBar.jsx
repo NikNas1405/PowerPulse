@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router';
-import { NavLink } from 'react-router-dom';
 import { LogOutBtn } from '../LogOutBtn/LogOutBtn';
 import { UserNav } from '../UserNav/UserNav';
 import { useAuth } from '../../../hooks/useAuth';
@@ -13,6 +12,7 @@ import {
   BtnIconMenu,
   LogOutWrapper,
   UseNavWrapper,
+  UserBarLink,
 } from './UserBar.styled';
 import sprite from '../../../assets/sprite.svg';
 import { useState } from 'react';
@@ -46,11 +46,11 @@ export const UserBar = () => {
       )}
 
       <UserCardContainer>
-        <NavLink to={'/profile'}>
+        <UserBarLink to={'/profile'}>
           <SvgUserNav>
             <use href={`${sprite}#icon-settings-01`} />
           </SvgUserNav>
-        </NavLink>
+        </UserBarLink>
         {avatarURL ? (
           <ImageHolder>
             <img src={avatarURL} alt={`User name ${name}`} />

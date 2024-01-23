@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import { NavLink } from 'react-router-dom';
 import { globalColor } from '../../../styles/root';
 
 export const UserBarConatiner = styled.div`
@@ -27,6 +29,15 @@ export const BtnIconMenu = styled.button`
   border: none;
   outline: none;
   padding: 0;
+
+  > svg {
+    transition: stroke 0.3s ease;
+    stroke: ${globalColor.colorOrange};
+  }
+
+  &:hover > svg {
+    stroke: ${globalColor.colorOrange1};
+  }
 
   @media screen and (min-width: 320px) {
   }
@@ -110,11 +121,24 @@ export const SvgUserNav = styled.svg`
   @media screen and (min-width: 320px) {
     width: 24px;
     height: 24px;
+    stroke: ${globalColor.colorInput};
   }
   @media screen and (min-width: 768px) {
     width: 28px;
     height: 28px;
     flex-shrink: 0;
+  }
+
+  transition: stroke 0.3s ease;
+`;
+
+export const UserBarLink = styled(NavLink)`
+  &:hover > svg {
+    stroke: ${globalColor.colorOrange1};
+  }
+
+  &.active > svg {
+    stroke: ${globalColor.colorOrange};
   }
 `;
 

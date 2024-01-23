@@ -30,6 +30,17 @@ export const UserNavLink = styled(NavLink)`
     &.active {
       background-color: ${globalColor.colorOrange};
       border: 1px solid rgba(239, 237, 232, 0.2);
+
+      &:hover {
+        background-color: ${globalColor.colorOrange1};
+      }
+    }
+
+    transition: background-color 0.3s ease;
+    transition: border 0.3s ease;
+
+    &:hover {
+      border: 1px solid ${globalColor.colorOrange};
     }
   }
 `;
