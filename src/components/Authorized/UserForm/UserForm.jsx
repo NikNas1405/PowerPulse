@@ -80,7 +80,6 @@ export const UserForm = ({ profile, refreshUserData }) => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // const [defaultBirthday, setDefaultBirthday] = useState(null);
   const [defaultBirthday, setDefaultBirthday] = useState(
     profile.birthday ? moment(profile.birthday).format('DD.MM.YYYY') : ''
   );
@@ -109,32 +108,16 @@ export const UserForm = ({ profile, refreshUserData }) => {
     fetchUserData();
   }, []);
 
-  // // console.log('Start');
-  // const fetchUserData = async () => {
-  //   try {
-  //     const resp = await dispatch(getCurrentUser());
-  //     console.log(resp);
-  //     if (resp.payload.birthday === undefined) {
-  //       resp.payload.birthday = '';
-  //     }
-  //     setUserData(resp.payload);
-  //     refreshUserData(resp.payload);
-  //   } catch (error) {
-  //     console.error('Error fetching user data:', error);
-  //   }
-  // };
+  const handleSubmit = (values, props) => {
+    if (values.birthday === defaultBirthday) {
+      values.birthday = userData.birthday;
+      props.setFieldValue('birthday', defaultBirthday);
+    }
 
-  // useEffect(() => {
-  //   fetchUserData();
-  // }, []);
-
-  const handleSubmit = (values) => {
     setIsSubmitted(true);
-    console.log(values);
-    // TODO UPDATE USER HERE
+
     try {
       const resp = dispatch(updateUser(values));
-      //setUserData(resp.payload);
       console.log(resp);
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -143,25 +126,15 @@ export const UserForm = ({ profile, refreshUserData }) => {
     setTimeout(() => {
       setIsSubmitted(false);
     }, 3000);
+
     return false;
   };
-
-  // const changeDate = (date) => {
-  //   const dateObject = new Date(date);
-  //   const year = dateObject.getFullYear();
-  //   const month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
-  //   const day = dateObject.getDate().toString().padStart(2, '0');
-
-  //   return `${day}-${month}-${year}`;
-  // };
 
   return (
     <ProfileContainer>
       <Formik
-        // initialValues={userData}
         initialValues={{
           ...userData,
-          // birthday: defaultBirthday ? changeDate(defaultBirthday) : '',
           birthday: defaultBirthday,
         }}
         enableReinitialize
@@ -239,23 +212,16 @@ export const UserForm = ({ profile, refreshUserData }) => {
                     <StyledDatePicker
                       selected={selectedDate}
                       onChange={(date) => {
+                        props.handleChange;
                         setSelectedDate(date);
                         props.setFieldValue('birthday', date);
-                        props.setFieldTouched;
+                        props.setFieldTouched('birthday', true);
                       }}
                       dateFormat="dd.MM.yyyy"
                       placeholderText="00.00.00"
                       name="birthday"
                       value={props.values.birthday}
                     />
-                    {/* 
-                      name="birthday"
-                      value={props.values.birthday}
-                      placeholder="0"
-                      type="text"
-                      onChange={props.handleChange}
-                    */}
-                    {/* />  */}
                     <StyledError name="birthday" component="div" />
                     <CalendarGlobalStyles />
                   </ParamsLabel>
