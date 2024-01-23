@@ -24,7 +24,9 @@ export const getCurrentUser = createAsyncThunk(
 
       return res.data.user;
     } catch (error) {
-      toast.error(error.message);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -47,10 +49,14 @@ export const updateUser = createAsyncThunk(
       delete userForm.createdAt;
 
       const res = await axios.patch('/auth/params', userForm);
-
+      toast.success('Your data has been updated successfully!', {
+        theme: 'dark',
+      });
       return { user: res.data.user, bmr: res.data.bmr };
     } catch (error) {
-      toast.error(error.message);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -87,7 +93,9 @@ export const updatedUserAvatar = createAsyncThunk(
       toast.success('Avatar updated');
       return res.data;
     } catch (error) {
-      toast.error(error.message);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }

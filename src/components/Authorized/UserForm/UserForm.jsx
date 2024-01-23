@@ -229,6 +229,8 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       showMonthDropdown
                       showYearDropdown
                       dropdownMode="select"
+                      calendarStartDay={1}
+                      formatWeekDay={(day) => day.substr(0, 1)}
                     />
                     <SvgCalendar>
                       <use href={`${sprite}#icon-calendar`} />
