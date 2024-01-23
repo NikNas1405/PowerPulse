@@ -69,13 +69,8 @@ const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        console.log(action.payload);
-        console.log(action.payload.bmr);
-        state.user = {
-          ...state.user,
-          ...action.payload.user,
-        };
-        state.bmr = action.payload.bmr; // Update this line to access bmr from the root
+        state.user = action.payload.user;
+        state.bmr = action.payload.bmr;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.isUserParams = checkUserParams(state.user);
