@@ -2,8 +2,6 @@ import sprite from '../../../assets/sprite.svg';
 import gridicons_user from '../../../assets/profile/gridicons_user.jpg';
 import { LogOutBtn } from '../LogOutBtn/LogOutBtn';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { useAuth } from '../../../hooks/useAuth';
 import { updatedUserAvatar } from '../../../redux/settings/operations';
 import {
   TextWrapper,
@@ -29,11 +27,14 @@ import {
   AvatarPickerSvg,
   NewAvatar,
 } from './UserCard.styled';
+import { selectDiaryInformation } from '../../../redux/diary/diarySelector';
 
 export const UserCard = ({ profile, refreshUserData }) => {
   const dispatch = useDispatch();
 
-  const { bmr } = useAuth();
+  const userDiaryData = useSelector(selectDiaryInformation);
+
+  const type = userDiaryData.caloriesIntake;
 
   const handleAvaChange = (e) => {
     // TODO UPDATE USER HERE
@@ -97,7 +98,9 @@ export const UserCard = ({ profile, refreshUserData }) => {
             <TextDescription> Daily calorie intake</TextDescription>
           </WrapperDescription>
           <WrapperDescription>
-            <TextNumber>{bmr !== null ? bmr : 0}</TextNumber>
+            <TextNumber>
+              {type !== undefined ? userDiaryData.caloriesIntake : 0}
+            </TextNumber>
           </WrapperDescription>
         </TextWrapper>
         <TextWrapper>

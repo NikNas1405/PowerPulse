@@ -32,7 +32,6 @@ import {
 
 import { changeDate } from '../../../helpers/helpers';
 import { refreshUser } from '../../../redux/auth/operations';
-import { useAuth } from '../../../hooks/useAuth';
 
 const DiaryPage = () => {
   const dispatch = useDispatch();
@@ -44,9 +43,7 @@ const DiaryPage = () => {
   const user = useSelector(selectUser);
   const userDataRegistration = user.createdAt;
 
-  const { bmr } = useAuth();
-
-  const [userBMR, setUserBRM] = useState(0);
+  // const bmr = user.bmr;
 
   const formattedCurrentDate = changeDate(currentDate);
   const formattedUserDateRegistration = changeDate(userDataRegistration);
@@ -55,8 +52,6 @@ const DiaryPage = () => {
     const fetchData = async () => {
       try {
         dispatch(refreshUser());
-        setUserBRM(bmr);
-
         await dispatch(getAllDiaryInformation(formattedCurrentDate));
       } catch (error) {
         toast.error('Error fetching data:', error);
@@ -65,7 +60,6 @@ const DiaryPage = () => {
     };
     fetchData();
   }, [dispatch, formattedCurrentDate, currentDate]);
-
 
   return (
     <Container>
@@ -82,7 +76,10 @@ const DiaryPage = () => {
             />
           </TitleAndSwitch>
           <InfoContainer>
-            <DayDashboard userDiaryInformation={userData} bmr={userBMR} />
+            <DayDashboard
+              userDiaryInformation={userData}
+              // bmr={bmr}
+            />
             <ProdAndExercise>
               <DayProducts
                 productsArray={addProducts}
