@@ -1,4 +1,4 @@
-import{s as n,ac as c,j as e,ad as o,u as p,v as r,ae as d,af as l,ag as m,r as a,C as g,B as h,U as f,ah as u}from"./index-8d04d221.js";import{W as j}from"./ProductsPage.styled-fd43d82d.js";import{T as w}from"./TitlePage-21c5dfc1.js";const E=n.ul`
+import{s as n,ac as c,j as e,ad as o,u as p,v as r,ae as d,af as l,ag as m,r as a,C as g,B as h,U as f,ah as u}from"./index-8373f070.js";import{W as j}from"./ProductsPage.styled-16312a9e.js";import{T as w}from"./TitlePage-bd6a9d50.js";const E=n.ul`
   display: flex;
   /* margin-top: 20px;
   margin-bottom: 40px; */
