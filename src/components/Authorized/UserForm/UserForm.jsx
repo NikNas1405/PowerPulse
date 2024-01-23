@@ -110,24 +110,29 @@ export const UserForm = ({ profile, refreshUserData }) => {
     fetchUserData();
   }, []);
 
-  const handleSubmit = (values, props) => {
+  const handleSubmit = async (values, props) => {
     if (values.birthday === defaultBirthday) {
       values.birthday = userData.birthday;
       props.setFieldValue('birthday', defaultBirthday);
     }
 
-    setIsSubmitted(true);
-
     try {
-      const resp = dispatch(updateUser(values));
+      const birthdate = moment(values.birthday, 'DD.MM.YYYY');
+      const age = moment().diff(birthdate, 'years');
+      if (age < 18) {
+        toast.error('You must be at least 18 years old.');
+        setIsSubmitted(false);
+        return;
+      }
+      const resp = await dispatch(updateUser(values));
+      console.log(resp);
+      setIsSubmitted(true);
     } catch (error) {
-      console.error('Error fetching user data:', error);
+      console.error('Error updating user data:', error);
     }
     // setTimeout(() => {
     //   setIsSubmitted(false);
     // }, 3000);
-
-    return false;
   };
 
   return (
