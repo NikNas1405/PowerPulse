@@ -11,7 +11,6 @@ import {
 import ExerciseCategories from '../../../components/Authorized/ExercisesCategories/ExercisesCategories';
 import { fetchExercisesCategories } from '../../../redux/exercises/operations';
 //
-import { Wrapper } from '../ProductsPage/ProductsPage.styled';
 import { Container } from '../../../styles/GlobalStyles';
 import { ContainerExPage } from './ExercisesPage.Styled';
 //
@@ -43,21 +42,21 @@ const ExercisesPage = () => {
     gettingExercisesFilters();
   }, [dispatch, filter]);
   return (
-    <Wrapper>
-      <Container>
-        <ContainerExPage>
-          <TitlePage title={'Exercises'} />
-          <ExerciseCategories />
-        </ContainerExPage>
+    // <ExerPageWrapper>
+    <Container>
+      <ContainerExPage>
+        <TitlePage title={'Exercises'} />
+        <ExerciseCategories />
+      </ContainerExPage>
 
-        {isLoading && !error && <Loader />}
-        <>
-          <Suspense>
-            <Outlet />
-          </Suspense>
-        </>
-      </Container>
-    </Wrapper>
+      {isLoading && !error && <Loader />}
+      <>
+        <Suspense>
+          <Outlet />
+        </Suspense>
+      </>
+    </Container>
+    // </ExerPageWrapper>
   );
 };
 

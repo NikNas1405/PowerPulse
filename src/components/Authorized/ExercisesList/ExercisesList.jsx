@@ -1,7 +1,3 @@
-// export const ExercisesList = () => {
-//   return <div></div>;
-// };
-import { ProductsListStyled } from '../ProductsList/ProductsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -13,6 +9,9 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { fetchExercisesList } from '../../../redux/exercises/operations';
 import { ExercisesItem } from '../ExercisesItem/ExercisesItem';
+import { ProductsListWrapper } from '../../../pages/Authorized/ProductsPage/ProductsPage.styled';
+import { ExercisesListWrapper } from './ExercisesList.styled';
+import { Loader } from '../../Loader/Loader';
 
 // import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 
@@ -26,8 +25,8 @@ export const ExercisesList = () => {
   const error = useSelector(getError);
   const { filterList } = useParams();
 
-  console.log('filterList=>', filterList);
-  console.log('exercises=>', exercises);
+  // console.log('filterList=>', filterList);
+  // console.log('exercises=>', exercises);
 
   useEffect(() => {
     const gettingExercisesList = async () => {
@@ -44,19 +43,19 @@ export const ExercisesList = () => {
   return (
     <div>
       <div>
-        {isLoading && !error && <b>Request in progress...</b>}
+        {isLoading && !error && <Loader />}
 
         {!exercises ? (
           <p>you do not have any exersise category</p>
         ) : (
-          <ProductsListStyled>
+          <ExercisesListWrapper>
             {/* Відображення категорій для відповідного значення filter */}
             {exercises.map((exercise) => (
               <li key={exercise._id}>
                 <ExercisesItem exercise={exercise} />
               </li>
             ))}
-          </ProductsListStyled>
+          </ExercisesListWrapper>
         )}
       </div>
     </div>
