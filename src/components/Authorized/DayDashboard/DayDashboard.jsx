@@ -20,12 +20,12 @@ import { useSelector } from 'react-redux';
 
 const DayDashboard = ({ userDiaryInformation, bmr }) => {
   const {
+    caloriesIntake,
     burnedCalories,
     consumedCalories,
     remainingCalories,
     remainingSports,
   } = userDiaryInformation;
-
 
   const [isOverThan, setIsOverThan] = useState(false);
 
@@ -86,7 +86,7 @@ const DayDashboard = ({ userDiaryInformation, bmr }) => {
             <TitleStyled>The rest of the calories</TitleStyled>
           </TitleStyledWrapper>
           <DataValue>
-            {remainingCalories && !error ? remainingCalories : 0}
+            {remainingCalories && !error ? remainingCalories : bmr ? bmr : 0}
           </DataValue>
         </ItemListStyled>
         <ItemListStyled className={isOverThan ? 'greenBg' : ''}>
