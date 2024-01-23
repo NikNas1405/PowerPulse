@@ -12,6 +12,7 @@ import { ExercisesItem } from '../ExercisesItem/ExercisesItem';
 import { ProductsListWrapper } from '../../../pages/Authorized/ProductsPage/ProductsPage.styled';
 import { ExercisesListWrapper } from './ExercisesList.styled';
 import { Loader } from '../../Loader/Loader';
+import { ProductsItemStyled } from '../ProductsItem/ProductsItem.styled';
 
 // import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
 
@@ -51,9 +52,9 @@ export const ExercisesList = () => {
           <ExercisesListWrapper>
             {/* Відображення категорій для відповідного значення filter */}
             {exercises.map((exercise) => (
-              <li key={exercise._id}>
+              <ProductsItemStyled key={exercise._id}>
                 <ExercisesItem exercise={exercise} />
-              </li>
+              </ProductsItemStyled>
             ))}
           </ExercisesListWrapper>
         )}
