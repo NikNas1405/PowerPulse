@@ -1,6 +1,6 @@
-import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as t,c as a,d as r,e as s,f as p,L as l}from"./Logo-e205c5d9.js";const c=e.div`
+import{s as i,g as n,N as o,j as e}from"./index-45fbf0ba.js";import{b as d,a as t,c as a,d as r,e as s,f as p,L as l}from"./Logo-8df702b1.js";const c=i.div`
   display: flex;
-`,x=e.div`
+`,x=i.div`
   height: 100vh;
   width: 36%;
   background-image: url(${d});
@@ -35,11 +35,11 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
       background-image: url(${p});
     }
   }
-`,m=e.div`
+`,h=i.div`
   background-color: ${n.colorOrange};
   height: 100vh;
   flex: 1;
-`,h=e.div`
+`,m=i.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -70,11 +70,11 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
     padding: 32px 96px;
     /* width: 669px; */
   }
-`,g=e.div`
+`,g=i.div`
   display: flex;
   flex-direction: column;
   transform: translateY(20vh);
-`,u=e.h2`
+`,u=i.h2`
   color: ${n.colorWhite};
   margin-bottom: 14px;
   font-size: 66px;
@@ -88,7 +88,7 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
     line-height: 0.9375;
     letter-spacing: 1.6px;
   }
-`,b=e.p`
+`,b=i.p`
   color: ${n.colorWhite};
   font-size: 14px;
   line-height: 1.28571;
@@ -98,7 +98,7 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,w=e(o)`
+`,w=i(o)`
   display: inline-flex;
   padding: 12px 38px;
   justify-content: center;
@@ -113,6 +113,12 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
   border: 1px solid ${n.colorInput};
   width: 147px;
 
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    border: 1px solid ${n.colorBeige};
+  }
+
   @media screen and (min-width: 768px) {
     padding: 16px 58px;
     width: 204px;
@@ -122,4 +128,4 @@ import{s as e,g as n,N as o,j as i}from"./index-e639b9a1.js";import{b as d,a as 
 
   @media screen and (min-width: 1440px) {
   }
-`,k=()=>i.jsxs(c,{children:[i.jsx(m,{children:i.jsxs(h,{children:[i.jsx(l,{}),i.jsxs(g,{children:[i.jsx(u,{children:"404"}),i.jsx(b,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),i.jsx(w,{to:"/",children:"Go Home"})]})]})}),i.jsx(x,{})]});export{k as default};
+`,k=()=>e.jsxs(c,{children:[e.jsx(h,{children:e.jsxs(m,{children:[e.jsx(l,{}),e.jsxs(g,{children:[e.jsx(u,{children:"404"}),e.jsx(b,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),e.jsx(w,{to:"/",children:"Go Home"})]})]})}),e.jsx(x,{})]});export{k as default};
