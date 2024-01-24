@@ -1,8 +1,8 @@
-import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";import{b as r,a as p,c as g,d as h,e as m,f as c}from"./Logo-d1dae3e1.js";const l=e.div`
+import{s as e,n as t,g as n,u as h,r as c,f as m,h as l,j as i,a as d}from"./index-ecd512a5.js";import{b as r,a as p,c as w,d as b,e as u,f}from"./Logo-bc7b6d1f.js";const k=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
-    ${({isWelcomePage:d})=>d?a`
+    ${({isWelcomePage:a})=>a?t`
             background-image: linear-gradient(
                 170deg,
                 #040404 3.66%,
@@ -27,7 +27,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
                 linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
                 url(${p});
             }
-          `:a`
+          `:t`
             background-image: linear-gradient(
                 168deg,
                 rgb(4, 4, 4) 14.75%,
@@ -69,7 +69,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
         rgba(4, 4, 4, 0) 19.15%
       ),
       linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-      url(${g});
+      url(${w});
     background-repeat: no-repeat;
     background-size: contain;
     width: 670px;
@@ -88,7 +88,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
           rgba(4, 4, 4, 0) 52.97%
         ),
         linear-gradient(73deg, #040404 6.11%, rgba(4, 4, 4, 0) 66.68%),
-        url(${h});
+        url(${b});
     }
   }
 
@@ -98,7 +98,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
         #040404 -2.45%,
         rgba(4, 4, 4, 0) 68.17%
       ),
-      url(${m});
+      url(${u});
     width: 670px;
     height: 800px;
     margin: 0;
@@ -111,12 +111,12 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
           #040404 -2.45%,
           rgba(4, 4, 4, 0) 68.17%
         ),
-        url(${c});
+        url(${f});
       background-position: right;
       margin: 0;
     }
   }
-`,w=e.div`
+`,v=e.div`
   position: absolute;
   display: flex;
   width: 146px;
@@ -148,7 +148,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     margin-top: 0;
     margin-left: 0;
   }
-`,b=e.div`
+`,$=e.div`
   padding: 8px;
   border-radius: 50%;
   width: 30px;
@@ -174,7 +174,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     margin-right: 12px;
     padding: 10px;
   }
-`,u=e.svg`
+`,j=e.svg`
   width: 14px;
   height: 14px;
   fill: ${n.colorWhite};
@@ -191,7 +191,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     width: 20px;
     height: 20px;
   }
-`,f=e.svg`
+`,y=e.svg`
   @media screen and (min-width: 320px) {
     width: 12px;
     height: 12px;
@@ -202,7 +202,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     width: 16px;
     height: 16px;
   }
-`,k=e.p`
+`,z=e.p`
   margin-bottom: 8px;
   color: ${n.colorWhite};
   font-family: Roboto;
@@ -221,7 +221,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
 
   @media screen and (min-width: 1440px) {
   }
-`,v=e.p`
+`,S=e.p`
   color: rgba(239, 237, 232, 0.65);
   font-family: Roboto;
   font-size: 12px;
@@ -239,7 +239,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
 
   @media screen and (min-width: 1440px) {
   }
-`,$=e.div`
+`,W=e.div`
   @media screen and (min-width: 320px) {
     position: absolute;
     width: 100px;
@@ -272,7 +272,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     margin-top: 0;
     margin-left: 0;
   }
-`,j=e.div`
+`,T=e.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -286,11 +286,11 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     width: 24px;
     height: 24px;
   }
-`,y=e.div`
+`,D=e.div`
   display: flex;
   align-items: baseline;
   gap: 11px;
-`,z=e.p`
+`,E=e.p`
   color: ${n.colorWhite};
   font-family: Roboto;
   font-size: 24px;
@@ -310,7 +310,7 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
 
   @media screen and (min-width: 1440px) {
   }
-`,S=e.span`
+`,R=e.span`
   color: rgba(239, 237, 232, 0.65);
   font-family: Roboto;
   font-size: 12px;
@@ -330,4 +330,4 @@ import{s as e,n as a,g as n,f as s,j as i,a as t}from"./index-075542a4.js";impor
     font-size: 16px;
     line-height: 24px;
   }
-`,W=d=>d.statistics.statistics,R=({isWelcomePage:d})=>{const{allTotalCaloriesExercises:o,numberExercises:x}=s(W);return i.jsxs(l,{isWelcomePage:d,children:[i.jsxs(w,{children:[i.jsx(b,{children:i.jsx(u,{children:i.jsx("use",{href:`${t}#icon-play`})})}),i.jsxs("div",{children:[i.jsxs(k,{children:[x,"+"]}),i.jsx(v,{children:"Video tutorial"})]})]}),i.jsxs($,{children:[i.jsx(j,{children:i.jsx(f,{children:i.jsx("use",{href:`${t}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(y,{children:[i.jsx(z,{children:o}),i.jsx(S,{children:"cal"})]})]})]})};export{R as S};
+`,V=a=>a.statistics.statistics,N=({isWelcomePage:a})=>{const o=h();c.useEffect(()=>{o(m())},[]);const s=l(V),{numberExercises:x,allTotalCaloriesExercises:g}=s;return i.jsxs(k,{isWelcomePage:a,children:[i.jsxs(v,{children:[i.jsx($,{children:i.jsx(j,{children:i.jsx("use",{href:`${d}#icon-play`})})}),i.jsxs("div",{children:[i.jsxs(z,{children:[x,"+"]}),i.jsx(S,{children:"Video tutorial"})]})]}),i.jsxs(W,{children:[i.jsx(T,{children:i.jsx(y,{children:i.jsx("use",{href:`${d}#icon-running-stick-figure-svgrepo-com-1`})})}),i.jsxs(D,{children:[i.jsx(E,{children:g}),i.jsx(R,{children:"cal"})]})]})]})};export{N as S};
