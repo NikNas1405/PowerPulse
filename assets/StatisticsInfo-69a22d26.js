@@ -1,4 +1,4 @@
-import{s as e,n as t,g as n,u as h,r as c,f as m,h as l,j as i,a as d}from"./index-4f442dc4.js";import{b as r,a as p,c as w,d as b,e as u,f}from"./Logo-24a14186.js";const k=e.div`
+import{s as e,n as t,g as n,u as h,r as c,f as m,h as l,j as i,a as d}from"./index-265dd3f9.js";import{b as r,a as p,c as w,d as b,e as u,f}from"./Logo-718fa19d.js";const k=e.div`
   display: flex;
 
   @media screen and (min-width: 320px) {
@@ -259,7 +259,7 @@ import{s as e,n as t,g as n,u as h,r as c,f as m,h as l,j as i,a as d}from"./ind
     width: 180px;
     height: 110px;
     flex-shrink: 0;
-    padding: 14px 28px 14px 38px;
+    /* padding: 14px 28px 14px 38px; */
     margin-top: 830px;
     margin-left: 275px;
   }
@@ -304,7 +304,8 @@ import{s as e,n as t,g as n,u as h,r as c,f as m,h as l,j as i,a as d}from"./ind
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 48px;
+    /* font-size: 48px; */
+    font-size: 44px;
     line-height: 50px;
   }
 
