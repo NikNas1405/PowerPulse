@@ -1,6 +1,7 @@
 import {
   Forma,
   Label,
+  SuccesModal,
   ButtonSubmit,
   Input,
   Details,
@@ -8,6 +9,7 @@ import {
   DetailsSpan,
   GifContainer,
   ModalContainer,
+  // PostModalContainer,
   TimerContainer,
   ModalTextStyle,
   ModalInfoStyle,
@@ -27,6 +29,7 @@ import {
   WrapperTitle,
   WrapperText,
 } from '../ProductsItem/ProductsItem.styled';
+import { addDiaryExercise } from '../../../redux/diary/diaryOperation';
 
 import { globalColor } from '../../../styles/root';
 
@@ -38,7 +41,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
-import { addDiaryExercise } from '../../../redux/diary/diaryOperation';
 
 const modalStyles = {
   overlay: {
@@ -121,64 +123,14 @@ export const ExercisesItem = ({
 
   const updateObject = (remainingTimeObj) => {
     setBurnedCaloriesByTime(funkOfBurnedCalories(remainingTimeObj));
-    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60));
+    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60) + 1);
   };
 
   const dispatch = useDispatch();
 
-  const updateModalWithResponseState = (data) => {
-    Array(document.getElementsByClassName('firstModal')).forEach(
-      (element) => (element[0].hidden = true)
-    );
-    Array(document.getElementsByClassName('secondModal')).forEach(
-      (element) => (element[0].hidden = false)
-    );
-  };
-  // const SetlectReset = () => {
-  //   return (
-  //     <div style={{ display: 'flex' }}>
-  //       <button
-  //         className="pause"
-  //         onClick={() => {
-  //           setIsPlaying(false);
-  //         }}
-  //         style={{
-  //           marginLeft: '20px',
-  //           backgroundColor: 'red',
-  //           color: 'white',
-  //           border: 'none',
-  //           fontSize: '18px',
-  //           paddingLeft: '12px',
-  //           paddingRight: '12px',
-  //           paddingTop: '5px',
-  //           paddingBottom: '5px',
-  //           borderRadius: '6px',
-  //         }}
-  //       >
-  //         Pause
-  //       </button>
-  //       <button
-  //         className="play"
-  //         onClick={() => {
-  //           setIsPlaying(true);
-  //         }}
-  //         style={{
-  //           marginLeft: '20px',
-  //           backgroundColor: 'green',
-  //           color: 'white',
-  //           border: 'none',
-  //           fontSize: '18px',
-  //           paddingLeft: '12px',
-  //           paddingRight: '12px',
-  //           paddingTop: '5px',
-  //           paddingBottom: '5px',
-  //           borderRadius: '6px',
-  //         }}
-  //       >
-  //         Play
-  //       </button>
-  //     </div>
-  //   );
+  // const updateModalWithResponseState = (data) => {
+  //   setResponse(data);
+
   // };
 
   const SetlectReset = () => {
@@ -291,138 +243,147 @@ export const ExercisesItem = ({
           </Text>
         </WrapperText>
       </>
+      {!response ? (
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={() => setIsModalOpen(false)}
+          contentLabel="Example Modal"
+          style={modalStyles}
+        >
+          <ModalContainer>
+            <ModalBlockFirst>
+              <GifContainer>
+                <img src={gifUrl} alt="gif" />
+              </GifContainer>
+              <TimerContainer className="timer-wrapper">
+                <CountdownCircleTimer
+                  // style={{ border: '1px solid green' }}
+                  size={124}
+                  strokeWidth={5}
+                  trailStrokeWidth={4}
+                  strokeLinecap="butt" // Кінці ліній закруглені
+                  key={timer}
+                  isPlaying={isPlaying}
+                  duration={select}
+                  colors={[['#303030']]}
+                  trailColor={[['#E6533C']]}
+                  onComplete={() =>
+                    console.log('finished, burnedCalories', burnedCalories)
+                  }
+                  onUpdate={(remainingTime) => {
+                    updateObject(remainingTime);
+                    // console.log('remainingTime', remainingTime);
+                  }}
+                >
+                  {renderTime}
+                </CountdownCircleTimer>
 
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={() => setIsModalOpen(false)}
-        contentLabel="Example Modal"
-        style={modalStyles}
-      >
-        <ModalContainer className="firstModal">
-          <ModalBlockFirst>
-            <GifContainer>
-              <img src={gifUrl} alt="gif" />
-            </GifContainer>
-            <TimerContainer className="timer-wrapper">
-              <CountdownCircleTimer
-                // style={{ border: '1px solid green' }}
-                size={124}
-                strokeWidth={5}
-                trailStrokeWidth={4}
-                strokeLinecap="butt" // Кінці ліній закруглені
-                key={timer}
-                isPlaying={isPlaying}
-                duration={select}
-                colors={[['#303030']]}
-                trailColor={[['#E6533C']]}
-                onComplete={() =>
-                  console.log('finished, burnedCalories', burnedCalories)
-                }
-                onUpdate={(remainingTime) => {
-                  updateObject(remainingTime);
-                  // console.log('remainingTime', remainingTime);
+                <SetlectReset />
+
+                <ModalTextStyle>
+                  Burned calories:{' '}
+                  <ModalInfoStyle>{burnedCaloriesByTime}</ModalInfoStyle>
+                </ModalTextStyle>
+              </TimerContainer>
+            </ModalBlockFirst>
+            <ModalBlockSecond>
+              <InfoBlock>
+                <Details>
+                  Name <DetailsSpan>{name}</DetailsSpan>
+                </Details>
+                <Details>
+                  Burned calories <DetailsSpan>{burnedCalories}</DetailsSpan>
+                </Details>
+                <Details>
+                  Body part <DetailsSpan>{bodyPart}</DetailsSpan>
+                </Details>
+                <Details>
+                  Target <DetailsSpan>{target}</DetailsSpan>
+                </Details>
+              </InfoBlock>
+
+              <Formik
+                initialValues={{
+                  exerciseId: _id,
+                  date: currentDate,
+                  time: timeSpent,
+                  calories: burnedCaloriesByTime,
+                }}
+                enableReinitialize
+                validationSchema={caloriesSchema}
+                onSubmit={(values) => {
+                  setIsPlaying(false);
+                  dispatch(addDiaryExercise({ ...values })).then((data) =>
+                    setResponse(data)
+                  );
                 }}
               >
-                {renderTime}
-              </CountdownCircleTimer>
-
-              <SetlectReset />
-
+                <Forma>
+                  <Input hidden id="exerciseId" name="exerciseId" type="text" />
+                  <ErrorMessage name="exerciseId" component="exerciseId" />
+                  <Input hidden id="date" name="date" type="text" />
+                  <ErrorMessage name="date" component="date" />
+                  <Input
+                    hidden
+                    id="time"
+                    name="time"
+                    type="number"
+                    min="0"
+                    value={timeSpent}
+                  />
+                  <ErrorMessage name="time" component="div" />
+                  <Input
+                    hidden
+                    id="calories"
+                    name="calories"
+                    type="number"
+                    value={burnedCaloriesByTime}
+                  />
+                  <ErrorMessage name="calories" component="calories" />
+                  <ButtonSubmit type="submit">Add to diary</ButtonSubmit>
+                </Forma>
+              </Formik>
+            </ModalBlockSecond>
+          </ModalContainer>
+        </Modal>
+      ) : (
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={() => setIsModalOpen(false)}
+          contentLabel="Example Modal"
+          style={modalStyles}
+        >
+          <SuccesModal>
+            <div>
+              <h2
+                style={{
+                  fontWeight: '700',
+                  fontSize: '24px',
+                  lineHeight: '1.333',
+                  color: 'rgba(239, 237, 232, 1)',
+                  marginBottom: '16px',
+                }}
+              >
+                Well done
+              </h2>
               <ModalTextStyle>
-                Burned calories:{' '}
+                Your time <ModalInfoStyle>{timeSpent}</ModalInfoStyle>
+              </ModalTextStyle>
+              <ModalTextStyle>
+                Burned calories{' '}
                 <ModalInfoStyle>{burnedCaloriesByTime}</ModalInfoStyle>
               </ModalTextStyle>
-            </TimerContainer>
-          </ModalBlockFirst>
-          <ModalBlockSecond>
-            <InfoBlock>
-              <Details>
-                Name <DetailsSpan>{name}</DetailsSpan>
-              </Details>
-              <Details>
-                Burned calories <DetailsSpan>{burnedCalories}</DetailsSpan>
-              </Details>
-              <Details>
-                Body part <DetailsSpan>{bodyPart}</DetailsSpan>
-              </Details>
-              <Details>
-                Target <DetailsSpan>{target}</DetailsSpan>
-              </Details>
-            </InfoBlock>
-
-            <Formik
-              initialValues={{
-                exerciseId: _id,
-                date: currentDate,
-                time: timeSpent,
-                calories: burnedCaloriesByTime,
-              }}
-              enableReinitialize
-              validationSchema={caloriesSchema}
-              onSubmit={(values) => {
-                setIsPlaying(false);
-                dispatch(addDiaryExercise({ ...values })).then((data) =>
-                  updateModalWithResponseState(data)
-                );
-              }}
-            >
-              <Forma>
-                <Input hidden id="exerciseId" name="exerciseId" type="text" />
-                <ErrorMessage name="exerciseId" component="exerciseId" />
-                <Input hidden id="date" name="date" type="text" />
-                <ErrorMessage name="date" component="date" />
-                <Input
-                  hidden
-                  id="time"
-                  name="time"
-                  type="number"
-                  min="0"
-                  value={timeSpent}
-                />
-                <ErrorMessage name="time" component="div" />
-                <Input
-                  hidden
-                  id="calories"
-                  name="calories"
-                  type="number"
-                  value={burnedCaloriesByTime}
-                />
-                <ErrorMessage name="calories" component="calories" />
-                <ButtonSubmit type="submit">Add to diary</ButtonSubmit>
-              </Forma>
-            </Formik>
-          </ModalBlockSecond>
-        </ModalContainer>
-        <div hidden className="secondModal">
-          <div>
-            <h2
-              style={{
-                fontWeight: '700',
-                fontSize: '24px',
-                lineHeight: '1.333',
-                color: 'rgba(239, 237, 232, 1)',
-                marginBottom: '16px',
-              }}
-            >
-              Well done
-            </h2>
-            <ModalTextStyle>
-              Your time <ModalInfoStyle>{timeSpent}</ModalInfoStyle>
-            </ModalTextStyle>
-            <ModalTextStyle>
-              Burned calories{' '}
-              <ModalInfoStyle>{burnedCaloriesByTime}</ModalInfoStyle>
-            </ModalTextStyle>
-            <ButtonSubmit onClick={() => setIsModalOpen(false)}>
-              Next exercise
-            </ButtonSubmit>
-            <a href="/PowerPulse/diary">
-              <ModalTextStyle>To the diary</ModalTextStyle>
-            </a>
-            <p></p>
-          </div>
-        </div>
-      </Modal>
+              <ButtonSubmit onClick={() => setIsModalOpen(false)}>
+                Next exercise
+              </ButtonSubmit>
+              <a href="/PowerPulse/diary">
+                <ModalTextStyle>To the diary</ModalTextStyle>
+              </a>
+              <p></p>
+            </div>
+          </SuccesModal>
+        </Modal>
+      )}
     </>
   );
 };
