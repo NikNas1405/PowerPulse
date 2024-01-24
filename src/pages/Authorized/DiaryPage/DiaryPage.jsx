@@ -52,7 +52,9 @@ const DiaryPage = () => {
         await dispatch(refreshUser());
         await dispatch(getAllDiaryInformation(formattedCurrentDate));
       } catch (error) {
-        toast.error('Error fetching data:', error);
+        toast.error('Sorry, something went wrong, please try again', {
+          theme: 'dark',
+        });
       }
     };
     fetchData();

@@ -71,7 +71,9 @@ export const ProductsFilters = ({ categories }) => {
       try {
         dispatch(fetchProducts(formData));
       } catch (error) {
-        toast.error('Network error:', error);
+        toast.error('Sorry, something went wrong, please try again', {
+          theme: 'dark',
+        });
       }
     }
   };

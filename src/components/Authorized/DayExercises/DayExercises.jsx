@@ -57,7 +57,9 @@ const DayExercises = ({ exercisesArray, date }) => {
       await dispatch(getAllDiaryInformation(date));
     } catch (error) {
       console.log(error);
-      toast.error('Some error occured, try again', error);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
     }
   };
 
@@ -134,7 +136,7 @@ const DayExercises = ({ exercisesArray, date }) => {
                         Burned Calories
                       </ExerciseListArrayItemMobile>
                       <ExerciseListArrayItemMobile>
-                        {exercise.exerciseId.burnedCalories}
+                        {exercise.calories}
                       </ExerciseListArrayItemMobile>
                     </MobileItemsHolder2>
                     <MobileItemsHolder3
@@ -203,7 +205,7 @@ const DayExercises = ({ exercisesArray, date }) => {
                     {formattedTitle(exercise.exerciseId.target)}
                   </ExerciseListArrayItem>
                   <ExerciseListArrayItem>
-                    {exercise.exerciseId.burnedCalories}
+                    {exercise.calories}
                   </ExerciseListArrayItem>
                   <ExerciseListArrayItem>{exercise.time}</ExerciseListArrayItem>
                   <ExerciseListArrayItem>

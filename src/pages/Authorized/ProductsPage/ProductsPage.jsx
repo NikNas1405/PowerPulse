@@ -30,7 +30,6 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
 
   const isLoadingProducts = useSelector(selectProductsIsLoading);
- 
 
   const categoriesArray = useSelector(selectProductsCategories);
   const productsArray = useSelector(selectProducts);
@@ -45,7 +44,9 @@ const ProductsPage = () => {
         };
         await dispatch(fetchProducts(formData));
       } catch (error) {
-        toast.error('Error fetching data:', error);
+        toast.error('Sorry, something went wrong, please try again', {
+          theme: 'dark',
+        });
         console.error('Error fetching data:', error);
       }
     };

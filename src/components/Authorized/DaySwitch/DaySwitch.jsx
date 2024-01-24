@@ -41,7 +41,10 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
       setIsActivePrev(false);
     } else {
       toast.error(
-        `However, we don't have any data to show you. Selected date cannot be earlier than the registration date: ${userDateRegistration}.`
+        `However, we don't have any data to show you. Selected date cannot be earlier than the registration date: ${userDateRegistration}.`,
+        {
+          theme: 'dark',
+        }
       );
       setIsActivePrev(true);
     }

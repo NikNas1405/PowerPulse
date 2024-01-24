@@ -56,7 +56,9 @@ const DayProducts = ({ productsArray, date }) => {
       await dispatch(deleteDiaryProducts(id));
       await dispatch(getAllDiaryInformation(date));
     } catch (error) {
-      toast.error('Some error occured, try again', error);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
     }
   };
 

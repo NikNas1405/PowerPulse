@@ -9,7 +9,9 @@ export const fetchAllProductsCategories = createAsyncThunk(
       const response = await axios.get('/products/categories');
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -41,7 +43,9 @@ export const fetchProducts = createAsyncThunk(
       });
       return response.data.dataUser;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -23,7 +23,10 @@ const StyledDatepicker = ({
       onClose();
     } else {
       toast.error(
-        `However, we don't have any data to show you. You can review the information from the day of your registration: ${userDateRegistration} up to today: ${today}. `
+        `However, we don't have any data to show you. You can review the information from the day of your registration: ${userDateRegistration} up to today: ${today}. `,
+        {
+          theme: 'dark',
+        }
       );
     }
   };

@@ -74,7 +74,9 @@ export const AddProductForm = ({
 
         await dispatch(addDiaryProducts(productToAdd));
       } catch (error) {
-        toast.error('Network error:', error);
+        toast.error('Sorry, something went wrong, please try again', {
+          theme: 'dark',
+        });
       }
     }
   };

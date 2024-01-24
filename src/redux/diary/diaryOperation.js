@@ -9,7 +9,9 @@ export const getAllDiaryInformation = createAsyncThunk(
       const response = await axios.get(`/diary/${date}`);
       return response.data;
     } catch (error) {
-      toast.error(`${error.response.data.message}`);
+      toast.error(`${error.response.data.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -22,7 +24,9 @@ export const addDiaryProducts = createAsyncThunk(
       const response = await axios.post('/diary/products', data);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -35,7 +39,9 @@ export const deleteDiaryProducts = createAsyncThunk(
       const response = await axios.delete(`/diary/products/${productId}`);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -48,7 +54,9 @@ export const addDiaryExercise = createAsyncThunk(
       const response = await axios.post('/diary/exercises', data);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -61,7 +69,9 @@ export const deleteDiaryExercise = createAsyncThunk(
       const response = await axios.delete(`/diary/exercises/${exerciseId}`);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`);
+      toast.error(`${error.message}`, {
+        theme: 'dark',
+      });
       return thunkAPI.rejectWithValue(error.message);
     }
   }
