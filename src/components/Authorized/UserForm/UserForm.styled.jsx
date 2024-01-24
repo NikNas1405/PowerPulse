@@ -174,31 +174,23 @@ export const CalendarGlobalStyles = createGlobalStyle`
     justify-content: space-around;
     gap: 10px;    
   }
-  .react-datepicker__month-select{
-    background-color: transparent;
-    border: 1px solid ${globalColor.colorInput};
-    border-radius: 2px;
-    color: ${globalColor.colorWhite};
-    outline: none;
 
-    & >option{
-      color: ${globalColor.colorBlack};  
-      background-color:${globalColor.colorWhite} ;   
-    }
+   .react-datepicker__month-select,
+.react-datepicker__year-select {
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  background-color: ${globalColor.colorOrange1};
+  border: 1px solid ${globalColor.colorBeige};
+  border-radius: 2px;
+  color: ${globalColor.colorWhite};
+  outline: none;
+
+  & > option {
+    color: ${globalColor.colorBlack};
+    background-color: ${globalColor.colorWhite};
   }
-
-  .react-datepicker__year-select{
-    background-color: transparent;
-    border: 1px solid ${globalColor.colorInput};
-    border-radius: 2px;
-    color: ${globalColor.colorWhite};
-     outline: none;
-
-    & >option{
-      color: ${globalColor.colorBlack};  
-      background-color:${globalColor.colorWhite} ;   
-    }
-  }
+}
 `;
 
 export const ProfileContainer = styled.div`

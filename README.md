@@ -29,7 +29,7 @@ data going forward.
 📖 Diary (/diary): Keep track of your nutrition and workouts on the diary page.
 The information panel will help you understand your progress.
 
-![Presentation](./public/presentation/DiaryPage.png)
+![Presentation](./public/presentation/DiaryPage.gif)
 
 🍏 Products (/products): Choose products for your diary. Filters will help you
 find the perfect choices for you.
@@ -43,7 +43,8 @@ on categories and equipment.
 
 # Our development team :
 
-- [ANASTASIIA NIKITINA ](https://github.com/NikNas1405) **Front end Team Lead & Scrum Master**,
+- [ANASTASIIA NIKITINA ](https://github.com/NikNas1405) **Front end Team Lead &
+  Scrum Master**,
 - [ANTON TYSLENKO](https://github.com/AntonTy35) **Back end Team Lead**,
 
 - [SERHII PEREVERTNIUK](https://github.com/Sereban13) **Front End Developer** ,
@@ -56,7 +57,7 @@ on categories and equipment.
 - [HRYHORII KYRIIENKO](https://github.com/kyr13nko) **Back end Developer**.
 
 # Technologies used:
- 
+
 Frontend:
 
 - HTML/CSS,
@@ -75,7 +76,7 @@ Backend:
 - Mongoose,
 - Mongo DB,
 - Render,
-- [Swagger Documentation](https://powerpulserver.onrender.com/api-docs/#/) 
+- [Swagger Documentation](https://powerpulserver.onrender.com/api-docs/#/)
 
 Utils:
 
