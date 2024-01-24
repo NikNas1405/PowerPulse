@@ -4,21 +4,12 @@ import { getStatistics } from './statisticsOperations';
 
 const initialState = {
   statistics: {
-    numberExercises: '350',
-    allTotalCaloriesExercises: '500',
+    numberExercises: '0',
+    allTotalCaloriesExercises: '0',
   },
   isLoading: false,
-  isRefreshing: false,
+  isError: false,
 };
-
-// "finalResult": {
-// "numberRegistered": 83,
-// "numberExercises": 1324,
-// "allTotalAmount": 21300,
-// "allTotalCalories": 44300,
-// "allTotalTimeExercises": 1800,
-// "allTotalCaloriesExercises": 4600
-// }
 
 const statisticsSlice = createSlice({
   name: 'statistics',
@@ -26,15 +17,15 @@ const statisticsSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(getStatistics.pending, (state) => {
-        state.isRefreshing = true;
+        state.isLoading = true;
       })
       .addCase(getStatistics.fulfilled, (state, action) => {
-        state.statistics = action.payload.statistics;
-        state.isLoggedIn = true;
-        state.isRefreshing = false;
+        state.statistics = action.payload;
+        state.isLoading = false;
       })
       .addCase(getStatistics.rejected, (state) => {
-        state.isRefreshing = false;
+        state.isError = true;
+        state.isLoading = false;
       }),
 });
 

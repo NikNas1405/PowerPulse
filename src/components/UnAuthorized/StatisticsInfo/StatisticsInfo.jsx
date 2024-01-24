@@ -13,12 +13,20 @@ import {
   SvgPlay,
 } from './StatisticsInfo.styled';
 import sprite from '../../../assets/sprite.svg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectStatistics } from '../../../redux/statistics/statisticsSelectors';
+import { useEffect } from 'react';
+import { getStatistics } from '../../../redux/statistics/statisticsOperations';
 
 export const StatisticsInfo = ({ isWelcomePage }) => {
-  const { allTotalCaloriesExercises, numberExercises } =
-    useSelector(selectStatistics);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getStatistics());
+  }, []);
+
+  const statistics = useSelector(selectStatistics);
+  const { numberExercises, allTotalCaloriesExercises } = statistics;
 
   return (
     <DivContainer isWelcomePage={isWelcomePage}>
