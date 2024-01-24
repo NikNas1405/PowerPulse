@@ -57,7 +57,10 @@ const DaySwitch = ({ currentDate, setCurrentDate, userDateRegistration }) => {
     nextDay.setDate(selectedDate.getDate() + 1);
     if (nextDay > new Date()) {
       toast.error(
-        `However, we don't have any data to show you. Selected date cannot be later than today's date: ${today}.`
+        `However, we don't have any data to show you. Selected date cannot be later than today's date: ${today}.`,
+        {
+          theme: 'dark',
+        }
       );
       setIsActiveNext(true);
     } else {
