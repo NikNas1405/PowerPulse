@@ -9,6 +9,16 @@ export const Block = styled.div`
   height: 206px;
   border: 1px solid white;
   border-radius: 5px;
+  transform: scale(0.98);
+  opacity: 0.8;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+
+  &:hover {
+    transform: scale(1);
+    opacity: 1;
+  }
 
   @media (min-width: 768px) {
     width: 224px;

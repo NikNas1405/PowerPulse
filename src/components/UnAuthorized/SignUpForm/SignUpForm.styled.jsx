@@ -133,6 +133,14 @@ export const FormInput = styled.input`
           : isValidationCompleted
           ? `${globalColor.colorSecondaryGreen}`
           : `${globalColor.colorInput}`};
+
+      &:hover,
+      &:focus {
+        ${!isValidationCompleted &&
+        `
+        border: 1px solid ${globalColor.colorOrange};
+      `}
+      }
     `}
   }
 
@@ -244,6 +252,11 @@ export const ButtonSignUp = styled.button`
     border: transparent;
     margin-top: 28px;
     margin-bottom: 12px;
+
+    &:hover,
+    &:focus {
+      background-color: ${globalColor.colorOrange1};
+    }
   }
 
   @media screen and (min-width: 375px) {

@@ -2,14 +2,18 @@ import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
 export const BtnIconClose = styled.svg`
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  stroke: rgba(239, 237, 232, 1);
-  margin-right: 0;
-  margin-left: auto;
-
   @media screen and (min-width: 320px) {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    stroke: rgba(239, 237, 232, 1);
+    margin-right: 0;
+    margin-left: auto;
+    transition: stroke 0.3s ease;
+
+    &:hover {
+      stroke: ${globalColor.colorOrange1};
+    }
   }
 
   @media screen and (min-width: 375px) {
@@ -87,4 +91,10 @@ export const BtnLogOut = styled.button`
 export const SvgLogOutBtn = styled.svg`
   width: 20px;
   height: 20px;
+  stroke: ${globalColor.colorWhite};
+  transition: stroke 0.3s ease;
+
+  &:hover {
+    stroke: ${globalColor.colorOrange1};
+  }
 `;

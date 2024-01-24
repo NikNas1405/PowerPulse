@@ -113,6 +113,12 @@ export const Label = styled.label`
 export const AvatarPickerSvg = styled.svg`
   width: 24px;
   height: 24px;
+  transition: stroke 0.3s ease;
+
+  &:hover,
+  &:focus {
+    stroke: ${globalColor.colorOrange1};
+  }
 
   @media (min-width: 768px) {
     width: 32px;

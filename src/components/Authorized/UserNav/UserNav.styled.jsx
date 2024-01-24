@@ -16,6 +16,13 @@ export const UserNavLink = styled(NavLink)`
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  transition: border 0.3s ease;
+
+  &:hover,
+  &:focus {
+    border: 1px solid ${globalColor.colorOrange1};
+  }
+
   &.active {
     border: 1px solid ${globalColor.colorWhite};
   }
@@ -31,7 +38,8 @@ export const UserNavLink = styled(NavLink)`
       background-color: ${globalColor.colorOrange};
       border: 1px solid rgba(239, 237, 232, 0.2);
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: ${globalColor.colorOrange1};
       }
     }
@@ -39,7 +47,8 @@ export const UserNavLink = styled(NavLink)`
     transition: background-color 0.3s ease;
     transition: border 0.3s ease;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border: 1px solid ${globalColor.colorOrange};
     }
   }
