@@ -285,7 +285,7 @@ export const TextWrapper = styled.div`
     width: 180px;
     height: 110px;
     flex-shrink: 0;
-    padding: 14px 28px 14px 38px;
+    /* padding: 14px 28px 14px 38px; */
     margin-top: 830px;
     margin-left: 275px;
   }
@@ -336,7 +336,8 @@ export const TextNumber = styled.p`
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 48px;
+    /* font-size: 48px; */
+    font-size: 44px;
     line-height: 50px;
   }
 
