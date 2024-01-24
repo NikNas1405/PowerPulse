@@ -60,18 +60,15 @@ export const ExercisesSubcategoriesList = () => {
               '--swiper-pagination-bullet-inactive-color':
                 ' rgba(239, 237, 232, 1)',
               '--swiper-pagination-color': 'rgba(230, 83, 60, 1)',
-              '--swiper-pagination-bullet-size': '14px',
-              '--swiper-pagination-bullet-horizontal-gap': '8px',
+              '--swiper-pagination-bullet-size': '12px',
+              '--swiper-pagination-bullet-horizontal-gap': '5px',
             }}
           >
             {/* Відображення категорій для відповідного значення filter */}
             {categories.map((category) => (
-              <SwiperSlide>
+              <SwiperSlide key={category._id}>
                 <div>
-                  <Link
-                    key={category._id}
-                    to={`/exercises/${category.filter}/${category.name}`}
-                  >
+                  <Link to={`/exercises/${category.filter}/${category.name}`}>
                     <ExercisesSubcategoriesItem category={category} />
                   </Link>
                 </div>

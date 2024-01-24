@@ -602,6 +602,7 @@ export const SvgCalendar = styled.svg`
   position: absolute;
   top: 35px;
   right: 13px;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     top: 36px;

@@ -15,6 +15,7 @@ export const DivWave = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 999;
 
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(255, 251, 251, 0.363));
     & > span {
