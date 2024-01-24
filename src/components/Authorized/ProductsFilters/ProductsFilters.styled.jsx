@@ -89,15 +89,21 @@ export const ButtonWrapper = styled.div`
     margin: 0;
     border: none;
     background: transparent;
+
+    &:hover > svg {
+      stroke: ${globalColor.colorBeige};
+    }
   }
 `;
 
 export const SvgWrapper = styled.svg`
   stroke: ${globalColor.colorWhite};
+  transition: stroke 0.3s ease;
 `;
 
 export const SvgCleanWrapper = styled.svg`
   stroke: ${globalColor.colorOrange};
+  transition: stroke 0.3s ease;
 `;
 
 export const DropdownSelectPartWrapper = styled.div`
@@ -383,6 +389,6 @@ export const ErrorMessage = styled.p`
   > svg {
     width: 16px;
     height: 16px;
-    fill: ${globalColor.colorSecondaryRed};
+    fill: ${globalColor.colorOrange};
   }
 `;
