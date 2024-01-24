@@ -56,7 +56,6 @@ export const SignInForm = () => {
     }),
 
     onSubmit: (values) => {
-      console.log(values);
       dispatch(
         logIn({
           email: values.email,
