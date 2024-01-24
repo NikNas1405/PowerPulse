@@ -7,6 +7,7 @@ import {
   getError,
   getIsLoading,
 } from '../../../redux/exercises/categoriesSlice';
+import capitalizeFirstLetter from '../../../helpers/capitalizeFirstLetter';
 
 import ExerciseCategories from '../../../components/Authorized/ExercisesCategories/ExercisesCategories';
 import { fetchExercisesCategories } from '../../../redux/exercises/operations';
@@ -16,13 +17,11 @@ import { ContainerExPage } from './ExercisesPage.Styled';
 //
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import { Loader } from '../../../components/Loader/Loader';
-
 const ExercisesPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
-  const { filter } = useParams();
-  // console.log('paramsFilter:', filter);
+  const { filter, filterList } = useParams();
 
   useEffect(() => {
     const gettingExercisesFilters = async () => {
@@ -45,7 +44,13 @@ const ExercisesPage = () => {
     // <ExerPageWrapper>
     <Container>
       <ContainerExPage>
-        <TitlePage title={'Exercises'} />
+        <TitlePage
+          title={
+            filterList
+              ? capitalizeFirstLetter(filterList.split(' ')[0])
+              : 'Exercises'
+          }
+        />
         <ExerciseCategories />
       </ContainerExPage>
 

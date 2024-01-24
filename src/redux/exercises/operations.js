@@ -8,7 +8,7 @@ export const fetchExercisesCategories = createAsyncThunk(
     try {
       const { filter } = getfilter;
 
-      console.log('filter', filter);
+      // console.log('filter', filter);
       // console.log('result', result);
       // const newFilter = filter.toLowerCase();
       const response = await axios.get(`/exercises/filter?filter=${filter}`);
@@ -25,16 +25,21 @@ export const fetchExercisesList = createAsyncThunk(
   '/exercises/exercises/fetchExercisesList',
   async (filters, thunkAPI) => {
     const { filterList } = filters;
-    console.log('filterListOper', filterList);
+    // console.log('filterOper =>', filter);
+    // console.log('filterListOper =>', filterList);
 
     try {
+      const response = await axios.get(
+        `/exercises/filter/:bodyPart?bodyPart=${filterList.toLowerCase()}`
+      );
+
       // const response = await axios.get(
-      //   `/exercises/filter/:bodyPart?bodyPart=${filterList.toLowerCase()}`
+      //   `/exercises/filter/:Equipment?Equipment=${filterList.toLowerCase()}`
       // );
 
-      const response = await axios.get(
-        `/exercises/filter/:category?category=${filterList.toLowerCase()}`
-      );
+      // const response = await axios.get(
+      //   `/exercises/filter/${filterList.toLowerCase()}?category=${filterList.toLowerCase()}`
+      // );
 
       return response.data;
     } catch (error) {

@@ -6,20 +6,16 @@ import {
   getError,
 } from '../../../redux/exercises/exercisesSlice';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { fetchExercisesList } from '../../../redux/exercises/operations';
 import { ExercisesItem } from '../ExercisesItem/ExercisesItem';
 import { ProductsListWrapper } from '../../../pages/Authorized/ProductsPage/ProductsPage.styled';
 import { ExercisesListWrapper } from './ExercisesList.styled';
 import { Loader } from '../../Loader/Loader';
 import { ProductsItemStyled } from '../ProductsItem/ProductsItem.styled';
-
-// import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
+import GoBackBtn from '../../BackBtn/BackBtn';
 
 export const ExercisesList = () => {
-  // timer
-
-  //
   const dispatch = useDispatch();
   const exercises = useSelector(getExercises);
   const isLoading = useSelector(getIsLoading);
@@ -28,11 +24,10 @@ export const ExercisesList = () => {
 
   // console.log('filterList=>', filterList);
   // console.log('exercises=>', exercises);
-
   useEffect(() => {
     const gettingExercisesList = async () => {
       if (!filterList) {
-        console.error('Invalid filter or filterList');
+        console.error('Invalid filterList');
         return;
       } else {
         dispatch(fetchExercisesList({ filterList: filterList }));
@@ -43,6 +38,7 @@ export const ExercisesList = () => {
 
   return (
     <div>
+      <GoBackBtn />
       <div>
         {isLoading && !error && <Loader />}
 

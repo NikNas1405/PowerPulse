@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import {
   ExercisesCategories,
   CategoryLink,
@@ -7,6 +7,7 @@ import {
 const ExerciseCategories = () => {
   const categories = ['Body parts', 'Muscles', 'Equipment'];
   const { filter } = useParams();
+  const location = useLocation();
 
   const activeCategory = filter;
 
@@ -17,6 +18,7 @@ const ExerciseCategories = () => {
           <li key={category}>
             <CategoryLink
               to={`/exercises/${category}`}
+              state={{ from: location }}
               isactive={category === activeCategory ? 'true' : 'false'}
             >
               {category}
