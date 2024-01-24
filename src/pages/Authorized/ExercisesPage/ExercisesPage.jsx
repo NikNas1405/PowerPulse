@@ -1,7 +1,7 @@
 // import { Container, Block } from './ExercisesPage.Styled';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 //
 import {
   getError,
@@ -17,11 +17,16 @@ import { ContainerExPage } from './ExercisesPage.Styled';
 //
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import { Loader } from '../../../components/Loader/Loader';
+import { ExercisesList } from '../../../components/Authorized/ExercisesList/ExercisesList';
+// import { GoBackBtn } from '../../../components/BackBtn/BackBtn';
+// import { string } from 'yup';
 const ExercisesPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const { filter, filterList } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const gettingExercisesFilters = async () => {
@@ -40,9 +45,14 @@ const ExercisesPage = () => {
     };
     gettingExercisesFilters();
   }, [dispatch, filter]);
+
   return (
     // <ExerPageWrapper>
     <Container>
+      {location.pathname.includes(filterList) && (
+        <button onClick={() => navigate(-1)}>Back</button>
+      )}
+
       <ContainerExPage>
         <TitlePage
           title={

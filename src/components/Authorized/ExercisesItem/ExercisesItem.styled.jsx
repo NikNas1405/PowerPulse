@@ -111,6 +111,19 @@ export const ModalContainer = styled.div`
     gap: 16px;
   }
 `;
+// export const PostModalContainer = styled.div`
+//   width: 50%;
+//   height: 50%;
+//   /* display: flex;
+//   flex-direction: column; */
+//   /* border: 2px solid white; */
+//   @media (min-width: 768px) {
+//     display: flex;
+//     width: 694px;
+//     height: 550px;
+//     gap: 16px;
+//   }
+// `;
 
 export const GifContainer = styled.div`
   width: 270px;
