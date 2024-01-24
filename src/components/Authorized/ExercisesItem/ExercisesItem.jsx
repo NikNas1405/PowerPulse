@@ -15,10 +15,13 @@ import {
   ModalInfoStyle,
   ModalBlockFirst,
   ModalBlockSecond,
+  ButtonNextExercise,
+  TitleModalSucces,
+  ThumbUp,
+  StyledLink,
+  CloseButton,
 } from './ExercisesItem.styled';
 
-// import { globalColor } from '../../../styles/root';
-// import sprite from '../../../assets/sprite.svg';
 import {
   DietSpan,
   SvgWrapper,
@@ -34,6 +37,7 @@ import { addDiaryExercise } from '../../../redux/diary/diaryOperation';
 import { globalColor } from '../../../styles/root';
 
 import sprite from '../../../assets/sprite.svg';
+
 //
 import Modal from 'react-modal';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
@@ -56,6 +60,8 @@ const modalStyles = {
     zIndex: '1200',
   },
   content: {
+    padding: '0',
+    borderRadius: '12px',
     maxWidth: 'calc(100vw - 20px)',
     maxHeight: 'calc(100vh - 6px)',
     top: '50%',
@@ -77,9 +83,6 @@ const renderTime = ({ remainingTime }) => {
 
   return `${minutes}:${seconds}`;
 };
-
-// const dateRegex = /^(0[1-9]|[1-2][0-9]|3[0-1])\/(0[1-9]|1[0-2])\/\d{4}$/;
-
 const caloriesSchema = Yup.object().shape({
   exerciseId: Yup.string().required(),
   date: Yup.string().required('Invalid date format. Please use dd/mm/YYYY.'),
@@ -102,6 +105,8 @@ export const ExercisesItem = ({
     equipment,
   },
 }) => {
+  const dispatch = useDispatch();
+
   const [select] = useState(180);
   const [timer, setTimer] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -123,15 +128,13 @@ export const ExercisesItem = ({
 
   const updateObject = (remainingTimeObj) => {
     setBurnedCaloriesByTime(funkOfBurnedCalories(remainingTimeObj));
-    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60) + 1);
+    setTimeSpent(Math.floor((180 - remainingTimeObj) / 60));
   };
 
-  const dispatch = useDispatch();
-
-  // const updateModalWithResponseState = (data) => {
-  //   setResponse(data);
-
-  // };
+  const resetExerciseResult = () => {
+    setIsModalOpen(false);
+    setResponse(null);
+  };
 
   const SetlectReset = () => {
     return (
@@ -144,18 +147,15 @@ export const ExercisesItem = ({
               setIsPlaying(false);
             }}
             style={{
-              backgroundColor: 'red',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              paddingLeft: '12px',
-              paddingRight: '12px',
-              paddingTop: '5px',
-              paddingBottom: '5px',
               borderRadius: '6px',
+              backgroundColor: 'rgba(230, 83, 60, 1)',
+              padding: 0,
+              border: 'none',
             }}
           >
-            Pause
+            <svg style={{ fill: 'none', height: '32px', width: '32px' }}>
+              <use href={sprite + '#icon-pause-square'} />
+            </svg>
           </button>
         ) : (
           // Якщо таймер на паузі або зупинений, відображається кнопка Play
@@ -165,18 +165,15 @@ export const ExercisesItem = ({
               setIsPlaying(true);
             }}
             style={{
-              backgroundColor: 'green',
-              color: 'white',
-              border: 'none',
-              fontSize: '18px',
-              paddingLeft: '12px',
-              paddingRight: '12px',
-              paddingTop: '5px',
-              paddingBottom: '5px',
               borderRadius: '6px',
+              backgroundColor: 'rgba(230, 83, 60, 1)',
+              padding: 0,
+              border: 'none',
             }}
           >
-            Play
+            <svg style={{ fill: 'none', height: '32px', width: '32px' }}>
+              <use href={sprite + '#play-square'} />
+            </svg>
           </button>
         )}
       </div>
@@ -243,13 +240,18 @@ export const ExercisesItem = ({
           </Text>
         </WrapperText>
       </>
-      {!response ? (
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={() => setIsModalOpen(false)}
-          contentLabel="Example Modal"
-          style={modalStyles}
-        >
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        contentLabel="Example Modal"
+        style={modalStyles}
+      >
+        <CloseButton type="button" onClick={resetExerciseResult}>
+          <svg>
+            <use href={sprite + '#icon-x'} />
+          </svg>
+        </CloseButton>
+        {!response ? (
           <ModalContainer>
             <ModalBlockFirst>
               <GifContainer>
@@ -345,45 +347,29 @@ export const ExercisesItem = ({
               </Formik>
             </ModalBlockSecond>
           </ModalContainer>
-        </Modal>
-      ) : (
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={() => setIsModalOpen(false)}
-          contentLabel="Example Modal"
-          style={modalStyles}
-        >
+        ) : (
           <SuccesModal>
-            <div>
-              <h2
-                style={{
-                  fontWeight: '700',
-                  fontSize: '24px',
-                  lineHeight: '1.333',
-                  color: 'rgba(239, 237, 232, 1)',
-                  marginBottom: '16px',
-                }}
-              >
-                Well done
-              </h2>
-              <ModalTextStyle>
-                Your time <ModalInfoStyle>{timeSpent}</ModalInfoStyle>
-              </ModalTextStyle>
-              <ModalTextStyle>
-                Burned calories{' '}
-                <ModalInfoStyle>{burnedCaloriesByTime}</ModalInfoStyle>
-              </ModalTextStyle>
-              <ButtonSubmit onClick={() => setIsModalOpen(false)}>
-                Next exercise
-              </ButtonSubmit>
-              <a href="/PowerPulse/diary">
-                <ModalTextStyle>To the diary</ModalTextStyle>
-              </a>
-              <p></p>
-            </div>
+            <ThumbUp />
+            <TitleModalSucces>Well done</TitleModalSucces>
+            <ModalTextStyle>
+              Your time <ModalInfoStyle>{timeSpent}</ModalInfoStyle>
+            </ModalTextStyle>
+            <ModalTextStyle>
+              Burned calories{' '}
+              <ModalInfoStyle>{burnedCaloriesByTime}</ModalInfoStyle>
+            </ModalTextStyle>
+            <ButtonNextExercise onClick={resetExerciseResult}>
+              Next exercise
+            </ButtonNextExercise>
+            <StyledLink href="/PowerPulse/diary">
+              To the diary
+              <svg>
+                <use href={sprite + '#icon-arrow'} />
+              </svg>
+            </StyledLink>
           </SuccesModal>
-        </Modal>
-      )}
+        )}
+      </Modal>
     </>
   );
 };

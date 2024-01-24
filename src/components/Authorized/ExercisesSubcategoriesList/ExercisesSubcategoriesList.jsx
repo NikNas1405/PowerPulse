@@ -7,7 +7,7 @@ import {
 import { SubCatItems } from './ExercisesSubcategoriesList.styled';
 import { Link } from 'react-router-dom';
 import { ExercisesSubcategoriesItem } from '../ExercisesSubcategoriesItem/ExercisesSubcategoriesItem';
-
+import { Loader } from '../../Loader/Loader';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
@@ -21,10 +21,10 @@ export const ExercisesSubcategoriesList = () => {
 
   return (
     <div>
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && <Loader />}
 
       {!categories ? (
-        <p>you do not have any exersise category</p>
+        <p>we do not have any exersise category</p>
       ) : (
         <SubCatItems>
           <Swiper
