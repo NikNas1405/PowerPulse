@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const ExercisesCategories = styled.ul`
   display: flex;
-  /* margin-top: 20px;
-  margin-bottom: 40px; */
-  gap: 10px;
+  margin-top: 28px;
+  gap: 28px;
 
   @media (min-width: 768px) {
     gap: 32px;
