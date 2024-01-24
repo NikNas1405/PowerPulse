@@ -13,7 +13,7 @@ import { ProductsListWrapper } from '../../../pages/Authorized/ProductsPage/Prod
 import { ExercisesListWrapper } from './ExercisesList.styled';
 import { Loader } from '../../Loader/Loader';
 import { ProductsItemStyled } from '../ProductsItem/ProductsItem.styled';
-import GoBackBtn from '../../BackBtn/BackBtn';
+// import GoBackBtn from '../../BackBtn/BackBtn';
 
 export const ExercisesList = () => {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export const ExercisesList = () => {
 
   return (
     <div>
-      <GoBackBtn />
+      {/* <GoBackBtn /> */}
       <div>
         {isLoading && !error && <Loader />}
 
