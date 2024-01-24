@@ -1,4 +1,4 @@
-import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j as e,M as F,C as z,a as s}from"./index-e89e658c.js";import{S as k}from"./StatisticsInfo-d566468b.js";import{L as E}from"./Logo-89f6627b.js";const I=o.div`
+import{s as o,g as i,n as p,N as $,r as f,u as y,b as S,c as v,d as c,e as C,j as e,M as F,C as z,a as t}from"./index-4d412fbb.js";import{S as k}from"./StatisticsInfo-76557949.js";import{L as E}from"./Logo-0407b236.js";const I=o.div`
   display: flex;
   position: relative;
 `,R=o.div`
@@ -11,7 +11,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
   }
 `,W=o.h2`
   @media screen and (min-width: 320px) {
-    color: ${n.colorWhite};
+    color: ${i.colorWhite};
     font-family: Roboto;
     font-size: 24px;
     font-style: normal;
@@ -37,7 +37,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
 `,P=o.p`
   @media screen and (min-width: 320px) {
     width: 335px;
-    color: ${n.colorInput};
+    color: ${i.colorInput};
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -96,17 +96,24 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
     padding: 14px;
     border-radius: 12px;
 
-    ${({haserror:r,isValidationCompleted:t,...a})=>p`
+    ${({haserror:r,isValidationCompleted:s,...a})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${i.colorSecondaryRed}`:s?`${i.colorSecondaryGreen}`:`${i.colorInput}`};
     `}
   }
 
   @media screen and (min-width: 375px) {
     width: 335px;
-    ${({haserror:r,isValidationCompleted:t,...a})=>p`
+    ${({haserror:r,isValidationCompleted:s,...a})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${i.colorSecondaryRed}`:s?`${i.colorSecondaryGreen}`:`${i.colorInput}`};
+
+      &:hover,
+      &:focus {
+        ${!s&&`
+        border: 1px solid ${i.colorOrange};
+      `}
+      }
     `}
   }
 
@@ -122,14 +129,14 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
     line-height: 24px;
     transition: border-color 0.3s;
 
-    ${({haserror:r,isValidationCompleted:t,...a})=>p`
+    ${({haserror:r,isValidationCompleted:s,...a})=>p`
       border: 1px solid
-        ${r?`${n.colorSecondaryRed}`:t?`${n.colorSecondaryGreen}`:`${n.colorInput}`};
+        ${r?`${i.colorSecondaryRed}`:s?`${i.colorSecondaryGreen}`:`${i.colorInput}`};
 
       &:hover,
       &:focus {
-        ${!t&&`
-        border: 1px solid ${n.colorOrange};
+        ${!s&&`
+        border: 1px solid ${i.colorOrange};
       `}
       }
     `}
@@ -163,11 +170,11 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
   }
   width: 16px;
   height: 16px;
-`,w=o.svg`
+`,u=o.svg`
   position: absolute;
   width: 20px;
   height: 20px;
-  fill: ${n.colorWhite};
+  fill: ${i.colorWhite};
   cursor: pointer;
 
   @media screen and (min-width: 320px) {
@@ -194,8 +201,8 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
     gap: 10px;
     width: 140px;
     border-radius: 12px;
-    background-color: ${n.colorOrange};
-    color: ${n.colorWhite};
+    background-color: ${i.colorOrange};
+    color: ${i.colorWhite};
     font-family: Roboto;
     font-size: 16px;
     font-style: normal;
@@ -205,6 +212,11 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
     border: transparent;
     margin-top: 28px;
     margin-bottom: 12px;
+
+    &:hover,
+    &:focus {
+      background-color: ${i.colorOrange1};
+    }
   }
 
   @media screen and (min-width: 375px) {
@@ -223,14 +235,14 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
 
     &:hover,
     &:focus {
-      background-color: ${n.colorOrange1};
+      background-color: ${i.colorOrange1};
     }
   }
-`,V=o.div`
+`,B=o.div`
   display: flex;
   align-items: center;
   gap: 5px;
-`,B=o.p`
+`,D=o.p`
   color: rgba(239, 237, 232, 0.6);
   font-feature-settings:
     'clig' off,
@@ -240,8 +252,8 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-`,D=o(y)`
-  color: ${n.colorWhite};
+`,O=o($)`
+  color: ${i.colorWhite};
   font-feature-settings:
     'clig' off,
     'liga' off;
@@ -251,7 +263,7 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
   font-weight: 400;
   line-height: 18px;
   text-decoration-line: underline;
-`,N=o.div`
+`,V=o.div`
   @media screen and (min-width: 320px) and (max-width: 767px) {
     position: absolute;
     z-index: -1;
@@ -270,4 +282,4 @@ import{s as o,g as n,n as p,N as y,r as f,u as $,b as S,c as C,d as c,e as v,j a
   @media screen and (min-width: 1440px) {
     width: 45%;
   }
-`,U=()=>{const[r,t]=f.useState(!1),[a,u]=f.useState(!1),j=$(),b=d=>!["isValidationCompleted","haserror"].includes(d),g=()=>{t(!r),u(!1)},i=S({initialValues:{name:"",email:"",password:""},validationSchema:C().shape({name:c().required("Name is required"),email:c().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:c().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:d=>{console.log(d),j(v({name:d.name,email:d.email,password:d.password}))}});return e.jsx(F,{shouldForwardProp:b,children:e.jsx(z,{children:e.jsxs(I,{children:[e.jsxs(R,{children:[e.jsx(E,{}),e.jsx(W,{children:"Sign up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(q,{autoComplete:"off",onSubmit:i.handleSubmit,children:[e.jsxs(L,{children:[e.jsxs(m,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:i.handleChange,value:i.values.name,haserror:!a&&i.touched.name&&i.errors.name,isValidationCompleted:!i.errors.name&&i.touched.name}),i.touched.name&&e.jsx(x,{style:{color:i.errors.name?"#D80027":"#3CBF61"},children:i.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error name, ${i.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success name"]})})]}),e.jsxs(m,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:i.handleChange,value:i.values.email,haserror:!a&&i.touched.email&&i.errors.email,isValidationCompleted:!i.errors.email&&i.touched.email}),i.touched.email&&e.jsx(x,{style:{color:i.errors.email?"#D80027":"#3CBF61"},children:i.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error email. ${i.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success email"]})})]}),e.jsxs(m,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:i.handleChange,value:i.values.password,haserror:!a&&i.touched.password&&i.errors.password,isValidationCompleted:!i.errors.password&&i.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${s}#icon-eye`})}):e.jsx(w,{onClick:g,children:e.jsx("use",{href:`${s}#icon-eye-off`})})}),i.touched.password&&e.jsx(x,{style:{color:i.errors.password?"#D80027":"#3CBF61"},children:i.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-red`})}),`Error password, ${i.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${s}#icon-green`})}),"Success password"]})})]})]}),e.jsx(T,{type:"Submit",children:"Sign Up"})]}),e.jsxs(V,{children:[e.jsx(B,{children:"Already have an account?"}),e.jsx(D,{to:"/signin",children:"Sing In"})]})]}),e.jsx(N,{children:e.jsx(k,{})})]})})})},M=()=>e.jsx(U,{});export{M as default};
+`,N=()=>{const[r,s]=f.useState(!1),[a,w]=f.useState(!1),j=y(),b=d=>!["isValidationCompleted","haserror"].includes(d),g=()=>{s(!r),w(!1)},n=S({initialValues:{name:"",email:"",password:""},validationSchema:v().shape({name:c().required("Name is required"),email:c().matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,"Example: test@gmail.com").email("Invalid email").required("Email is required"),password:c().min(6,"Enter a valid Password").required("Password is required")}),onSubmit:d=>{console.log(d),j(C({name:d.name,email:d.email,password:d.password}))}});return e.jsx(F,{shouldForwardProp:b,children:e.jsx(z,{children:e.jsxs(I,{children:[e.jsxs(R,{children:[e.jsx(E,{}),e.jsx(W,{children:"Sign up"}),e.jsx(P,{children:"Thank you for your interest in our platform. To complete the registration process, please provide us with the following information."}),e.jsxs(q,{autoComplete:"off",onSubmit:n.handleSubmit,children:[e.jsxs(L,{children:[e.jsxs(m,{children:[e.jsx(h,{id:"name",name:"name",type:"text",placeholder:"Name",onChange:n.handleChange,value:n.values.name,haserror:!a&&n.touched.name&&n.errors.name,isValidationCompleted:!n.errors.name&&n.touched.name}),n.touched.name&&e.jsx(x,{style:{color:n.errors.name?"#D80027":"#3CBF61"},children:n.errors.name?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error name, ${n.errors.name}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success name"]})})]}),e.jsxs(m,{children:[e.jsx(h,{id:"email",name:"email",type:"email",placeholder:"Email",onChange:n.handleChange,value:n.values.email,haserror:!a&&n.touched.email&&n.errors.email,isValidationCompleted:!n.errors.email&&n.touched.email}),n.touched.email&&e.jsx(x,{style:{color:n.errors.email?"#D80027":"#3CBF61"},children:n.errors.email?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error email. ${n.errors.email}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success email"]})})]}),e.jsxs(m,{children:[e.jsx(h,{id:"password",name:"password",type:r?"text":"password",placeholder:"Password",onChange:n.handleChange,value:n.values.password,haserror:!a&&n.touched.password&&n.errors.password,isValidationCompleted:!n.errors.password&&n.touched.password}),e.jsx(e.Fragment,{children:r?e.jsx(u,{onClick:g,children:e.jsx("use",{href:`${t}#icon-eye`})}):e.jsx(u,{onClick:g,children:e.jsx("use",{href:`${t}#icon-eye-off`})})}),n.touched.password&&e.jsx(x,{style:{color:n.errors.password?"#D80027":"#3CBF61"},children:n.errors.password?e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-red`})}),`Error password, ${n.errors.password}`]}):e.jsxs(e.Fragment,{children:[e.jsx(l,{children:e.jsx("use",{href:`${t}#icon-green`})}),"Success password"]})})]})]}),e.jsx(T,{type:"Submit",children:"Sign Up"})]}),e.jsxs(B,{children:[e.jsx(D,{children:"Already have an account?"}),e.jsx(O,{to:"/signin",children:"Sing In"})]})]}),e.jsx(V,{children:e.jsx(k,{})})]})})})},M=()=>e.jsx(N,{});export{M as default};
