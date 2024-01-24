@@ -1,4 +1,4 @@
-import{s as x,ad as p,ae as l,af as d,j as e,ag as o,u as g,h as n,ah as m,ai as h,r as c,C as f,aj as u,G as j,W as E,ak as w}from"./index-e0afce64.js";import{T as b}from"./TitlePage-5f5a9047.js";const v=x.ul`
+import{s as x,ad as m,ae as l,af as p,j as e,ag as n,u as h,h as r,ah as u,ai as f,aj as j,r as c,C as E,ak as w,G as v,W as b,al as C}from"./index-0cd56e32.js";import{T as L}from"./TitlePage-fa153366.js";const k=x.ul`
   display: flex;
   /* margin-top: 20px;
   margin-bottom: 40px; */
@@ -7,7 +7,7 @@ import{s as x,ad as p,ae as l,af as d,j as e,ag as o,u as g,h as n,ah as m,ai as
   @media (min-width: 768px) {
     gap: 32px;
   }
-`,C=x(p)`
+`,y=x(m)`
   color: rgba(239, 237, 232, 0.4);
   font-size: 14px;
   font-weight: 400;
@@ -37,7 +37,7 @@ import{s as x,ad as p,ae as l,af as d,j as e,ag as o,u as g,h as n,ah as m,ai as
   @media (max-width: 374px) {
     font-size: 18px;
   }
-`,L=()=>{const t=["Body parts","Muscles","Equipment"],{filter:a}=l(),r=d(),s=a;return e.jsx(e.Fragment,{children:e.jsx(v,{children:t.map(i=>e.jsx("li",{children:e.jsx(C,{to:`/exercises/${i}`,state:{from:r},isactive:i===s?"true":"false",children:i})},i))})})},y=o.div`
+`,F=()=>{const t=["Body parts","Muscles","Equipment"],{filter:a}=l(),o=p(),s=a;return e.jsx(e.Fragment,{children:e.jsx(k,{children:t.map(i=>e.jsx("li",{children:e.jsx(y,{to:`/exercises/${i}`,state:{from:o},isactive:i===s?"true":"false",children:i})},i))})})},z=n.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,9 +54,9 @@ import{s as x,ad as p,ae as l,af as d,j as e,ag as o,u as g,h as n,ah as m,ai as
 
   @media (max-width: 374px) {
   }
-`;o.div`
+`;n.div`
   text-align: center;
-`;o.div`
+`;n.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -65,4 +65,4 @@ import{s as x,ad as p,ae as l,af as d,j as e,ag as o,u as g,h as n,ah as m,ai as
   @media (min-width: 768px) {
     gap: 32px;
   }
-`;const P=()=>{const t=g(),a=n(m),r=n(h),{filter:s,filterList:i}=l();return c.useEffect(()=>{(async()=>{if(s===void 0)return console.log("something wrong");t(w({filter:s}))})()},[t,s]),e.jsxs(f,{children:[e.jsxs(y,{children:[e.jsx(b,{title:i?u(i.split(" ")[0]):"Exercises"}),e.jsx(L,{})]}),a&&!r&&e.jsx(j,{}),e.jsx(e.Fragment,{children:e.jsx(c.Suspense,{children:e.jsx(E,{})})})]})};export{P as default};
+`;const B=()=>{const t=h(),a=r(u),o=r(f),{filter:s,filterList:i}=l(),d=j(),g=p();return c.useEffect(()=>{(async()=>{if(s===void 0)return console.log("something wrong");t(C({filter:s}))})()},[t,s]),e.jsxs(E,{children:[g.pathname.includes(i)&&e.jsx("button",{onClick:()=>d(-1),children:"Back"}),e.jsxs(z,{children:[e.jsx(L,{title:i?w(i.split(" ")[0]):"Exercises"}),e.jsx(F,{})]}),a&&!o&&e.jsx(v,{}),e.jsx(e.Fragment,{children:e.jsx(c.Suspense,{children:e.jsx(b,{})})})]})};export{B as default};
