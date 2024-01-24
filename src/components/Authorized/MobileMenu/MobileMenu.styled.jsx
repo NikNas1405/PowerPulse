@@ -26,15 +26,19 @@ export const BtnIconClose = styled.svg`
 `;
 
 export const TextUser = styled.div`
-  color: #efede8;
+  color: ${globalColor.colorWhite};
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 30px;
-  width: 250px;
+  max-width: 250px;
   text-transform: uppercase;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const UserNavMobileWrapper = styled.div`

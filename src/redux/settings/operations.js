@@ -90,7 +90,9 @@ export const updatedUserAvatar = createAsyncThunk(
           'content-type': 'multipart/form-data',
         },
       });
-      toast.success('Avatar updated');
+      // toast.success('Avatar updated', {
+      //   theme: 'dark',
+      // });
       return res.data;
     } catch (error) {
       toast.error('Sorry, something went wrong, please try again', {

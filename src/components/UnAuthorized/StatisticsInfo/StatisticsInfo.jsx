@@ -13,8 +13,13 @@ import {
   SvgPlay,
 } from './StatisticsInfo.styled';
 import sprite from '../../../assets/sprite.svg';
+import { useSelector } from 'react-redux';
+import { selectStatistics } from '../../../redux/statistics/statisticsSelectors';
 
 export const StatisticsInfo = ({ isWelcomePage }) => {
+  const { allTotalCaloriesExercises, numberExercises } =
+    useSelector(selectStatistics);
+
   return (
     <DivContainer isWelcomePage={isWelcomePage}>
       <VideoWrapper>
@@ -24,7 +29,7 @@ export const StatisticsInfo = ({ isWelcomePage }) => {
           </SvgPlay>
         </WrapperSvg>
         <div>
-          <VideoNumber>350+</VideoNumber>
+          <VideoNumber>{numberExercises}+</VideoNumber>
           <VideoText>Video tutorial</VideoText>
         </div>
       </VideoWrapper>
@@ -37,7 +42,7 @@ export const StatisticsInfo = ({ isWelcomePage }) => {
           </Svg>
         </WrapperTextSvg>
         <WrapperDescription>
-          <TextNumber>500</TextNumber>
+          <TextNumber>{allTotalCaloriesExercises}</TextNumber>
           <TextDescription>cal</TextDescription>
         </WrapperDescription>
       </TextWrapper>

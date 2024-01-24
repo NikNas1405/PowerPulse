@@ -103,7 +103,9 @@ export const UserForm = ({ profile, refreshUserData }) => {
         );
       } catch (error) {
         console.error('Error fetching user data:', error);
-        toast.error('You must be older 18 age');
+        // toast.error('You must be at least 18 years old.', {
+        //   theme: 'dark',
+        // });
       }
     };
 
@@ -120,15 +122,20 @@ export const UserForm = ({ profile, refreshUserData }) => {
       const birthdate = moment(values.birthday, 'DD.MM.YYYY');
       const age = moment().diff(birthdate, 'years');
       if (age < 18) {
-        toast.error('You must be at least 18 years old.');
+        toast.error('You must be at least 18 years old.', {
+          theme: 'dark',
+        });
         setIsSubmitted(false);
         return;
       }
       const resp = await dispatch(updateUser(values));
-      console.log(resp);
+
       setIsSubmitted(true);
     } catch (error) {
-      console.error('Error updating user data:', error);
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
+      // console.error('Error updating user data:', error);
     }
     // setTimeout(() => {
     //   setIsSubmitted(false);

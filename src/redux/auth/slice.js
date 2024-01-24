@@ -38,11 +38,20 @@ const authSlice = createSlice({
   initialState,
   extraReducers: (builder) =>
     builder
+      .addCase(register.pending, (state) => {
+        state.isRefreshing = true;
+      })
       .addCase(register.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
         state.isUserParams = checkUserParams(state.user);
+      })
+      .addCase(register.rejected, (state) => {
+        state.isRefreshing = false;
+      })
+      .addCase(logIn.pending, (state) => {
+        state.isRefreshing = true;
       })
       .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
@@ -50,6 +59,9 @@ const authSlice = createSlice({
         state.bmr = action.payload.bmr;
         state.isLoggedIn = true;
         state.isUserParams = checkUserParams(state.user);
+      })
+      .addCase(logIn.rejected, (state) => {
+        state.isRefreshing = false;
       })
       .addCase(logOut.fulfilled, (state) => {
         state.user = { name: null, email: null };
@@ -89,19 +101,3 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-
-// state.user = action.payload;
-// // state.bmr = action.payload;
-// state.isLoggedIn = true;
-// state.isRefreshing = false;
-// state.isUserParams = checkUserParams(state.user);
-// state.user = {
-//   ...state.user,
-//   ...action.payload.user,
-// };
-// Add the new field to the user
-
-// state.user.bmr = {
-//   ...state.user,
-//   bmr: action.payload.bmr,
-// };

@@ -64,8 +64,8 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
       <UserNavMobileWrapper>
         {isUserParams ? (
           <TextUser>
-            Dear {user.name}, to continue using the application, please fill in
-            all parameters in the profile settings.
+            Dear {user.name}, to continue using the application correctly,
+            please fill in all parameters in the profile settings.
             <p> Thank you for choosing our application!</p>
           </TextUser>
         ) : (
