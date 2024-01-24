@@ -57,9 +57,7 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
       }}
     >
       <BtnIconClose type="button" onClick={onClose}>
-        <svg>
-          <use href={`${sprite}#icon-x`} />
-        </svg>
+        <use href={`${sprite}#icon-x`} />
       </BtnIconClose>
       <UserNavMobileWrapper>
         {isUserParams ? (
@@ -76,7 +74,7 @@ export const MobileMenu = ({ onClose, isActive, anchorEl }) => {
         <BtnLogOut type="button" onClick={handleLogOut}>
           Logout
           <SvgLogOutBtn>
-            <use href={`${sprite}#icon-log-out-02`} />
+            <use href={`${sprite}#icon-log-out-01`} />
           </SvgLogOutBtn>
         </BtnLogOut>
       </LogOutContainer>

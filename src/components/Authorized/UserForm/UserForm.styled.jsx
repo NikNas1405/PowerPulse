@@ -603,6 +603,12 @@ export const SvgCalendar = styled.svg`
   top: 35px;
   right: 13px;
   cursor: pointer;
+  transition: stroke 0.3s ease;
+
+  &:hover,
+  &:focus {
+    stroke: ${globalColor.colorOrange1};
+  }
 
   @media (min-width: 768px) {
     top: 36px;
@@ -612,6 +618,10 @@ export const SvgCalendar = styled.svg`
   @media (min-width: 1440px) {
     top: 40px;
     right: 15px;
+
+    &:hover {
+      stroke: ${globalColor.colorOrange1};
+    }
   }
 `;
 
@@ -668,6 +678,13 @@ export const ButtonSave = styled.button`
     border: transparent;
     margin-top: 28px;
     margin-bottom: 12px;
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background-color: ${globalColor.colorOrange1};
+    }
+
     &:disabled {
       background-color: ${globalColor.colorInput};
     }
