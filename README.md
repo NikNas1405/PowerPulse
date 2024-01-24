@@ -34,12 +34,12 @@ The information panel will help you understand your progress.
 🍏 Products (/products): Choose products for your diary. Filters will help you
 find the perfect choices for you.
 
-![Presentation](./public/presentation/Filters.png)
+![Presentation](./public/presentation/Products.gif)
 
 💪 Exercises (/exercises): Explore the exercises section. Select exercises based
 on categories and equipment.
 
-![Presentation](./public/presentation/BodyParts.png)
+![Presentation](./public/presentation/Exercises.gif)
 
 # Our development team :
 
@@ -50,7 +50,6 @@ on categories and equipment.
 - [KATERYNA KOKHAS](https://github.com/KatanES) **Front End Developer** ,
 - [TETIANA MOSKALIUK](https://github.com/TanyaMosk) **Front End Developer** ,
 - [OLEKSII HOSTRYK](https://github.com/Alex1Go) **Front End Developer** ,
-- [ROMAN PROTSENKO](https://github.com/RomanProtsenko) **Front End Developer** ,
 
 - [OLEKSANDR SHEVCHENKO](https://github.com/Alex-diver) **Back end Developer**,
 - [EDUARD KURISH](https://github.com/EduardMLT) **Back end Developer**,
