@@ -1,4 +1,4 @@
-import{s as n,g as o,n as p,N as $,r as m,u as y,b as S,c as v,d as x,l as C,j as e,M as F,C as z,a as s}from"./index-aa53d373.js";import{S as I}from"./StatisticsInfo-931f985a.js";import{L as k}from"./Logo-af7b2c6a.js";const R=n.div`
+import{s as n,g as o,n as p,N as $,r as m,u as y,b as S,c as v,d as x,l as C,j as e,M as F,C as z,a as s}from"./index-037ee7cc.js";import{S as I}from"./StatisticsInfo-02b58397.js";import{L as k}from"./Logo-02ee9442.js";const R=n.div`
   display: flex;
   position: relative;
 
@@ -153,10 +153,12 @@ import{s as n,g as o,n as p,N as $,r as m,u as y,b as S,c as v,d as x,l as C,j a
 
   @media screen and (min-width: 320px) {
     top: 30%;
-    right: 10%;
+    right: 22%;
   }
 
   @media screen and (min-width: 375px) {
+    top: 30%;
+    right: 12%;
   }
 
   @media screen and (min-width: 768px) {
