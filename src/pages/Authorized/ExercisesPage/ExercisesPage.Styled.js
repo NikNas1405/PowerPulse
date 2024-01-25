@@ -80,10 +80,6 @@ export const BackGroundStyle = styled.div`
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    /* background-image: ${(props) =>
-      props.isexerciselist === 'true'
-        ? 'linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%), url(${bgDesktop1})'
-        : 'unset'}; */
     background-image: linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%),
       url(${bgDesktop1});
     background-repeat: no-repeat;

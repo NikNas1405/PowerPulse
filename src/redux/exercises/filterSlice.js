@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const filterSlice = createSlice({
   name: 'filter',
   initialState: {
-    value: 'body parts', // default value
+    value: 'body parts',
   },
   reducers: {
     setFilter: {
@@ -17,5 +17,5 @@ const filterSlice = createSlice({
 export const filterReducer = filterSlice.reducer;
 
 export const { setFilter } = filterSlice.actions;
-//selector
+
 export const getFilter = (state) => state.filter.value;

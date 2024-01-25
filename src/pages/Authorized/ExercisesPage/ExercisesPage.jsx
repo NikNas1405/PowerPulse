@@ -1,12 +1,11 @@
-// import { Container, Block } from './ExercisesPage.Styled';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
-//
+
 import { globalColor } from '../../../styles/root';
 
 import sprite from '../../../assets/sprite.svg';
-//
+
 import {
   getError,
   getIsLoading,
@@ -15,18 +14,17 @@ import capitalizeFirstLetter from '../../../helpers/capitalizeFirstLetter';
 
 import ExerciseCategories from '../../../components/Authorized/ExercisesCategories/ExercisesCategories';
 import { fetchExercisesCategories } from '../../../redux/exercises/operations';
-//
+
 import { Container } from '../../../styles/GlobalStyles';
 import {
   ContainerExPage,
   BackButton,
   BackGroundStyle,
 } from './ExercisesPage.Styled';
-//
+
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
 import { Loader } from '../../../components/Loader/Loader';
 import { toast } from 'react-toastify';
-// import { StyledLink } from '../../../components/Authorized/ExercisesItem/ExercisesItem.styled';
 
 const ExercisesPage = () => {
   const dispatch = useDispatch();
@@ -51,7 +49,6 @@ const ExercisesPage = () => {
     gettingExercisesFilters();
   }, [dispatch, filter]);
   return (
-    // <ExerPageWrapper>
     <BackGroundStyle>
       <Container>
         {isLoading ? (

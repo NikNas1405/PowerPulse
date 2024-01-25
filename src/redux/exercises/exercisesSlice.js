@@ -39,8 +39,6 @@ const exercisesSlice = createSlice({
 
 export const exercisesReducer = exercisesSlice.reducer;
 
-// Selectors;
-
 export const getExercises = (state) => state.exercises.items;
 export const getIsLoading = (state) => state.exercises.isLoading;
 export const getError = (state) => state.exercises.error;

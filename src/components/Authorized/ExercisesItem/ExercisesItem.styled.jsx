@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 import { Field, Form } from 'formik';
-// import avocado from '../../../assets/products/avocado.png';
 import thumbUp from '../../../assets/exercises/thumbUp.png';
 
 export const Input = styled(Field)`
@@ -12,13 +11,6 @@ export const Input = styled(Field)`
 `;
 
 export const Forma = styled(Form)`
-  /* display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 10px;
-  width: 200px;
-  margin-bottom: 50px; */
 `;
 
 export const Label = styled.label`
@@ -35,7 +27,6 @@ export const ButtonSubmit = styled.button`
   font-weight: 500;
   font-size: 16px;
   line-height: 1.125;
-  /* margin-right: auto; */
 
   @media (min-width: 768px) {
     margin-top: 53px;
@@ -67,14 +58,13 @@ export const DetailsSpan = styled.span`
   font-weight: 700;
   font-size: 14px;
   line-height: 1.29;
-  white-space: nowrap; /* Запобігає переносу тексту на новий рядок */
-  overflow: hidden; /* Ховає зайвий текст, який не вміщається в контейнері */
+  white-space: nowrap; 
+  overflow: hidden; 
   text-overflow: ellipsis;
 `;
 
 export const InfoBlock = styled.div`
   width: 302px;
-  /* border: 1px solid red; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -84,7 +74,6 @@ export const InfoBlock = styled.div`
 
   @media (min-width: 768px) {
     width: 350px;
-    /* align-items: end; */
     margin-top: 48px;
     margin-bottom: 254px;
   }
@@ -194,9 +183,6 @@ export const StyledLink = styled.a`
 export const ModalContainer = styled.div`
   width: 100%;
   height: 100%;
-  /* display: flex;
-  flex-direction: column; */
-  /* border: 2px solid white; */
   @media (min-width: 768px) {
     display: flex;
     width: 694px;
@@ -226,7 +212,6 @@ export const TimerContainer = styled.div`
 
   @media (min-width: 768px) {
     margin-left: 32px;
-    /* align-items: start; */
   }
 `;
 
@@ -249,23 +234,16 @@ export const ModalInfoStyle = styled.span`
 export const ModalBlockFirst = styled.div`
   display: flex;
   flex-direction: column;
-  /* border: 2px solid green; */
 
   @media (min-width: 768px) {
-    /* margin-bottom: 19px; */
   }
 `;
 
 export const ModalBlockSecond = styled.div`
   padding: 0px 16px 0px 16px;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* border: 2px solid green; */
 
   @media (min-width: 768px) {
     padding: 0px;
-    /* display: flex; */
-    /* margin-bottom: 19px; */
   }
 `;
 

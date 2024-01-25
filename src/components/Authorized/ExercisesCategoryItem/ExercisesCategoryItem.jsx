@@ -1,4 +1,3 @@
-// import { useDispatch } from 'react-redux';
 import { Block } from './ExercisesCategoryItem.Styled';
 
 export const ExercisesCategoryItem = ({

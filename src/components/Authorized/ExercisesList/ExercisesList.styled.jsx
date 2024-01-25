@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 import { globalColor } from '../../../styles/root';
 
-export const ExercisesListWrapper = styled.div`
-  list-style: none;
+export const Wrapper = styled.div`
   overflow: auto;
   margin-top: 32px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 
   @media (min-width: 768px) {
     height: 660px;
     width: 704px;
-    gap: 32px 16px;
   }
 
   @media (min-width: 1440px) {
@@ -28,5 +23,16 @@ export const ExercisesListWrapper = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: ${globalColor.colorOrange1};
     border-radius: 12px;
+  }
+`;
+
+export const ExercisesListWrapper = styled.ul`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    gap: 32px 16px;
   }
 `;

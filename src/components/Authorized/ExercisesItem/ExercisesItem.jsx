@@ -37,7 +37,6 @@ import { globalColor } from '../../../styles/root';
 
 import sprite from '../../../assets/sprite.svg';
 
-//
 import Modal from 'react-modal';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { useState } from 'react';
@@ -130,7 +129,6 @@ export const ExercisesItem = ({
     return (
       <div style={{ display: 'flex', margin: '30px' }}>
         {isPlaying ? (
-          // Якщо таймер запущений, відображається кнопка Pause
           <button
             className="pause"
             onClick={() => {
@@ -148,7 +146,6 @@ export const ExercisesItem = ({
             </svg>
           </button>
         ) : (
-          // Якщо таймер на паузі або зупинений, відображається кнопка Play
           <button
             className="play"
             onClick={() => {
@@ -249,11 +246,10 @@ export const ExercisesItem = ({
               </GifContainer>
               <TimerContainer className="timer-wrapper">
                 <CountdownCircleTimer
-                  // style={{ border: '1px solid green' }}
                   size={124}
                   strokeWidth={5}
                   trailStrokeWidth={4}
-                  strokeLinecap="butt" // Кінці ліній закруглені
+                  strokeLinecap="butt" 
                   key={timer}
                   isPlaying={isPlaying}
                   duration={select}
@@ -264,7 +260,6 @@ export const ExercisesItem = ({
                   }
                   onUpdate={(remainingTime) => {
                     updateObject(remainingTime);
-                    // console.log('remainingTime', remainingTime);
                   }}
                 >
                   {renderTime}

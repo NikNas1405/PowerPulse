@@ -10,7 +10,6 @@ export const StatusFilter = () => {
     if (filter !== newFilter) {
       dispatch(setFilter(newFilter));
     } else {
-      // Скасування вибору, якщо кнопка вже вибрана
       dispatch(setFilter(''));
     }
   };
