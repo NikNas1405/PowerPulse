@@ -16,10 +16,10 @@ import {
 } from './ProductsPage.styled';
 
 import {
+  selectProducts,
   selectProductsCategories,
   selectProductsIsLoading,
 } from '../../../redux/products/productsSelector';
-import { selectProducts } from '../../../redux/products/productsSelector';
 
 import {
   fetchAllProductsCategories,
@@ -30,7 +30,6 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
 
   const isLoadingProducts = useSelector(selectProductsIsLoading);
-
   const categoriesArray = useSelector(selectProductsCategories);
   const productsArray = useSelector(selectProducts);
 
@@ -47,7 +46,6 @@ const ProductsPage = () => {
         toast.error('Sorry, something went wrong, please try again', {
           theme: 'dark',
         });
-        console.error('Error fetching data:', error);
       }
     };
 

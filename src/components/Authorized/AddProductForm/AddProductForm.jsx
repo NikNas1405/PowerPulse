@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { changeDate } from '../../../helpers/helpers';
 
 import { addDiaryProducts } from '../../../redux/diary/diaryOperation';
+
+import { selectDiaryError } from '../../../redux/diary/diarySelector';
 
 import {
   AddProductFormStyled,
@@ -30,6 +32,8 @@ export const AddProductForm = ({
   productId,
 }) => {
   const dispatch = useDispatch();
+
+  const errorAdding = useSelector(selectDiaryError);
 
   const [productToAdd, setProductToAdd] = useState({
     product: '',
@@ -64,20 +68,23 @@ export const AddProductForm = ({
     ) {
       setError('Enter amount*');
       setIsError(true);
-    } else {
+    } else if (!errorAdding) {
       setError('');
       setIsError(false);
-
       try {
         closeModallAddProductForm();
         onClick(productToAdd.calories);
-
         await dispatch(addDiaryProducts(productToAdd));
       } catch (error) {
         toast.error('Sorry, something went wrong, please try again', {
           theme: 'dark',
         });
       }
+    } else {
+      toast.error('Sorry, something went wrong, please try again', {
+        theme: 'dark',
+      });
+      return;
     }
   };
 

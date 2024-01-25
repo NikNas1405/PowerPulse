@@ -24,7 +24,7 @@ export const addDiaryProducts = createAsyncThunk(
       const response = await axios.post('/diary/products', data);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);
@@ -39,7 +39,7 @@ export const deleteDiaryProducts = createAsyncThunk(
       const response = await axios.delete(`/diary/products/${productId}`);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);
@@ -54,7 +54,7 @@ export const addDiaryExercise = createAsyncThunk(
       const response = await axios.post('/diary/exercises', data);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);
@@ -69,7 +69,7 @@ export const deleteDiaryExercise = createAsyncThunk(
       const response = await axios.delete(`/diary/exercises/${exerciseId}`);
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);

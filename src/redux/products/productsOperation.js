@@ -9,7 +9,7 @@ export const fetchAllProductsCategories = createAsyncThunk(
       const response = await axios.get('/products/categories');
       return response.data;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);
@@ -43,7 +43,8 @@ export const fetchProducts = createAsyncThunk(
       });
       return response.data.dataUser;
     } catch (error) {
-      toast.error(`${error.message}`, {
+      console.log(error);
+      toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
       return thunkAPI.rejectWithValue(error.message);
