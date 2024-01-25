@@ -1,0 +1,1 @@
+const o=t=>{const a=new Date(t),r=String(a.getDate()).padStart(2,"0"),e=String(a.getMonth()+1).padStart(2,"0"),n=a.getFullYear();return`${r}-${e}-${n}`},s=t=>t.diary.allDiaryInformation,c=t=>t.diary.isLoading,i=t=>t.diary.error;export{s as a,c as b,o as c,i as s};
