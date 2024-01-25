@@ -92,20 +92,32 @@ function App() {
           />
           <Route
             path="/diary"
-            element={<PrivateRoute redirectTo="/" component={<DiaryPage />} />}
+            element={
+              isUserParams ? (
+                <Navigate to="/profile" replace />
+              ) : (
+                <PrivateRoute redirectTo="/" component={<DiaryPage />} />
+              )
+            }
           />
-
           <Route
             path="/products"
             element={
-              <PrivateRoute redirectTo="/" component={<ProductsPage />} />
+              isUserParams ? (
+                <Navigate to="/profile" replace />
+              ) : (
+                <PrivateRoute redirectTo="/" component={<ProductsPage />} />
+              )
             }
           />
-
           <Route
             path="/exercises"
             element={
-              <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
+              isUserParams ? (
+                <Navigate to="/profile" replace />
+              ) : (
+                <PrivateRoute redirectTo="/" component={<ExercisesPage />} />
+              )
             }
           >
             <Route
