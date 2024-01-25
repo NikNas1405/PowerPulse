@@ -142,6 +142,8 @@ export const UserForm = ({ profile, refreshUserData }) => {
     // }, 3000);
   };
 
+  const lastDateOfYear = `12/31/${new Date().getFullYear()}`;
+
   return (
     <ProfileContainer>
       <Formik
@@ -235,6 +237,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
                       value={props.values.birthday}
                       showMonthDropdown
                       showYearDropdown
+                      maxDate={new Date(lastDateOfYear)}
                       dropdownMode="select"
                       calendarStartDay={1}
                       formatWeekDay={(day) => day.substr(0, 1)}
@@ -410,7 +413,7 @@ export const UserForm = ({ profile, refreshUserData }) => {
                 </ActiveRadioForm>
               </LabelWrapper>
 
-              <ButtonSave type="submit" disabled={isSubmitted}>
+              <ButtonSave type="submit" disabled={isSubmitted || !props.dirty}>
                 Save
               </ButtonSave>
             </Form>

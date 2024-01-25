@@ -687,6 +687,9 @@ export const ButtonSave = styled.button`
 
   @media screen and (min-width: 768px) {
     margin-top: 64px;
+    &:disabled {
+      background-color: ${globalColor.colorInput};
+    }
   }
 
   @media screen and (min-width: 1440px) {
@@ -699,6 +702,9 @@ export const ButtonSave = styled.button`
     &:hover,
     &:focus {
       background-color: ${globalColor.colorOrange1};
+    }
+    &:disabled {
+      background-color: ${globalColor.colorInput};
     }
   }
 `;

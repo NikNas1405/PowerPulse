@@ -22,6 +22,13 @@ export const register = createAsyncThunk(
 
       return data;
     } catch (error) {
+      if (error.response.status === 409) {
+        toast.error('Sorry, this email is already in use', {
+          theme: 'dark',
+        });
+        return thunkAPI.rejectWithValue(error.message);
+      }
+
       toast.error('Sorry, something went wrong, please try again', {
         theme: 'dark',
       });
@@ -74,6 +81,7 @@ export const refreshUser = createAsyncThunk(
 
       return data;
     } catch (error) {
+      // console.log(error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
