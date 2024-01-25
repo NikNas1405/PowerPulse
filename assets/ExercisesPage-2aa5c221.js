@@ -1,4 +1,4 @@
-import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as w,af as b,ag as j,r as c,C as v,G as p,a as k,ah as E,W as y,Q as C,ai as $}from"./index-904a8b3e.js";import{T as L}from"./TitlePage-0f43c099.js";const P=l.ul`
+import{s as l,aa as u,ab as x,ac as g,j as e,ad as n,g as o,u as f,h as d,ae as w,af as b,ag as v,r as p,C as j,G as c,a as k,ah as E,W as y,Q as C,ai as $}from"./index-aa53d373.js";import{T as L}from"./TitlePage-00c14ac6.js";const P=l.ul`
   display: flex;
   margin-top: 28px;
   gap: 28px;
@@ -6,7 +6,7 @@ import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as 
   @media (min-width: 768px) {
     gap: 32px;
   }
-`,F=l(u)`
+`,z=l(u)`
   color: rgba(239, 237, 232, 0.4);
   font-size: 14px;
   font-weight: 400;
@@ -36,7 +36,9 @@ import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as 
   @media (max-width: 374px) {
     font-size: 18px;
   }
-`,z=()=>{const i=["Body parts","Muscles","Equipment"],{filter:n}=x(),o=g(),t=n;return e.jsx(e.Fragment,{children:e.jsx(P,{children:i.map(s=>e.jsx("li",{children:e.jsx(F,{to:`/exercises/${s}`,state:{from:o},isactive:s===t?"true":"false",children:s})},s))})})},B="/PowerPulse/assets/trainingGym-1-78b576d3.jpg",D="/PowerPulse/assets/trainingGym-1@2x-7f8d3593.jpg",G=a.div`
+`,F=()=>{const i=["Body parts","Muscles","Equipment"],{filter:a}=x(),r=g(),t=a;return e.jsx(e.Fragment,{children:e.jsx(P,{children:i.map(s=>e.jsx("li",{children:e.jsx(z,{to:`/exercises/${s}`,state:{from:r},isactive:s===t?"true":"false",children:s})},s))})})},B="/PowerPulse/assets/trainingGym-1-78b576d3.jpg",D="/PowerPulse/assets/trainingGym-1@2x-7f8d3593.jpg",G=n.div`
+  /* border: 2px solid red;
+  position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,9 +55,9 @@ import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as 
 
   @media (max-width: 374px) {
   }
-`;a.div`
+`;n.div`
   text-align: center;
-`;a.div`
+`;n.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -64,38 +66,53 @@ import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as 
   @media (min-width: 768px) {
     gap: 32px;
   }
-`;const S=a.a`
+`;const S=n.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  /* border: 2px solid red; */
+`,I=n.a`
+  position: absolute;
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  top: 6px;
   gap: 8px;
-  color: ${r.colorInput};
-  line-height: 1.2357;
-  word-wrap: break-word;
+  color: ${o.colorInput};
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.167;
   transition: color 0.3s ease;
 
   @media (min-width: 768px) {
-    padding-top: 32px;
+    top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.167;
   }
 
   > svg {
-    stroke: ${r.colorInput};
-    width: 16px;
-    height: 16px;
+    stroke: ${o.colorInput};
+    width: 10px;
+    height: 10px;
     transition: stroke 0.3s ease;
-  }
-
-  &:hover {
-    color: ${r.colorOrange1};
-    cursor: pointer;
-
-    > svg {
-      stroke: ${r.colorOrange1};
+    @media (min-width: 768px) {
       width: 16px;
       height: 16px;
     }
   }
-`,I=a.div`
+
+  &:hover {
+    color: ${o.colorOrange1};
+    cursor: pointer;
+
+    > svg {
+      stroke: ${o.colorOrange1};
+      width: 16px;
+      height: 16px;
+    }
+  }
+`,O=n.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -119,4 +136,4 @@ import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as 
     background-image: linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%),
       url(${D});
   }
-`,q=()=>{const i=f(),n=d(w),o=d(b),{filter:t,filterList:s}=x(),h=j(),m=g();return c.useEffect(()=>{(async()=>{t===void 0?C.info("We are still awating for data",{theme:"dark"}):i($({filter:t}))})()},[i,t]),e.jsx(I,{children:e.jsx(v,{children:n?e.jsx(p,{}):e.jsxs("div",{children:[t!==void 0&&m.pathname.endsWith(t.replace(" ","%20"))?null:e.jsxs(S,{onClick:()=>h(-1),children:[e.jsx("svg",{style:{fill:"none"},children:e.jsx("use",{href:k+"#icon-arrow-left"})}),"Back"," "]}),e.jsxs(G,{children:[e.jsx(L,{title:s?E(s.split(" ")[0]):"Exercises"}),e.jsx(z,{})]}),n&&!o&&e.jsx(p,{}),e.jsx(e.Fragment,{children:e.jsx(c.Suspense,{children:e.jsx(y,{})})})]})})})};export{q as default};
+`,q=()=>{const i=f(),a=d(w),r=d(b),{filter:t,filterList:s}=x(),h=v(),m=g();return p.useEffect(()=>{(async()=>{t===void 0?C.info("We are still awating for data",{theme:"dark"}):i($({filter:t}))})()},[i,t]),e.jsx(O,{children:e.jsx(j,{children:e.jsx(S,{children:a?e.jsx(c,{}):e.jsxs("div",{children:[t!==void 0&&m.pathname.endsWith(t.replace(" ","%20"))?null:e.jsxs(I,{onClick:()=>h(-1),children:[e.jsx("svg",{style:{fill:"none"},children:e.jsx("use",{href:k+"#icon-arrow-left"})}),"Back"," "]}),e.jsxs(G,{children:[e.jsx(L,{title:s?E(s.split(" ")[0]):"Exercises"}),e.jsx(F,{})]}),a&&!r&&e.jsx(c,{}),e.jsx(e.Fragment,{children:e.jsx(p.Suspense,{children:e.jsx(y,{})})})]})})})})};export{q as default};
