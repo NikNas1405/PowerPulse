@@ -257,12 +257,13 @@ export const ModalBlockFirst = styled.div`
 `;
 
 export const ModalBlockSecond = styled.div`
+  padding: 0px 16px 0px 16px;
   /* display: flex; */
   /* flex-direction: column; */
   /* border: 2px solid green; */
 
   @media (min-width: 768px) {
-    /* width: 380px; */
+    padding: 0px;
     /* display: flex; */
     /* margin-bottom: 19px; */
   }

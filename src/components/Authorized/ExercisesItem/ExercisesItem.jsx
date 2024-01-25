@@ -9,7 +9,6 @@ import {
   DetailsSpan,
   GifContainer,
   ModalContainer,
-  // PostModalContainer,
   TimerContainer,
   ModalTextStyle,
   ModalInfoStyle,
@@ -94,16 +93,7 @@ const caloriesSchema = Yup.object().shape({
 });
 
 export const ExercisesItem = ({
-  exercise: {
-    burnedCalories,
-    name,
-    bodyPart,
-    target,
-    gifUrl,
-    time,
-    _id,
-    equipment,
-  },
+  exercise: { burnedCalories, name, bodyPart, target, gifUrl, time, _id },
 }) => {
   const dispatch = useDispatch();
 
