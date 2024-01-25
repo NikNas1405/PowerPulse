@@ -1,4 +1,4 @@
-import{s as p,ad as u,ae as x,af as g,j as e,ag as a,g as r,u as f,h as d,ah as w,ai as b,aj as j,r as c,C as k,G as l,a as v,ak as E,W as y,Q as $,al as C}from"./index-cf1f2f67.js";import{T as L}from"./TitlePage-f56841ee.js";const P=p.ul`
+import{s as l,aa as u,ab as x,ac as g,j as e,ad as a,g as r,u as f,h as d,ae as w,af as b,ag as j,r as c,C as v,G as p,a as k,ah as E,W as y,Q as C,ai as $}from"./index-904a8b3e.js";import{T as L}from"./TitlePage-0f43c099.js";const P=l.ul`
   display: flex;
   margin-top: 28px;
   gap: 28px;
@@ -6,7 +6,7 @@ import{s as p,ad as u,ae as x,af as g,j as e,ag as a,g as r,u as f,h as d,ah as 
   @media (min-width: 768px) {
     gap: 32px;
   }
-`,F=p(u)`
+`,F=l(u)`
   color: rgba(239, 237, 232, 0.4);
   font-size: 14px;
   font-weight: 400;
@@ -105,7 +105,6 @@ import{s as p,ad as u,ae as x,af as g,j as e,ag as a,g as r,u as f,h as d,ah as 
     gap: 32px;
   }
   @media (min-width: 1440px) {
-    /* background-image: ${i=>i.isexerciselist==="true"?"linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%), url(${bgDesktop1})":"unset"}; */
     background-image: linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%),
       url(${B});
     background-repeat: no-repeat;
@@ -120,4 +119,4 @@ import{s as p,ad as u,ae as x,af as g,j as e,ag as a,g as r,u as f,h as d,ah as 
     background-image: linear-gradient(89deg, #040404 0%, rgba(4, 4, 4, 0) 100%),
       url(${D});
   }
-`,q=()=>{const i=f(),n=d(w),o=d(b),{filter:t,filterList:s}=x(),h=j(),m=g();return c.useEffect(()=>{(async()=>{t===void 0?$.info("We are still awating for data",{theme:"dark"}):i(C({filter:t}))})()},[i,t]),e.jsx(I,{children:e.jsx(k,{children:n?e.jsx(l,{}):e.jsxs("div",{children:[t!==void 0&&m.pathname.endsWith(t.replace(" ","%20"))?null:e.jsxs(S,{onClick:()=>h(-1),children:[e.jsx("svg",{style:{fill:"none"},children:e.jsx("use",{href:v+"#icon-arrow-left"})}),"Back"," "]}),e.jsxs(G,{children:[e.jsx(L,{title:s?E(s.split(" ")[0]):"Exercises"}),e.jsx(z,{})]}),n&&!o&&e.jsx(l,{}),e.jsx(e.Fragment,{children:e.jsx(c.Suspense,{children:e.jsx(y,{})})})]})})})};export{q as default};
+`,q=()=>{const i=f(),n=d(w),o=d(b),{filter:t,filterList:s}=x(),h=j(),m=g();return c.useEffect(()=>{(async()=>{t===void 0?C.info("We are still awating for data",{theme:"dark"}):i($({filter:t}))})()},[i,t]),e.jsx(I,{children:e.jsx(v,{children:n?e.jsx(p,{}):e.jsxs("div",{children:[t!==void 0&&m.pathname.endsWith(t.replace(" ","%20"))?null:e.jsxs(S,{onClick:()=>h(-1),children:[e.jsx("svg",{style:{fill:"none"},children:e.jsx("use",{href:k+"#icon-arrow-left"})}),"Back"," "]}),e.jsxs(G,{children:[e.jsx(L,{title:s?E(s.split(" ")[0]):"Exercises"}),e.jsx(z,{})]}),n&&!o&&e.jsx(p,{}),e.jsx(e.Fragment,{children:e.jsx(c.Suspense,{children:e.jsx(y,{})})})]})})})};export{q as default};
