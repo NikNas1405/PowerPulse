@@ -51,6 +51,14 @@ function App() {
     setLoading(false);
   }, [dispatch]);
 
+  useEffect(() => {
+    if (!isLoggedIn) {
+      setLoading(true);
+      dispatch(refreshUser());
+      setLoading(false);
+    }
+  }, [isLoggedIn, dispatch]);
+
   return loading ? (
     <Loader />
   ) : (
