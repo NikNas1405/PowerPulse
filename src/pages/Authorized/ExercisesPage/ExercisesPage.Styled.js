@@ -5,6 +5,8 @@ import bgDesktop1 from '../../../assets/exercises/trainingGym-1.jpg';
 import bgDesktop2 from '../../../assets/exercises/trainingGym-1@2x.jpg';
 
 export const ContainerExPage = styled.div`
+  /* border: 2px solid red;
+  position: relative; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,25 +39,42 @@ export const ExerPageWrapper = styled.div`
   }
 `;
 
+export const MixContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  /* border: 2px solid red; */
+`;
+
 export const BackButton = styled.a`
+  position: absolute;
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  top: 6px;
   gap: 8px;
   color: ${globalColor.colorInput};
-  line-height: 1.2357;
-  word-wrap: break-word;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.167;
   transition: color 0.3s ease;
 
   @media (min-width: 768px) {
-    padding-top: 32px;
+    top: 32px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.167;
   }
 
   > svg {
     stroke: ${globalColor.colorInput};
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     transition: stroke 0.3s ease;
+    @media (min-width: 768px) {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   &:hover {
