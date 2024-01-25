@@ -2,8 +2,6 @@ import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import { globalColor } from '../../../styles/root';
-
 import sprite from '../../../assets/sprite.svg';
 
 import {
@@ -20,6 +18,7 @@ import {
   ContainerExPage,
   BackButton,
   BackGroundStyle,
+  MixContainer,
 } from './ExercisesPage.Styled';
 
 import { TitlePage } from '../../../components/Authorized/TitlePage/TitlePage';
@@ -51,38 +50,40 @@ const ExercisesPage = () => {
   return (
     <BackGroundStyle>
       <Container>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <div>
-            {filter !== undefined &&
-            location.pathname.endsWith(filter.replace(' ', '%20')) ? null : (
-              <BackButton onClick={() => navigate(-1)}>
-                <svg style={{ fill: 'none' }}>
-                  <use href={sprite + '#icon-arrow-left'} />
-                </svg>
-                Back{' '}
-              </BackButton>
-            )}
-            <ContainerExPage>
-              <TitlePage
-                title={
-                  filterList
-                    ? capitalizeFirstLetter(filterList.split(' ')[0])
-                    : 'Exercises'
-                }
-              />
-              <ExerciseCategories />
-            </ContainerExPage>
+        <MixContainer>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <div>
+              {filter !== undefined &&
+              location.pathname.endsWith(filter.replace(' ', '%20')) ? null : (
+                <BackButton onClick={() => navigate(-1)}>
+                  <svg style={{ fill: 'none' }}>
+                    <use href={sprite + '#icon-arrow-left'} />
+                  </svg>
+                  Back{' '}
+                </BackButton>
+              )}
+              <ContainerExPage>
+                <TitlePage
+                  title={
+                    filterList
+                      ? capitalizeFirstLetter(filterList.split(' ')[0])
+                      : 'Exercises'
+                  }
+                />
+                <ExerciseCategories />
+              </ContainerExPage>
 
-            {isLoading && !error && <Loader />}
-            <>
-              <Suspense>
-                <Outlet />
-              </Suspense>
-            </>
-          </div>
-        )}
+              {isLoading && !error && <Loader />}
+              <>
+                <Suspense>
+                  <Outlet />
+                </Suspense>
+              </>
+            </div>
+          )}
+        </MixContainer>
       </Container>
     </BackGroundStyle>
   );
