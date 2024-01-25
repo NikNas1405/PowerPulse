@@ -1,6 +1,6 @@
-import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as t,c as a,d as r,e as s,f as p,L as l}from"./Logo-ca686f77.js";const c=i.div`
+import{s as i,g as n,N as r,i as a,j as e}from"./index-cf1f2f67.js";import{b as d,a as s,c as p,d as l,e as c,f as x,L as h}from"./Logo-34dd863e.js";const m=i.div`
   display: flex;
-`,x=i.div`
+`,g=i.div`
   height: 100vh;
   width: 36%;
   background-image: url(${d});
@@ -11,35 +11,35 @@ import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as 
   @media screen and (min-device-pixel-radio: 2) and (min-width: 320px),
     screen and (min-resolution: 192dpi) and (min-width: 320px),
     screen and (min-resolution: 2dppx) and (min-width: 320px) {
-    background-image: url(${t});
+    background-image: url(${s});
   }
 
   @media screen and (min-width: 768px) {
-    background-image: url(${a});
+    background-image: url(${p});
     width: 45%;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 768px),
       screen and (min-resolution: 192dpi) and (min-width: 768px),
       screen and (min-resolution: 2dppx) and (min-width: 768px) {
-      background-image: url(${r});
+      background-image: url(${l});
     }
   }
 
   @media screen and (min-width: 1440px) {
-    background-image: url(${s});
+    background-image: url(${c});
     width: 54%;
 
     @media screen and (min-device-pixel-radio: 2) and (min-width: 1440px),
       screen and (min-resolution: 192dpi) and (min-width: 1440px),
       screen and (min-resolution: 2dppx) and (min-width: 1440px) {
-      background-image: url(${p});
+      background-image: url(${x});
     }
   }
-`,h=i.div`
+`,u=i.div`
   background-color: ${n.colorOrange};
   height: 100vh;
   flex: 1;
-`,m=i.div`
+`,b=i.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -70,11 +70,11 @@ import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as 
     padding: 32px 96px;
     /* width: 669px; */
   }
-`,g=i.div`
+`,w=i.div`
   display: flex;
   flex-direction: column;
   transform: translateY(20vh);
-`,u=i.h2`
+`,f=i.h2`
   color: ${n.colorWhite};
   margin-bottom: 14px;
   font-size: 66px;
@@ -88,7 +88,7 @@ import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as 
     line-height: 0.9375;
     letter-spacing: 1.6px;
   }
-`,b=i.p`
+`,v=i.p`
   color: ${n.colorWhite};
   font-size: 14px;
   line-height: 1.28571;
@@ -98,7 +98,7 @@ import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as 
     font-size: 16px;
     line-height: 1.5;
   }
-`,w=i(o)`
+`,o=i(r)`
   display: inline-flex;
   padding: 12px 38px;
   justify-content: center;
@@ -128,4 +128,4 @@ import{s as i,g as n,N as o,j as e}from"./index-c075d7e5.js";import{b as d,a as 
 
   @media screen and (min-width: 1440px) {
   }
-`,k=()=>e.jsxs(c,{children:[e.jsx(h,{children:e.jsxs(m,{children:[e.jsx(l,{}),e.jsxs(g,{children:[e.jsx(u,{children:"404"}),e.jsx(b,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),e.jsx(w,{to:"/",children:"Go Home"})]})]})}),e.jsx(x,{})]});export{k as default};
+`,y=()=>{const t=a();return e.jsxs(m,{children:[e.jsx(u,{children:e.jsxs(b,{children:[e.jsx(h,{}),e.jsxs(w,{children:[e.jsx(f,{children:"404"}),e.jsx(v,{children:"Sorry, you have reached a page that we could not find. It seems that you are lost among the numbers and letters of our virtual space. Perhaps this page went on vacation or decided to disappear into another dimension. We apologize for this inconvenience."}),t?e.jsx(o,{to:"/diary",children:"Go Home"}):e.jsx(o,{to:"/profile",replace:!0,children:"Go Home"})]})]})}),e.jsx(g,{})]})};export{y as default};

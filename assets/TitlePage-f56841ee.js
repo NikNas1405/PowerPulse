@@ -1,4 +1,4 @@
-import{s as o,g as t,j as e}from"./index-c075d7e5.js";const s=o.h1`
+import{s as o,g as t,j as e}from"./index-cf1f2f67.js";const s=o.h1`
   color: ${t.colorWhite};
   font-size: 24px;
   font-weight: 700;
