@@ -5,7 +5,7 @@ export const Block = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: 335px;
+  width: 280px;
   height: 206px;
   border: 1px solid white;
   border-radius: 5px;
@@ -18,6 +18,10 @@ export const Block = styled.div`
   &:hover {
     transform: scale(1);
     opacity: 1;
+  }
+
+  @media (min-width: 375px) {
+    width: 335px;
   }
 
   @media (min-width: 768px) {

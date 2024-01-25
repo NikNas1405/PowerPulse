@@ -33,6 +33,13 @@ export const ExercisesSubcategoriesList = () => {
               clickable: true,
             }}
             breakpoints={{
+              320: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                grid: {
+                  rows: 10,
+                },
+              },
               375: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
