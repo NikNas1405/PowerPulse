@@ -217,10 +217,12 @@ export const ImageToggle = styled.svg`
 
   @media screen and (min-width: 320px) {
     top: 30%;
-    right: 10%;
+    right: 22%;
   }
 
   @media screen and (min-width: 375px) {
+    top: 30%;
+    right: 12%;
   }
 
   @media screen and (min-width: 768px) {
