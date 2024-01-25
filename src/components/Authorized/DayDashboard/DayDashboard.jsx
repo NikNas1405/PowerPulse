@@ -47,7 +47,7 @@ const DayDashboard = ({ userDiaryInformation, bmr }) => {
             </SvgStyled>
             <TitleStyled>Daily calory intake</TitleStyled>
           </TitleStyledWrapper>
-          <DataValue>{bmr !== null ? bmr : 0}</DataValue>
+          <DataValue>{bmr && bmr !== null && bmr !== 0 ? bmr : 2200}</DataValue>
         </ItemListStyled>
         <ItemListStyled>
           <TitleStyledWrapper>

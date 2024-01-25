@@ -24,7 +24,7 @@ find the data input page, where you need to fill in all necessary information
 about yourself for your goals. On the profile page, you can view and update your
 data going forward.
 
-![Presentation](./public/presentation/UserPage.png)
+![Presentation](./public/presentation/UserPage.gif)
 
 📖 Diary (/diary): Keep track of your nutrition and workouts on the diary page.
 The information panel will help you understand your progress.

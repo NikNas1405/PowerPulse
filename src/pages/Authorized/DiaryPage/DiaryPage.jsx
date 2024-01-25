@@ -27,7 +27,6 @@ import { toast } from 'react-toastify';
 import {
   selectBmr,
   selectIsRefreshing,
-  selectIsUserParams,
   selectUser,
 } from '../../../redux/auth/selectors';
 
@@ -38,9 +37,10 @@ const DiaryPage = () => {
   const dispatch = useDispatch();
   const userData = useSelector(selectDiaryInformation);
   const isLoading = useSelector(selectDiaryIsLoading);
+  const isRefreshing = useSelector(selectIsRefreshing);
+  const bmr = useSelector(selectBmr);
   const { addProducts, addExercises } = userData;
   const [currentDate, setCurrentDate] = useState(new Date());
-  const bmr = useSelector(selectBmr);
   const user = useSelector(selectUser);
   const userDataRegistration = user.createdAt;
   const formattedCurrentDate = changeDate(currentDate);
@@ -62,7 +62,7 @@ const DiaryPage = () => {
 
   return (
     <Container>
-      {isLoading ? (
+      {isLoading || isRefreshing ? (
         <Loader />
       ) : (
         <DiaryCont>
