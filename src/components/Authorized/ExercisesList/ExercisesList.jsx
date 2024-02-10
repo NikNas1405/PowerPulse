@@ -39,6 +39,8 @@ export const ExercisesList = () => {
 
         {!exercises ? (
           <p>you do not have any exersise category</p>
+        ) : isLoading ? (
+          <Loader />
         ) : (
           <Wrapper>
             <ExercisesListWrapper>

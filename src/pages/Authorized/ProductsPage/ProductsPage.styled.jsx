@@ -53,12 +53,11 @@ export const ProductsListWrapper = styled.div`
   margin-top: 32px;
 
   @media (min-width: 768px) {
-    height: 660px;
     width: 704px;
+    height: 70vh;
   }
 
   @media (min-width: 1440px) {
-    height: 487px;
     width: 850px;
     margin-top: 28px;
   }
